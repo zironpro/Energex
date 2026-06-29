@@ -40,22 +40,54 @@ export function StoryScroll() {
 
 	useEffect(() => {
 		const loadedImages: HTMLImageElement[] = [];
-		let loadedCount = 0;
-
 		for (let i = 0; i < frameCount; i++) {
-			const img = new Image();
-			img.src = currentFrame(i);
-			img.onload = () => {
-				loadedCount++;
-				if (i === 0) {
-					setFirstFrameLoaded(true);
-				}
-			};
-			loadedImages.push(img);
+			loadedImages.push(new Image());
 		}
 
 		// Set immediately so we can render frames as they load
 		setImages(loadedImages);
+
+		let isCancelled = false;
+
+		const loadFrame = (index: number) => {
+			return new Promise<void>((resolve) => {
+				const img = loadedImages[index];
+				img.onload = () => {
+					if (index === 0) {
+						setFirstFrameLoaded(true);
+					}
+					resolve();
+				};
+				img.onerror = () => {
+					resolve(); // Resolve on error so we don't block the queue
+				};
+				// Trigger network request
+				img.src = currentFrame(index);
+			});
+		};
+
+		const loadImagesInBatches = async () => {
+			// 1. Load the very first frame immediately
+			await loadFrame(0);
+			if (isCancelled) return;
+
+			// 2. Load the rest in small batches to avoid network congestion
+			const batchSize = 10;
+			for (let i = 1; i < frameCount; i += batchSize) {
+				const batch = [];
+				for (let j = i; j < i + batchSize && j < frameCount; j++) {
+					batch.push(loadFrame(j));
+				}
+				await Promise.all(batch);
+				if (isCancelled) return;
+			}
+		};
+
+		loadImagesInBatches();
+
+		return () => {
+			isCancelled = true;
+		};
 	}, []);
 
 	const drawImage = useCallback(() => {
