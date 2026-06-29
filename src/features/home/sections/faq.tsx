@@ -55,7 +55,7 @@ const faqs = [
 
 export function FAQ() {
 	return (
-		<section className="bg-slate-50 py-12 text-slate-900">
+		<section className="bg-slate-50 py-16 text-slate-900">
 			<div className="container mx-auto max-w-7xl px-6 md:px-12">
 				<div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
 					{/* Left Column */}

@@ -3,17 +3,17 @@ import Link from "next/link";
 
 export function Hero() {
 	return (
-		<section className="relative flex w-full flex-col items-center overflow-hidden bg-white pt-32 pb-12">
+		<section className="relative flex w-full flex-col items-center overflow-hidden bg-white pt-32 pb-16">
 			<div className="container z-10 flex flex-col items-center space-y-8 px-4 text-center md:px-6">
 				<h1 className="mx-auto max-w-4xl font-bold text-5xl text-slate-900 leading-tight tracking-tighter md:text-7xl">
-					Premium & beautiful <br className="hidden md:block" />
-					hero design
+					Reliable & scalable <br className="hidden md:block" />
+					power solutions
 				</h1>
 
 				<p className="max-w-[600px] font-medium text-lg text-slate-600 md:text-xl">
-					Where magic meets logic, beautifully crafted
+					Empowering the UAE with continuous, efficient power
 					<br className="hidden sm:block" />
-					design resources that inspire.
+					for every industry and event.
 				</p>
 
 				<div className="pt-4">

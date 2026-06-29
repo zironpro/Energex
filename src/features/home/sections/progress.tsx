@@ -5,26 +5,30 @@ const industries = [
 		title: "Construction",
 		description:
 			"Continuous power for site offices and heavy machinery operations.",
+		image: "/progress/construction.png",
 	},
 	{
 		title: "Oil & Gas",
 		description:
 			"Powering drilling sites and downstream operations with reliable energy.",
+		image: "/progress/oil-&-gas.png",
 	},
 	{
 		title: "Events",
 		description:
 			"Never miss a moment with backup power for festivals, concerts, and conferences.",
+		image: "/progress/events.png",
 	},
 	{
 		title: "Logistics & Mining",
 		description: "Always-on supply for distribution hubs and remote sites.",
+		image: "/progress/logistics.png",
 	},
 ];
 
 export function Progress() {
 	return (
-		<section className="relative w-full overflow-hidden bg-white py-12 text-slate-900">
+		<section className="relative w-full overflow-hidden bg-white py-16 text-slate-900">
 			<div className="container relative z-10 mx-auto max-w-7xl px-6 md:px-12">
 				{/* Section Header */}
 				<div className="mb-20 grid grid-cols-1 items-center gap-8 px-4 md:grid-cols-2 md:px-12">
@@ -49,7 +53,16 @@ export function Progress() {
 							<div className="flex flex-grow flex-col overflow-hidden rounded-md bg-white shadow-sm transition-shadow duration-300 group-hover:shadow-md">
 								{/* Photo Placeholder */}
 								<div className="relative h-48 w-full shrink-0 overflow-hidden bg-slate-100">
-									<div className="absolute inset-0 bg-slate-200 transition-transform duration-700 group-hover:scale-105" />
+									{industry.image ? (
+										<Image
+											alt={industry.title}
+											className="object-cover transition-transform duration-700 group-hover:scale-105"
+											fill
+											src={industry.image}
+										/>
+									) : (
+										<div className="absolute inset-0 bg-slate-200 transition-transform duration-700 group-hover:scale-105" />
+									)}
 
 									{/* Hover Overlay */}
 									<div className="absolute inset-0 bg-blue-900/0 transition-colors duration-500 group-hover:bg-blue-900/10" />

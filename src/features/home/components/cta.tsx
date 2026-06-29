@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export function CTA() {
 	return (
-		<section className="relative overflow-hidden bg-slate-950 py-12 text-white">
+		<section className="relative overflow-hidden bg-slate-950 py-16 text-white">
 			{/* Background Logo Overflowing */}
 			<div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.08]">
 				<svg
