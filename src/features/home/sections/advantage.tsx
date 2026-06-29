@@ -23,31 +23,31 @@ const advantages: AdvantageItem[] = [
 		title: "Rapid Delivery",
 		description:
 			"On-site and operational on demand, with custom equipment tailored specifically for your environment.",
-		image: "/advantage/rapid-delivery.png",
+		image: "/advantage/rapid-delivery.webp",
 	},
 	{
 		title: "Total Reliability",
 		description:
 			"Every unit is backed by rigorous preventive maintenance to secure peak uptime and regulatory compliance.",
-		image: "/advantage/total-reliability.png",
+		image: "/advantage/total-reliability.webp",
 	},
 	{
 		title: "Smart Engineering",
 		description:
 			"Beyond a rental service, we size, sync and support your specific power requirements.",
-		image: "/advantage/smart-engineering.png",
+		image: "/advantage/smart-engineering.webp",
 	},
 	{
 		title: "Expert Consulting",
 		description:
 			"Attentive 24/7 technical assistance to maintain uninterrupted operations.",
-		image: "/advantage/expert-consulting.png",
+		image: "/advantage/expert-consulting.webp",
 	},
 	{
 		title: "Flexible Packages",
 		description:
 			"Tailored rental terms and project-based options for your business.",
-		image: "/advantage/flexible-packages.png",
+		image: "/advantage/flexible-packages.webp",
 	},
 ];
 

@@ -41,7 +41,7 @@ export function Hero() {
 						className="h-auto w-full object-cover"
 						height={1080}
 						priority
-						src="/images/hero-image.png"
+						src="/images/hero-image.webp"
 						width={1920}
 					/>
 				</div>

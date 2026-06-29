@@ -5,24 +5,24 @@ const industries = [
 		title: "Construction",
 		description:
 			"Continuous power for site offices and heavy machinery operations.",
-		image: "/progress/construction.png",
+		image: "/progress/construction.webp",
 	},
 	{
 		title: "Oil & Gas",
 		description:
 			"Powering drilling sites and downstream operations with reliable energy.",
-		image: "/progress/oil-&-gas.png",
+		image: "/progress/oil-&-gas.webp",
 	},
 	{
 		title: "Events",
 		description:
 			"Never miss a moment with backup power for festivals, concerts, and conferences.",
-		image: "/progress/events.png",
+		image: "/progress/events.webp",
 	},
 	{
 		title: "Logistics & Mining",
 		description: "Always-on supply for distribution hubs and remote sites.",
-		image: "/progress/logistics.png",
+		image: "/progress/logistics.webp",
 	},
 ];
 

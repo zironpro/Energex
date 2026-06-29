@@ -10,7 +10,6 @@ import { Advantage } from "./sections/advantage";
 import { FAQ } from "./sections/faq";
 import { Hero } from "./sections/hero";
 import { Progress } from "./sections/progress";
-import { StoryScroll } from "./sections/story-scroll";
 
 export function HomePage() {
 	useEffect(() => {
@@ -52,7 +51,7 @@ export function HomePage() {
 	return (
 		<main className="relative min-h-screen bg-[#050505] text-white">
 			<Intro />
-			<StoryScroll />
+			{/* <StoryScroll /> */}
 			<Hero />
 			<Advantage />
 			<Progress />
