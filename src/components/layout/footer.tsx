@@ -243,13 +243,13 @@ export function Footer() {
 					<div className="mt-4 flex gap-6 text-sm md:mt-0">
 						<Link
 							className="inline-block text-slate-500 transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-white"
-							href="#"
+							href="/terms-and-policy"
 						>
 							Privacy Policy
 						</Link>
 						<Link
 							className="inline-block text-slate-500 transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-white"
-							href="#"
+							href="/terms-and-policy"
 						>
 							Terms of Service
 						</Link>

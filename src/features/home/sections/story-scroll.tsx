@@ -35,11 +35,11 @@ export function StoryScroll() {
 					muted
 					playsInline
 				>
-					<source src="/video/scroll-story.mp4" type="video/mp4" />
+					<source src="/video/hero.mp4" type="video/mp4" />
 				</video>
 				{/* Premium gradient overlays for text readability and depth */}
-				<div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-				<div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent" />
+				{/* <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+				<div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent" /> */}
 			</motion.div>
 
 			<div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-32 md:px-20">
@@ -51,10 +51,7 @@ export function StoryScroll() {
 						whileInView={{ opacity: 1, y: 0 }}
 					>
 						<h1 className="font-bold text-5xl text-white tracking-tighter md:text-7xl lg:text-8xl">
-							Experience <br className="hidden md:block" />
-							<span className="bg-gradient-to-r from-white to-white/50 bg-clip-text text-transparent">
-								the Future
-							</span>
+							Reliable Power, Anytime
 						</h1>
 					</motion.div>
 
