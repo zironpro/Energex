@@ -6,10 +6,18 @@ import Link from "next/link";
 
 import { Globe } from "lucide-react";
 
-const NavLink = ({ href, children }: { href: string; children: string }) => {
+const NavLink = ({
+	href,
+	children,
+	isScrolled,
+}: {
+	href: string;
+	children: string;
+	isScrolled: boolean;
+}) => {
 	return (
 		<Link
-			className="group relative flex overflow-hidden font-bold text-gray-800 text-lg"
+			className={`group relative flex overflow-hidden font-bold text-lg transition-colors ${isScrolled ? "text-gray-800" : "text-white"}`}
 			href={href}
 		>
 			<div className="flex">
@@ -69,7 +77,7 @@ export function Navbar() {
 				{/* Left Side: Logo */}
 				<div className="flex-shrink-0">
 					<Link
-						className="flex items-center gap-3 font-bold text-3xl text-gray-900 tracking-tighter"
+						className={`flex items-center gap-3 font-bold text-3xl tracking-tighter transition-colors ${isScrolled ? "text-gray-900" : "text-white"}`}
 						href="/"
 					>
 						<svg className="h-auto w-16 fill-current" viewBox="0 0 210 126">
@@ -85,15 +93,25 @@ export function Navbar() {
 
 				{/* Center: Navigation Links */}
 				<div className="hidden items-center space-x-8 md:flex">
-					<NavLink href="/">Home</NavLink>
-					<NavLink href="/solutions">Solutions</NavLink>
-					<NavLink href="/company">Company</NavLink>
-					<NavLink href="/contact">Contact</NavLink>
+					<NavLink href="/" isScrolled={isScrolled}>
+						Home
+					</NavLink>
+					<NavLink href="/solutions" isScrolled={isScrolled}>
+						Solutions
+					</NavLink>
+					<NavLink href="/company" isScrolled={isScrolled}>
+						Company
+					</NavLink>
+					<NavLink href="/contact" isScrolled={isScrolled}>
+						Contact
+					</NavLink>
 				</div>
 
 				{/* Right Side: Multilingual Button */}
 				<div className="flex-shrink-0">
-					<button className="flex cursor-pointer items-center space-x-2 rounded-lg px-5 py-2.5 font-bold text-gray-800 text-lg transition-all transition-colors hover:bg-gray-100/80 hover:text-blue-600">
+					<button
+						className={`flex cursor-pointer items-center space-x-2 rounded-lg px-5 py-2.5 font-bold text-lg transition-all transition-colors ${isScrolled ? "text-gray-800 hover:bg-gray-100/80 hover:text-blue-600" : "text-white hover:bg-white/20"}`}
+					>
 						<Globe className="h-5 w-5" />
 						<span>EN</span>
 					</button>

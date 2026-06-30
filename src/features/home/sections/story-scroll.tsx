@@ -1,265 +1,103 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
-import {
-	motion,
-	useMotionValueEvent,
-	useScroll,
-	useSpring,
-	useTransform,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
-const frameCount = 285;
-
-// The images are named ezgif-frame-001.png to ezgif-frame-285.png
-const currentFrame = (index: number) =>
-	`/sequence/ezgif-frame-${(index + 1).toString().padStart(3, "0")}.png`;
+import { Button } from "@/components/ui/button";
 
 export function StoryScroll() {
-	const canvasRef = useRef<HTMLCanvasElement>(null);
 	const containerRef = useRef<HTMLDivElement>(null);
-	const [images, setImages] = useState<HTMLImageElement[]>([]);
-	const [firstFrameLoaded, setFirstFrameLoaded] = useState(false);
 
-	// Track native scroll progress of the container
+	// Track scroll progress for parallax effect
 	const { scrollYProgress } = useScroll({
 		target: containerRef,
-		offset: ["start start", "end end"],
+		offset: ["start start", "end start"],
 	});
 
-	// Apply spring physics for buttery smooth scrubbing
-	const smoothProgress = useSpring(scrollYProgress, {
-		stiffness: 100,
-		damping: 30,
-		restDelta: 0.001,
-	});
-
-	// Map progress to frame index
-	const frameIndex = useTransform(smoothProgress, [0, 1], [0, frameCount - 1]);
-
-	useEffect(() => {
-		const loadedImages: HTMLImageElement[] = [];
-		for (let i = 0; i < frameCount; i++) {
-			loadedImages.push(new Image());
-		}
-
-		// Set immediately so we can render frames as they load
-		setImages(loadedImages);
-
-		let isCancelled = false;
-
-		const loadFrame = (index: number) => {
-			return new Promise<void>((resolve) => {
-				const img = loadedImages[index];
-				img.onload = () => {
-					if (index === 0) {
-						setFirstFrameLoaded(true);
-					}
-					resolve();
-				};
-				img.onerror = () => {
-					resolve(); // Resolve on error so we don't block the queue
-				};
-				// Trigger network request
-				img.src = currentFrame(index);
-			});
-		};
-
-		const loadImagesInBatches = async () => {
-			// 1. Load the very first frame immediately
-			await loadFrame(0);
-			if (isCancelled) return;
-
-			// 2. Load the rest in small batches to avoid network congestion
-			const batchSize = 10;
-			for (let i = 1; i < frameCount; i += batchSize) {
-				const batch = [];
-				for (let j = i; j < i + batchSize && j < frameCount; j++) {
-					batch.push(loadFrame(j));
-				}
-				await Promise.all(batch);
-				if (isCancelled) return;
-			}
-		};
-
-		loadImagesInBatches();
-
-		return () => {
-			isCancelled = true;
-		};
-	}, []);
-
-	const drawImage = useCallback(() => {
-		const canvas = canvasRef.current;
-		if (!canvas || images.length === 0) return;
-
-		const context = canvas.getContext("2d");
-		if (!context) return;
-
-		const index = Math.min(
-			frameCount - 1,
-			Math.max(0, Math.round(frameIndex.get()))
-		);
-		const img = images[index];
-
-		if (img && img.complete) {
-			const canvasRatio = canvas.width / canvas.height;
-			const imgRatio = img.width / img.height;
-
-			let drawWidth: number;
-			let drawHeight: number;
-			let offsetX: number;
-			let offsetY: number;
-
-			// Simulate object-fit: cover
-			if (canvasRatio > imgRatio) {
-				drawWidth = canvas.width;
-				drawHeight = canvas.width / imgRatio;
-				offsetX = 0;
-				offsetY = (canvas.height - drawHeight) / 2;
-			} else {
-				drawWidth = canvas.height * imgRatio;
-				drawHeight = canvas.height;
-				offsetX = (canvas.width - drawWidth) / 2;
-				offsetY = 0;
-			}
-
-			context.clearRect(0, 0, canvas.width, canvas.height);
-			context.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
-		}
-	}, [images, frameIndex]);
-
-	// Render canvas whenever the smoothed frame changes
-	useMotionValueEvent(frameIndex, "change", drawImage);
-
-	// Initial render & resize handler
-	useEffect(() => {
-		const handleResize = () => {
-			const canvas = canvasRef.current;
-			if (canvas) {
-				canvas.width = window.innerWidth;
-				canvas.height = window.innerHeight;
-				drawImage();
-			}
-		};
-		window.addEventListener("resize", handleResize);
-		// Draw initial frame if ready
-		handleResize();
-		return () => window.removeEventListener("resize", handleResize);
-	}, [drawImage]);
-
-	// Ensure we draw the very first frame immediately as soon as it's fully loaded over the network
-	useEffect(() => {
-		if (firstFrameLoaded) {
-			drawImage();
-		}
-	}, [firstFrameLoaded, drawImage]);
-
-	// Text 1 Opacity & Translate
-	const opacity1 = useTransform(
-		smoothProgress,
-		[0, 0.25, 0.33, 1],
-		[1, 1, 0, 0]
-	);
-	const y1 = useTransform(smoothProgress, [0, 0.25, 0.33, 1], [0, 0, -20, -20]);
-	const pointerEvents1 = useTransform(smoothProgress, (v) =>
-		v < 0.29 ? "auto" : "none"
-	);
-
-	// Text 2 Opacity & Translate
-	const opacity2 = useTransform(
-		smoothProgress,
-		[0, 0.33, 0.4, 0.58, 0.66, 1],
-		[0, 0, 1, 1, 0, 0]
-	);
-	const y2 = useTransform(
-		smoothProgress,
-		[0, 0.33, 0.4, 0.58, 0.66, 1],
-		[20, 20, 0, 0, -20, -20]
-	);
-	const pointerEvents2 = useTransform(smoothProgress, (v) =>
-		v > 0.33 && v < 0.62 ? "auto" : "none"
-	);
-
-	// Text 3 Opacity & Translate
-	const opacity3 = useTransform(
-		smoothProgress,
-		[0, 0.66, 0.75, 1],
-		[0, 0, 1, 1]
-	);
-	const y3 = useTransform(smoothProgress, [0, 0.66, 0.75, 1], [20, 20, 0, 0]);
-	const pointerEvents3 = useTransform(smoothProgress, (v) =>
-		v > 0.66 ? "auto" : "none"
-	);
+	// Subtle parallax on the background video
+	const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+	const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
 	return (
-		<div className="relative h-[400vh] w-full bg-black" ref={containerRef}>
-			<div className="sticky top-0 flex h-screen w-full items-center justify-center overflow-hidden">
-				<canvas
-					className="absolute inset-0 z-0 block h-full w-full"
-					ref={canvasRef}
-				/>
+		<section
+			className="relative h-screen w-full overflow-hidden bg-black"
+			ref={containerRef}
+		>
+			<motion.div
+				className="absolute inset-0 h-full w-full"
+				style={{ y, opacity }}
+			>
+				<video
+					autoPlay
+					className="h-full w-full object-cover"
+					loop
+					muted
+					playsInline
+				>
+					<source src="/video/scroll-story.mp4" type="video/mp4" />
+				</video>
+				{/* Premium gradient overlays for text readability and depth */}
+				<div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+				<div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent" />
+			</motion.div>
 
-				{/* Text Overlays */}
-				<div className="pointer-events-none absolute inset-0 z-10 flex flex-col justify-center px-6 md:px-20">
-					<div className="relative h-[300px] max-w-xl">
-						{/* Text 1 */}
-						<motion.div
-							className="absolute inset-0 flex flex-col justify-center space-y-6"
-							style={{
-								opacity: opacity1,
-								y: y1,
-								pointerEvents: pointerEvents1 as unknown as "auto",
-							}}
-						>
-							<h2 className="font-bold text-5xl text-white tracking-tighter drop-shadow-lg md:text-7xl">
-								Experience the Future
-							</h2>
-							<p className="font-medium text-lg text-white/90 leading-relaxed drop-shadow-md md:text-xl">
-								Discover unparalleled performance and breathtaking design,
-								perfectly synced with every scroll. Power reinvented.
-							</p>
-						</motion.div>
+			<div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-32 md:px-20">
+				<div className="max-w-4xl">
+					<motion.div
+						initial={{ opacity: 0, y: 30 }}
+						transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+						viewport={{ once: true }}
+						whileInView={{ opacity: 1, y: 0 }}
+					>
+						<h1 className="font-bold text-5xl text-white tracking-tighter md:text-7xl lg:text-8xl">
+							Experience <br className="hidden md:block" />
+							<span className="bg-gradient-to-r from-white to-white/50 bg-clip-text text-transparent">
+								the Future
+							</span>
+						</h1>
+					</motion.div>
 
-						{/* Text 2 */}
-						<motion.div
-							className="absolute inset-0 flex flex-col justify-center space-y-6"
-							style={{
-								opacity: opacity2,
-								y: y2,
-								pointerEvents: pointerEvents2 as unknown as "auto",
-							}}
-						>
-							<h2 className="font-bold text-5xl text-white tracking-tighter drop-shadow-lg md:text-7xl">
-								Crafted for Perfection
-							</h2>
-							<p className="font-medium text-lg text-white/90 leading-relaxed drop-shadow-md md:text-xl">
-								Every detail meticulously engineered to deliver the ultimate
-								seamless experience. Built to inspire your next move.
-							</p>
-						</motion.div>
+					<motion.p
+						className="mt-6 max-w-xl font-medium text-lg text-white/80 leading-relaxed md:text-xl"
+						initial={{ opacity: 0, y: 30 }}
+						transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+						viewport={{ once: true }}
+						whileInView={{ opacity: 1, y: 0 }}
+					>
+						Discover unparalleled performance and breathtaking design, perfectly
+						synced with every scroll. Power reinvented.
+					</motion.p>
 
-						{/* Text 3 */}
-						<motion.div
-							className="absolute inset-0 flex flex-col justify-center space-y-6"
-							style={{
-								opacity: opacity3,
-								y: y3,
-								pointerEvents: pointerEvents3 as unknown as "auto",
-							}}
+					<motion.div
+						className="mt-10 flex flex-wrap items-center gap-6"
+						initial={{ opacity: 0, y: 30 }}
+						transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+						viewport={{ once: true }}
+						whileInView={{ opacity: 1, y: 0 }}
+					>
+						<Button
+							className="group h-14 rounded-full px-8 font-semibold text-base transition-all duration-300 hover:translate-x-1 hover:-translate-y-1"
+							size="lg"
 						>
-							<h2 className="font-bold text-5xl text-white tracking-tighter drop-shadow-lg md:text-7xl">
-								Limitless Potential
-							</h2>
-							<p className="font-medium text-lg text-white/90 leading-relaxed drop-shadow-md md:text-xl">
-								Pushing the boundaries of what is possible. Enter a new era of
-								interactive digital experiences today.
-							</p>
-						</motion.div>
-					</div>
+							<span>Discover More</span>
+							<svg
+								className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									d="M14 5l7 7m0 0l-7 7m7-7H3"
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth={2}
+								/>
+							</svg>
+						</Button>
+					</motion.div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 }

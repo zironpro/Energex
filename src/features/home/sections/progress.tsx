@@ -21,7 +21,8 @@ const industries = [
 	},
 	{
 		title: "Logistics & Mining",
-		description: "Always-on supply for distribution hubs and remote sites.",
+		description:
+			"Always-on supply for distribution hubs and remote sites, reliably everywhere.",
 		image: "/progress/logistics.webp",
 	},
 ];
