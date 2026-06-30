@@ -8,6 +8,7 @@ import { CTA } from "@/features/home/components/cta";
 
 import { FeatureShowcase } from "./sections/feature-showcase";
 import { Hero } from "./sections/hero";
+import { RentalPackages } from "./sections/rental-packages";
 import { ServicesGrid } from "./sections/services-grid";
 
 export function SolutionsPage() {
@@ -40,6 +41,7 @@ export function SolutionsPage() {
 			<Hero />
 			<ServicesGrid />
 			<FeatureShowcase />
+			<RentalPackages />
 			<CTA />
 		</main>
 	);
