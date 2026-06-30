@@ -2,6 +2,14 @@
 
 import Link from "next/link";
 
+import Map, {
+	FullscreenControl,
+	Marker,
+	NavigationControl,
+	Popup,
+} from "react-map-gl/maplibre";
+import "maplibre-gl/dist/maplibre-gl.css";
+
 import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -347,34 +355,46 @@ export function ContactPage() {
 								</a>{" "}
 								instead.
 							</p>
-							<div className="relative mt-8 overflow-hidden rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-								<div className="relative z-10">
-									<h4 className="mb-2 font-bold text-slate-900 text-xs uppercase tracking-wider">
-										Headquarters
-									</h4>
-									<p className="font-medium text-slate-600 leading-relaxed">
-										Energex HQ
-										<br />
-										Dubai Industrial City,
-										<br />
-										Dubai, United Arab Emirates
-									</p>
-								</div>
-								<svg
-									className="absolute -right-6 -bottom-6 z-0 h-32 w-32 text-slate-900 opacity-[0.04]"
-									fill="none"
-									stroke="currentColor"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									viewBox="0 0 24 24"
-								>
-									<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-									<circle cx="12" cy="10" r="3" />
-								</svg>
-							</div>
 						</div>
 					</div>
+				</div>
+
+				{/* Full-width Map Section */}
+				<div className="mt-16 h-[400px] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-xl lg:h-[500px]">
+					<Map
+						initialViewState={{
+							longitude: 55.071,
+							latitude: 24.876,
+							zoom: 15.5,
+						}}
+						mapStyle="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
+					>
+						<Marker anchor="center" latitude={24.876} longitude={55.071}>
+							<div className="h-5 w-5 rounded-full border-[3px] border-white bg-yellow-500 shadow-md" />
+						</Marker>
+
+						<Popup
+							anchor="bottom"
+							closeButton={false}
+							closeOnClick={false}
+							latitude={24.876}
+							longitude={55.071}
+							offset={16}
+						>
+							<div className="max-w-[220px] p-1">
+								<h4 className="mb-1 font-bold text-slate-900 text-sm">
+									Energex HQ
+								</h4>
+								<p className="text-slate-600 text-xs leading-relaxed">
+									Visit our office in Dubai Industrial City. We provide reliable
+									power solutions for modern industries.
+								</p>
+							</div>
+						</Popup>
+
+						<NavigationControl position="bottom-right" />
+						<FullscreenControl position="bottom-right" />
+					</Map>
 				</div>
 			</div>
 		</main>
