@@ -53,8 +53,8 @@ export function Navbar() {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const pathname = usePathname();
 	
-	// Force dark text if scrolled OR if we are on a light-themed page like terms-and-policy, contact, or solutions
-	const isDarkText = isScrolled || pathname === "/terms-and-policy" || pathname === "/contact" || pathname === "/solutions";
+	// Force dark text if scrolled OR if we are on a light-themed page like terms-and-policy, contact, solutions, or company
+	const isDarkText = isScrolled || pathname === "/terms-and-policy" || pathname === "/contact" || pathname === "/solutions" || pathname === "/company";
 
 	useEffect(() => {
 		const handleScroll = () => {

@@ -1,0 +1,90 @@
+"use client";
+
+import { useState } from "react";
+
+import Image from "next/image";
+
+import { AnimatePresence, motion } from "framer-motion";
+
+const SECTIONS = [
+	{
+		label: "MISSION",
+		title: "EMPOWERING WITH RELIABILITY, DELIVERING WITH EXCELLENCE.",
+		desc: "To empower businesses with reliable, efficient, and tailored power solutions. We strive to be the invisible force behind our clients' success, ensuring their operations never stop, no matter the challenges.",
+		image: "/images/mission.webp",
+	},
+	{
+		label: "VISION",
+		title: "LEADING WITH VISION, MOVING WITH PURPOSE.",
+		desc: "To be the most trusted and innovative energy partner in the region, setting new benchmarks for reliability and sustainability in temporary and permanent power generation.",
+		image: "/images/vision.webp",
+	},
+];
+
+export function MissionVision() {
+	const [activeIndex, setActiveIndex] = useState(0);
+
+	return (
+		<section className="relative bg-blue-50/50 py-12 lg:py-16">
+			<div className="container mx-auto max-w-7xl px-6">
+				<div className="relative flex flex-col items-start gap-16 lg:flex-row lg:gap-12">
+					{/* Left Side: Scrolling Content */}
+					<div className="flex w-full flex-col lg:w-7/12">
+						<div>
+							{SECTIONS.map((section, index) => (
+								<motion.div
+									className={`mb-48 transition-opacity duration-500 last:mb-0 ${activeIndex === index ? "opacity-100" : "opacity-30"}`}
+									key={section.label}
+									onViewportEnter={() => setActiveIndex(index)}
+									viewport={{ margin: "-40% 0px -40% 0px" }}
+								>
+									<div className="grid grid-cols-1 gap-8 lg:grid-cols-7">
+										{/* Label */}
+										<div className="lg:col-span-2 lg:pt-2">
+											<span className="font-semibold text-blue-500 text-sm uppercase tracking-wider">
+												{section.label}
+											</span>
+										</div>
+
+										{/* Text Content */}
+										<div className="lg:col-span-5">
+											<h2 className="mb-6 font-black text-4xl text-[#0f3b5e] uppercase leading-[1.1] md:text-5xl">
+												{section.title}
+											</h2>
+											<p className="text-lg text-slate-600 leading-relaxed md:text-xl">
+												{section.desc}
+											</p>
+										</div>
+									</div>
+								</motion.div>
+							))}
+						</div>
+					</div>
+
+					{/* Right Side: Sticky Image Area */}
+					<div className="sticky top-32 hidden h-max w-full lg:block lg:w-5/12 lg:pl-8">
+						<div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg shadow-xl">
+							<AnimatePresence mode="wait">
+								<motion.div
+									animate={{ opacity: 1, scale: 1 }}
+									className="absolute inset-0"
+									exit={{ opacity: 0, scale: 0.95 }}
+									initial={{ opacity: 0, scale: 1.05 }}
+									key={activeIndex}
+									transition={{ duration: 0.5, ease: "easeInOut" }}
+								>
+									<Image
+										alt={SECTIONS[activeIndex].title}
+										className="object-cover"
+										fill
+										src={SECTIONS[activeIndex].image}
+									/>
+								</motion.div>
+							</AnimatePresence>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	);
+}

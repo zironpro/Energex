@@ -103,7 +103,7 @@ export function MainHero() {
 
 	return (
 		<section
-			className="relative h-screen w-full overflow-hidden bg-[#050505]"
+			className="relative h-screen w-full overflow-hidden bg-white"
 			ref={heroRef}
 		>
 			<style>{`
@@ -132,7 +132,7 @@ export function MainHero() {
 			{/* Content */}
 			<div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-4 pt-16">
 				<div className="flex w-full max-w-7xl items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-12">
-					<h1 className="top-text-left font-bold text-3xl text-white tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
+					<h1 className="top-text-left font-bold text-3xl text-slate-900 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
 						Reliable
 					</h1>
 
@@ -144,24 +144,24 @@ export function MainHero() {
 						/>
 					</div>
 
-					<h1 className="top-text-right font-bold text-3xl text-white tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
+					<h1 className="top-text-right font-bold text-3xl text-slate-900 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
 						Scalable
 					</h1>
 				</div>
 
 				<div className="bottom-reveal mt-2 text-center md:mt-4">
-					<h1 className="font-bold text-3xl text-white tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
+					<h1 className="font-bold text-3xl text-slate-900 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
 						Power Solutions
 					</h1>
 					<div className="flex flex-wrap justify-center gap-4 pt-8">
 						<Link
-							className="inline-flex h-12 items-center justify-center rounded-lg bg-white px-8 font-semibold text-black text-sm transition-transform hover:scale-105"
+							className="inline-flex h-12 items-center justify-center rounded-lg bg-black px-8 font-semibold text-white text-sm transition-transform hover:scale-105"
 							href="/contact"
 						>
 							Request a Quote
 							<Image
 								alt=""
-								className="ml-2 h-4 w-4"
+								className="ml-2 h-4 w-4 invert"
 								height={16}
 								src="/icons/caret-right.svg"
 								width={16}
@@ -171,8 +171,16 @@ export function MainHero() {
 				</div>
 			</div>
 
-			{/* Background radial gradient */}
-			<div className="pointer-events-none absolute top-1/4 left-1/4 -z-0 h-[600px] w-full max-w-3xl -translate-x-1/2 bg-gradient-to-b from-blue-900/10 to-transparent opacity-50 blur-3xl" />
+			{/* Background Logo Watermark */}
+			<div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-10">
+				<svg className="h-[80vh] w-auto fill-slate-900" viewBox="0 0 210 126">
+					<g>
+						<polygon points="135.83 54.08 139.67 57.16 203.21 4.92 203.21 0 152.97 0 135.83 13.92 135.83 54.08" />
+						<polygon points="73.35 71.08 69.52 68.01 6.04 120.21 6.04 125.12 56.23 125.12 73.35 111.21 73.35 71.08" />
+						<polygon points="0 0 152.68 125.12 209.36 125.12 56.4 0 0 0" />
+					</g>
+				</svg>
+			</div>
 		</section>
 	);
 }
