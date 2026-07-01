@@ -10,17 +10,15 @@ import { Globe } from "lucide-react";
 const NavLink = ({
 	href,
 	children,
-	isDarkText,
 	isActive,
 }: {
 	href: string;
 	children: string;
-	isDarkText: boolean;
 	isActive?: boolean;
 }) => {
 	return (
 		<Link
-			className={`group relative flex overflow-hidden pb-1 font-bold text-lg transition-colors ${isDarkText ? "text-gray-800" : "text-white"}`}
+			className="group relative flex overflow-hidden pb-1 font-bold text-lg text-white transition-colors"
 			href={href}
 		>
 			<div className="flex">
@@ -35,7 +33,7 @@ const NavLink = ({
 					</span>
 				))}
 			</div>
-			<div className="absolute inset-0 flex text-blue-600">
+			<div className="absolute inset-0 flex text-blue-200">
 				{children.split("").map((char, index) => (
 					<span
 						className="translate-y-full transition-transform duration-300 ease-in-out group-hover:translate-y-0"
@@ -49,7 +47,7 @@ const NavLink = ({
 			</div>
 			{/* Animated Bottom Border */}
 			<div
-				className={`absolute bottom-0 left-0 h-[3px] bg-blue-600 transition-all duration-300 ease-in-out ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
+				className={`absolute bottom-0 left-0 h-[3px] bg-white transition-all duration-300 ease-in-out ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
 			/>
 		</Link>
 	);
@@ -59,13 +57,8 @@ export function Navbar() {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const pathname = usePathname();
 
-	// Force dark text if scrolled OR if we are on a light-themed page like terms-and-policy, contact, solutions, or company
-	const isDarkText =
-		isScrolled ||
-		pathname === "/terms-and-policy" ||
-		pathname === "/contact" ||
-		pathname === "/solutions" ||
-		pathname === "/company";
+	const isNotHome = pathname !== "/";
+	const showBg = isScrolled || isNotHome;
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -84,16 +77,14 @@ export function Navbar() {
 	return (
 		<nav
 			className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ease-in-out ${
-				isScrolled
-					? "bg-white/80 py-5 shadow-sm backdrop-blur-md"
-					: "bg-transparent py-8"
+				showBg ? "bg-blue-600 py-5 shadow-sm" : "bg-transparent py-8"
 			}`}
 		>
 			<div className="container mx-auto flex items-center justify-between px-6">
 				{/* Left Side: Logo */}
 				<div className="flex-shrink-0">
 					<Link
-						className={`flex items-center gap-3 font-bold text-3xl tracking-tighter transition-colors ${isDarkText ? "text-gray-900" : "text-white"}`}
+						className="flex items-center gap-3 font-bold text-3xl text-white tracking-tighter transition-colors"
 						href="/"
 					>
 						<svg className="h-auto w-16 fill-current" viewBox="0 0 210 126">
@@ -109,37 +100,26 @@ export function Navbar() {
 
 				{/* Center: Navigation Links */}
 				<div className="hidden items-center space-x-8 md:flex">
-					<NavLink href="/" isActive={pathname === "/"} isDarkText={isDarkText}>
+					<NavLink href="/" isActive={pathname === "/"}>
 						Home
 					</NavLink>
 					<NavLink
 						href="/solutions"
 						isActive={pathname.startsWith("/solutions")}
-						isDarkText={isDarkText}
 					>
 						Solutions
 					</NavLink>
-					<NavLink
-						href="/company"
-						isActive={pathname.startsWith("/company")}
-						isDarkText={isDarkText}
-					>
+					<NavLink href="/company" isActive={pathname.startsWith("/company")}>
 						Company
 					</NavLink>
-					<NavLink
-						href="/contact"
-						isActive={pathname.startsWith("/contact")}
-						isDarkText={isDarkText}
-					>
+					<NavLink href="/contact" isActive={pathname.startsWith("/contact")}>
 						Contact
 					</NavLink>
 				</div>
 
 				{/* Right Side: Multilingual Button */}
 				<div className="flex-shrink-0">
-					<button
-						className={`flex cursor-pointer items-center space-x-2 rounded-lg px-5 py-2.5 text-lg transition-all transition-colors ${isDarkText ? "text-gray-800 hover:bg-gray-100/80 hover:text-blue-600" : "text-white hover:bg-white/20"}`}
-					>
+					<button className="flex cursor-pointer items-center space-x-2 rounded-lg px-5 py-2.5 text-lg text-white transition-all transition-colors hover:bg-white/20">
 						<Globe className="h-5 w-5" />
 						<span>EN</span>
 					</button>

@@ -4,13 +4,13 @@ import { useEffect } from "react";
 
 import Lenis from "lenis";
 
+import { RentalPackages } from "@/features/solutions/sections/rental-packages";
+
 import { CTA } from "./components/cta";
-import { HeroFeatures } from "./components/hero-features";
 import { Intro } from "./components/intro";
 import { Advantage } from "./sections/advantage";
 import { FAQ } from "./sections/faq";
 import { GeneratorFeatures } from "./sections/generator-features";
-import { Hero } from "./sections/hero";
 import { MainHero } from "./sections/main-hero";
 import { Products } from "./sections/products";
 import { Progress } from "./sections/progress";
@@ -56,12 +56,11 @@ export function HomePage() {
 		<main className="relative min-h-screen bg-[#050505] text-white">
 			<Intro />
 			<MainHero />
-			<HeroFeatures />
 			{/* <StoryScroll /> */}
 			<Advantage />
 			<GeneratorFeatures />
 			<Products />
-			<Hero />
+			<RentalPackages />
 			<Progress />
 			<FAQ />
 			<CTA />

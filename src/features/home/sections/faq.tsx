@@ -64,7 +64,7 @@ export function FAQ() {
 			<div className="container mx-auto max-w-7xl px-6 md:px-12">
 				<div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
 					{/* Left Column */}
-					<div className="sticky top-24 flex h-fit flex-col lg:col-span-5">
+					<div className="relative flex h-fit flex-col lg:sticky lg:top-24 lg:col-span-5">
 						<ScrollReveal direction="left">
 							<h2 className="mb-12 font-bold text-5xl text-blue-600 tracking-tighter md:text-6xl">
 								Frequently asked

@@ -14,6 +14,8 @@ if (typeof window !== "undefined") {
 	gsap.registerPlugin(ScrollTrigger, Flip);
 }
 
+import { HeroFeatures } from "../components/hero-features";
+
 export function MainHero() {
 	const heroRef = useRef<HTMLElement>(null);
 	const smallImgRef = useRef<HTMLDivElement>(null);
@@ -125,27 +127,27 @@ export function MainHero() {
 						muted
 						playsInline
 					>
-						<source src="/video/hero-vid.webm" type="video/mp4" />
+						<source src="/video/hero-vid.webm" type="video/webm" />
 					</video>
 				</div>
 			</div>
 
 			{/* Content */}
-			<div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-4 pt-16">
-				<div className="flex w-full max-w-7xl flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6 md:gap-8 lg:gap-12">
-					<h1 className="top-text-left font-bold text-4xl text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
+			<div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-2 pt-16 pb-16 md:pb-0">
+				<div className="flex w-full max-w-7xl flex-row items-center justify-center gap-2 sm:gap-6 md:gap-8 lg:gap-12">
+					<h1 className="top-text-left font-bold text-[28px] text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
 						Reliable
 					</h1>
 
 					{/* Medium Image Placeholder for Flip */}
-					<div className="h-[100px] w-[180px] sm:h-[150px] sm:w-[250px] md:h-[220px] md:w-[350px] lg:h-[300px] lg:w-[500px]">
+					<div className="h-[60px] w-[110px] shrink-0 sm:h-[150px] sm:w-[250px] md:h-[220px] md:w-[350px] lg:h-[300px] lg:w-[500px]">
 						<div
 							className="invisible h-full w-full rounded-full"
 							ref={smallImgRef}
 						/>
 					</div>
 
-					<h1 className="top-text-right font-bold text-4xl text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
+					<h1 className="top-text-right font-bold text-[28px] text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
 						Scalable
 					</h1>
 				</div>
@@ -154,7 +156,7 @@ export function MainHero() {
 					<h1 className="font-bold text-3xl text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
 						Power Solutions
 					</h1>
-					<div className="flex flex-wrap justify-center gap-4 pt-8">
+					<div className="flex flex-wrap justify-center gap-4 pt-4 md:pt-8">
 						<Link
 							className="inline-flex h-12 items-center justify-center rounded-lg bg-black px-8 font-semibold text-sm text-white transition-transform hover:scale-105"
 							href="/contact"
@@ -173,14 +175,22 @@ export function MainHero() {
 			</div>
 
 			{/* Background Logo Watermark */}
-			<div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-10">
-				<svg className="h-[80vh] w-auto fill-slate-900" viewBox="0 0 210 126">
+			<div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center overflow-hidden opacity-10">
+				<svg
+					className="h-[80vh] w-auto scale-[2] fill-slate-900 md:scale-100"
+					viewBox="0 0 210 126"
+				>
 					<g>
 						<polygon points="135.83 54.08 139.67 57.16 203.21 4.92 203.21 0 152.97 0 135.83 13.92 135.83 54.08" />
 						<polygon points="73.35 71.08 69.52 68.01 6.04 120.21 6.04 125.12 56.23 125.12 73.35 111.21 73.35 71.08" />
 						<polygon points="0 0 152.68 125.12 209.36 125.12 56.4 0 0 0" />
 					</g>
 				</svg>
+			</div>
+
+			{/* Integrated Hero Features at bottom */}
+			<div className="absolute bottom-0 bottom-reveal left-0 z-30 w-full">
+				<HeroFeatures />
 			</div>
 		</section>
 	);
