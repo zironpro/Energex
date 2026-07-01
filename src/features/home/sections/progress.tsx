@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 const industries = [
@@ -27,81 +29,66 @@ const industries = [
 	},
 ];
 
+const bentoLayouts = [
+	"md:col-span-2 md:row-span-2 min-h-[400px] md:min-h-[600px]",
+	"md:col-span-1 md:row-span-2 min-h-[400px] md:min-h-[600px]",
+	"md:col-span-1 md:row-span-1 min-h-[250px] md:min-h-[288px]",
+	"md:col-span-1 md:row-span-1 min-h-[250px] md:min-h-[288px]",
+];
+
 export function Progress() {
 	return (
-		<section className="relative w-full overflow-hidden bg-white py-16 text-slate-900">
-			<div className="container relative z-10 mx-auto max-w-7xl px-6 md:px-12">
+		<section className="relative w-full bg-slate-50 py-16 md:py-24">
+			<div className="mx-auto w-full max-w-7xl px-6 md:px-12">
 				{/* Section Header */}
-				<div className="mb-20 grid grid-cols-1 items-center gap-8 px-4 md:grid-cols-2 md:px-12">
+				<div className="mb-12 flex flex-col justify-between gap-6 md:mb-16 md:flex-row md:items-end">
 					<div>
-						<h2 className="font-bold text-4xl text-slate-900 tracking-tighter md:text-6xl">
+						<h2 className="mb-4 font-bold text-4xl text-slate-900 tracking-tighter md:text-5xl lg:text-6xl">
 							Powering the UAE
 						</h2>
-					</div>
-					<div>
-						<p className="max-w-lg font-medium text-lg text-slate-500 md:text-xl">
-							From small projects to large-scale infrastructure.
+						<p className="max-w-2xl font-medium text-lg text-slate-500 md:text-xl">
+							From small projects to large-scale infrastructure, we provide
+							reliable energy where and when it matters most.
 						</p>
 					</div>
 				</div>
 
-				<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-					{industries.map((industry) => (
-						<div
-							className="group flex h-full cursor-pointer flex-col rounded-lg bg-slate-100 p-4 transition-colors duration-300 hover:bg-slate-200"
-							key={industry.title}
-						>
-							<div className="flex flex-grow flex-col overflow-hidden rounded-md bg-white shadow-sm transition-shadow duration-300 group-hover:shadow-md">
-								{/* Photo Placeholder */}
-								<div className="relative h-48 w-full shrink-0 overflow-hidden bg-slate-100">
-									{industry.image ? (
-										<Image
-											alt={industry.title}
-											className="object-cover transition-transform duration-700 group-hover:scale-105"
-											fill
-											src={industry.image}
-										/>
-									) : (
-										<div className="absolute inset-0 bg-slate-200 transition-transform duration-700 group-hover:scale-105" />
-									)}
+				{/* Magazine Bento Grid */}
+				<div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-4">
+					{industries.map((industry, idx) => {
+						const isFeatured = idx === 0;
 
-									{/* Hover Overlay */}
-									<div className="absolute inset-0 bg-blue-900/0 transition-colors duration-500 group-hover:bg-blue-900/10" />
+						return (
+							<div
+								className={`group relative overflow-hidden rounded-lg shadow-sm transition-all duration-700 hover:shadow-xl ${bentoLayouts[idx]}`}
+								key={industry.title}
+							>
+								{/* Full background image card */}
+								<Image
+									alt={industry.title}
+									className="object-cover transition-transform duration-700 group-hover:scale-105"
+									fill
+									src={industry.image}
+								/>
+								<div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent transition-opacity duration-500 group-hover:opacity-90" />
 
-									{/* Bottom gradient just for depth */}
-									<div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-								</div>
-
-								{/* Text Content */}
-								<div className="flex flex-grow flex-col p-6">
-									<div className="flex items-center justify-between">
-										<h3 className="font-bold text-lg text-slate-900 transition-colors duration-300 group-hover:text-blue-600">
+								<div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 lg:p-10">
+									<div className="translate-y-0 transition-transform duration-500 lg:translate-y-4 lg:group-hover:translate-y-0">
+										<h3
+											className={`mb-3 font-bold text-white tracking-tight ${isFeatured ? "text-3xl md:text-5xl lg:text-6xl" : "text-2xl md:text-3xl"}`}
+										>
 											{industry.title}
 										</h3>
-										<Image
-											alt="Arrow"
-											className="h-4 w-4 -translate-x-4 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
-											height={16}
-											src="/icons/caret-right.svg"
-											style={{
-												filter:
-													"invert(30%) sepia(90%) saturate(2000%) hue-rotate(200deg)",
-											}}
-											width={16}
-										/>
+										<p
+											className={`font-medium text-slate-200 leading-relaxed transition-opacity duration-500 lg:opacity-0 lg:group-hover:opacity-100 ${isFeatured ? "max-w-md text-base md:text-lg" : "text-sm"}`}
+										>
+											{industry.description}
+										</p>
 									</div>
 								</div>
 							</div>
-
-							{industry.description && (
-								<div className="px-2 pt-4 pb-2">
-									<p className="text-slate-600 leading-relaxed">
-										{industry.description}
-									</p>
-								</div>
-							)}
-						</div>
-					))}
+						);
+					})}
 				</div>
 			</div>
 		</section>

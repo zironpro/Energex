@@ -97,7 +97,7 @@ export function GeneratorFeatures() {
 						return (
 							<div className="h-[280px] w-full" key={card.title}>
 								<motion.div
-									className="group relative flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl shadow-xl"
+									className="group relative flex h-full w-full flex-col justify-between overflow-hidden rounded-lg shadow-xl"
 									layoutId={`feature-card-${card.title}`}
 									transition={{ type: "spring", stiffness: 300, damping: 25 }}
 								>
@@ -163,7 +163,7 @@ export function GeneratorFeatures() {
 												isTop ? { y: -10, scale: 1.02, rotate: 0 } : {}
 											}
 										>
-											<div className="group relative h-full w-full overflow-hidden rounded-3xl shadow-2xl">
+											<div className="group relative h-full w-full overflow-hidden rounded-lg shadow-2xl">
 												<Image
 													alt={card.title}
 													className="pointer-events-none object-cover transition-transform duration-700 group-hover:scale-105"

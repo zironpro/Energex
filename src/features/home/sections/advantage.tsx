@@ -134,7 +134,7 @@ export function Advantage() {
 										zIndex,
 									}}
 								>
-									<div className="group relative h-full w-full overflow-hidden rounded-2xl shadow-2xl">
+									<div className="group relative h-full w-full overflow-hidden rounded-lg shadow-2xl">
 										{adv.image ? (
 											<Image
 												alt={adv.title}
