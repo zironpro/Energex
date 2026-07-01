@@ -32,7 +32,7 @@ export function LocalFocus() {
 				{/* Top Content */}
 				<div className="mb-16 grid grid-cols-1 items-end gap-8 lg:grid-cols-2 lg:gap-16">
 					<motion.h3
-						className="font-black text-4xl text-slate-900 leading-tight md:text-5xl lg:text-6xl"
+						className="font-black text-3xl text-slate-900 leading-tight sm:text-4xl md:text-5xl lg:text-6xl"
 						initial={{ opacity: 0, y: 20 }}
 						transition={{ duration: 0.8 }}
 						viewport={{ once: true }}

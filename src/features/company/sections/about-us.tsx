@@ -16,7 +16,7 @@ export function AboutUs() {
 							viewport={{ once: true }}
 							whileInView={{ opacity: 1, y: 0 }}
 						>
-							<h2 className="mt-4 font-black text-4xl text-slate-900 leading-tight lg:text-5xl">
+							<h2 className="mt-4 font-black text-3xl text-slate-900 leading-tight sm:text-4xl lg:text-5xl">
 								Reliability Built on Local Expertise
 							</h2>
 						</motion.div>

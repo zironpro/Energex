@@ -74,7 +74,7 @@ export function FeatureShowcase() {
 					{/* Left Side: Navigation & Intro */}
 					<div className="flex flex-col lg:col-span-5">
 						<div className="mb-12">
-							<h2 className="mb-6 font-black text-4xl text-slate-900 uppercase leading-[1.1] md:text-5xl">
+							<h2 className="mb-6 font-black text-3xl text-slate-900 uppercase leading-[1.1] sm:text-4xl md:text-5xl">
 								Power Solutions <br />
 								<span className="text-blue-600">You Can Depend On</span>
 							</h2>

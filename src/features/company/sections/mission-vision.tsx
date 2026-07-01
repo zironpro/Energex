@@ -48,7 +48,7 @@ export function MissionVision() {
 
 										{/* Text Content */}
 										<div className="lg:col-span-5">
-											<h2 className="mb-6 font-black text-4xl text-[#0f3b5e] uppercase leading-[1.1] md:text-5xl">
+											<h2 className="mb-6 font-black text-3xl text-[#0f3b5e] uppercase leading-[1.1] sm:text-4xl md:text-5xl">
 												{section.title}
 											</h2>
 											<p className="text-base text-slate-600 leading-relaxed md:text-lg">

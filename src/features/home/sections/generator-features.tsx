@@ -127,7 +127,7 @@ export function GeneratorFeatures() {
 						{/* Stack Container overlay */}
 						{unstackedCount < cards.length && (
 							<div className="pointer-events-none absolute inset-0 flex items-start justify-center">
-								<div className="pointer-events-auto relative h-[280px] w-full max-w-[340px]">
+								<div className="pointer-events-auto relative h-[280px] w-full max-w-[280px] sm:max-w-[340px]">
 									{cards.map((card, i) => {
 										if (i < unstackedCount) return null;
 										const stackIndex = i - unstackedCount;

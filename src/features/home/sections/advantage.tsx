@@ -127,7 +127,7 @@ export function Advantage() {
 					>
 						{/* Cards Container with Drag Support */}
 						<motion.div
-							className="relative flex h-full w-full max-w-[320px] items-center justify-center [transform-style:preserve-3d]"
+							className="relative flex h-full w-full max-w-[280px] items-center justify-center [transform-style:preserve-3d] sm:max-w-[320px]"
 							drag="x"
 							dragConstraints={{ left: 0, right: 0 }}
 							dragElastic={0.05}

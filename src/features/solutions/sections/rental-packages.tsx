@@ -32,7 +32,7 @@ export function RentalPackages() {
 			<div className="container mx-auto max-w-7xl">
 				<div className="mb-16 grid grid-cols-1 items-end gap-8 lg:grid-cols-2 lg:gap-16">
 					<motion.h2
-						className="font-black text-4xl text-slate-900 uppercase tracking-tighter md:text-5xl"
+						className="font-black text-3xl text-slate-900 uppercase tracking-tighter sm:text-4xl md:text-5xl"
 						initial={{ opacity: 0, y: 20 }}
 						transition={{ duration: 0.8 }}
 						viewport={{ once: true }}

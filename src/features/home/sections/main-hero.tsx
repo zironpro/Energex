@@ -125,27 +125,27 @@ export function MainHero() {
 						muted
 						playsInline
 					>
-						<source src="/video/main-hero.mp4" type="video/mp4" />
+						<source src="/video/hero-vid.webm" type="video/mp4" />
 					</video>
 				</div>
 			</div>
 
 			{/* Content */}
 			<div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-4 pt-16">
-				<div className="flex w-full max-w-7xl items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-12">
-					<h1 className="top-text-left font-bold text-3xl text-slate-900 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
+				<div className="flex w-full max-w-7xl flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6 md:gap-8 lg:gap-12">
+					<h1 className="top-text-left font-bold text-4xl text-slate-900 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
 						Reliable
 					</h1>
 
 					{/* Medium Image Placeholder for Flip */}
-					<div className="h-[120px] w-[200px] sm:h-[150px] sm:w-[250px] md:h-[220px] md:w-[350px] lg:h-[300px] lg:w-[500px]">
+					<div className="h-[100px] w-[180px] sm:h-[150px] sm:w-[250px] md:h-[220px] md:w-[350px] lg:h-[300px] lg:w-[500px]">
 						<div
 							className="invisible h-full w-full rounded-full"
 							ref={smallImgRef}
 						/>
 					</div>
 
-					<h1 className="top-text-right font-bold text-3xl text-slate-900 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
+					<h1 className="top-text-right font-bold text-4xl text-slate-900 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
 						Scalable
 					</h1>
 				</div>

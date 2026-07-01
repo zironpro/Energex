@@ -16,7 +16,7 @@ export function Hero() {
 			{/* Content */}
 			<div className="container relative z-20 flex flex-col items-center space-y-8 px-4 text-center md:px-6">
 				<ScrollReveal>
-					<h2 className="mx-auto max-w-5xl font-bold text-5xl text-white leading-tight tracking-tighter md:text-7xl lg:text-[80px]">
+					<h2 className="mx-auto max-w-5xl font-bold text-4xl text-white leading-tight tracking-tighter sm:text-5xl md:text-7xl lg:text-[80px]">
 						POWERING WHAT MATTERS
 						<span className="mt-4 block font-semibold text-blue-400 text-xl tracking-normal md:text-2xl">
 							POWER GENERATOR SOLUTIONS IN DUBAI, UAE

@@ -23,7 +23,7 @@ export function Hero() {
 				<div className="flex flex-col items-center space-y-6">
 					<motion.h1
 						animate={{ opacity: 1, y: 0 }}
-						className="max-w-4xl font-black text-4xl uppercase leading-[1.1] tracking-tighter md:text-6xl lg:text-[5rem]"
+						className="max-w-4xl font-black text-4xl uppercase leading-[1.1] tracking-tighter sm:text-5xl md:text-6xl lg:text-[5rem]"
 						initial={{ opacity: 0, y: 40 }}
 						transition={{
 							duration: 1,
