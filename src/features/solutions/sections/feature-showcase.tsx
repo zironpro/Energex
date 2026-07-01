@@ -1,13 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Image from "next/image";
 
-import { motion } from "framer-motion";
+import Autoplay from "embla-carousel-autoplay";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import {
+	Carousel,
+	type CarouselApi,
+	CarouselContent,
+	CarouselItem,
+} from "@/components/ui/carousel";
 
 const features = [
 	{
@@ -46,7 +52,20 @@ const features = [
 ];
 
 export function FeatureShowcase() {
-	const [activeIndex, setActiveIndex] = useState(0);
+	const [api, setApi] = useState<CarouselApi>();
+	const [current, setCurrent] = useState(0);
+
+	const plugin = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
+
+	useEffect(() => {
+		if (!api) return;
+
+		setCurrent(api.selectedScrollSnap());
+
+		api.on("select", () => {
+			setCurrent(api.selectedScrollSnap());
+		});
+	}, [api]);
 
 	return (
 		<section className="bg-blue-50 px-6 pt-8 pb-24 lg:px-16">
@@ -74,7 +93,7 @@ export function FeatureShowcase() {
 						{/* Feature List selection */}
 						<div className="flex flex-col">
 							{features.map((feature, i) => {
-								const isActive = i === activeIndex;
+								const isActive = i === current;
 								return (
 									<button
 										className={`flex w-full cursor-pointer items-center border-b py-4 text-left transition-colors ${
@@ -83,7 +102,7 @@ export function FeatureShowcase() {
 												: "border-slate-200 text-slate-400 hover:text-slate-600"
 										}`}
 										key={feature.title}
-										onClick={() => setActiveIndex(i)}
+										onClick={() => api?.scrollTo(i)}
 										type="button"
 									>
 										<span
@@ -106,46 +125,52 @@ export function FeatureShowcase() {
 						</div>
 					</div>
 
-					{/* Right Side: Feature Content */}
-					<div className="lg:col-span-7">
-						<motion.div
-							animate={{ opacity: 1, y: 0 }}
-							className="flex h-full flex-col overflow-hidden rounded-lg border border-slate-200 bg-white p-6 md:p-10"
-							initial={{ opacity: 0, y: 20 }}
-							key={activeIndex}
-							transition={{ duration: 0.4 }}
+					{/* Right Side: Feature Content Carousel */}
+					<div className="overflow-hidden py-4 lg:col-span-7">
+						<Carousel
+							className="w-full"
+							plugins={[plugin.current]}
+							setApi={setApi}
 						>
-							<h3 className="mb-4 font-bold text-3xl text-blue-500">
-								{features[activeIndex].title}
-							</h3>
-							<p className="mb-6 text-base text-slate-600 leading-relaxed">
-								{features[activeIndex].description}
-							</p>
+							<CarouselContent>
+								{features.map((feature) => (
+									<CarouselItem key={feature.title}>
+										<div className="flex h-full flex-col overflow-hidden rounded-lg border border-slate-200 bg-white p-6 md:p-10">
+											<h3 className="mb-4 font-bold text-3xl text-blue-500">
+												{feature.title}
+											</h3>
+											<p className="mb-6 text-base text-slate-600 leading-relaxed">
+												{feature.description}
+											</p>
 
-							<ul className="mb-8 space-y-3">
-								{features[activeIndex].points.map((point) => (
-									<li
-										className="flex items-center space-x-3 text-slate-700 text-sm md:text-base"
-										key={point}
-									>
-										<CheckCircle2 className="h-4 w-4 text-blue-500 md:h-5 md:w-5" />
-										<span className="font-medium">{point}</span>
-									</li>
+											<ul className="mb-8 space-y-3">
+												{feature.points.map((point) => (
+													<li
+														className="flex items-center space-x-3 text-slate-700 text-sm md:text-base"
+														key={point}
+													>
+														<CheckCircle2 className="h-4 w-4 text-blue-500 md:h-5 md:w-5" />
+														<span className="font-medium">{point}</span>
+													</li>
+												))}
+											</ul>
+
+											{/* Image */}
+											<div className="relative mt-auto aspect-[16/10] w-full overflow-hidden rounded-lg">
+												<Image
+													alt={feature.title}
+													className="object-cover"
+													fill
+													sizes="(max-width: 1024px) 100vw, 50vw"
+													src={feature.image}
+												/>
+												<div className="absolute inset-0 bg-blue-600/10 mix-blend-overlay" />
+											</div>
+										</div>
+									</CarouselItem>
 								))}
-							</ul>
-
-							{/* Image */}
-							<div className="relative mt-auto aspect-[16/10] w-full overflow-hidden rounded-lg">
-								<Image
-									alt={features[activeIndex].title}
-									className="object-cover"
-									fill
-									sizes="(max-width: 1024px) 100vw, 50vw"
-									src={features[activeIndex].image}
-								/>
-								<div className="absolute inset-0 bg-blue-600/10 mix-blend-overlay" />
-							</div>
-						</motion.div>
+							</CarouselContent>
+						</Carousel>
 					</div>
 				</div>
 			</div>

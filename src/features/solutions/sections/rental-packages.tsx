@@ -1,7 +1,10 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
+
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar, Clock, Handshake } from "lucide-react";
+import { Calendar, Clock, Handshake } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -27,14 +30,26 @@ export function RentalPackages() {
 	return (
 		<section className="bg-white px-6 py-24 lg:px-16">
 			<div className="container mx-auto max-w-7xl">
-				<div className="mx-auto mb-16 max-w-2xl text-center">
-					<h2 className="mb-4 font-black text-4xl text-slate-900 uppercase tracking-tighter md:text-5xl">
+				<div className="mb-16 grid grid-cols-1 items-end gap-8 lg:grid-cols-2 lg:gap-16">
+					<motion.h2
+						className="font-black text-4xl text-slate-900 uppercase tracking-tighter md:text-5xl"
+						initial={{ opacity: 0, y: 20 }}
+						transition={{ duration: 0.8 }}
+						viewport={{ once: true }}
+						whileInView={{ opacity: 1, y: 0 }}
+					>
 						Rental Packages
-					</h2>
-					<p className="text-base text-slate-600 leading-relaxed md:text-lg">
+					</motion.h2>
+					<motion.p
+						className="text-base text-slate-600 leading-relaxed md:text-lg"
+						initial={{ opacity: 0, y: 20 }}
+						transition={{ duration: 0.8, delay: 0.1 }}
+						viewport={{ once: true }}
+						whileInView={{ opacity: 1, y: 0 }}
+					>
 						Our rental packages are designed to fit the needs of our customers —
 						from short-term projects to long-term contracts.
-					</p>
+					</motion.p>
 				</div>
 
 				<div className="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -58,11 +73,18 @@ export function RentalPackages() {
 							</p>
 
 							<Button
-								className="group mt-auto w-full rounded-lg bg-blue-600 font-semibold text-white hover:bg-blue-700"
-								variant="default"
+								className="mt-auto inline-flex h-12 w-full items-center justify-center rounded-lg bg-black px-8 font-semibold text-sm text-white transition-transform hover:scale-105 hover:bg-black/90"
+								nativeButton={false}
+								render={<Link href="/contact" />}
 							>
 								Request a Quote
-								<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+								<Image
+									alt=""
+									className="ml-2 h-4 w-4 invert"
+									height={16}
+									src="/icons/caret-right.svg"
+									width={16}
+								/>
 							</Button>
 						</motion.div>
 					))}

@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { Globe } from "lucide-react";
 
@@ -52,9 +52,14 @@ const NavLink = ({
 export function Navbar() {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const pathname = usePathname();
-	
+
 	// Force dark text if scrolled OR if we are on a light-themed page like terms-and-policy, contact, solutions, or company
-	const isDarkText = isScrolled || pathname === "/terms-and-policy" || pathname === "/contact" || pathname === "/solutions" || pathname === "/company";
+	const isDarkText =
+		isScrolled ||
+		pathname === "/terms-and-policy" ||
+		pathname === "/contact" ||
+		pathname === "/solutions" ||
+		pathname === "/company";
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -98,16 +103,24 @@ export function Navbar() {
 
 				{/* Center: Navigation Links */}
 				<div className="hidden items-center space-x-8 md:flex">
-					<NavLink href="/" isDarkText={isDarkText}>Home</NavLink>
-					<NavLink href="/solutions" isDarkText={isDarkText}>Solutions</NavLink>
-					<NavLink href="/company" isDarkText={isDarkText}>Company</NavLink>
-					<NavLink href="/contact" isDarkText={isDarkText}>Contact</NavLink>
+					<NavLink href="/" isDarkText={isDarkText}>
+						Home
+					</NavLink>
+					<NavLink href="/solutions" isDarkText={isDarkText}>
+						Solutions
+					</NavLink>
+					<NavLink href="/company" isDarkText={isDarkText}>
+						Company
+					</NavLink>
+					<NavLink href="/contact" isDarkText={isDarkText}>
+						Contact
+					</NavLink>
 				</div>
 
 				{/* Right Side: Multilingual Button */}
 				<div className="flex-shrink-0">
 					<button
-						className={`flex cursor-pointer items-center space-x-2 rounded-lg px-5 py-2.5 font-bold text-lg transition-all transition-colors ${isDarkText ? "text-gray-800 hover:bg-gray-100/80 hover:text-blue-600" : "text-white hover:bg-white/20"}`}
+						className={`flex cursor-pointer items-center space-x-2 rounded-lg px-5 py-2.5 text-lg transition-all transition-colors ${isDarkText ? "text-gray-800 hover:bg-gray-100/80 hover:text-blue-600" : "text-white hover:bg-white/20"}`}
 					>
 						<Globe className="h-5 w-5" />
 						<span>EN</span>

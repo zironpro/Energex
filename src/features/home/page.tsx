@@ -8,10 +8,10 @@ import { CTA } from "./components/cta";
 import { Intro } from "./components/intro";
 import { Advantage } from "./sections/advantage";
 import { FAQ } from "./sections/faq";
+import { GeneratorFeatures } from "./sections/generator-features";
 import { Hero } from "./sections/hero";
-import { Progress } from "./sections/progress";
-import { StoryScroll } from "./sections/story-scroll";
 import { MainHero } from "./sections/main-hero";
+import { Progress } from "./sections/progress";
 
 export function HomePage() {
 	useEffect(() => {
@@ -56,6 +56,7 @@ export function HomePage() {
 			<MainHero />
 			{/* <StoryScroll /> */}
 			<Advantage />
+			<GeneratorFeatures />
 			<Hero />
 			<Progress />
 			<FAQ />

@@ -1,16 +1,10 @@
 "use client";
 
+import { useState } from "react";
+
 import Image from "next/image";
 
-import Autoplay from "embla-carousel-autoplay";
-
-import {
-	Carousel,
-	CarouselContent,
-	CarouselItem,
-	CarouselNext,
-	CarouselPrevious,
-} from "@/components/ui/carousel";
+import { motion } from "framer-motion";
 
 type AdvantageItem = {
 	title: string;
@@ -51,9 +45,24 @@ const advantages: AdvantageItem[] = [
 	},
 ];
 
+const swipeConfidenceThreshold = 10000;
+const swipePower = (offset: number, velocity: number) => {
+	return Math.abs(offset) * velocity;
+};
+
 export function Advantage() {
+	const [activeIndex, setActiveIndex] = useState(2);
+
+	const handleNext = () => {
+		setActiveIndex((prev) => Math.min(prev + 1, advantages.length - 1));
+	};
+
+	const handlePrev = () => {
+		setActiveIndex((prev) => Math.max(prev - 1, 0));
+	};
+
 	return (
-		<section className="w-full overflow-hidden bg-slate-50 pt-8 pb-16 text-slate-900">
+		<section className="w-full overflow-hidden bg-slate-50 pt-8 pb-32 text-slate-900">
 			<div className="container mx-auto max-w-7xl px-6 md:px-12">
 				{/* Section Header */}
 				<div className="mb-20 grid grid-cols-1 items-center gap-8 px-4 md:grid-cols-2 md:px-12">
@@ -71,59 +80,83 @@ export function Advantage() {
 					</div>
 				</div>
 
-				{/* Carousel */}
-				<div className="relative px-4 md:px-12">
-					<Carousel
-						className="w-full"
-						opts={{
-							align: "start",
-							loop: true,
+				{/* 3D Coverflow Carousel */}
+				<div className="relative mt-12 flex h-[500px] w-full items-center justify-center [perspective:1000px]">
+					{/* Cards Container with Drag Support */}
+					<motion.div
+						className="relative flex h-full w-full max-w-[320px] items-center justify-center [transform-style:preserve-3d]"
+						drag="x"
+						dragConstraints={{ left: 0, right: 0 }}
+						dragElastic={0.05}
+						onDragEnd={(_e, { offset, velocity }) => {
+							const swipe = swipePower(offset.x, velocity.x);
+
+							if (swipe < -swipeConfidenceThreshold) {
+								handleNext();
+							} else if (swipe > swipeConfidenceThreshold) {
+								handlePrev();
+							}
 						}}
-						plugins={[
-							Autoplay({
-								delay: 2500,
-								stopOnInteraction: true,
-							}),
-						]}
 					>
-						<CarouselContent className="-ml-4 py-4 md:-ml-6">
-							{advantages.map((adv) => {
-								return (
-									<CarouselItem
-										className="pl-4 md:basis-1/2 md:pl-6 lg:basis-1/3"
-										key={adv.title}
-									>
-										<div className="group relative h-full cursor-pointer overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-slate-300 hover:shadow-md">
-											<div className="relative z-10 flex h-full flex-col">
-												{adv.image ? (
-													<div className="relative h-48 w-full shrink-0 bg-slate-100">
-														<Image
-															alt={adv.title}
-															className="object-cover"
-															fill
-															src={adv.image}
-														/>
-													</div>
-												) : (
-													<div className="h-48 w-full shrink-0 bg-slate-100" />
-												)}
-												<div className="flex-grow p-8">
-													<h3 className="mb-4 font-bold text-2xl text-slate-900 tracking-tight">
-														{adv.title}
-													</h3>
-													<p className="text-slate-600 leading-relaxed">
-														{adv.description}
-													</p>
-												</div>
-											</div>
+						{advantages.map((adv, index) => {
+							const offset = index - activeIndex;
+							const isActive = offset === 0;
+
+							// 3D Math for Coverflow Effect
+							const rotateY = offset * -25; // Tilt inwards
+							const translateZ = Math.abs(offset) * -100; // Push back
+							const translateX = offset * 110; // Spread horizontally
+							const zIndex = 50 - Math.abs(offset); // Active card on top
+
+							return (
+								<div
+									className="absolute top-0 left-0 h-full w-full cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
+									key={adv.title}
+									onClick={() => setActiveIndex(index)}
+									style={{
+										transform: `translateX(${translateX}%) translateZ(${translateZ}px) rotateY(${rotateY}deg)`,
+										zIndex,
+									}}
+								>
+									<div className="group relative h-full w-full overflow-hidden rounded-2xl shadow-2xl">
+										{adv.image ? (
+											<Image
+												alt={adv.title}
+												className="pointer-events-none object-cover transition-transform duration-700 group-hover:scale-105"
+												fill
+												src={adv.image}
+											/>
+										) : (
+											<div className="h-full w-full bg-slate-200" />
+										)}
+
+										{/* Gradient Overlay */}
+										<div
+											className={`pointer-events-none absolute inset-0 transition-all duration-500 ${
+												isActive
+													? "bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"
+													: "bg-slate-900/70"
+											}`}
+										/>
+
+										{/* Text Content */}
+										<div
+											className={`pointer-events-none absolute inset-x-0 bottom-0 p-8 text-white transition-all duration-500 ${
+												isActive
+													? "translate-y-0 opacity-100"
+													: "translate-y-8 opacity-0"
+											}`}
+										>
+											<h3 className="mb-3 font-bold text-3xl">{adv.title}</h3>
+											<p className="font-medium text-base text-slate-300 leading-relaxed">
+												{adv.description}
+											</p>
 										</div>
-									</CarouselItem>
-								);
-							})}
-						</CarouselContent>
-						<CarouselPrevious className="hidden border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:bg-slate-100 hover:text-slate-900 md:flex" />
-						<CarouselNext className="hidden border-slate-200 bg-white text-slate-600 shadow-sm transition-colors hover:bg-slate-100 hover:text-slate-900 md:flex" />
-					</Carousel>
+									</div>
+								</div>
+							);
+						})}
+					</motion.div>
 				</div>
 			</div>
 		</section>
