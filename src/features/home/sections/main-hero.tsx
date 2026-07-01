@@ -118,14 +118,15 @@ export function MainHero() {
 					className="relative h-full w-full overflow-hidden"
 					ref={targetImgRef}
 				>
-					<Image
-						alt="Energex Power Solutions"
-						className="object-cover"
-						fill
-						priority
-						sizes="100vw"
-						src="/images/hero.png"
-					/>
+					<video
+						autoPlay
+						className="absolute inset-0 h-full w-full object-cover"
+						loop
+						muted
+						playsInline
+					>
+						<source src="/video/main-hero.mp4" type="video/mp4" />
+					</video>
 				</div>
 			</div>
 
@@ -155,7 +156,7 @@ export function MainHero() {
 					</h1>
 					<div className="flex flex-wrap justify-center gap-4 pt-8">
 						<Link
-							className="inline-flex h-12 items-center justify-center rounded-lg bg-black px-8 font-semibold text-white text-sm transition-transform hover:scale-105"
+							className="inline-flex h-12 items-center justify-center rounded-lg bg-black px-8 font-semibold text-sm text-white transition-transform hover:scale-105"
 							href="/contact"
 						>
 							Request a Quote
