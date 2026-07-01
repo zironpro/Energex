@@ -25,7 +25,7 @@ const features = [
 			"Easy-to-tow trailers",
 			"Multi-socket distribution panels",
 		],
-		image: "/solutions/Small%20Portable%20Generators.webp",
+		image: "/solutions/small-portable.webp",
 	},
 	{
 		title: "200kVA – 800kVA",
@@ -36,7 +36,7 @@ const features = [
 			"Electronic governors for stable frequency",
 			"Heavy-duty skid bases",
 		],
-		image: "/solutions/Medium%20Industrial%20Generator.webp",
+		image: "/solutions/medium-generator.webp",
 	},
 	{
 		title: "1000kVA – 1500kVA",
@@ -47,7 +47,7 @@ const features = [
 			"Internal lighting & fire suppression systems",
 			"Synchronised control modules (DeepSea/ComAp)",
 		],
-		image: "/solutions/Containerised%20Generator.webp",
+		image: "/solutions/containerised-generator.webp",
 	},
 ];
 
@@ -79,7 +79,11 @@ export function FeatureShowcase() {
 								<span className="text-blue-600">You Can Depend On</span>
 							</h2>
 							<p className="mb-8 text-base text-slate-600 leading-relaxed">
-								We provide premium diesel generator rental solutions across the UAE for construction, commercial, industrial, and emergency power requirements. Our soundproof generators from 20kVA to 1500kVA are designed for maximum efficiency, reliability, and 24/7 operation.
+								We provide premium diesel generator rental solutions across the
+								UAE for construction, commercial, industrial, and emergency
+								power requirements. Our soundproof generators from 20kVA to
+								1500kVA are designed for maximum efficiency, reliability, and
+								24/7 operation.
 							</p>
 							<Button className="group h-12 rounded-lg bg-slate-900 px-8 font-bold text-white hover:bg-slate-800">
 								Get Started

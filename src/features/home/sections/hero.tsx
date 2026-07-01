@@ -8,7 +8,7 @@ export function Hero() {
 	return (
 		<section
 			className="relative flex min-h-[70vh] w-full flex-col items-center justify-center bg-center bg-cover bg-slate-950 bg-fixed py-24 md:min-h-[800px]"
-			style={{ backgroundImage: "url('/images/hero-image.webp')" }}
+			style={{ backgroundImage: "url('/images/img-hero.webp')" }}
 		>
 			{/* Subtle Dark Overlay */}
 			<div className="absolute inset-0 z-10 bg-gradient-to-b from-slate-950/40 via-slate-900/20 to-slate-950/50" />
