@@ -11,6 +11,7 @@ import { FAQ } from "./sections/faq";
 import { GeneratorFeatures } from "./sections/generator-features";
 import { Hero } from "./sections/hero";
 import { MainHero } from "./sections/main-hero";
+import { Products } from "./sections/products";
 import { Progress } from "./sections/progress";
 
 export function HomePage() {
@@ -57,6 +58,7 @@ export function HomePage() {
 			{/* <StoryScroll /> */}
 			<Advantage />
 			<GeneratorFeatures />
+			<Products />
 			<Hero />
 			<Progress />
 			<FAQ />
