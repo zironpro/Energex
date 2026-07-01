@@ -1,54 +1,47 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Button } from "@/components/ui/button";
+
 export function Hero() {
 	return (
-		<section className="relative flex w-full flex-col items-center overflow-hidden bg-white pt-8 pb-8">
-			<div className="container z-10 flex flex-col items-center space-y-8 px-4 text-center md:px-6">
-				<h1 className="mx-auto max-w-4xl font-bold text-5xl text-slate-900 leading-tight tracking-tighter md:text-7xl">
+		<section
+			className="relative flex min-h-[70vh] w-full flex-col items-center justify-center bg-center bg-cover bg-slate-950 bg-fixed py-24 md:min-h-[800px]"
+			style={{ backgroundImage: "url('/images/hero-image.webp')" }}
+		>
+			{/* Subtle Dark Overlay */}
+			<div className="absolute inset-0 z-10 bg-gradient-to-b from-slate-950/40 via-slate-900/20 to-slate-950/50" />
+
+			{/* Content */}
+			<div className="container relative z-20 flex flex-col items-center space-y-8 px-4 text-center md:px-6">
+				<h2 className="mx-auto max-w-5xl font-bold text-5xl text-white leading-tight tracking-tighter md:text-7xl lg:text-[80px]">
 					Reliable & scalable <br className="hidden md:block" />
 					power solutions
-				</h1>
+				</h2>
 
-				<p className="max-w-[600px] font-medium text-lg text-slate-600 md:text-xl">
+				<p className="max-w-[600px] font-medium text-lg text-slate-300 md:text-2xl">
 					Empowering the UAE with continuous, efficient power
 					<br className="hidden sm:block" />
 					for every industry and event.
 				</p>
 
-				<div className="pt-4">
-					<Link
-						className="inline-flex h-12 items-center justify-center rounded-lg bg-black px-8 font-semibold text-sm text-white shadow-lg transition-transform hover:scale-105"
-						href="/signup"
+				<div className="pt-8">
+					<Button
+						className="group h-14 rounded-lg bg-white px-8 font-bold text-base text-slate-900 shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all hover:scale-105 hover:bg-slate-50 hover:shadow-[0_0_60px_rgba(255,255,255,0.4)]"
+						nativeButton={false}
+						render={<Link href="/contact" />}
 					>
-						Request a Quote
+						Contact Us
 						<Image
 							alt=""
-							className="ml-2 h-4 w-4 invert"
+							className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
 							height={16}
 							src="/icons/caret-right.svg"
 							width={16}
 						/>
-					</Link>
+					</Button>
 				</div>
 			</div>
-
-			{/* Hero Image */}
-			<div className="relative z-10 mx-auto mt-16 w-full max-w-6xl px-4 md:px-6">
-				<div className="relative w-full overflow-hidden rounded-lg shadow-2xl">
-					<Image
-						alt="Energex Power Solutions"
-						className="h-auto w-full object-cover"
-						height={1080}
-						priority
-						src="/images/hero-image.webp"
-						width={1920}
-					/>
-				</div>
-			</div>
-
-			{/* Background radial gradient to give it a soft premium feel */}
-			<div className="pointer-events-none absolute top-0 left-1/2 -z-0 h-[600px] w-full max-w-3xl -translate-x-1/2 bg-gradient-to-b from-slate-100 to-transparent opacity-50 blur-3xl" />
 		</section>
 	);
 }
