@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Image from "next/image";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import {
 	BatteryCharging,
 	CalendarClock,
@@ -57,40 +57,37 @@ const cards = [
 
 export function GeneratorFeatures() {
 	const [unstackedCount, setUnstackedCount] = useState(0);
+	const containerRef = useRef(null);
+	const isInView = useInView(containerRef, { once: true, margin: "-150px" });
 
-	const handleNext = () => {
-		if (unstackedCount < cards.length) {
-			setUnstackedCount((prev) => prev + 1);
+	useEffect(() => {
+		if (isInView) {
+			const interval = setInterval(() => {
+				setUnstackedCount((prev) => {
+					if (prev < cards.length) return prev + 1;
+					clearInterval(interval);
+					return prev;
+				});
+			}, 500); // Slower, elegant sequence
+			return () => clearInterval(interval);
 		}
-	};
-
-	const reset = () => {
-		setUnstackedCount(0);
-	};
+	}, [isInView]);
 
 	return (
 		<section className="relative w-full overflow-hidden bg-slate-50 pt-0 pb-16 text-slate-900">
-			<div className="container mx-auto max-w-7xl px-6 md:px-12">
+			<div
+				className="container mx-auto max-w-7xl px-6 md:px-12"
+				ref={containerRef}
+			>
 				<ScrollReveal>
 					<div className="mb-16 flex flex-col items-center text-center">
 						<h2 className="font-bold text-4xl text-slate-900 tracking-tighter md:text-5xl">
 							Generators Built for Demanding Conditions
 						</h2>
 						<p className="mt-4 max-w-2xl text-lg text-slate-500">
-							Click the top card to unpack the features that make our fleet the
-							most reliable choice.
+							Discover the features that make our fleet the most reliable choice
+							for your power needs.
 						</p>
-
-						<div className="mt-4 h-6">
-							{unstackedCount > 0 && (
-								<button
-									className="font-semibold text-blue-600 text-sm transition-colors hover:text-blue-700"
-									onClick={reset}
-								>
-									Reset Stack
-								</button>
-							)}
-						</div>
 					</div>
 				</ScrollReveal>
 
@@ -104,7 +101,7 @@ export function GeneratorFeatures() {
 									<motion.div
 										className="group relative flex h-full w-full flex-col justify-between overflow-hidden rounded-lg shadow-xl"
 										layoutId={`feature-card-${card.title}`}
-										transition={{ type: "spring", stiffness: 300, damping: 25 }}
+										transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
 									>
 										<Image
 											alt={card.title}
@@ -151,24 +148,17 @@ export function GeneratorFeatures() {
 													y,
 													scale,
 												}}
-												className={`absolute inset-0 ${isTop ? "cursor-pointer" : ""}`}
+												className="absolute inset-0"
 												initial={false}
 												key={`stack-${card.title}`}
 												layoutId={`feature-card-${card.title}`}
-												onClick={() => {
-													if (isTop) handleNext();
-												}}
 												style={{
 													zIndex: cards.length - stackIndex,
 												}}
 												transition={{
-													type: "spring",
-													stiffness: 300,
-													damping: 25,
+													duration: 0.8,
+													ease: [0.16, 1, 0.3, 1],
 												}}
-												whileHover={
-													isTop ? { y: -10, scale: 1.02, rotate: 0 } : {}
-												}
 											>
 												<div className="group relative h-full w-full overflow-hidden rounded-lg shadow-2xl">
 													<Image
@@ -190,11 +180,6 @@ export function GeneratorFeatures() {
 														<p className="mt-2 font-medium text-slate-300 text-sm leading-relaxed">
 															{card.description}
 														</p>
-														{isTop && (
-															<div className="mt-4 animate-pulse font-bold text-blue-400 text-xs uppercase tracking-widest">
-																Click to expand
-															</div>
-														)}
 													</div>
 												</div>
 											</motion.div>
