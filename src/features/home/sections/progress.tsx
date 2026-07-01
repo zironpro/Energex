@@ -52,7 +52,7 @@ export function Progress() {
 						<h2 className="mb-4 font-bold text-4xl text-slate-900 tracking-tighter md:text-5xl lg:text-6xl">
 							Powering the UAE
 						</h2>
-						<p className="max-w-2xl font-medium text-lg text-slate-500 md:text-xl">
+						<p className="max-w-2xl font-medium text-base text-slate-500 md:text-lg">
 							Best power generator solutions designed for UAE’s most demanding industries with reliable, efficient, and uninterrupted performance.
 						</p>
 					</ScrollReveal>
@@ -80,7 +80,7 @@ export function Progress() {
 								<div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 lg:p-10">
 									<div className="translate-y-0 transition-transform duration-500 lg:translate-y-4 lg:group-hover:translate-y-0">
 										<h3
-											className={`mb-3 font-bold text-white tracking-tight ${isFeatured ? "text-3xl md:text-5xl lg:text-6xl" : "text-2xl md:text-3xl"}`}
+											className={`mb-3 font-bold text-white tracking-tight ${isFeatured ? "text-2xl md:text-4xl" : "text-xl md:text-2xl"}`}
 										>
 											{industry.title}
 										</h3>

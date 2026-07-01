@@ -84,7 +84,7 @@ export function GeneratorFeatures() {
 						<h2 className="font-bold text-4xl text-slate-900 tracking-tighter md:text-5xl">
 							Generators Built for Demanding Conditions
 						</h2>
-						<p className="mt-4 max-w-2xl text-lg text-slate-500">
+						<p className="mt-4 max-w-2xl text-base text-slate-500 md:text-lg">
 							Discover the features that make our fleet the most reliable choice
 							for your power needs.
 						</p>

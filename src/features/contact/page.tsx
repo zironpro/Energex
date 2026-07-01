@@ -31,7 +31,7 @@ export function ContactPage() {
 				<div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
 					{/* Left Column: Heading and Info */}
 					<div className="flex flex-col justify-center lg:sticky lg:top-32 lg:h-max lg:self-start lg:pr-8">
-						<h1 className="mb-6 font-black text-6xl text-slate-900 uppercase leading-[0.9] tracking-tighter md:text-7xl lg:text-[5.5rem]">
+						<h1 className="mb-6 font-black text-6xl text-blue-600 uppercase leading-[0.9] tracking-tighter md:text-7xl lg:text-[5.5rem]">
 							POWER <br />
 							<span className="text-blue-600">YOUR</span> <br />
 							SUCCESS

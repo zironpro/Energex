@@ -137,7 +137,7 @@ export function FeatureShowcase() {
 								{features.map((feature) => (
 									<CarouselItem key={feature.title}>
 										<div className="flex h-full flex-col overflow-hidden rounded-lg border border-slate-200 bg-white p-6 md:p-10">
-											<h3 className="mb-4 font-bold text-3xl text-blue-600">
+											<h3 className="mb-4 font-bold text-2xl text-blue-600">
 												{feature.title}
 											</h3>
 											<p className="mb-6 text-base text-slate-600 leading-relaxed">

@@ -22,7 +22,7 @@ export function AboutUs() {
 						</motion.div>
 
 						<motion.div
-							className="space-y-6 text-lg text-slate-600 leading-relaxed"
+							className="space-y-6 text-base text-slate-600 leading-relaxed md:text-lg"
 							initial={{ opacity: 0, y: 20 }}
 							transition={{ duration: 0.8, delay: 0.2 }}
 							viewport={{ once: true }}
