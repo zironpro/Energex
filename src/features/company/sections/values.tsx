@@ -45,7 +45,7 @@ export function Values() {
 						Core Values
 					</motion.h2>
 					<motion.h3
-						className="mt-4 font-black text-3xl text-slate-900 sm:text-4xl md:text-5xl"
+						className="mt-4 font-black text-3xl text-blue-600 sm:text-4xl md:text-5xl"
 						initial={{ opacity: 0, y: 20 }}
 						transition={{ duration: 0.8, delay: 0.1 }}
 						viewport={{ once: true }}

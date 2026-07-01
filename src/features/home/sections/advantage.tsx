@@ -83,7 +83,7 @@ export function Advantage() {
 				{/* Section Header */}
 				<div className="mb-20 grid grid-cols-1 items-center gap-8 px-4 md:grid-cols-2 md:px-12">
 					<ScrollReveal direction="left">
-						<h2 className="font-bold text-4xl text-slate-900 tracking-tighter md:text-6xl">
+						<h2 className="font-bold text-4xl text-blue-600 tracking-tighter md:text-6xl">
 							Why Choose Energex?
 						</h2>
 					</ScrollReveal>

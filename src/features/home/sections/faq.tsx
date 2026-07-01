@@ -66,7 +66,7 @@ export function FAQ() {
 					{/* Left Column */}
 					<div className="sticky top-24 flex h-fit flex-col lg:col-span-5">
 						<ScrollReveal direction="left">
-							<h2 className="mb-12 font-bold text-5xl text-slate-900 tracking-tighter md:text-6xl">
+							<h2 className="mb-12 font-bold text-5xl text-blue-600 tracking-tighter md:text-6xl">
 								Frequently asked
 								<br />
 								questions

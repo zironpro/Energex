@@ -49,7 +49,7 @@ export function Progress() {
 				{/* Section Header */}
 				<div className="mb-12 flex flex-col justify-between gap-6 md:mb-16 md:flex-row md:items-end">
 					<ScrollReveal>
-						<h2 className="mb-4 font-bold text-4xl text-slate-900 tracking-tighter md:text-5xl lg:text-6xl">
+						<h2 className="mb-4 font-bold text-4xl text-blue-600 tracking-tighter md:text-5xl lg:text-6xl">
 							Powering the UAE
 						</h2>
 						<p className="max-w-2xl font-medium text-base text-slate-500 md:text-lg">

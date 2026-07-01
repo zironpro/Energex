@@ -81,7 +81,7 @@ export function GeneratorFeatures() {
 			>
 				<ScrollReveal>
 					<div className="mb-16 flex flex-col items-center text-center">
-						<h2 className="font-bold text-4xl text-slate-900 tracking-tighter md:text-5xl">
+						<h2 className="font-bold text-4xl text-blue-600 tracking-tighter md:text-5xl">
 							Generators Built for Demanding Conditions
 						</h2>
 						<p className="mt-4 max-w-2xl text-base text-slate-500 md:text-lg">

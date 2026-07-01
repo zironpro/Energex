@@ -133,7 +133,7 @@ export function MainHero() {
 			{/* Content */}
 			<div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-4 pt-16">
 				<div className="flex w-full max-w-7xl flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6 md:gap-8 lg:gap-12">
-					<h1 className="top-text-left font-bold text-4xl text-slate-900 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
+					<h1 className="top-text-left font-bold text-4xl text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
 						Reliable
 					</h1>
 
@@ -145,13 +145,13 @@ export function MainHero() {
 						/>
 					</div>
 
-					<h1 className="top-text-right font-bold text-4xl text-slate-900 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
+					<h1 className="top-text-right font-bold text-4xl text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
 						Scalable
 					</h1>
 				</div>
 
 				<div className="bottom-reveal mt-2 text-center md:mt-4">
-					<h1 className="font-bold text-3xl text-slate-900 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
+					<h1 className="font-bold text-3xl text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
 						Power Solutions
 					</h1>
 					<div className="flex flex-wrap justify-center gap-4 pt-8">
