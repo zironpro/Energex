@@ -11,14 +11,16 @@ const NavLink = ({
 	href,
 	children,
 	isDarkText,
+	isActive,
 }: {
 	href: string;
 	children: string;
 	isDarkText: boolean;
+	isActive?: boolean;
 }) => {
 	return (
 		<Link
-			className={`group relative flex overflow-hidden font-bold text-lg transition-colors ${isDarkText ? "text-gray-800" : "text-white"}`}
+			className={`group relative flex overflow-hidden pb-1 font-bold text-lg transition-colors ${isDarkText ? "text-gray-800" : "text-white"}`}
 			href={href}
 		>
 			<div className="flex">
@@ -45,6 +47,10 @@ const NavLink = ({
 					</span>
 				))}
 			</div>
+			{/* Animated Bottom Border */}
+			<div
+				className={`absolute bottom-0 left-0 h-[3px] bg-blue-600 transition-all duration-300 ease-in-out ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
+			/>
 		</Link>
 	);
 };
@@ -103,16 +109,28 @@ export function Navbar() {
 
 				{/* Center: Navigation Links */}
 				<div className="hidden items-center space-x-8 md:flex">
-					<NavLink href="/" isDarkText={isDarkText}>
+					<NavLink href="/" isActive={pathname === "/"} isDarkText={isDarkText}>
 						Home
 					</NavLink>
-					<NavLink href="/solutions" isDarkText={isDarkText}>
+					<NavLink
+						href="/solutions"
+						isActive={pathname.startsWith("/solutions")}
+						isDarkText={isDarkText}
+					>
 						Solutions
 					</NavLink>
-					<NavLink href="/company" isDarkText={isDarkText}>
+					<NavLink
+						href="/company"
+						isActive={pathname.startsWith("/company")}
+						isDarkText={isDarkText}
+					>
 						Company
 					</NavLink>
-					<NavLink href="/contact" isDarkText={isDarkText}>
+					<NavLink
+						href="/contact"
+						isActive={pathname.startsWith("/contact")}
+						isDarkText={isDarkText}
+					>
 						Contact
 					</NavLink>
 				</div>

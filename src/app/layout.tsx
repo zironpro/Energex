@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
+import { FloatingCallButton } from "@/components/ui/floating-call-button";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
 				<Navbar />
 				{children}
 				<Footer />
+				<FloatingCallButton />
 			</body>
 		</html>
 	);

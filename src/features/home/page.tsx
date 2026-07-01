@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 
 import { CTA } from "./components/cta";
+import { HeroFeatures } from "./components/hero-features";
 import { Intro } from "./components/intro";
 import { Advantage } from "./sections/advantage";
 import { FAQ } from "./sections/faq";
@@ -55,6 +56,7 @@ export function HomePage() {
 		<main className="relative min-h-screen bg-[#050505] text-white">
 			<Intro />
 			<MainHero />
+			<HeroFeatures />
 			{/* <StoryScroll /> */}
 			<Advantage />
 			<GeneratorFeatures />
