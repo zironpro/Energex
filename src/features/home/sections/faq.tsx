@@ -1,18 +1,17 @@
 import Image from "next/image";
 
 import {
-	ScrollReveal,
-	ScrollRevealGroup,
-	ScrollRevealItem,
-} from "@/components/ui/scroll-reveal";
-
-import {
 	Accordion,
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import {
+	ScrollReveal,
+	ScrollRevealGroup,
+	ScrollRevealItem,
+} from "@/components/ui/scroll-reveal";
 
 const faqs = [
 	{
@@ -103,7 +102,7 @@ export function FAQ() {
 							className="flex w-full flex-col gap-4"
 							defaultValue={["item-0"]}
 						>
-							<ScrollRevealGroup stagger={0.1} className="flex flex-col gap-4">
+							<ScrollRevealGroup className="flex flex-col gap-4" stagger={0.1}>
 								{faqs.map((faq) => (
 									<ScrollRevealItem key={faq.id}>
 										<AccordionItem

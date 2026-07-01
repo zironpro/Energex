@@ -31,9 +31,9 @@ export function Hero() {
 							ease: [0.21, 0.47, 0.32, 0.98],
 						}}
 					>
-						ABOUT <br className="hidden md:block" />
-						<span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-							ENERGEX
+						RELIABLE POWER. <br className="hidden md:block" />
+						<span className="text-blue-600">
+							PROVEN PERFORMANCE.
 						</span>
 					</motion.h1>
 

@@ -17,16 +17,18 @@ export function Hero() {
 			<div className="container relative z-20 flex flex-col items-center space-y-8 px-4 text-center md:px-6">
 				<ScrollReveal>
 					<h2 className="mx-auto max-w-5xl font-bold text-5xl text-white leading-tight tracking-tighter md:text-7xl lg:text-[80px]">
-						Reliable & scalable <br className="hidden md:block" />
-						power solutions
+						POWERING WHAT MATTERS
+						<span className="mt-4 block font-semibold text-3xl text-blue-400 tracking-normal md:text-4xl">
+							POWER GENERATOR SOLUTIONS IN DUBAI, UAE
+						</span>
 					</h2>
 				</ScrollReveal>
 
 				<ScrollReveal delay={0.2}>
 					<p className="max-w-[600px] font-medium text-lg text-slate-300 md:text-2xl">
-						Empowering the UAE with continuous, efficient power
-						<br className="hidden sm:block" />
-						for every industry and event.
+						Energex delivers dependable diesel and gas generator solutions in
+						Dubai, UAE. From supply and installation to maintenance and
+						technical support, we provide reliable power when it matters most.
 					</p>
 				</ScrollReveal>
 

@@ -53,8 +53,7 @@ export function Progress() {
 							Powering the UAE
 						</h2>
 						<p className="max-w-2xl font-medium text-lg text-slate-500 md:text-xl">
-							From small projects to large-scale infrastructure, we provide
-							reliable energy where and when it matters most.
+							Best power generator solutions designed for UAE’s most demanding industries with reliable, efficient, and uninterrupted performance.
 						</p>
 					</ScrollReveal>
 				</div>

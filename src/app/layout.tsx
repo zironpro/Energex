@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: "Energex",
+	title: "Energex | Best Power Generator Supplier in Dubai | UAE",
 	description:
-		"Energex is a leading provider of mobile generator rentals, offering reliable power solutions for events, construction sites, and industrial operations.",
+		"Energex is the best power generator supplier in Dubai, providing diesel and gas generators, backup power solutions, installation, maintenance, and expert support across the UAE.",
 };
 
 export default function RootLayout({

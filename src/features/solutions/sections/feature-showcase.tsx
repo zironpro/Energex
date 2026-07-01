@@ -75,14 +75,11 @@ export function FeatureShowcase() {
 					<div className="flex flex-col lg:col-span-5">
 						<div className="mb-12">
 							<h2 className="mb-6 font-black text-4xl text-slate-900 uppercase leading-[1.1] md:text-5xl">
-								ENERGEX <br />
-								<span className="text-blue-500">GENERATORS</span>
+								Power Solutions <br />
+								<span className="text-blue-500">You Can Depend On</span>
 							</h2>
 							<p className="mb-8 text-base text-slate-600 leading-relaxed">
-								Our fleet consists of the latest high-performance diesel
-								generators, ranging from 20kVA to 1500kVA. All units are
-								sound-attenuated, fuel-efficient and designed for 24/7
-								heavy-duty operation in UAE conditions (50°C ambient design).
+								We provide premium diesel generator rental solutions across the UAE for construction, commercial, industrial, and emergency power requirements. Our soundproof generators from 20kVA to 1500kVA are designed for maximum efficiency, reliability, and 24/7 operation.
 							</p>
 							<Button className="group h-12 rounded-lg bg-slate-900 px-8 font-bold text-white hover:bg-slate-800">
 								Get Started

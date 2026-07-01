@@ -31,9 +31,9 @@ export function Hero() {
 							ease: [0.21, 0.47, 0.32, 0.98],
 						}}
 					>
-						RELIABLE <br className="hidden md:block" />
-						<span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
-							POWER SOLUTIONS
+						EMPOWERING <br className="hidden md:block" />
+						<span className="text-blue-600">
+							EVERY PROJECT
 						</span>
 					</motion.h1>
 
@@ -43,9 +43,7 @@ export function Hero() {
 						initial={{ opacity: 0 }}
 						transition={{ duration: 1, delay: 0.6 }}
 					>
-						We deliver comprehensive, end-to-end power solutions designed to
-						maximize efficiency and ensure absolute reliability for your most
-						critical operations.
+						We provide premium diesel generator rental solutions Dubai for construction, commercial, industrial, and emergency power requirements.
 					</motion.p>
 				</div>
 			</div>

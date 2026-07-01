@@ -9,14 +9,14 @@ import { AnimatePresence, motion } from "framer-motion";
 const SECTIONS = [
 	{
 		label: "MISSION",
-		title: "EMPOWERING WITH RELIABILITY, DELIVERING WITH EXCELLENCE.",
-		desc: "To empower businesses with reliable, efficient, and tailored power solutions. We strive to be the invisible force behind our clients' success, ensuring their operations never stop, no matter the challenges.",
+		title: "DRIVEN BY POWER. BUILT ON TRUST.",
+		desc: "Power your projects with Energex's reliable diesel generators from 20kVA to 1500kVA, delivering efficient and uninterrupted power across Dubai and the UAE.",
 		image: "/images/mission.webp",
 	},
 	{
 		label: "VISION",
-		title: "LEADING WITH VISION, MOVING WITH PURPOSE.",
-		desc: "To be the most trusted and innovative energy partner in the region, setting new benchmarks for reliability and sustainability in temporary and permanent power generation.",
+		title: "DEPENDABLE POWER FOR EVERY INDUSTRY.",
+		desc: "Whether you need temporary site power or critical emergency backup, Energex delivers reliable generator solutions backed by quality equipment, experienced professionals, and responsive support. We help businesses stay powered with confidence across the UAE.",
 		image: "/images/vision.webp",
 	},
 ];
