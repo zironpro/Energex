@@ -6,9 +6,10 @@ export function CTA() {
 	return (
 		<section className="relative overflow-hidden bg-slate-950 py-16 text-white">
 			{/* Background Logo Overflowing */}
-			<div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.08]">
+			<div className="pointer-events-none absolute inset-0 opacity-[0.08]">
 				<svg
-					className="h-auto w-[80vw] min-w-[500px] fill-current"
+					className="h-full w-full fill-current"
+					preserveAspectRatio="xMidYMid slice"
 					viewBox="0 0 210 126"
 				>
 					<g>

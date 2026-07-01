@@ -122,41 +122,50 @@ export function MainHero() {
 				>
 					<video
 						autoPlay
-						className="absolute inset-0 h-full w-full object-cover"
+						className="absolute inset-0 hidden h-full w-full object-cover md:block"
 						loop
 						muted
 						playsInline
 					>
 						<source src="/video/hero-vid.webm" type="video/webm" />
 					</video>
+					<video
+						autoPlay
+						className="absolute inset-0 block h-full w-full object-cover md:hidden"
+						loop
+						muted
+						playsInline
+					>
+						<source src="/video/vid-mobile.webm" type="video/webm" />
+					</video>
 				</div>
 			</div>
 
 			{/* Content */}
-			<div className="relative z-10 flex h-full w-full flex-col items-center justify-center px-2 pt-16 pb-16 md:pb-0">
-				<div className="flex w-full max-w-7xl flex-row items-center justify-center gap-2 sm:gap-6 md:gap-8 lg:gap-12">
-					<h1 className="top-text-left font-bold text-[28px] text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
+			<div className="relative z-30 flex h-full w-full flex-col items-center justify-center px-2 pt-16 pb-24 md:pb-0">
+				<div className="flex w-full max-w-7xl flex-row items-center justify-center gap-3 sm:gap-6 md:gap-8 lg:gap-12">
+					<h1 className="top-text-left font-bold text-2xl text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
 						Reliable
 					</h1>
 
 					{/* Medium Image Placeholder for Flip */}
-					<div className="h-[60px] w-[110px] shrink-0 sm:h-[150px] sm:w-[250px] md:h-[220px] md:w-[350px] lg:h-[300px] lg:w-[500px]">
+					<div className="h-[140px] w-[90px] shrink-0 sm:h-[150px] sm:w-[250px] md:h-[220px] md:w-[350px] lg:h-[300px] lg:w-[500px]">
 						<div
-							className="invisible h-full w-full rounded-full"
+							className="invisible h-full w-full rounded-[40px] md:rounded-full"
 							ref={smallImgRef}
 						/>
 					</div>
 
-					<h1 className="top-text-right font-bold text-[28px] text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
+					<h1 className="top-text-right font-bold text-2xl text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
 						Scalable
 					</h1>
 				</div>
 
-				<div className="bottom-reveal mt-2 text-center md:mt-4">
+				<div className="bottom-reveal mt-8 text-center md:mt-4">
 					<h1 className="font-bold text-3xl text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
 						Power Solutions
 					</h1>
-					<div className="flex flex-wrap justify-center gap-4 pt-4 md:pt-8">
+					<div className="flex flex-wrap justify-center gap-4 pt-6 md:pt-8">
 						<Link
 							className="inline-flex h-12 items-center justify-center rounded-lg bg-black px-8 font-semibold text-sm text-white transition-transform hover:scale-105"
 							href="/contact"

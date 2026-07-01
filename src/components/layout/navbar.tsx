@@ -5,7 +5,15 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { Globe } from "lucide-react";
+import { Globe, Menu } from "lucide-react";
+
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const NavLink = ({
 	href,
@@ -117,12 +125,79 @@ export function Navbar() {
 					</NavLink>
 				</div>
 
-				{/* Right Side: Multilingual Button */}
-				<div className="flex-shrink-0">
-					<button className="flex cursor-pointer items-center space-x-2 rounded-lg px-5 py-2.5 text-lg text-white transition-all transition-colors hover:bg-white/20">
-						<Globe className="h-5 w-5" />
-						<span>EN</span>
-					</button>
+				{/* Right Side: Multilingual Button & Mobile Menu */}
+				<div className="flex flex-shrink-0 items-center gap-2 md:gap-4">
+					<div className="hidden md:block">
+						<DropdownMenu>
+							<DropdownMenuTrigger className="flex cursor-pointer items-center space-x-2 rounded-lg px-3 py-2 text-white transition-colors hover:bg-white/20 md:px-5 md:py-2.5 md:text-lg">
+								<Globe className="h-5 w-5" />
+								<span>EN</span>
+							</DropdownMenuTrigger>
+							<DropdownMenuContent align="end">
+								<DropdownMenuItem className="cursor-pointer">
+									English (EN)
+								</DropdownMenuItem>
+								<DropdownMenuItem className="cursor-pointer">
+									Arabic (AR)
+								</DropdownMenuItem>
+							</DropdownMenuContent>
+						</DropdownMenu>
+					</div>
+
+					{/* Mobile Menu */}
+					<div className="md:hidden">
+						<Sheet>
+							<SheetTrigger className="flex cursor-pointer items-center justify-center rounded-lg p-2 text-white transition-colors hover:bg-white/20">
+								<Menu className="h-6 w-6" />
+							</SheetTrigger>
+							<SheetContent
+								className="w-[300px] border-l-0 bg-white sm:w-[400px]"
+								side="right"
+							>
+								<div className="mt-12 flex flex-col gap-6 px-2">
+									<Link
+										className="font-bold text-2xl text-blue-900 transition-colors hover:text-blue-700"
+										href="/"
+									>
+										Home
+									</Link>
+									<Link
+										className="font-bold text-2xl text-blue-900 transition-colors hover:text-blue-700"
+										href="/solutions"
+									>
+										Solutions
+									</Link>
+									<Link
+										className="font-bold text-2xl text-blue-900 transition-colors hover:text-blue-700"
+										href="/company"
+									>
+										Company
+									</Link>
+									<Link
+										className="font-bold text-2xl text-blue-900 transition-colors hover:text-blue-700"
+										href="/contact"
+									>
+										Contact
+									</Link>
+
+									{/* Mobile Language Selector */}
+									<div className="mt-8 border-t pt-8">
+										<h3 className="mb-4 font-semibold text-slate-500 text-sm uppercase tracking-wider">
+											Select Language
+										</h3>
+										<div className="flex flex-col gap-4">
+											<button className="flex items-center gap-3 font-bold text-blue-900 text-lg">
+												<Globe className="h-5 w-5" /> English (EN)
+											</button>
+											<button className="flex items-center gap-3 font-bold text-lg text-slate-500 transition-colors hover:text-blue-600">
+												<Globe className="h-5 w-5" /> Arabic (AR)
+											</button>
+										</div>
+									</div>
+								</div>
+							</SheetContent>
+						</Sheet>
+					</div>
 				</div>
 			</div>
 		</nav>

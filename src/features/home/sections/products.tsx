@@ -72,8 +72,10 @@ export function Products() {
 								key={product.id}
 							>
 								<div
-									className="mb-6 flex w-full items-end justify-center transition-transform duration-500 group-hover:-translate-y-2"
-									style={{ height: `${height}px` }}
+									className="mb-6 flex h-[140px] w-full items-center justify-center transition-transform duration-500 group-hover:-translate-y-2 lg:items-end lg:[height:var(--desktop-height)]"
+									style={
+										{ "--desktop-height": `${height}px` } as React.CSSProperties
+									}
 								>
 									<Image
 										alt={product.capacity}
