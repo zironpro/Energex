@@ -74,46 +74,78 @@ const Linkedin = (props: React.SVGProps<SVGSVGElement>) => (
 
 export function Footer() {
 	return (
-		<footer className="bg-blue-600 py-16 text-slate-300 md:py-24">
-			<div className="container mx-auto max-w-7xl px-6 md:px-12">
-				<div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
-					{/* Brand Column */}
-					<div className="flex flex-col lg:col-span-4">
+		<footer className="relative overflow-hidden bg-blue-600 pt-20 pb-4 text-slate-300">
+			{/* Sweeping abstract waves background similar to the reference design */}
+			<div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+				<svg
+					className="absolute top-0 left-0 h-full w-full"
+					preserveAspectRatio="xMidYMid slice"
+					viewBox="0 0 1440 600"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					{/* Large elegant swooshes imitating the reference image background */}
+					<path
+						d="M-200,600 C400,600 600,0 1200,-100 L1440,-100 L1440,600 Z"
+						fill="#ffffff"
+						fillOpacity="0.03"
+					/>
+					<path
+						d="M200,700 C700,300 1000,-50 1800,-50 L1800,700 Z"
+						fill="#ffffff"
+						fillOpacity="0.02"
+					/>
+					<path
+						d="M-100,-100 C400,150 700,400 1300,700 L-100,700 Z"
+						fill="#000000"
+						fillOpacity="0.05"
+					/>
+					<path
+						d="M400,-100 C800,200 1100,500 1600,700 L400,700 Z"
+						fill="#ffffff"
+						fillOpacity="0.02"
+					/>
+				</svg>
+			</div>
+
+			<div className="container relative z-10 mx-auto max-w-7xl px-6 md:px-12">
+				<div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+					{/* Column 1: Logo & Slogan */}
+					<div className="flex flex-col">
 						<Link className="mb-6 flex items-center gap-3 text-white" href="/">
-							<svg className="h-auto w-12 fill-current" viewBox="0 0 210 126">
+							<svg className="h-8 w-auto fill-white" viewBox="0 0 210 126">
 								<g>
 									<polygon points="135.83 54.08 139.67 57.16 203.21 4.92 203.21 0 152.97 0 135.83 13.92 135.83 54.08" />
 									<polygon points="73.35 71.08 69.52 68.01 6.04 120.21 6.04 125.12 56.23 125.12 73.35 111.21 73.35 71.08" />
 									<polygon points="0 0 152.68 125.12 209.36 125.12 56.4 0 0 0" />
 								</g>
 							</svg>
-							<span className="font-bold text-2xl tracking-tight">ENERGEX</span>
+							<span className="font-bold text-xl tracking-tight">ENERGEX</span>
 						</Link>
-						<p className="mb-8 max-w-sm text-slate-400 leading-relaxed">
+						<p className="mb-8 text-slate-300 text-sm leading-relaxed">
 							Empowering the UAE with reliable, scalable, and efficient power
 							solutions for every industry and event.
 						</p>
-						<div className="flex items-center gap-2">
+						<div className="flex gap-4">
 							<a
-								className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl bg-white/10 transition-colors hover:bg-blue-500 hover:text-white"
+								className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-blue-500"
 								href="#"
 							>
 								<Facebook className="h-5 w-5" />
 							</a>
 							<a
-								className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl bg-white/10 transition-colors hover:bg-blue-500 hover:text-white"
+								className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-blue-500"
 								href="#"
 							>
 								<Twitter className="h-5 w-5" />
 							</a>
 							<a
-								className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl bg-white/10 transition-colors hover:bg-blue-500 hover:text-white"
+								className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-blue-500"
 								href="#"
 							>
 								<Instagram className="h-5 w-5" />
 							</a>
 							<a
-								className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl bg-white/10 transition-colors hover:bg-blue-500 hover:text-white"
+								className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-blue-500"
 								href="#"
 							>
 								<Linkedin className="h-5 w-5" />
@@ -121,38 +153,38 @@ export function Footer() {
 						</div>
 					</div>
 
-					{/* Links Column 1 */}
-					<div className="lg:col-span-2">
-						<h3 className="mb-6 font-semibold text-lg text-white">Company</h3>
-						<ul className="flex flex-col gap-4 text-slate-400">
+					{/* Column 2: Company */}
+					<div className="flex flex-col">
+						<h4 className="mb-6 font-bold text-lg text-white">Company</h4>
+						<ul className="flex flex-col gap-4 text-slate-300 text-sm">
 							<li>
 								<Link
-									className="inline-block transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-white"
-									href="#"
+									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+									href="/about"
 								>
 									About Us
 								</Link>
 							</li>
 							<li>
 								<Link
-									className="inline-block transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-white"
-									href="#"
+									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+									href="/careers"
 								>
 									Careers
 								</Link>
 							</li>
 							<li>
 								<Link
-									className="inline-block transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-white"
-									href="#"
+									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+									href="/news"
 								>
 									News & Press
 								</Link>
 							</li>
 							<li>
 								<Link
-									className="inline-block transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-white"
-									href="#"
+									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+									href="/contact"
 								>
 									Contact
 								</Link>
@@ -160,38 +192,38 @@ export function Footer() {
 						</ul>
 					</div>
 
-					{/* Links Column 2 */}
-					<div className="lg:col-span-3">
-						<h3 className="mb-6 font-semibold text-lg text-white">Solutions</h3>
-						<ul className="flex flex-col gap-4 text-slate-400">
+					{/* Column 3: Solutions */}
+					<div className="flex flex-col">
+						<h4 className="mb-6 font-bold text-lg text-white">Solutions</h4>
+						<ul className="flex flex-col gap-4 text-slate-300 text-sm">
 							<li>
 								<Link
-									className="inline-block transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-white"
-									href="#"
+									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+									href="/solutions"
 								>
 									Diesel Generators
 								</Link>
 							</li>
 							<li>
 								<Link
-									className="inline-block transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-white"
-									href="#"
+									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+									href="/solutions"
 								>
 									Hybrid Power Systems
 								</Link>
 							</li>
 							<li>
 								<Link
-									className="inline-block transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-white"
-									href="#"
+									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+									href="/solutions"
 								>
 									Event Power
 								</Link>
 							</li>
 							<li>
 								<Link
-									className="inline-block transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-white"
-									href="#"
+									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+									href="/solutions"
 								>
 									Fuel Management
 								</Link>
@@ -199,56 +231,58 @@ export function Footer() {
 						</ul>
 					</div>
 
-					{/* Contact Info Column */}
-					<div className="lg:col-span-3">
-						<h3 className="mb-6 font-semibold text-lg text-white">
-							Contact Us
-						</h3>
-						<ul className="flex flex-col gap-4 text-slate-400">
-							<li>
-								<span className="block text-slate-500">Email</span>
+					{/* Column 4: Contact Us */}
+					<div className="flex flex-col">
+						<h4 className="mb-6 font-bold text-lg text-white">Contact Us</h4>
+						<div className="flex flex-col gap-5 text-slate-300 text-sm">
+							<div>
+								<span className="mb-1 block text-slate-400">Email</span>
 								<a
-									className="transition-colors hover:text-white"
-									href="mailto:info@energex.ae"
+									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+									href="mailto:info@energexequip.ae"
 								>
-									info@energex.ae
+									info@energexequip.ae
 								</a>
-							</li>
-							<li>
-								<span className="block text-slate-500">Phone</span>
+							</div>
+							<div>
+								<span className="mb-1 block text-slate-400">Phone</span>
 								<a
-									className="transition-colors hover:text-white"
-									href="tel:+971501234567"
+									className="relative mb-1 block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+									href="tel:+97145753066"
 								>
-									+971 50 123 4567
+									T: (+971) 4 575 3066
 								</a>
-							</li>
-							<li>
-								<span className="block text-slate-500">Address</span>
-								<span>
-									Dubai Industrial City,
-									<br />
-									Dubai, United Arab Emirates
-								</span>
-							</li>
-						</ul>
+								<a
+									className="relative block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+									href="tel:+971502335477"
+								>
+									M: +971 50 233 5477
+								</a>
+							</div>
+							<div>
+								<span className="mb-1 block text-slate-400">Address</span>
+								<p>Energex Equipment Rental,</p>
+								<p>Al Quasis Industrial Second,</p>
+								<p>Plot No. 238-0</p>
+							</div>
+						</div>
 					</div>
 				</div>
+			</div>
 
-				{/* Bottom Bar */}
-				<div className="mt-16 flex flex-col items-center justify-between border-white/10 border-t pt-8 md:flex-row">
-					<p className="text-slate-400 text-sm">
-						&copy; {new Date().getFullYear()} Energex. All rights reserved.
-					</p>
-					<div className="mt-4 flex gap-6 text-sm md:mt-0">
+			{/* Full-width Bottom Bar */}
+			<div className="mt-20 border-blue-400/30 border-t">
+				<div className="container relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-between px-6 py-6 text-slate-300 text-xs md:flex-row md:px-12">
+					<p>&copy; {new Date().getFullYear()} Energex</p>
+					<div className="mt-4 flex gap-6 md:mt-0">
 						<Link
-							className="inline-block text-slate-500 transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-white"
+							className="transition hover:text-white"
 							href="/terms-and-policy"
 						>
 							Privacy Policy
 						</Link>
 						<Link
-							className="inline-block text-slate-500 transition-all duration-300 hover:translate-x-1 hover:-translate-y-1 hover:text-white"
+							className="transition hover:text-white"
 							href="/terms-and-policy"
 						>
 							Terms of Service

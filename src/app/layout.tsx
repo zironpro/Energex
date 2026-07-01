@@ -32,11 +32,13 @@ export default function RootLayout({
 			className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			lang="en"
 		>
-			<body className="flex flex-col">
-				<Navbar />
-				{children}
-				<Footer />
-				<FloatingCallButton />
+			<body className="flex flex-col font-sans">
+				<div className="flex min-h-screen flex-col overflow-x-hidden">
+					<Navbar />
+					{children}
+					<Footer />
+					<FloatingCallButton />
+				</div>
 			</body>
 		</html>
 	);

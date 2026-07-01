@@ -87,7 +87,10 @@ export function MainHero() {
 		// Run immediately to establish initial ScrollTrigger state
 		init();
 
+		let windowWidth = window.innerWidth;
 		const handleResize = () => {
+			if (window.innerWidth === windowWidth) return;
+			windowWidth = window.innerWidth;
 			clearTimeout(resizeTimer);
 			resizeTimer = setTimeout(() => {
 				init();

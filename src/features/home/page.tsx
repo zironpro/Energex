@@ -25,7 +25,6 @@ export function HomePage() {
 			gestureOrientation: "vertical",
 			smoothWheel: true,
 			wheelMultiplier: 1,
-			touchMultiplier: 2,
 		});
 
 		// Force page to top and disable scrolling during intro

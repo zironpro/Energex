@@ -21,7 +21,6 @@ export function SolutionsPage() {
 			gestureOrientation: "vertical",
 			smoothWheel: true,
 			wheelMultiplier: 1,
-			touchMultiplier: 2,
 		});
 
 		function raf(time: number) {

@@ -22,7 +22,6 @@ export function CompanyPage() {
 			gestureOrientation: "vertical",
 			smoothWheel: true,
 			wheelMultiplier: 1,
-			touchMultiplier: 2,
 		});
 
 		function raf(time: number) {
