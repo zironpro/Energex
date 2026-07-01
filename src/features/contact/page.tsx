@@ -150,7 +150,7 @@ export function ContactPage() {
 											Name <span className="text-red-500">*</span>
 										</Label>
 										<Input
-											className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-500"
+											className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-600"
 											id="firstName"
 											placeholder="Your first name"
 										/>
@@ -163,7 +163,7 @@ export function ContactPage() {
 											Last name <span className="text-red-500">*</span>
 										</Label>
 										<Input
-											className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-500"
+											className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-600"
 											id="lastName"
 											placeholder="Your last name"
 										/>
@@ -179,7 +179,7 @@ export function ContactPage() {
 											Company
 										</Label>
 										<Input
-											className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-500"
+											className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-600"
 											id="company"
 											placeholder="Company name"
 										/>
@@ -192,7 +192,7 @@ export function ContactPage() {
 											Email Address <span className="text-red-500">*</span>
 										</Label>
 										<Input
-											className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-500"
+											className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-600"
 											id="email"
 											placeholder="your@company.com"
 											type="email"
@@ -208,7 +208,7 @@ export function ContactPage() {
 										Phone number <span className="text-red-500">*</span>
 									</Label>
 									<Input
-										className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-500"
+										className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-600"
 										id="phone"
 										placeholder="+971 50 123 4567"
 										type="tel"
@@ -225,7 +225,7 @@ export function ContactPage() {
 										</Label>
 										<Select>
 											<SelectTrigger
-												className="h-11 border-slate-200 bg-slate-50 focus:ring-blue-500"
+												className="h-11 border-slate-200 bg-slate-50 focus:ring-blue-600"
 												id="rentalDuration"
 											>
 												<SelectValue placeholder="Select rental duration" />
@@ -253,7 +253,7 @@ export function ContactPage() {
 										</Label>
 										<Select>
 											<SelectTrigger
-												className="h-11 border-slate-200 bg-slate-50 focus:ring-blue-500"
+												className="h-11 border-slate-200 bg-slate-50 focus:ring-blue-600"
 												id="sector"
 											>
 												<SelectValue placeholder="Select your sector" />
@@ -284,7 +284,7 @@ export function ContactPage() {
 									</Label>
 									<Select>
 										<SelectTrigger
-											className="h-11 border-slate-200 bg-slate-50 focus:ring-blue-500"
+											className="h-11 border-slate-200 bg-slate-50 focus:ring-blue-600"
 											id="projectType"
 										>
 											<SelectValue placeholder="Select your project type" />
@@ -308,7 +308,7 @@ export function ContactPage() {
 										Message
 									</Label>
 									<Textarea
-										className="resize-y border-slate-200 bg-slate-50 focus-visible:ring-blue-500"
+										className="resize-y border-slate-200 bg-slate-50 focus-visible:ring-blue-600"
 										id="message"
 										placeholder="Tell us about your project or inquiry..."
 										rows={4}

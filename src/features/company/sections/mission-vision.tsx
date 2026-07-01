@@ -41,7 +41,7 @@ export function MissionVision() {
 									<div className="grid grid-cols-1 gap-8 lg:grid-cols-7">
 										{/* Label */}
 										<div className="lg:col-span-2 lg:pt-2">
-											<span className="font-semibold text-blue-500 text-sm uppercase tracking-wider">
+											<span className="font-semibold text-blue-600 text-sm uppercase tracking-wider">
 												{section.label}
 											</span>
 										</div>

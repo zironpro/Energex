@@ -74,7 +74,7 @@ const Linkedin = (props: React.SVGProps<SVGSVGElement>) => (
 
 export function Footer() {
 	return (
-		<footer className="bg-slate-950 py-16 text-slate-300 md:py-24">
+		<footer className="bg-blue-600 py-16 text-slate-300 md:py-24">
 			<div className="container mx-auto max-w-7xl px-6 md:px-12">
 				<div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
 					{/* Brand Column */}
@@ -93,27 +93,27 @@ export function Footer() {
 							Empowering the UAE with reliable, scalable, and efficient power
 							solutions for every industry and event.
 						</p>
-						<div className="flex items-center gap-4">
+						<div className="flex items-center gap-2">
 							<a
-								className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-900 transition-colors hover:bg-slate-800 hover:text-white"
+								className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl bg-white/10 transition-colors hover:bg-blue-500 hover:text-white"
 								href="#"
 							>
 								<Facebook className="h-5 w-5" />
 							</a>
 							<a
-								className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-900 transition-colors hover:bg-slate-800 hover:text-white"
+								className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl bg-white/10 transition-colors hover:bg-blue-500 hover:text-white"
 								href="#"
 							>
 								<Twitter className="h-5 w-5" />
 							</a>
 							<a
-								className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-900 transition-colors hover:bg-slate-800 hover:text-white"
+								className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl bg-white/10 transition-colors hover:bg-blue-500 hover:text-white"
 								href="#"
 							>
 								<Instagram className="h-5 w-5" />
 							</a>
 							<a
-								className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-900 transition-colors hover:bg-slate-800 hover:text-white"
+								className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl bg-white/10 transition-colors hover:bg-blue-500 hover:text-white"
 								href="#"
 							>
 								<Linkedin className="h-5 w-5" />
@@ -236,8 +236,8 @@ export function Footer() {
 				</div>
 
 				{/* Bottom Bar */}
-				<div className="mt-16 flex flex-col items-center justify-between border-slate-800 border-t pt-8 md:flex-row">
-					<p className="text-slate-500 text-sm">
+				<div className="mt-16 flex flex-col items-center justify-between border-white/10 border-t pt-8 md:flex-row">
+					<p className="text-slate-400 text-sm">
 						&copy; {new Date().getFullYear()} Energex. All rights reserved.
 					</p>
 					<div className="mt-4 flex gap-6 text-sm md:mt-0">

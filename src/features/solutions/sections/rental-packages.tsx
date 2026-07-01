@@ -12,17 +12,17 @@ const packages = [
 	{
 		title: "Short-Term Projects",
 		description: "Agile solutions for events or emergencies.",
-		icon: <Clock className="h-6 w-6 text-blue-500" />,
+		icon: <Clock className="h-6 w-6 text-blue-600" />,
 	},
 	{
 		title: "Long-Term Contracts",
 		description: "Cost-effective, scalable power for multi-year projects.",
-		icon: <Calendar className="h-6 w-6 text-blue-500" />,
+		icon: <Calendar className="h-6 w-6 text-blue-600" />,
 	},
 	{
 		title: "Custom Partnerships",
 		description: "Bespoke sub-rental agreements for equipment providers.",
-		icon: <Handshake className="h-6 w-6 text-blue-500" />,
+		icon: <Handshake className="h-6 w-6 text-blue-600" />,
 	},
 ];
 
@@ -62,7 +62,7 @@ export function RentalPackages() {
 							viewport={{ once: true, margin: "-100px" }}
 							whileInView={{ opacity: 1, y: 0 }}
 						>
-							<div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10">
+							<div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600/10">
 								{pkg.icon}
 							</div>
 							<h3 className="mb-3 font-bold text-slate-900 text-xl">

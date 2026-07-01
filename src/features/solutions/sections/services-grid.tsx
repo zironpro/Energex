@@ -16,19 +16,19 @@ const services = [
 		title: "Strategic Assessment",
 		description:
 			"Expert load calculation to optimise efficiency and performance.",
-		icon: <BarChart className="h-6 w-6 text-blue-500" />,
+		icon: <BarChart className="h-6 w-6 text-blue-600" />,
 	},
 	{
 		title: "Logistics & Installation",
 		description:
 			"Precision delivery and professionals on-site setup for operational readiness.",
-		icon: <Truck className="h-6 w-6 text-blue-500" />,
+		icon: <Truck className="h-6 w-6 text-blue-600" />,
 	},
 	{
 		title: "24/7 Support",
 		description:
 			"Rapid-response technicians ready to troubleshoot any issue.",
-		icon: <Headset className="h-6 w-6 text-blue-500" />,
+		icon: <Headset className="h-6 w-6 text-blue-600" />,
 	},
 ];
 
@@ -45,9 +45,9 @@ export function ServicesGrid() {
 							viewport={{ once: true, margin: "-100px" }}
 							whileInView={{ opacity: 1, y: 0 }}
 						>
-							<Card className="group h-full border-slate-200 bg-white transition-all hover:border-blue-500 hover:shadow-lg">
+							<Card className="group h-full border-slate-200 bg-white transition-all hover:border-blue-600 hover:shadow-lg">
 								<CardHeader>
-									<div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 transition-colors group-hover:bg-blue-500/20">
+									<div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600/10 transition-colors group-hover:bg-blue-600/20">
 										{service.icon}
 									</div>
 									<CardTitle className="text-slate-900 text-xl">

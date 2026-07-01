@@ -76,7 +76,7 @@ export function FeatureShowcase() {
 						<div className="mb-12">
 							<h2 className="mb-6 font-black text-4xl text-slate-900 uppercase leading-[1.1] md:text-5xl">
 								Power Solutions <br />
-								<span className="text-blue-500">You Can Depend On</span>
+								<span className="text-blue-600">You Can Depend On</span>
 							</h2>
 							<p className="mb-8 text-base text-slate-600 leading-relaxed">
 								We provide premium diesel generator rental solutions across the UAE for construction, commercial, industrial, and emergency power requirements. Our soundproof generators from 20kVA to 1500kVA are designed for maximum efficiency, reliability, and 24/7 operation.
@@ -133,7 +133,7 @@ export function FeatureShowcase() {
 								{features.map((feature) => (
 									<CarouselItem key={feature.title}>
 										<div className="flex h-full flex-col overflow-hidden rounded-lg border border-slate-200 bg-white p-6 md:p-10">
-											<h3 className="mb-4 font-bold text-3xl text-blue-500">
+											<h3 className="mb-4 font-bold text-3xl text-blue-600">
 												{feature.title}
 											</h3>
 											<p className="mb-6 text-base text-slate-600 leading-relaxed">
@@ -146,7 +146,7 @@ export function FeatureShowcase() {
 														className="flex items-center space-x-3 text-slate-700 text-sm md:text-base"
 														key={point}
 													>
-														<CheckCircle2 className="h-4 w-4 text-blue-500 md:h-5 md:w-5" />
+														<CheckCircle2 className="h-4 w-4 text-blue-600 md:h-5 md:w-5" />
 														<span className="font-medium">{point}</span>
 													</li>
 												))}
