@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import Image from "next/image";
 
@@ -52,6 +52,7 @@ const swipePower = (offset: number, velocity: number) => {
 
 export function Advantage() {
 	const [activeIndex, setActiveIndex] = useState(2);
+	const lastScrollTime = useRef(0);
 
 	const handleNext = () => {
 		setActiveIndex((prev) => Math.min(prev + 1, advantages.length - 1));
@@ -59,6 +60,18 @@ export function Advantage() {
 
 	const handlePrev = () => {
 		setActiveIndex((prev) => Math.max(prev - 1, 0));
+	};
+
+	const handleWheel = (e: React.WheelEvent) => {
+		const now = Date.now();
+		if (now - lastScrollTime.current > 400) {
+			if (e.deltaX > 0) {
+				handleNext();
+			} else if (e.deltaX < 0) {
+				handlePrev();
+			}
+			lastScrollTime.current = now;
+		}
 	};
 
 	return (
@@ -81,7 +94,10 @@ export function Advantage() {
 				</div>
 
 				{/* 3D Coverflow Carousel */}
-				<div className="relative mt-12 flex h-[500px] w-full items-center justify-center [perspective:1000px]">
+				<div
+					className="relative mt-12 flex h-[500px] w-full items-center justify-center [perspective:1000px]"
+					onWheel={handleWheel}
+				>
 					{/* Cards Container with Drag Support */}
 					<motion.div
 						className="relative flex h-full w-full max-w-[320px] items-center justify-center [transform-style:preserve-3d]"
