@@ -2,6 +2,12 @@
 
 import Image from "next/image";
 
+import {
+	ScrollReveal,
+	ScrollRevealGroup,
+	ScrollRevealItem,
+} from "@/components/ui/scroll-reveal";
+
 const industries = [
 	{
 		title: "Construction",
@@ -42,7 +48,7 @@ export function Progress() {
 			<div className="mx-auto w-full max-w-7xl px-6 md:px-12">
 				{/* Section Header */}
 				<div className="mb-12 flex flex-col justify-between gap-6 md:mb-16 md:flex-row md:items-end">
-					<div>
+					<ScrollReveal>
 						<h2 className="mb-4 font-bold text-4xl text-slate-900 tracking-tighter md:text-5xl lg:text-6xl">
 							Powering the UAE
 						</h2>
@@ -50,16 +56,16 @@ export function Progress() {
 							From small projects to large-scale infrastructure, we provide
 							reliable energy where and when it matters most.
 						</p>
-					</div>
+					</ScrollReveal>
 				</div>
 
 				{/* Magazine Bento Grid */}
-				<div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-4">
+				<ScrollRevealGroup className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-4">
 					{industries.map((industry, idx) => {
 						const isFeatured = idx === 0;
 
 						return (
-							<div
+							<ScrollRevealItem
 								className={`group relative overflow-hidden rounded-lg shadow-sm transition-all duration-700 hover:shadow-xl ${bentoLayouts[idx]}`}
 								key={industry.title}
 							>
@@ -86,10 +92,10 @@ export function Progress() {
 										</p>
 									</div>
 								</div>
-							</div>
+							</ScrollRevealItem>
 						);
 					})}
-				</div>
+				</ScrollRevealGroup>
 			</div>
 		</section>
 	);

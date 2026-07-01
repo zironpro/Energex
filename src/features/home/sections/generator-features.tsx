@@ -5,6 +5,8 @@ import { useState } from "react";
 import Image from "next/image";
 
 import { motion } from "framer-motion";
+
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import {
 	BatteryCharging,
 	CalendarClock,
@@ -69,29 +71,32 @@ export function GeneratorFeatures() {
 	return (
 		<section className="relative w-full overflow-hidden bg-slate-50 pt-0 pb-16 text-slate-900">
 			<div className="container mx-auto max-w-7xl px-6 md:px-12">
-				<div className="mb-16 flex flex-col items-center text-center">
-					<h2 className="font-bold text-4xl text-slate-900 tracking-tighter md:text-5xl">
-						Generators Built for Demanding Conditions
-					</h2>
-					<p className="mt-4 max-w-2xl text-lg text-slate-500">
-						Click the top card to unpack the features that make our fleet the
-						most reliable choice.
-					</p>
+				<ScrollReveal>
+					<div className="mb-16 flex flex-col items-center text-center">
+						<h2 className="font-bold text-4xl text-slate-900 tracking-tighter md:text-5xl">
+							Generators Built for Demanding Conditions
+						</h2>
+						<p className="mt-4 max-w-2xl text-lg text-slate-500">
+							Click the top card to unpack the features that make our fleet the
+							most reliable choice.
+						</p>
 
-					<div className="mt-4 h-6">
-						{unstackedCount > 0 && (
-							<button
-								className="font-semibold text-blue-600 text-sm transition-colors hover:text-blue-700"
-								onClick={reset}
-							>
-								Reset Stack
-							</button>
-						)}
+						<div className="mt-4 h-6">
+							{unstackedCount > 0 && (
+								<button
+									className="font-semibold text-blue-600 text-sm transition-colors hover:text-blue-700"
+									onClick={reset}
+								>
+									Reset Stack
+								</button>
+							)}
+						</div>
 					</div>
-				</div>
+				</ScrollReveal>
 
 				{/* Grid Container for Final Alignment */}
-				<div className="relative mx-auto grid min-h-[340px] w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+				<ScrollReveal delay={0.2}>
+					<div className="relative mx-auto grid min-h-[340px] w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 					{cards.map((card, i) => {
 						if (i >= unstackedCount) return null;
 						return (
@@ -196,7 +201,8 @@ export function GeneratorFeatures() {
 							</div>
 						</div>
 					)}
-				</div>
+					</div>
+				</ScrollReveal>
 			</div>
 		</section>
 	);

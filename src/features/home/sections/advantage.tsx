@@ -6,6 +6,8 @@ import Image from "next/image";
 
 import { motion } from "framer-motion";
 
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
+
 type AdvantageItem = {
 	title: string;
 	description: string;
@@ -79,25 +81,26 @@ export function Advantage() {
 			<div className="container mx-auto max-w-7xl px-6 md:px-12">
 				{/* Section Header */}
 				<div className="mb-20 grid grid-cols-1 items-center gap-8 px-4 md:grid-cols-2 md:px-12">
-					<div>
+					<ScrollReveal direction="left">
 						<h2 className="font-bold text-4xl text-slate-900 tracking-tighter md:text-6xl">
 							The Energex Advantage
 						</h2>
-					</div>
-					<div>
+					</ScrollReveal>
+					<ScrollReveal delay={0.2} direction="right">
 						<p className="max-w-lg font-medium text-lg text-slate-500 md:text-xl">
 							Empowering your operations with state-of-the-art power solutions,
 							unmatched reliability, and expert support tailored to your unique
 							requirements.
 						</p>
-					</div>
+					</ScrollReveal>
 				</div>
 
 				{/* 3D Coverflow Carousel */}
-				<div
-					className="relative mt-12 flex h-[500px] w-full items-center justify-center [perspective:1000px]"
-					onWheel={handleWheel}
-				>
+				<ScrollReveal delay={0.4}>
+					<div
+						className="relative mt-12 flex h-[500px] w-full items-center justify-center [perspective:1000px]"
+						onWheel={handleWheel}
+					>
 					{/* Cards Container with Drag Support */}
 					<motion.div
 						className="relative flex h-full w-full max-w-[320px] items-center justify-center [transform-style:preserve-3d]"
@@ -173,7 +176,8 @@ export function Advantage() {
 							);
 						})}
 					</motion.div>
-				</div>
+					</div>
+				</ScrollReveal>
 			</div>
 		</section>
 	);
