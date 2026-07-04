@@ -3,11 +3,12 @@
 import { useEffect, useRef } from "react";
 
 import Image from "next/image";
-import Link from "next/link";
 
 import gsap from "gsap";
 import Flip from "gsap/Flip";
 import ScrollTrigger from "gsap/ScrollTrigger";
+
+import { Link } from "@/i18n/navigation";
 
 // Register GSAP Plugins (outside component for SSR safety, but we'll also register in useEffect)
 if (typeof window !== "undefined") {

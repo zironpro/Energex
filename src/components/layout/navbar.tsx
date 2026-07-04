@@ -3,10 +3,9 @@
 import { useEffect, useState } from "react";
 
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 import { Globe, Menu } from "lucide-react";
+import { useLocale } from "next-intl";
 
 import {
 	DropdownMenu,
@@ -15,6 +14,8 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 
 const NavLink = ({
 	href,
@@ -65,6 +66,12 @@ const NavLink = ({
 export function Navbar() {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const pathname = usePathname();
+	const router = useRouter();
+	const currentLocale = useLocale();
+
+	const switchLocale = (locale: string) => {
+		router.replace(pathname, { locale });
+	};
 
 	const isNotHome = pathname !== "/";
 	const showBg = isScrolled || isNotHome;
@@ -140,13 +147,19 @@ export function Navbar() {
 						<DropdownMenu>
 							<DropdownMenuTrigger className="flex cursor-pointer items-center space-x-2 rounded-lg px-3 py-2 text-white transition-colors hover:bg-white/20 md:px-5 md:py-2.5 md:text-lg">
 								<Globe className="h-5 w-5" />
-								<span>EN</span>
+								<span>{currentLocale.toUpperCase()}</span>
 							</DropdownMenuTrigger>
 							<DropdownMenuContent align="end">
-								<DropdownMenuItem className="cursor-pointer">
+								<DropdownMenuItem
+									className="cursor-pointer"
+									onClick={() => switchLocale("en")}
+								>
 									English (EN)
 								</DropdownMenuItem>
-								<DropdownMenuItem className="cursor-pointer">
+								<DropdownMenuItem
+									className="cursor-pointer"
+									onClick={() => switchLocale("ar")}
+								>
 									Arabic (AR)
 								</DropdownMenuItem>
 							</DropdownMenuContent>
@@ -277,8 +290,14 @@ export function Navbar() {
 											width={16}
 										/>
 									</Link>
-									<button className="flex h-12 items-center justify-center rounded-lg bg-slate-100 px-5 font-medium text-slate-700 transition-colors hover:bg-slate-200">
-										English
+									<button
+										className="flex h-12 items-center justify-center rounded-lg bg-slate-100 px-5 font-medium text-slate-700 transition-colors hover:bg-slate-200"
+										onClick={() => {
+											setIsOpen(false);
+											switchLocale(currentLocale === "en" ? "ar" : "en");
+										}}
+									>
+										{currentLocale === "en" ? "العربية" : "English"}
 									</button>
 								</div>
 							</SheetContent>

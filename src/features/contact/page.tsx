@@ -1,13 +1,13 @@
 "use client";
 
-import Link from "next/link";
-
 import Map, {
 	FullscreenControl,
 	Marker,
 	NavigationControl,
 	Popup,
 } from "react-map-gl/maplibre";
+
+import { Link } from "@/i18n/navigation";
 import "maplibre-gl/dist/maplibre-gl.css";
 
 import { ArrowRight } from "lucide-react";
