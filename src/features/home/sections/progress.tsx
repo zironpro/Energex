@@ -8,39 +8,7 @@ import {
 	ScrollRevealItem,
 } from "@/components/ui/scroll-reveal";
 
-const industries = [
-	{
-		title: "Construction",
-		description:
-			"Continuous power for site offices and heavy machinery operations.",
-		image: "/progress/construction.webp",
-	},
-	{
-		title: "Oil & Gas",
-		description:
-			"Powering drilling sites and downstream operations with reliable energy.",
-		image: "/progress/oil-&-gas.webp",
-	},
-	{
-		title: "Events",
-		description:
-			"Never miss a moment with backup power for festivals, concerts, and conferences.",
-		image: "/progress/events.webp",
-	},
-	{
-		title: "Logistics & Mining",
-		description:
-			"Always-on supply for distribution hubs and remote sites, reliably everywhere.",
-		image: "/progress/logistics.webp",
-	},
-];
-
-const bentoLayouts = [
-	"md:col-span-2 md:row-span-2 min-h-[400px] md:min-h-[600px]",
-	"md:col-span-1 md:row-span-2 min-h-[400px] md:min-h-[600px]",
-	"md:col-span-1 md:row-span-1 min-h-[250px] md:min-h-[288px]",
-	"md:col-span-1 md:row-span-1 min-h-[250px] md:min-h-[288px]",
-];
+import { bentoLayouts, industries } from "../data/progress";
 
 export function Progress() {
 	return (
@@ -53,7 +21,9 @@ export function Progress() {
 							Powering the UAE
 						</h2>
 						<p className="max-w-2xl font-medium text-base text-slate-500 md:text-lg">
-							Best power generator solutions designed for UAE’s most demanding industries with reliable, efficient, and uninterrupted performance.
+							Best power generator solutions designed for UAE’s most demanding
+							industries with reliable, efficient, and uninterrupted
+							performance.
 						</p>
 					</ScrollReveal>
 				</div>

@@ -88,6 +88,7 @@ export function Navbar() {
 	const mobileLinks = [
 		{ name: "Home", href: "/" },
 		{ name: "Solutions", href: "/solutions" },
+		{ name: "Products", href: "/products" },
 		{ name: "Company", href: "/company" },
 		{ name: "Contact", href: "/contact" },
 	];

@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BarChart, Headset, Truck } from "lucide-react";
 
 import {
 	Card,
@@ -11,26 +10,7 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 
-const services = [
-	{
-		title: "Strategic Assessment",
-		description:
-			"Expert load calculation to optimise efficiency and performance.",
-		icon: <BarChart className="h-6 w-6 text-blue-600" />,
-	},
-	{
-		title: "Logistics & Installation",
-		description:
-			"Precision delivery and professionals on-site setup for operational readiness.",
-		icon: <Truck className="h-6 w-6 text-blue-600" />,
-	},
-	{
-		title: "24/7 Support",
-		description:
-			"Rapid-response technicians ready to troubleshoot any issue.",
-		icon: <Headset className="h-6 w-6 text-blue-600" />,
-	},
-];
+import { services } from "../data/services-grid";
 
 export function ServicesGrid() {
 	return (
