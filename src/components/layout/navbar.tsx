@@ -4,15 +4,9 @@ import { useEffect, useState } from "react";
 
 import Image from "next/image";
 
-import { Globe, Menu } from "lucide-react";
+import { Languages, Menu } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
@@ -32,28 +26,14 @@ const NavLink = ({
 			href={href}
 		>
 			<div className="flex">
-				{children.split("").map((char, index) => (
-					<span
-						className="transition-transform duration-300 ease-in-out group-hover:-translate-y-full"
-						// biome-ignore lint/suspicious/noArrayIndexKey: Static text for hover effect doesn't reorder
-						key={`orig-${index}`}
-						style={{ transitionDelay: `${index * 30}ms` }}
-					>
-						{char === " " ? "\u00A0" : char}
-					</span>
-				))}
+				<span className="transition-transform duration-300 ease-in-out group-hover:-translate-y-full">
+					{children}
+				</span>
 			</div>
 			<div className="absolute inset-0 flex text-blue-200">
-				{children.split("").map((char, index) => (
-					<span
-						className="translate-y-full transition-transform duration-300 ease-in-out group-hover:translate-y-0"
-						// biome-ignore lint/suspicious/noArrayIndexKey: Static text for hover effect doesn't reorder
-						key={`clone-${index}`}
-						style={{ transitionDelay: `${index * 30}ms` }}
-					>
-						{char === " " ? "\u00A0" : char}
-					</span>
-				))}
+				<span className="translate-y-full transition-transform duration-300 ease-in-out group-hover:translate-y-0">
+					{children}
+				</span>
 			</div>
 			{/* Animated Bottom Border */}
 			<div
@@ -145,32 +125,19 @@ export function Navbar() {
 				{/* Right Side: Multilingual Button & Mobile Menu */}
 				<div className="flex flex-shrink-0 items-center gap-3 md:gap-4">
 					<div className="hidden md:block">
-						<DropdownMenu>
-							<DropdownMenuTrigger className="flex cursor-pointer items-center space-x-2 rounded-lg px-3 py-2 text-white transition-colors hover:bg-white/20 md:px-5 md:py-2.5 md:text-lg">
-								<Globe className="h-5 w-5" />
-								<span>{currentLocale.toUpperCase()}</span>
-							</DropdownMenuTrigger>
-							<DropdownMenuContent align="end">
-								<DropdownMenuItem
-									className="cursor-pointer"
-									onClick={() => switchLocale("en")}
-								>
-									{t("languages.en")}
-								</DropdownMenuItem>
-								<DropdownMenuItem
-									className="cursor-pointer"
-									onClick={() => switchLocale("ar")}
-								>
-									{t("languages.ar")}
-								</DropdownMenuItem>
-							</DropdownMenuContent>
-						</DropdownMenu>
+						<button
+							className="flex cursor-pointer items-center space-x-2 rounded-lg px-3 py-2 text-white transition-colors hover:bg-white/20 md:px-5 md:py-2.5 md:text-lg"
+							onClick={() => switchLocale(currentLocale === "en" ? "ar" : "en")}
+						>
+							<Languages className="h-5 w-5" />
+							<span>{currentLocale === "en" ? "العربية" : "English"}</span>
+						</button>
 					</div>
 
 					{/* Mobile Menu */}
 					<div className="md:hidden">
 						<Sheet onOpenChange={setIsOpen} open={isOpen}>
-							<SheetTrigger className="flex cursor-pointer items-center justify-center rounded-full bg-white/10 p-2.5 text-white backdrop-blur-md transition-all hover:bg-white/20 active:scale-95">
+							<SheetTrigger className="flex cursor-pointer items-center justify-center rounded-lg bg-white/10 p-2.5 text-white backdrop-blur-md transition-all hover:bg-white/20 active:scale-95">
 								<Menu className="h-6 w-6" />
 							</SheetTrigger>
 							<SheetContent
