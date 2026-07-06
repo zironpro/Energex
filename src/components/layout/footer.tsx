@@ -1,3 +1,5 @@
+import { useTranslations } from "next-intl";
+
 import { Link } from "@/i18n/navigation";
 
 const Facebook = (props: React.SVGProps<SVGSVGElement>) => (
@@ -73,6 +75,8 @@ const Linkedin = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 export function Footer() {
+	const t = useTranslations("common.Footer");
+
 	return (
 		<footer className="relative overflow-hidden bg-blue-600 pt-20 pb-4 text-slate-300">
 			{/* Sweeping abstract waves background similar to the reference design */}
@@ -122,8 +126,7 @@ export function Footer() {
 							<span className="font-bold text-xl tracking-tight">ENERGEX</span>
 						</Link>
 						<p className="mb-8 text-slate-300 text-sm leading-relaxed">
-							Empowering the UAE with reliable, scalable, and efficient power
-							solutions for every industry and event.
+							{t("slogan")}
 						</p>
 						<div className="flex gap-4">
 							<a
@@ -155,14 +158,16 @@ export function Footer() {
 
 					{/* Column 2: Company */}
 					<div className="flex flex-col">
-						<h4 className="mb-6 font-bold text-lg text-white">Company</h4>
+						<h4 className="mb-6 font-bold text-lg text-white">
+							{t("columns.company.title")}
+						</h4>
 						<ul className="flex flex-col gap-4 text-slate-300 text-sm">
 							<li>
 								<Link
 									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
 									href="/about"
 								>
-									About Us
+									{t("columns.company.about")}
 								</Link>
 							</li>
 							<li>
@@ -170,7 +175,7 @@ export function Footer() {
 									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
 									href="/careers"
 								>
-									Careers
+									{t("columns.company.careers")}
 								</Link>
 							</li>
 							<li>
@@ -178,7 +183,7 @@ export function Footer() {
 									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
 									href="/news"
 								>
-									News & Press
+									{t("columns.company.news")}
 								</Link>
 							</li>
 							<li>
@@ -186,7 +191,7 @@ export function Footer() {
 									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
 									href="/contact"
 								>
-									Contact
+									{t("columns.company.contact")}
 								</Link>
 							</li>
 						</ul>
@@ -194,14 +199,16 @@ export function Footer() {
 
 					{/* Column 3: Solutions */}
 					<div className="flex flex-col">
-						<h4 className="mb-6 font-bold text-lg text-white">Solutions</h4>
+						<h4 className="mb-6 font-bold text-lg text-white">
+							{t("columns.solutions.title")}
+						</h4>
 						<ul className="flex flex-col gap-4 text-slate-300 text-sm">
 							<li>
 								<Link
 									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
 									href="/solutions"
 								>
-									Diesel Generators
+									{t("columns.solutions.diesel")}
 								</Link>
 							</li>
 							<li>
@@ -209,7 +216,7 @@ export function Footer() {
 									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
 									href="/solutions"
 								>
-									Hybrid Power Systems
+									{t("columns.solutions.hybrid")}
 								</Link>
 							</li>
 							<li>
@@ -217,7 +224,7 @@ export function Footer() {
 									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
 									href="/solutions"
 								>
-									Event Power
+									{t("columns.solutions.event")}
 								</Link>
 							</li>
 							<li>
@@ -225,7 +232,7 @@ export function Footer() {
 									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
 									href="/solutions"
 								>
-									Fuel Management
+									{t("columns.solutions.fuel")}
 								</Link>
 							</li>
 						</ul>
@@ -233,10 +240,14 @@ export function Footer() {
 
 					{/* Column 4: Contact Us */}
 					<div className="flex flex-col">
-						<h4 className="mb-6 font-bold text-lg text-white">Contact Us</h4>
+						<h4 className="mb-6 font-bold text-lg text-white">
+							{t("columns.contact.title")}
+						</h4>
 						<div className="flex flex-col gap-5 text-slate-300 text-sm">
 							<div>
-								<span className="mb-1 block text-slate-400">Email</span>
+								<span className="mb-1 block text-slate-400">
+									{t("columns.contact.email")}
+								</span>
 								<a
 									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
 									href="mailto:info@energexequip.ae"
@@ -245,7 +256,9 @@ export function Footer() {
 								</a>
 							</div>
 							<div>
-								<span className="mb-1 block text-slate-400">Phone</span>
+								<span className="mb-1 block text-slate-400">
+									{t("columns.contact.phone")}
+								</span>
 								<a
 									className="relative mb-1 block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
 									href="tel:+97145753066"
@@ -260,10 +273,12 @@ export function Footer() {
 								</a>
 							</div>
 							<div>
-								<span className="mb-1 block text-slate-400">Address</span>
-								<p>Energex Equipment Rental,</p>
-								<p>Al Quasis Industrial Second,</p>
-								<p>Plot No. 238-0</p>
+								<span className="mb-1 block text-slate-400">
+									{t("columns.contact.address")}
+								</span>
+								<p>{t("columns.contact.addressLines.line1")}</p>
+								<p>{t("columns.contact.addressLines.line2")}</p>
+								<p>{t("columns.contact.addressLines.line3")}</p>
 							</div>
 						</div>
 					</div>
@@ -273,19 +288,21 @@ export function Footer() {
 			{/* Full-width Bottom Bar */}
 			<div className="mt-20 border-blue-400/30 border-t">
 				<div className="container relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-between px-6 py-6 text-slate-300 text-xs md:flex-row md:px-12">
-					<p>&copy; {new Date().getFullYear()} Energex</p>
+					<p>
+						&copy; {new Date().getFullYear()} {t("bottom.rights")}
+					</p>
 					<div className="mt-4 flex gap-6 md:mt-0">
 						<Link
 							className="transition hover:text-white"
 							href="/terms-and-policy"
 						>
-							Privacy Policy
+							{t("bottom.privacy")}
 						</Link>
 						<Link
 							className="transition hover:text-white"
 							href="/terms-and-policy"
 						>
-							Terms of Service
+							{t("bottom.terms")}
 						</Link>
 					</div>
 				</div>

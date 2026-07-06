@@ -1,13 +1,17 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import {
 	ScrollRevealGroup,
 	ScrollRevealItem,
 } from "@/components/ui/scroll-reveal";
 
-import { features } from "../data/hero-features";
+import { getFeatures } from "../data/hero-features";
 
 export function HeroFeatures() {
+	const t = useTranslations("home.HeroFeatures");
+	const features = getFeatures(t);
 	return (
 		<div className="relative z-20 pt-2 pb-4 md:py-6">
 			<div className="container mx-auto px-2 md:px-6 lg:px-12">

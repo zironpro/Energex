@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import { Globe, Menu } from "lucide-react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import {
 	DropdownMenu,
@@ -68,6 +68,7 @@ export function Navbar() {
 	const pathname = usePathname();
 	const router = useRouter();
 	const currentLocale = useLocale();
+	const t = useTranslations("common.Navbar");
 
 	const switchLocale = (locale: string) => {
 		router.replace(pathname, { locale });
@@ -93,11 +94,11 @@ export function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const mobileLinks = [
-		{ name: "Home", href: "/" },
-		{ name: "Solutions", href: "/solutions" },
-		{ name: "Products", href: "/products" },
-		{ name: "Company", href: "/company" },
-		{ name: "Contact", href: "/contact" },
+		{ name: t("links.home"), href: "/" },
+		{ name: t("links.solutions"), href: "/solutions" },
+		{ name: t("links.products"), href: "/products" },
+		{ name: t("links.company"), href: "/company" },
+		{ name: t("links.contact"), href: "/contact" },
 	];
 
 	return (
@@ -154,13 +155,13 @@ export function Navbar() {
 									className="cursor-pointer"
 									onClick={() => switchLocale("en")}
 								>
-									English (EN)
+									{t("languages.en")}
 								</DropdownMenuItem>
 								<DropdownMenuItem
 									className="cursor-pointer"
 									onClick={() => switchLocale("ar")}
 								>
-									Arabic (AR)
+									{t("languages.ar")}
 								</DropdownMenuItem>
 							</DropdownMenuContent>
 						</DropdownMenu>
@@ -281,7 +282,7 @@ export function Navbar() {
 										href="/contact"
 										onClick={() => setIsOpen(false)}
 									>
-										Request Quote
+										{t("actions.requestQuote")}
 										<Image
 											alt=""
 											className="ml-2 h-4 w-4 invert"

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 import {
 	Card,
@@ -10,9 +11,11 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 
-import { services } from "../data/services-grid";
+import { getServices } from "../data/services-grid";
 
 export function ServicesGrid() {
+	const t = useTranslations("solutions.ServicesGrid");
+	const services = getServices(t);
 	return (
 		<section className="relative bg-slate-50 px-6 pt-0 pb-8 lg:px-16">
 			<div className="container mx-auto max-w-7xl">

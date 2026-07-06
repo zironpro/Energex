@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Map, {
 	FullscreenControl,
 	Marker,
@@ -25,6 +26,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 
 export function ContactPage() {
+	const t = useTranslations("contact");
 	return (
 		<main className="relative min-h-screen bg-slate-50 pt-32 pb-24 text-slate-900">
 			<div className="container relative z-10 mx-auto max-w-7xl px-6">
@@ -32,30 +34,26 @@ export function ContactPage() {
 					{/* Left Column: Heading and Info */}
 					<div className="flex flex-col justify-center lg:sticky lg:top-32 lg:h-max lg:self-start lg:pr-8">
 						<h1 className="mb-6 font-black text-5xl text-blue-600 uppercase leading-[0.9] tracking-tighter sm:text-6xl md:text-7xl lg:text-[5.5rem]">
-							POWER <br />
-							<span className="text-blue-600">YOUR</span> <br />
-							SUCCESS
+							{t("title1")} <br />
+							<span className="text-blue-600">{t("title2")}</span> <br />
+							{t("title3")}
 						</h1>
 
 						<p className="mb-4 max-w-lg text-slate-700 text-xl leading-relaxed">
-							Whether you're planning a{" "}
-							<span className="font-bold text-slate-900">
-								new construction project, managing a large-scale event,
-							</span>{" "}
-							or bringing your ideas to life across industrial operations -{" "}
-							<span className="font-bold text-slate-900">we're ready.</span>
+							{t("desc1")}
+							<span className="font-bold text-slate-900">{t("descBold1")}</span>
+							{t("desc2")}
+							<span className="font-bold text-slate-900">{t("descBold2")}</span>
 						</p>
 
 						<p className="mb-12 max-w-md text-slate-500 text-sm leading-relaxed">
-							Tell us about your power requirements. We'll respond within 2
-							business hours with a clear next step. No sales pressure, no
-							jargon.
+							{t("subtext")}
 						</p>
 
 						<div className="flex flex-col gap-10 sm:flex-row">
 							<div className="flex flex-col gap-4">
 								<h3 className="font-medium text-slate-500 text-sm">
-									Stay Connected
+									{t("stayConnected")}
 								</h3>
 								<div className="flex gap-3">
 									<a
@@ -112,7 +110,7 @@ export function ContactPage() {
 							<div className="flex flex-col justify-center gap-4 border-slate-200 sm:border-l sm:pl-8">
 								<div className="flex items-center gap-4">
 									<span className="w-16 font-bold text-blue-600 text-xs uppercase tracking-wider">
-										Email.
+										{t("emailLabel")}
 									</span>
 									<span className="font-medium text-slate-900">
 										info@energex.ae
@@ -120,7 +118,7 @@ export function ContactPage() {
 								</div>
 								<div className="flex items-center gap-4">
 									<span className="w-16 font-bold text-blue-600 text-xs uppercase tracking-wider">
-										Phone.
+										{t("phoneLabel")}
 									</span>
 									<span className="font-medium text-slate-900">
 										+971 50 123 4567
@@ -134,11 +132,9 @@ export function ContactPage() {
 					<div className="flex flex-col justify-center">
 						<div className="relative z-10 rounded-lg border border-slate-200 bg-white p-8 shadow-xl md:p-10">
 							<h2 className="mb-2 font-bold text-3xl text-slate-900">
-								Start your project today
+								{t("formTitle")}
 							</h2>
-							<p className="mb-8 text-slate-500">
-								Tell us about your goals and we'll take it from there.
-							</p>
+							<p className="mb-8 text-slate-500">{t("formSubtitle")}</p>
 
 							<form className="space-y-5">
 								<div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -147,12 +143,13 @@ export function ContactPage() {
 											className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
 											htmlFor="firstName"
 										>
-											Name <span className="text-red-500">*</span>
+											{t("form.firstNameLabel")}{" "}
+											<span className="text-red-500">*</span>
 										</Label>
 										<Input
 											className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-600"
 											id="firstName"
-											placeholder="Your first name"
+											placeholder={t("form.firstNamePlaceholder")}
 										/>
 									</div>
 									<div className="space-y-1.5">
@@ -160,12 +157,13 @@ export function ContactPage() {
 											className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
 											htmlFor="lastName"
 										>
-											Last name <span className="text-red-500">*</span>
+											{t("form.lastNameLabel")}{" "}
+											<span className="text-red-500">*</span>
 										</Label>
 										<Input
 											className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-600"
 											id="lastName"
-											placeholder="Your last name"
+											placeholder={t("form.lastNamePlaceholder")}
 										/>
 									</div>
 								</div>
@@ -176,12 +174,12 @@ export function ContactPage() {
 											className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
 											htmlFor="company"
 										>
-											Company
+											{t("form.companyLabel")}
 										</Label>
 										<Input
 											className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-600"
 											id="company"
-											placeholder="Company name"
+											placeholder={t("form.companyPlaceholder")}
 										/>
 									</div>
 									<div className="space-y-1.5">
@@ -189,12 +187,13 @@ export function ContactPage() {
 											className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
 											htmlFor="email"
 										>
-											Email Address <span className="text-red-500">*</span>
+											{t("form.emailLabel")}{" "}
+											<span className="text-red-500">*</span>
 										</Label>
 										<Input
 											className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-600"
 											id="email"
-											placeholder="your@company.com"
+											placeholder={t("form.emailPlaceholder")}
 											type="email"
 										/>
 									</div>
@@ -205,12 +204,13 @@ export function ContactPage() {
 										className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
 										htmlFor="phone"
 									>
-										Phone number <span className="text-red-500">*</span>
+										{t("form.phoneLabel")}{" "}
+										<span className="text-red-500">*</span>
 									</Label>
 									<Input
 										className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-600"
 										id="phone"
-										placeholder="+971 50 123 4567"
+										placeholder={t("form.phonePlaceholder")}
 										type="tel"
 									/>
 								</div>
@@ -221,24 +221,26 @@ export function ContactPage() {
 											className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
 											htmlFor="rentalDuration"
 										>
-											Rental duration
+											{t("form.durationLabel")}
 										</Label>
 										<Select>
 											<SelectTrigger
 												className="h-11 border-slate-200 bg-slate-50 focus:ring-blue-600"
 												id="rentalDuration"
 											>
-												<SelectValue placeholder="Select rental duration" />
+												<SelectValue
+													placeholder={t("form.durationPlaceholder")}
+												/>
 											</SelectTrigger>
 											<SelectContent>
 												<SelectItem value="short">
-													Short term (1-30 days)
+													{t("form.durationShort")}
 												</SelectItem>
 												<SelectItem value="medium">
-													Medium term (1-6 months)
+													{t("form.durationMedium")}
 												</SelectItem>
 												<SelectItem value="long">
-													Long term (6+ months)
+													{t("form.durationLong")}
 												</SelectItem>
 											</SelectContent>
 										</Select>
@@ -249,27 +251,33 @@ export function ContactPage() {
 											className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
 											htmlFor="sector"
 										>
-											Sector
+											{t("form.sectorLabel")}
 										</Label>
 										<Select>
 											<SelectTrigger
 												className="h-11 border-slate-200 bg-slate-50 focus:ring-blue-600"
 												id="sector"
 											>
-												<SelectValue placeholder="Select your sector" />
+												<SelectValue
+													placeholder={t("form.sectorPlaceholder")}
+												/>
 											</SelectTrigger>
 											<SelectContent>
 												<SelectItem value="construction">
-													Construction
+													{t("form.sectorConstruction")}
 												</SelectItem>
 												<SelectItem value="events">
-													Events & Entertainment
+													{t("form.sectorEvents")}
 												</SelectItem>
 												<SelectItem value="industrial">
-													Industrial & Manufacturing
+													{t("form.sectorIndustrial")}
 												</SelectItem>
-												<SelectItem value="oilgas">Oil & Gas</SelectItem>
-												<SelectItem value="other">Other</SelectItem>
+												<SelectItem value="oilgas">
+													{t("form.sectorOilGas")}
+												</SelectItem>
+												<SelectItem value="other">
+													{t("form.sectorOther")}
+												</SelectItem>
 											</SelectContent>
 										</Select>
 									</div>
@@ -280,22 +288,28 @@ export function ContactPage() {
 										className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
 										htmlFor="projectType"
 									>
-										Project type
+										{t("form.typeLabel")}
 									</Label>
 									<Select>
 										<SelectTrigger
 											className="h-11 border-slate-200 bg-slate-50 focus:ring-blue-600"
 											id="projectType"
 										>
-											<SelectValue placeholder="Select your project type" />
+											<SelectValue placeholder={t("form.typePlaceholder")} />
 										</SelectTrigger>
 										<SelectContent>
-											<SelectItem value="prime">Prime Power</SelectItem>
-											<SelectItem value="standby">
-												Standby / Emergency Power
+											<SelectItem value="prime">
+												{t("form.typePrime")}
 											</SelectItem>
-											<SelectItem value="hybrid">Hybrid System</SelectItem>
-											<SelectItem value="custom">Custom Engineering</SelectItem>
+											<SelectItem value="standby">
+												{t("form.typeStandby")}
+											</SelectItem>
+											<SelectItem value="hybrid">
+												{t("form.typeHybrid")}
+											</SelectItem>
+											<SelectItem value="custom">
+												{t("form.typeCustom")}
+											</SelectItem>
 										</SelectContent>
 									</Select>
 								</div>
@@ -305,39 +319,39 @@ export function ContactPage() {
 										className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
 										htmlFor="message"
 									>
-										Message
+										{t("form.messageLabel")}
 									</Label>
 									<Textarea
 										className="resize-y border-slate-200 bg-slate-50 focus-visible:ring-blue-600"
 										id="message"
-										placeholder="Tell us about your project or inquiry..."
+										placeholder={t("form.messagePlaceholder")}
 										rows={4}
 									/>
 								</div>
 
 								<div className="mt-8 flex flex-col items-center justify-between gap-6 border-slate-100 border-t pt-4 sm:flex-row">
 									<p className="max-w-[200px] text-slate-500 text-xs">
-										By submitting you agree to our <br />
+										{t("form.termsText1")} <br />
 										<Link
 											className="text-blue-600 hover:underline"
 											href="/terms-and-policy"
 										>
-											Terms of Service
+											{t("form.termsLink")}
 										</Link>{" "}
-										and{" "}
+										{t("form.termsText2")}{" "}
 										<Link
 											className="text-blue-600 hover:underline"
 											href="/terms-and-policy"
 										>
-											Privacy Policy
+											{t("form.privacyLink")}
 										</Link>
-										.
+										{t("form.termsText3")}
 									</p>
 									<Button
 										className="group h-12 w-full rounded-lg bg-blue-600 px-8 font-semibold text-white transition-colors hover:bg-blue-700 sm:w-auto"
 										type="button"
 									>
-										Send Message
+										{t("form.submit")}
 										<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
 									</Button>
 								</div>
@@ -346,14 +360,14 @@ export function ContactPage() {
 
 						<div className="mt-8 text-center sm:pl-4 sm:text-left">
 							<p className="font-medium text-slate-600">
-								Prefer to hop on a call?{" "}
+								{t("callText1")}
 								<a
 									className="font-semibold text-blue-600 hover:underline"
 									href="#"
 								>
-									Book a call
-								</a>{" "}
-								instead.
+									{t("callLink")}
+								</a>
+								{t("callText2")}
 							</p>
 						</div>
 					</div>
@@ -383,11 +397,10 @@ export function ContactPage() {
 						>
 							<div className="max-w-[220px] p-1">
 								<h4 className="mb-1 font-bold text-slate-900 text-sm">
-									Energex HQ
+									{t("map.hq")}
 								</h4>
 								<p className="text-slate-600 text-xs leading-relaxed">
-									Visit our office in Dubai Industrial City. We provide reliable
-									power solutions for modern industries.
+									{t("map.desc")}
 								</p>
 							</div>
 						</Popup>

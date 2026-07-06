@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { useTranslations } from "next-intl";
+
 import {
 	Accordion,
 	AccordionContent,
@@ -13,9 +15,11 @@ import {
 	ScrollRevealItem,
 } from "@/components/ui/scroll-reveal";
 
-import { faqs } from "../data/faq";
+import { getFaqs } from "../data/faq";
 
 export function FAQ() {
+	const t = useTranslations("home.FAQ");
+	const faqs = getFaqs(t);
 	return (
 		<section className="bg-slate-50 py-16 text-slate-900">
 			<div className="container mx-auto max-w-7xl px-6 md:px-12">
@@ -24,23 +28,22 @@ export function FAQ() {
 					<div className="relative flex h-fit flex-col lg:sticky lg:top-24 lg:col-span-5">
 						<ScrollReveal direction="left">
 							<h2 className="mb-12 font-bold text-5xl text-blue-600 tracking-tighter md:text-6xl">
-								Frequently asked
+								{t("title1")}
 								<br />
-								questions
+								{t("title2")}
 							</h2>
 						</ScrollReveal>
 
 						<ScrollReveal delay={0.2} direction="left">
 							<div className="mt-auto rounded-lg border border-slate-200 bg-white p-8 shadow-sm">
 								<h3 className="mb-3 font-bold text-2xl text-slate-900">
-									Still have a questions?
+									{t("stillHaveQuestions")}
 								</h3>
 								<p className="mb-8 text-slate-600 leading-relaxed">
-									Can't find the answer to your question? Send us an email and
-									we'll get back to you as soon as possible!
+									{t("cantFindAnswer")}
 								</p>
 								<Button className="flex items-center gap-2 rounded-lg bg-black px-6 py-6 font-bold text-base text-white hover:bg-slate-800">
-									Send email
+									{t("sendEmail")}
 									<Image
 										alt="Arrow"
 										className="invert"

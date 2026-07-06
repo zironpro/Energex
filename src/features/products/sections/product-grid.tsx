@@ -4,12 +4,15 @@ import Image from "next/image";
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
 
-import { products } from "../data/product-grid";
+import { getProducts } from "../data/product-grid";
 
 export function ProductGrid() {
+	const t = useTranslations("products.ProductGrid");
+	const products = getProducts(t);
 	return (
 		<section className="bg-white px-6 py-24 lg:px-16">
 			<div className="container mx-auto max-w-7xl">
@@ -21,7 +24,7 @@ export function ProductGrid() {
 						viewport={{ once: true }}
 						whileInView={{ opacity: 1, y: 0 }}
 					>
-						Generator Fleet
+						{t("title")}
 					</motion.h2>
 					<motion.p
 						className="max-w-2xl text-lg text-slate-600 leading-relaxed md:text-xl"
@@ -30,9 +33,7 @@ export function ProductGrid() {
 						viewport={{ once: true }}
 						whileInView={{ opacity: 1, y: 0 }}
 					>
-						Discover our versatile range of high-performance generators,
-						perfectly suited to handle anything from local events to massive
-						industrial power demands.
+						{t("description")}
 					</motion.p>
 				</div>
 
@@ -60,7 +61,7 @@ export function ProductGrid() {
 								{/* Left/Top Content */}
 								<div className="z-10 flex flex-col">
 									<h3 className="mb-3 font-black text-3xl text-blue-600 uppercase leading-[1.1] tracking-tighter">
-										PREMIUM <br />
+										{t("premium")} <br />
 										<span className="text-blue-600">{unit}</span>
 									</h3>
 									<p className="mb-6 text-slate-600 text-sm leading-relaxed md:text-base">
@@ -72,7 +73,7 @@ export function ProductGrid() {
 											className="inline-flex w-fit items-center gap-2 rounded-full bg-blue-600/10 px-5 py-2.5 font-bold text-blue-700 text-sm transition-colors hover:bg-blue-600/20"
 											href="/contact"
 										>
-											Quote <ArrowRight className="h-4 w-4" />
+											{t("quote")} <ArrowRight className="h-4 w-4" />
 										</Link>
 									</div>
 								</div>
@@ -87,7 +88,7 @@ export function ProductGrid() {
 											</span>
 										</div>
 										<div className="mt-1 font-medium text-slate-500 text-xs lowercase md:text-sm">
-											kVA generator
+											{t("generatorType")}
 										</div>
 									</div>
 

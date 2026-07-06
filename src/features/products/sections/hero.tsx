@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export function Hero() {
+	const t = useTranslations("products.Hero");
 	return (
 		<section className="relative flex flex-col justify-center overflow-hidden px-6 pt-40 pb-8 lg:px-16">
 			{/* Background Icon */}
@@ -31,7 +33,7 @@ export function Hero() {
 							ease: [0.21, 0.47, 0.32, 0.98],
 						}}
 					>
-						OUR <span className="text-blue-600">PRODUCTS</span>
+						{t("title1")} <span className="text-blue-600">{t("title2")}</span>
 					</motion.h1>
 
 					<motion.p
@@ -40,8 +42,7 @@ export function Hero() {
 						initial={{ opacity: 0 }}
 						transition={{ duration: 1, delay: 0.6 }}
 					>
-						Explore our extensive range of high-quality products designed for
-						maximum performance, reliability, and efficiency.
+						{t("description")}
 					</motion.p>
 				</div>
 			</div>

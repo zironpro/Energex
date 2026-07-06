@@ -2,10 +2,13 @@
 
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-import { EMIRATES } from "../data/local-focus";
+import { getEmirates } from "../data/local-focus";
 
 export function LocalFocus() {
+	const t = useTranslations("company.LocalFocus");
+	const EMIRATES = getEmirates(t);
 	return (
 		<section className="relative overflow-hidden bg-slate-50 py-12 text-slate-900 lg:py-16">
 			<div className="container relative z-10 mx-auto max-w-7xl px-6">
@@ -18,7 +21,7 @@ export function LocalFocus() {
 						viewport={{ once: true }}
 						whileInView={{ opacity: 1, y: 0 }}
 					>
-						Powering All Seven Emirates
+						{t("title")}
 					</motion.h3>
 
 					<motion.p
@@ -28,11 +31,9 @@ export function LocalFocus() {
 						viewport={{ once: true }}
 						whileInView={{ opacity: 1, y: 0 }}
 					>
-						As part of the{" "}
-						<strong className="text-slate-900">Zactic Group</strong>, Energex
-						operates from our headquarters in Dubai. We have established
-						reliable local networks to provide comprehensive support and
-						distribution throughout the UAE.
+						{t("descPart1")}
+						<strong className="text-slate-900">{t("descBold")}</strong>
+						{t("descPart2")}
 					</motion.p>
 				</div>
 

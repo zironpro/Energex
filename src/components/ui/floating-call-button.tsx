@@ -2,10 +2,12 @@
 
 import { motion } from "framer-motion";
 import { PhoneCall } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
 
 export function FloatingCallButton() {
+	const t = useTranslations("common.FloatingCallButton");
 	return (
 		<motion.div
 			animate={{ scale: 1, opacity: 1, y: 0 }}
@@ -25,9 +27,9 @@ export function FloatingCallButton() {
 				</div>
 				<div className="hidden flex-col text-left md:flex">
 					<span className="font-semibold text-blue-100 text-xs uppercase tracking-wider">
-						24/7 Support
+						{t("support")}
 					</span>
-					<span className="font-extrabold tracking-tight">Call Now</span>
+					<span className="font-extrabold tracking-tight">{t("callNow")}</span>
 				</div>
 			</Link>
 		</motion.div>

@@ -1,26 +1,22 @@
-export const industries = [
+export const getIndustries = (t: (key: string) => string) => [
 	{
-		title: "Construction",
-		description:
-			"Continuous power for site offices and heavy machinery operations.",
+		title: t("items.construction.title"),
+		description: t("items.construction.description"),
 		image: "/progress/construction.webp",
 	},
 	{
-		title: "Oil & Gas",
-		description:
-			"Powering drilling sites and downstream operations with reliable energy.",
+		title: t("items.oilgas.title"),
+		description: t("items.oilgas.description"),
 		image: "/progress/oil-&-gas.webp",
 	},
 	{
-		title: "Events",
-		description:
-			"Never miss a moment with backup power for festivals, concerts, and conferences.",
+		title: t("items.events.title"),
+		description: t("items.events.description"),
 		image: "/progress/events.webp",
 	},
 	{
-		title: "Logistics & Mining",
-		description:
-			"Always-on supply for distribution hubs and remote sites, reliably everywhere.",
+		title: t("items.logistics.title"),
+		description: t("items.logistics.description"),
 		image: "/progress/logistics.webp",
 	},
 ];

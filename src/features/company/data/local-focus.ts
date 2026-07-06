@@ -1,21 +1,30 @@
-export const EMIRATES = [
+export const getEmirates = (t: (key: string) => string) => [
 	{
-		name: "Abu Dhabi",
-		desc: "Capital hub for infrastructure and heavy industries.",
+		name: t("emirates.abuDhabi.name"),
+		desc: t("emirates.abuDhabi.desc"),
 	},
 	{
-		name: "Dubai",
-		desc: "Global center for trade, events, and rapid construction.",
-	},
-	{ name: "Sharjah", desc: "Key industrial zones powering manufacturing." },
-	{ name: "Ajman", desc: "Growing business hub with expanding sectors." },
-	{ name: "Umm Al Quwain", desc: "Developing marine and local manufacturing." },
-	{
-		name: "Ras Al Khaimah",
-		desc: "Leading in ceramics, quarrying, and materials.",
+		name: t("emirates.dubai.name"),
+		desc: t("emirates.dubai.desc"),
 	},
 	{
-		name: "Fujairah",
-		desc: "Strategic port city driving oil and shipping logistics.",
+		name: t("emirates.sharjah.name"),
+		desc: t("emirates.sharjah.desc"),
+	},
+	{
+		name: t("emirates.ajman.name"),
+		desc: t("emirates.ajman.desc"),
+	},
+	{
+		name: t("emirates.ummAlQuwain.name"),
+		desc: t("emirates.ummAlQuwain.desc"),
+	},
+	{
+		name: t("emirates.rasAlKhaimah.name"),
+		desc: t("emirates.rasAlKhaimah.desc"),
+	},
+	{
+		name: t("emirates.fujairah.name"),
+		desc: t("emirates.fujairah.desc"),
 	},
 ];

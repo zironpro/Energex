@@ -1,34 +1,31 @@
-export const features = [
+export const getFeatures = (t: (key: string) => string) => [
 	{
-		title: "20kVA – 150kVA",
-		description:
-			"Power Range: 20, 30, 45, 60, 100, 125, 150 kVA. Noise Level: Super Silent (58–65 dB at 7m).",
+		title: t("features.small.title"),
+		description: t("features.small.description"),
 		points: [
-			"Internal fuel tanks (8 to 24-hour runtime)",
-			"Easy-to-tow trailers",
-			"Multi-socket distribution panels",
+			t("features.small.points.0"),
+			t("features.small.points.1"),
+			t("features.small.points.2"),
 		],
 		image: "/solutions/small-portable.webp",
 	},
 	{
-		title: "200kVA – 800kVA",
-		description:
-			"Power Range: 200, 250, 350, 500, 650, 800 kVA. Noise Level: Sound Attenuated (70–75 dB at 7m).",
+		title: t("features.medium.title"),
+		description: t("features.medium.description"),
 		points: [
-			"External fuel link capability",
-			"Electronic governors for stable frequency",
-			"Heavy-duty skid bases",
+			t("features.medium.points.0"),
+			t("features.medium.points.1"),
+			t("features.medium.points.2"),
 		],
 		image: "/solutions/medium-generator.webp",
 	},
 	{
-		title: "1000kVA – 1500kVA",
-		description:
-			"Power Range: 1000, 1250, 1500 kVA. Design: 20ft or 40ft ISO Containerised Units.",
+		title: t("features.large.title"),
+		description: t("features.large.description"),
 		points: [
-			"High-capacity internal fuel tanks",
-			"Internal lighting & fire suppression systems",
-			"Synchronised control modules (DeepSea/ComAp)",
+			t("features.large.points.0"),
+			t("features.large.points.1"),
+			t("features.large.points.2"),
 		],
 		image: "/solutions/containerised-generator.webp",
 	},

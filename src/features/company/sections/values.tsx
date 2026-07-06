@@ -1,10 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
-import { VALUES } from "../data/values";
+import { getValues } from "../data/values";
 
 export function Values() {
+	const t = useTranslations("company.Values");
+	const VALUES = getValues(t);
 	return (
 		<section className="relative overflow-hidden bg-slate-50 py-12 lg:py-16">
 			<div className="container mx-auto max-w-7xl px-6">
@@ -16,7 +19,7 @@ export function Values() {
 						viewport={{ once: true }}
 						whileInView={{ opacity: 1, y: 0 }}
 					>
-						Core Values
+						{t("subtitle")}
 					</motion.h2>
 					<motion.h3
 						className="mt-4 font-black text-3xl text-blue-600 sm:text-4xl md:text-5xl"
@@ -25,7 +28,7 @@ export function Values() {
 						viewport={{ once: true }}
 						whileInView={{ opacity: 1, y: 0 }}
 					>
-						What Drives Us Forward
+						{t("title")}
 					</motion.h3>
 				</div>
 

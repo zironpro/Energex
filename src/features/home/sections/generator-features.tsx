@@ -2,26 +2,29 @@
 
 import Image from "next/image";
 
+import { useTranslations } from "next-intl";
+
 import {
 	ScrollReveal,
 	ScrollRevealGroup,
 	ScrollRevealItem,
 } from "@/components/ui/scroll-reveal";
 
-import { cards } from "../data/generator-features";
+import { getCards } from "../data/generator-features";
 
 export function GeneratorFeatures() {
+	const t = useTranslations("home.GeneratorFeatures");
+	const cards = getCards(t);
 	return (
 		<section className="relative w-full overflow-hidden bg-slate-50 pt-0 pb-16 text-slate-900">
 			<div className="container mx-auto max-w-7xl px-6 md:px-12">
 				<ScrollReveal>
 					<div className="mb-16 flex flex-col items-center text-center">
 						<h2 className="font-bold text-4xl text-blue-600 tracking-tighter md:text-5xl">
-							Generators Built for Demanding Conditions
+							{t("title")}
 						</h2>
 						<p className="mt-4 max-w-2xl text-base text-slate-500 md:text-lg">
-							Discover the features that make our fleet the most reliable choice
-							for your power needs.
+							{t("description")}
 						</p>
 					</div>
 				</ScrollReveal>

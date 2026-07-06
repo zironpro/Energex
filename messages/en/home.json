@@ -1,0 +1,156 @@
+{
+	"MainHero": {
+		"title1": "Reliable",
+		"title2": "Scalable",
+		"subtitle": "Power Solutions",
+		"requestQuote": "Request a Quote"
+	},
+	"Advantage": {
+		"title": "Why Choose Energex?",
+		"subtitleHeader": "Premium Generator Solutions UAE",
+		"subtitleText": "We supply high-performance diesel and gas generators from trusted manufacturers, delivering reliable backup and prime power for every industry.",
+		"bullet1": "Customized Power Systems",
+		"bullet2": "Fast Delivery & 24/7 Support",
+		"items": {
+			"rapid": {
+				"title": "Rapid Delivery",
+				"description": "On-site and operational on demand, with custom equipment tailored specifically for your environment."
+			},
+			"reliable": {
+				"title": "Total Reliability",
+				"description": "Every unit is backed by rigorous preventive maintenance to secure peak uptime and regulatory compliance."
+			},
+			"smart": {
+				"title": "Smart Engineering",
+				"description": "Beyond a rental service, we size, sync and support your specific power requirements."
+			},
+			"expert": {
+				"title": "Expert Consulting",
+				"description": "Attentive 24/7 technical assistance to maintain uninterrupted operations."
+			},
+			"flexible": {
+				"title": "Flexible Packages",
+				"description": "Tailored rental terms and project-based options for your business."
+			}
+		}
+	},
+	"FAQ": {
+		"title1": "Frequently asked",
+		"title2": "questions",
+		"stillHaveQuestions": "Still have a questions?",
+		"cantFindAnswer": "Can't find the answer to your question? Send us an email and we'll get back to you as soon as possible!",
+		"sendEmail": "Send email",
+		"items": {
+			"q0": {
+				"question": "What types of power solutions do you provide?",
+				"answer": "We provide a comprehensive range of power solutions including diesel generators, hybrid power systems, and customized distribution networks for construction, events, and industrial sites."
+			},
+			"q1": {
+				"question": "Do you offer 24/7 technical support?",
+				"answer": "Yes, our expert engineering team is available 24/7 to ensure uninterrupted power supply and provide immediate assistance for any technical issues on site."
+			},
+			"q2": {
+				"question": "How quickly can you deploy equipment to our site?",
+				"answer": "With our extensive fleet and strategic locations across the UAE, we can mobilize and deploy equipment rapidly, often within 24 hours for emergency requirements."
+			},
+			"q3": {
+				"question": "Can you support large-scale events?",
+				"answer": "Absolutely. We have extensive experience powering major festivals, concerts, and corporate events with reliable, synchronized backup power systems to ensure zero downtime."
+			},
+			"q4": {
+				"question": "Do you offer environmentally friendly power options?",
+				"answer": "Yes, we are committed to sustainability and offer hybrid power solutions, solar generators, and battery energy storage systems (BESS) to reduce carbon footprint and fuel consumption."
+			},
+			"q5": {
+				"question": "Are your generators soundproof?",
+				"answer": "Yes, all our generators come with custom-built acoustic enclosures to ensure minimal noise disruption, making them perfect for residential areas, events, and film sets."
+			},
+			"q6": {
+				"question": "Do you provide fuel management services?",
+				"answer": "We offer comprehensive fuel management and delivery services. Our team monitors your fuel levels and schedules deliveries to ensure your power supply remains uninterrupted."
+			}
+		}
+	},
+	"Products": {
+		"title": "Power for Every Need.",
+		"viewAll": "View All Generators",
+		"viewDetails": "View Details"
+	},
+	"Progress": {
+		"title": "Powering the UAE",
+		"description": "Best power generator solutions designed for UAE’s most demanding industries with reliable, efficient, and uninterrupted performance.",
+		"items": {
+			"construction": {
+				"title": "Construction",
+				"description": "Continuous power for site offices and heavy machinery operations."
+			},
+			"oilgas": {
+				"title": "Oil & Gas",
+				"description": "Powering drilling sites and downstream operations with reliable energy."
+			},
+			"events": {
+				"title": "Events",
+				"description": "Never miss a moment with backup power for festivals, concerts, and conferences."
+			},
+			"logistics": {
+				"title": "Logistics & Mining",
+				"description": "Always-on supply for distribution hubs and remote sites, reliably everywhere."
+			}
+		}
+	},
+	"StoryScroll": {
+		"title": "Reliable Power, Anytime",
+		"description": "Discover unparalleled performance and breathtaking design, perfectly synced with every scroll. Power reinvented.",
+		"discoverMore": "Discover More"
+	},
+	"HeroFeatures": {
+		"items": {
+			"reliable": {
+				"title": "Reliable",
+				"description": "99.9% uptime promise"
+			},
+			"scalable": {
+				"title": "Scalable",
+				"description": "From small to large scale"
+			},
+			"available": {
+				"title": "Available 24/7",
+				"description": "Always ready to support"
+			},
+			"across": {
+				"title": "Across UAE",
+				"description": "Nationwide coverage"
+			}
+		}
+	},
+	"GeneratorFeatures": {
+		"title": "Generators Built for Demanding Conditions",
+		"description": "Discover the features that make our fleet the most reliable choice for your power needs.",
+		"items": {
+			"uaeReady": {
+				"title": "UAE-Ready Performance",
+				"description": "Built for tough site conditions."
+			},
+			"range": {
+				"title": "20kVA–1500kVA Range",
+				"description": "Power options for every scale."
+			},
+			"reliableOutput": {
+				"title": "Reliable Power Output",
+				"description": "Stable supply for daily operations."
+			},
+			"flexible": {
+				"title": "Flexible Rental Plans",
+				"description": "Short-term and long-term options."
+			},
+			"fast": {
+				"title": "Fast Deployment",
+				"description": "Quick delivery when you need it."
+			},
+			"support": {
+				"title": "24/7 Support",
+				"description": "Assistance whenever required."
+			}
+		}
+	}
+}

@@ -1,28 +1,24 @@
 import { Lightbulb, ShieldCheck, Users, Zap } from "lucide-react";
 
-export const VALUES = [
+export const getValues = (t: (key: string) => string) => [
 	{
-		title: "Reliability",
-		description:
-			"We understand that power is the lifeblood of your operations. We deliver systems you can count on, every single time.",
+		title: t("items.reliability.title"),
+		description: t("items.reliability.description"),
 		icon: ShieldCheck,
 	},
 	{
-		title: "Efficiency",
-		description:
-			"From rapid deployment to fuel optimization, we design our solutions to maximize output while minimizing waste.",
+		title: t("items.efficiency.title"),
+		description: t("items.efficiency.description"),
 		icon: Zap,
 	},
 	{
-		title: "Partnership",
-		description:
-			"We don't just supply equipment; we work closely with you to understand your needs and engineer the perfect solution.",
+		title: t("items.partnership.title"),
+		description: t("items.partnership.description"),
 		icon: Users,
 	},
 	{
-		title: "Innovation",
-		description:
-			"The energy landscape is changing. We continuously adopt new technologies and practices to offer smarter, cleaner power.",
+		title: t("items.innovation.title"),
+		description: t("items.innovation.description"),
 		icon: Lightbulb,
 	},
 ];

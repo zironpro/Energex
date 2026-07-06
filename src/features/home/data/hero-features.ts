@@ -1,24 +1,24 @@
 import { Activity, BarChart3, Clock, MapPin } from "lucide-react";
 
-export const features = [
+export const getFeatures = (t: (key: string) => string) => [
 	{
-		title: "Reliable",
-		description: "99.9% uptime promise",
+		title: t("items.reliable.title"),
+		description: t("items.reliable.description"),
 		icon: Activity,
 	},
 	{
-		title: "Scalable",
-		description: "From small to large scale",
+		title: t("items.scalable.title"),
+		description: t("items.scalable.description"),
 		icon: BarChart3,
 	},
 	{
-		title: "Available 24/7",
-		description: "Always ready to support",
+		title: t("items.available.title"),
+		description: t("items.available.description"),
 		icon: Clock,
 	},
 	{
-		title: "Across UAE",
-		description: "Nationwide coverage",
+		title: t("items.across.title"),
+		description: t("items.across.description"),
 		icon: MapPin,
 	},
 ];

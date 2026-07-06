@@ -1,0 +1,41 @@
+{
+	"Hero": {
+		"title1": "OUR",
+		"title2": "PRODUCTS",
+		"description": "Explore our extensive range of high-quality products designed for maximum performance, reliability, and efficiency."
+	},
+	"ProductGrid": {
+		"title": "Generator Fleet",
+		"description": "Discover our versatile range of high-performance generators, perfectly suited to handle anything from local events to massive industrial power demands.",
+		"premium": "PREMIUM",
+		"quote": "Quote",
+		"generatorType": "kVA generator",
+		"items": {
+			"p50": {
+				"title": "50 kVA Generator",
+				"description": "Compact and efficient. Ideal for small events, retail backups, and temporary small-scale setups.",
+				"specs": ["Low emissions", "Ultra-silent", "Fuel efficient", "Portable"]
+			},
+			"p100": {
+				"title": "100 kVA Generator",
+				"description": "Versatile and reliable power for construction sites, medium-sized events, and commercial facilities.",
+				"specs": ["Heavy-duty", "Extended runtime", "Quick deploy", "Reliable"]
+			},
+			"p250": {
+				"title": "250 kVA Generator",
+				"description": "Robust industrial-grade power tailored for large-scale operations and critical infrastructure backups.",
+				"specs": ["High capacity", "Weather proof", "Smart monitor", "Industrial"]
+			},
+			"p500": {
+				"title": "500 kVA Generator",
+				"description": "Massive power output designed to support expansive events, factories, and emergency grids.",
+				"specs": ["Parallel ready", "Max efficiency", "24/7 uptime", "Grid support"]
+			},
+			"p1000": {
+				"title": "1000 kVA Generator",
+				"description": "The ultimate powerhouse for utility-scale demands, major industrial plants, and massive temporary power stations.",
+				"specs": ["Utility grade", "Containerized", "Load manage", "Ultimate power"]
+			}
+		}
+	}
+}

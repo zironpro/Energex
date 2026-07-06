@@ -1,0 +1,91 @@
+{
+	"Hero": {
+		"title1": "RELIABLE POWER.",
+		"title2": "PROVEN PERFORMANCE.",
+		"description": "We are redefining the standards of power generation and supply. Pioneering reliable, scalable, and innovative energy solutions for a rapidly evolving world."
+	},
+	"AboutUs": {
+		"title": "Reliability Built on Local Expertise",
+		"p1": "As a newly established leader in the UAE, Energex Equipment Rental partners with operators to deliver high-standard generator rental systems for your specific site and project.",
+		"p2": "Our approach combines deep local expertise with a customer-first approach. By integrating compliant, well-maintained equipment, offering flexible packages and providing proactive technical care, we secure uninterrupted operations for every client, from delivery to installation.",
+		"stats": {
+			"powerRange": "Power Range.",
+			"support": "Technical Support.",
+			"ambient": "Ambient design."
+		},
+		"imageText1": "UAE Based",
+		"imageText2": "Reliable Power Systems"
+	},
+	"MissionVision": {
+		"items": {
+			"mission": {
+				"label": "MISSION",
+				"title": "DRIVEN BY POWER. BUILT ON TRUST.",
+				"desc": "Power your projects with Energex's reliable diesel generators from 20kVA to 1500kVA, delivering efficient and uninterrupted power across Dubai and the UAE."
+			},
+			"vision": {
+				"label": "VISION",
+				"title": "DEPENDABLE POWER FOR EVERY INDUSTRY.",
+				"desc": "Whether you need temporary site power or critical emergency backup, Energex delivers reliable generator solutions backed by quality equipment, experienced professionals, and responsive support. We help businesses stay powered with confidence across the UAE."
+			}
+		}
+	},
+	"Values": {
+		"subtitle": "Core Values",
+		"title": "What Drives Us Forward",
+		"items": {
+			"reliability": {
+				"title": "Reliability",
+				"description": "We understand that power is the lifeblood of your operations. We deliver systems you can count on, every single time."
+			},
+			"efficiency": {
+				"title": "Efficiency",
+				"description": "From rapid deployment to fuel optimization, we design our solutions to maximize output while minimizing waste."
+			},
+			"partnership": {
+				"title": "Partnership",
+				"description": "We don't just supply equipment; we work closely with you to understand your needs and engineer the perfect solution."
+			},
+			"innovation": {
+				"title": "Innovation",
+				"description": "The energy landscape is changing. We continuously adopt new technologies and practices to offer smarter, cleaner power."
+			}
+		}
+	},
+	"LocalFocus": {
+		"title": "Powering All Seven Emirates",
+		"descPart1": "As part of the ",
+		"descBold": "Zactic Group",
+		"descPart2": ", Energex operates from our headquarters in Dubai. We have established reliable local networks to provide comprehensive support and distribution throughout the UAE.",
+		"emirates": {
+			"abuDhabi": {
+				"name": "Abu Dhabi",
+				"desc": "Capital hub for infrastructure and heavy industries."
+			},
+			"dubai": {
+				"name": "Dubai",
+				"desc": "Global center for trade, events, and rapid construction."
+			},
+			"sharjah": {
+				"name": "Sharjah",
+				"desc": "Key industrial zones powering manufacturing."
+			},
+			"ajman": {
+				"name": "Ajman",
+				"desc": "Growing business hub with expanding sectors."
+			},
+			"ummAlQuwain": {
+				"name": "Umm Al Quwain",
+				"desc": "Developing marine and local manufacturing."
+			},
+			"rasAlKhaimah": {
+				"name": "Ras Al Khaimah",
+				"desc": "Leading in ceramics, quarrying, and materials."
+			},
+			"fujairah": {
+				"name": "Fujairah",
+				"desc": "Strategic port city driving oil and shipping logistics."
+			}
+		}
+	}
+}

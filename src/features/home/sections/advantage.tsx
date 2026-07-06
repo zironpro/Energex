@@ -6,6 +6,7 @@ import Image from "next/image";
 
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
@@ -15,35 +16,30 @@ type AdvantageItem = {
 	image?: string;
 };
 
-const advantages: AdvantageItem[] = [
+const getAdvantages = (t: (key: string) => string): AdvantageItem[] => [
 	{
-		title: "Rapid Delivery",
-		description:
-			"On-site and operational on demand, with custom equipment tailored specifically for your environment.",
+		title: t("items.rapid.title"),
+		description: t("items.rapid.description"),
 		image: "/advantage/rapid-delivery.webp",
 	},
 	{
-		title: "Total Reliability",
-		description:
-			"Every unit is backed by rigorous preventive maintenance to secure peak uptime and regulatory compliance.",
+		title: t("items.reliable.title"),
+		description: t("items.reliable.description"),
 		image: "/advantage/total-reliability.webp",
 	},
 	{
-		title: "Smart Engineering",
-		description:
-			"Beyond a rental service, we size, sync and support your specific power requirements.",
+		title: t("items.smart.title"),
+		description: t("items.smart.description"),
 		image: "/advantage/smart-engineering.webp",
 	},
 	{
-		title: "Expert Consulting",
-		description:
-			"Attentive 24/7 technical assistance to maintain uninterrupted operations.",
+		title: t("items.expert.title"),
+		description: t("items.expert.description"),
 		image: "/advantage/expert-consulting.webp",
 	},
 	{
-		title: "Flexible Packages",
-		description:
-			"Tailored rental terms and project-based options for your business.",
+		title: t("items.flexible.title"),
+		description: t("items.flexible.description"),
 		image: "/advantage/flexible-packages.webp",
 	},
 ];
@@ -54,6 +50,9 @@ const swipePower = (offset: number, velocity: number) => {
 };
 
 export function Advantage() {
+	const t = useTranslations("home.Advantage");
+	const advantages = getAdvantages(t);
+
 	const [activeIndex, setActiveIndex] = useState(2);
 	const lastScrollTime = useRef(0);
 
@@ -84,35 +83,29 @@ export function Advantage() {
 				<div className="mb-20 grid grid-cols-1 items-center gap-8 px-4 md:grid-cols-2 md:px-12">
 					<ScrollReveal direction="left">
 						<h2 className="font-bold text-4xl text-blue-600 tracking-tighter md:text-6xl">
-							Why Choose Energex?
+							{t("title")}
 						</h2>
 					</ScrollReveal>
 					<ScrollReveal delay={0.2} direction="right">
 						<div className="max-w-lg font-medium text-lg text-slate-500 md:text-xl">
 							<p className="mb-6">
 								<strong className="mb-2 block font-bold text-slate-900">
-									Premium Generator Solutions UAE
+									{t("subtitleHeader")}
 								</strong>
-								We supply high-performance diesel and gas generators from
-								trusted manufacturers, delivering reliable backup and prime
-								power for every industry.
+								{t("subtitleText")}
 							</p>
 							<ul className="space-y-4">
 								<li className="flex items-center gap-3">
 									<div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-600">
 										<ChevronRight className="h-4 w-4" strokeWidth={3} />
 									</div>
-									<span className="text-slate-700">
-										Customized Power Systems
-									</span>
+									<span className="text-slate-700">{t("bullet1")}</span>
 								</li>
 								<li className="flex items-center gap-3">
 									<div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-600">
 										<ChevronRight className="h-4 w-4" strokeWidth={3} />
 									</div>
-									<span className="text-slate-700">
-										Fast Delivery & 24/7 Support
-									</span>
+									<span className="text-slate-700">{t("bullet2")}</span>
 								</li>
 							</ul>
 						</div>

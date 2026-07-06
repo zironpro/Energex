@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export function Hero() {
+	const t = useTranslations("company.Hero");
 	return (
 		<section className="relative flex flex-col justify-center overflow-hidden px-6 pt-40 pb-8 lg:px-16">
 			{/* Background Icon */}
@@ -31,10 +33,8 @@ export function Hero() {
 							ease: [0.21, 0.47, 0.32, 0.98],
 						}}
 					>
-						RELIABLE POWER. <br className="hidden md:block" />
-						<span className="text-blue-600">
-							PROVEN PERFORMANCE.
-						</span>
+						{t("title1")} <br className="hidden md:block" />
+						<span className="text-blue-600">{t("title2")}</span>
 					</motion.h1>
 
 					<motion.p
@@ -43,8 +43,7 @@ export function Hero() {
 						initial={{ opacity: 0 }}
 						transition={{ duration: 1, delay: 0.6 }}
 					>
-						We are redefining the standards of power generation and supply.
-						Pioneering reliable, scalable, and innovative energy solutions for a rapidly evolving world.
+						{t("description")}
 					</motion.p>
 				</div>
 			</div>

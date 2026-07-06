@@ -3,6 +3,7 @@
 import Image from "next/image";
 
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import {
 	ScrollReveal,
@@ -12,16 +13,18 @@ import {
 
 import { Link } from "@/i18n/navigation";
 
-import { products } from "../data/products";
+import { getProducts } from "../data/products";
 
 export function Products() {
+	const t = useTranslations("home.Products");
+	const products = getProducts(t);
 	return (
 		<section className="relative bg-white pt-8 pb-12 lg:pt-12 lg:pb-16">
 			<div className="container mx-auto px-6">
 				<div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between lg:mb-16">
 					<ScrollReveal>
 						<h2 className="font-extrabold text-4xl text-blue-600 tracking-tight lg:text-5xl">
-							Power for Every Need.
+							{t("title")}
 						</h2>
 					</ScrollReveal>
 					<ScrollReveal>
@@ -29,7 +32,7 @@ export function Products() {
 							className="group flex items-center font-bold text-blue-600 transition-colors hover:text-blue-700"
 							href="/products"
 						>
-							View All Generators{" "}
+							{t("viewAll")}{" "}
 							<ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
 						</Link>
 					</ScrollReveal>
@@ -64,7 +67,7 @@ export function Products() {
 									{product.capacity}
 								</h3>
 								<div className="flex items-center font-semibold text-gray-500 text-sm transition-colors group-hover:text-blue-600">
-									View Details{" "}
+									{t("viewDetails")}{" "}
 									<ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
 								</div>
 							</ScrollRevealItem>

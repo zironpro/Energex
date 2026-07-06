@@ -7,6 +7,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import Flip from "gsap/Flip";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
 
@@ -21,6 +22,7 @@ export function MainHero() {
 	const heroRef = useRef<HTMLElement>(null);
 	const smallImgRef = useRef<HTMLDivElement>(null);
 	const targetImgRef = useRef<HTMLDivElement>(null);
+	const t = useTranslations("home.MainHero");
 
 	useEffect(() => {
 		// Ensure plugins are registered on client
@@ -149,7 +151,7 @@ export function MainHero() {
 			<div className="relative z-30 flex h-full w-full flex-col items-center justify-center px-2 pt-16 pb-24 md:pb-0">
 				<div className="flex w-full max-w-7xl flex-row items-center justify-center gap-3 sm:gap-6 md:gap-8 lg:gap-12">
 					<h1 className="top-text-left font-bold text-2xl text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
-						Reliable
+						{t("title1")}
 					</h1>
 
 					{/* Medium Image Placeholder for Flip */}
@@ -161,20 +163,20 @@ export function MainHero() {
 					</div>
 
 					<h1 className="top-text-right font-bold text-2xl text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
-						Scalable
+						{t("title2")}
 					</h1>
 				</div>
 
 				<div className="bottom-reveal mt-8 text-center md:mt-4">
 					<h1 className="font-bold text-3xl text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
-						Power Solutions
+						{t("subtitle")}
 					</h1>
 					<div className="flex flex-wrap justify-center gap-4 pt-6 md:pt-8">
 						<Link
 							className="inline-flex h-12 items-center justify-center rounded-lg bg-black px-8 font-semibold text-sm text-white transition-transform hover:scale-105"
 							href="/contact"
 						>
-							Request a Quote
+							{t("requestQuote")}
 							<Image
 								alt=""
 								className="ml-2 h-4 w-4 invert"

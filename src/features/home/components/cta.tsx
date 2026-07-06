@@ -1,8 +1,11 @@
 import Image from "next/image";
 
+import { useTranslations } from "next-intl";
+
 import { Button } from "@/components/ui/button";
 
 export function CTA() {
+	const t = useTranslations("common.CTA");
 	return (
 		<section className="relative overflow-hidden bg-slate-950 py-16 text-white">
 			{/* Background Logo Overflowing */}
@@ -23,12 +26,10 @@ export function CTA() {
 			<div className="container relative z-10 mx-auto flex flex-col items-center justify-between gap-8 px-6 text-center md:flex-row md:px-12 md:text-left">
 				<div className="max-w-2xl">
 					<h2 className="mb-4 font-bold text-3xl tracking-tighter md:text-4xl">
-						Ready to Power Your Next Project?
+						{t("title")}
 					</h2>
 					<p className="font-medium text-base text-slate-400 md:text-lg">
-						Get in touch with our team today to discover how Energex can provide
-						reliable, efficient, and scalable power solutions tailored to your
-						unique requirements.
+						{t("description")}
 					</p>
 				</div>
 				<div className="flex-shrink-0">
@@ -36,7 +37,7 @@ export function CTA() {
 						className="group flex h-auto cursor-pointer items-center gap-2 rounded-lg bg-blue-600 px-8 py-4 font-bold text-base text-white hover:bg-blue-700"
 						size="lg"
 					>
-						Contact Us Today
+						{t("button")}
 						<Image
 							alt="Arrow"
 							className="brightness-0 invert transition-transform duration-300 group-hover:translate-x-1"

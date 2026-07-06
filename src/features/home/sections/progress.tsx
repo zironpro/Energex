@@ -2,15 +2,19 @@
 
 import Image from "next/image";
 
+import { useTranslations } from "next-intl";
+
 import {
 	ScrollReveal,
 	ScrollRevealGroup,
 	ScrollRevealItem,
 } from "@/components/ui/scroll-reveal";
 
-import { bentoLayouts, industries } from "../data/progress";
+import { bentoLayouts, getIndustries } from "../data/progress";
 
 export function Progress() {
+	const t = useTranslations("home.Progress");
+	const industries = getIndustries(t);
 	return (
 		<section className="relative w-full bg-slate-50 py-16 md:py-24">
 			<div className="mx-auto w-full max-w-7xl px-6 md:px-12">
@@ -18,12 +22,10 @@ export function Progress() {
 				<div className="mb-12 flex flex-col justify-between gap-6 md:mb-16 md:flex-row md:items-end">
 					<ScrollReveal>
 						<h2 className="mb-4 font-bold text-4xl text-blue-600 tracking-tighter md:text-5xl lg:text-6xl">
-							Powering the UAE
+							{t("title")}
 						</h2>
 						<p className="max-w-2xl font-medium text-base text-slate-500 md:text-lg">
-							Best power generator solutions designed for UAE’s most demanding
-							industries with reliable, efficient, and uninterrupted
-							performance.
+							{t("description")}
 						</p>
 					</ScrollReveal>
 				</div>

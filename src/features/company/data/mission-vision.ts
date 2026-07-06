@@ -1,14 +1,14 @@
-export const SECTIONS = [
+export const getSections = (t: (key: string) => string) => [
 	{
-		label: "MISSION",
-		title: "DRIVEN BY POWER. BUILT ON TRUST.",
-		desc: "Power your projects with Energex's reliable diesel generators from 20kVA to 1500kVA, delivering efficient and uninterrupted power across Dubai and the UAE.",
+		label: t("items.mission.label"),
+		title: t("items.mission.title"),
+		desc: t("items.mission.desc"),
 		image: "/images/mission.webp",
 	},
 	{
-		label: "VISION",
-		title: "DEPENDABLE POWER FOR EVERY INDUSTRY.",
-		desc: "Whether you need temporary site power or critical emergency backup, Energex delivers reliable generator solutions backed by quality equipment, experienced professionals, and responsive support. We help businesses stay powered with confidence across the UAE.",
+		label: t("items.vision.label"),
+		title: t("items.vision.title"),
+		desc: t("items.vision.desc"),
 		image: "/images/vision.webp",
 	},
 ];

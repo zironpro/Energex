@@ -6,6 +6,7 @@ import Image from "next/image";
 
 import Autoplay from "embla-carousel-autoplay";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -15,9 +16,12 @@ import {
 	CarouselItem,
 } from "@/components/ui/carousel";
 
-import { features } from "../data/feature-showcase";
+import { getFeatures } from "../data/feature-showcase";
 
 export function FeatureShowcase() {
+	const t = useTranslations("solutions.FeatureShowcase");
+	const features = getFeatures(t);
+
 	const [api, setApi] = useState<CarouselApi>();
 	const [current, setCurrent] = useState(0);
 
@@ -41,18 +45,14 @@ export function FeatureShowcase() {
 					<div className="flex flex-col lg:col-span-5">
 						<div className="mb-12">
 							<h2 className="mb-6 font-black text-3xl text-blue-600 uppercase leading-[1.1] sm:text-4xl md:text-5xl">
-								Power Solutions <br />
-								<span className="text-blue-600">You Can Depend On</span>
+								{t("title1")} <br />
+								<span className="text-blue-600">{t("title2")}</span>
 							</h2>
 							<p className="mb-8 text-base text-slate-600 leading-relaxed">
-								We provide premium diesel generator rental solutions across the
-								UAE for construction, commercial, industrial, and emergency
-								power requirements. Our soundproof generators from 20kVA to
-								1500kVA are designed for maximum efficiency, reliability, and
-								24/7 operation.
+								{t("description")}
 							</p>
 							<Button className="group h-12 rounded-lg bg-slate-900 px-8 font-bold text-white hover:bg-slate-800">
-								Get Started
+								{t("getStarted")}
 								<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
 							</Button>
 						</div>

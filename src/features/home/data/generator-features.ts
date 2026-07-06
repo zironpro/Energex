@@ -7,40 +7,40 @@ import {
 	Zap,
 } from "lucide-react";
 
-export const cards = [
+export const getCards = (t: (key: string) => string) => [
 	{
-		title: "UAE-Ready Performance",
-		description: "Built for tough site conditions.",
+		title: t("items.uaeReady.title"),
+		description: t("items.uaeReady.description"),
 		icon: ShieldCheck,
 		image: "/advantage/total-reliability.webp",
 	},
 	{
-		title: "20kVA–1500kVA Range",
-		description: "Power options for every scale.",
+		title: t("items.range.title"),
+		description: t("items.range.description"),
 		icon: BatteryCharging,
 		image: "/advantage/smart-engineering.webp",
 	},
 	{
-		title: "Reliable Power Output",
-		description: "Stable supply for daily operations.",
+		title: t("items.reliableOutput.title"),
+		description: t("items.reliableOutput.description"),
 		icon: Zap,
 		image: "/advantage/expert-consulting.webp",
 	},
 	{
-		title: "Flexible Rental Plans",
-		description: "Short-term and long-term options.",
+		title: t("items.flexible.title"),
+		description: t("items.flexible.description"),
 		icon: CalendarClock,
 		image: "/advantage/flexible-packages.webp",
 	},
 	{
-		title: "Fast Deployment",
-		description: "Quick delivery when you need it.",
+		title: t("items.fast.title"),
+		description: t("items.fast.description"),
 		icon: Truck,
 		image: "/advantage/rapid-delivery.webp",
 	},
 	{
-		title: "24/7 Support",
-		description: "Assistance whenever required.",
+		title: t("items.support.title"),
+		description: t("items.support.description"),
 		icon: Headphones,
 		image: "/advantage/total-reliability.webp",
 	},

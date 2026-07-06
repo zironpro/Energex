@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export function Hero() {
+	const t = useTranslations("solutions.Hero");
 	return (
 		<section className="relative flex flex-col justify-center overflow-hidden px-6 pt-40 pb-8 lg:px-16">
 			{/* Background Icon */}
@@ -31,10 +33,8 @@ export function Hero() {
 							ease: [0.21, 0.47, 0.32, 0.98],
 						}}
 					>
-						EMPOWERING <br className="hidden md:block" />
-						<span className="text-blue-600">
-							EVERY PROJECT
-						</span>
+						{t("title1")} <br className="hidden md:block" />
+						<span className="text-blue-600">{t("title2")}</span>
 					</motion.h1>
 
 					<motion.p
@@ -43,7 +43,7 @@ export function Hero() {
 						initial={{ opacity: 0 }}
 						transition={{ duration: 1, delay: 0.6 }}
 					>
-						We provide premium diesel generator rental solutions Dubai for construction, commercial, industrial, and emergency power requirements.
+						{t("description")}
 					</motion.p>
 				</div>
 			</div>

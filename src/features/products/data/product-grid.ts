@@ -1,37 +1,57 @@
-export const products = [
+export const getProducts = (t: (key: string) => string) => [
 	{
-		title: "50 kVA Generator",
-		description:
-			"Compact and efficient. Ideal for small events, retail backups, and temporary small-scale setups.",
+		title: t("items.p50.title"),
+		description: t("items.p50.description"),
 		image: "/products/50kva.png",
-		specs: ["Low emissions", "Ultra-silent", "Fuel efficient", "Portable"],
+		specs: [
+			t("items.p50.specs.0"),
+			t("items.p50.specs.1"),
+			t("items.p50.specs.2"),
+			t("items.p50.specs.3"),
+		],
 	},
 	{
-		title: "100 kVA Generator",
-		description:
-			"Versatile and reliable power for construction sites, medium-sized events, and commercial facilities.",
+		title: t("items.p100.title"),
+		description: t("items.p100.description"),
 		image: "/products/100kva.png",
-		specs: ["Heavy-duty", "Extended runtime", "Quick deploy", "Reliable"],
+		specs: [
+			t("items.p100.specs.0"),
+			t("items.p100.specs.1"),
+			t("items.p100.specs.2"),
+			t("items.p100.specs.3"),
+		],
 	},
 	{
-		title: "250 kVA Generator",
-		description:
-			"Robust industrial-grade power tailored for large-scale operations and critical infrastructure backups.",
+		title: t("items.p250.title"),
+		description: t("items.p250.description"),
 		image: "/products/250kva.png",
-		specs: ["High capacity", "Weather proof", "Smart monitor", "Industrial"],
+		specs: [
+			t("items.p250.specs.0"),
+			t("items.p250.specs.1"),
+			t("items.p250.specs.2"),
+			t("items.p250.specs.3"),
+		],
 	},
 	{
-		title: "500 kVA Generator",
-		description:
-			"Massive power output designed to support expansive events, factories, and emergency grids.",
+		title: t("items.p500.title"),
+		description: t("items.p500.description"),
 		image: "/products/500kva.png",
-		specs: ["Parallel ready", "Max efficiency", "24/7 uptime", "Grid support"],
+		specs: [
+			t("items.p500.specs.0"),
+			t("items.p500.specs.1"),
+			t("items.p500.specs.2"),
+			t("items.p500.specs.3"),
+		],
 	},
 	{
-		title: "1000 kVA Generator",
-		description:
-			"The ultimate powerhouse for utility-scale demands, major industrial plants, and massive temporary power stations.",
+		title: t("items.p1000.title"),
+		description: t("items.p1000.description"),
 		image: "/products/1000kva.png",
-		specs: ["Utility grade", "Containerized", "Load manage", "Ultimate power"],
+		specs: [
+			t("items.p1000.specs.0"),
+			t("items.p1000.specs.1"),
+			t("items.p1000.specs.2"),
+			t("items.p1000.specs.3"),
+		],
 	},
 ];

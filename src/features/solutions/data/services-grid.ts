@@ -2,22 +2,20 @@ import React from "react";
 
 import { BarChart, Headset, Truck } from "lucide-react";
 
-export const services = [
+export const getServices = (t: (key: string) => string) => [
 	{
-		title: "Strategic Assessment",
-		description:
-			"Expert load calculation to optimise efficiency and performance.",
+		title: t("items.assessment.title"),
+		description: t("items.assessment.description"),
 		icon: React.createElement(BarChart, { className: "h-6 w-6 text-blue-600" }),
 	},
 	{
-		title: "Logistics & Installation",
-		description:
-			"Precision delivery and professionals on-site setup for operational readiness.",
+		title: t("items.logistics.title"),
+		description: t("items.logistics.description"),
 		icon: React.createElement(Truck, { className: "h-6 w-6 text-blue-600" }),
 	},
 	{
-		title: "24/7 Support",
-		description: "Rapid-response technicians ready to troubleshoot any issue.",
+		title: t("items.support.title"),
+		description: t("items.support.description"),
 		icon: React.createElement(Headset, { className: "h-6 w-6 text-blue-600" }),
 	},
 ];

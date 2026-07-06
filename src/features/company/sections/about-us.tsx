@@ -3,8 +3,10 @@
 import Image from "next/image";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export function AboutUs() {
+	const t = useTranslations("company.AboutUs");
 	return (
 		<section className="relative overflow-hidden bg-white py-12 lg:py-16">
 			<div className="container mx-auto max-w-7xl px-6">
@@ -17,7 +19,7 @@ export function AboutUs() {
 							whileInView={{ opacity: 1, y: 0 }}
 						>
 							<h2 className="mt-4 font-black text-3xl text-blue-600 leading-tight sm:text-4xl lg:text-5xl">
-								Reliability Built on Local Expertise
+								{t("title")}
 							</h2>
 						</motion.div>
 
@@ -28,18 +30,8 @@ export function AboutUs() {
 							viewport={{ once: true }}
 							whileInView={{ opacity: 1, y: 0 }}
 						>
-							<p>
-								As a newly established leader in the UAE, Energex Equipment
-								Rental partners with operators to deliver high-standard
-								generator rental systems for your specific site and project.
-							</p>
-							<p>
-								Our approach combines deep local expertise with a customer-first
-								approach. By integrating compliant, well-maintained equipment,
-								offering flexible packages and providing proactive technical
-								care, we secure uninterrupted operations for every client, from
-								delivery to installation.
-							</p>
+							<p>{t("p1")}</p>
+							<p>{t("p2")}</p>
 						</motion.div>
 
 						<motion.div
@@ -53,14 +45,16 @@ export function AboutUs() {
 								<h4 className="font-bold text-2xl text-slate-900 md:text-3xl">
 									20kVA - 1500kVA
 								</h4>
-								<p className="mt-2 font-medium text-slate-500">Power Range.</p>
+								<p className="mt-2 font-medium text-slate-500">
+									{t("stats.powerRange")}
+								</p>
 							</div>
 							<div>
 								<h4 className="font-bold text-2xl text-slate-900 md:text-3xl">
 									24/7
 								</h4>
 								<p className="mt-2 font-medium text-slate-500">
-									Technical Support.
+									{t("stats.support")}
 								</p>
 							</div>
 							<div>
@@ -68,7 +62,7 @@ export function AboutUs() {
 									50°C
 								</h4>
 								<p className="mt-2 font-medium text-slate-500">
-									Ambient design.
+									{t("stats.ambient")}
 								</p>
 							</div>
 						</motion.div>
@@ -91,10 +85,10 @@ export function AboutUs() {
 							/>
 							<div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
 							<div className="absolute bottom-0 left-0 p-8">
-								<div className="font-bold text-4xl text-white">UAE Based</div>
-								<div className="mt-2 text-slate-300">
-									Reliable Power Systems
+								<div className="font-bold text-4xl text-white">
+									{t("imageText1")}
 								</div>
+								<div className="mt-2 text-slate-300">{t("imageText2")}</div>
 							</div>
 						</div>
 					</motion.div>

@@ -5,10 +5,13 @@ import { useState } from "react";
 import Image from "next/image";
 
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
-import { SECTIONS } from "../data/mission-vision";
+import { getSections } from "../data/mission-vision";
 
 export function MissionVision() {
+	const t = useTranslations("company.MissionVision");
+	const SECTIONS = getSections(t);
 	const [activeIndex, setActiveIndex] = useState(0);
 
 	return (

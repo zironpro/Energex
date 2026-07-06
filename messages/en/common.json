@@ -1,0 +1,62 @@
+{
+	"Navbar": {
+		"links": {
+			"home": "Home",
+			"solutions": "Solutions",
+			"products": "Products",
+			"company": "Company",
+			"contact": "Contact"
+		},
+		"actions": {
+			"requestQuote": "Request Quote"
+		},
+		"languages": {
+			"en": "English (EN)",
+			"ar": "Arabic (AR)"
+		}
+	},
+	"Footer": {
+		"slogan": "Empowering the UAE with reliable, scalable, and efficient power solutions for every industry and event.",
+		"columns": {
+			"company": {
+				"title": "Company",
+				"about": "About Us",
+				"careers": "Careers",
+				"news": "News & Press",
+				"contact": "Contact"
+			},
+			"solutions": {
+				"title": "Solutions",
+				"diesel": "Diesel Generators",
+				"hybrid": "Hybrid Power Systems",
+				"event": "Event Power",
+				"fuel": "Fuel Management"
+			},
+			"contact": {
+				"title": "Contact Us",
+				"email": "Email",
+				"phone": "Phone",
+				"address": "Address",
+				"addressLines": {
+					"line1": "Energex Equipment Rental,",
+					"line2": "Al Quasis Industrial Second,",
+					"line3": "Plot No. 238-0"
+				}
+			}
+		},
+		"bottom": {
+			"rights": "Energex",
+			"privacy": "Privacy Policy",
+			"terms": "Terms of Service"
+		}
+	},
+	"CTA": {
+		"title": "Ready to Power Your Next Project?",
+		"description": "Get in touch with our team today to discover how Energex can provide reliable, efficient, and scalable power solutions tailored to your unique requirements.",
+		"button": "Contact Us Today"
+	},
+	"FloatingCallButton": {
+		"support": "24/7 Support",
+		"callNow": "Call Now"
+	}
+}

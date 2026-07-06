@@ -1,4 +1,4 @@
-export const products = [
+export const getProducts = (_t: (key: string) => string) => [
 	{
 		id: "50kva",
 		capacity: "50 kVA",

@@ -3,10 +3,12 @@
 import { useRef } from "react";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 
 export function StoryScroll() {
+	const t = useTranslations("home.StoryScroll");
 	const containerRef = useRef<HTMLDivElement>(null);
 
 	// Track scroll progress for parallax effect
@@ -51,7 +53,7 @@ export function StoryScroll() {
 						whileInView={{ opacity: 1, y: 0 }}
 					>
 						<h1 className="font-bold text-5xl text-white tracking-tighter md:text-7xl lg:text-8xl">
-							Reliable Power, Anytime
+							{t("title")}
 						</h1>
 					</motion.div>
 
@@ -62,8 +64,7 @@ export function StoryScroll() {
 						viewport={{ once: true }}
 						whileInView={{ opacity: 1, y: 0 }}
 					>
-						Discover unparalleled performance and breathtaking design, perfectly
-						synced with every scroll. Power reinvented.
+						{t("description")}
 					</motion.p>
 
 					<motion.div
@@ -77,7 +78,7 @@ export function StoryScroll() {
 							className="group h-14 rounded-full px-8 font-semibold text-base transition-all duration-300 hover:translate-x-1 hover:-translate-y-1"
 							size="lg"
 						>
-							<span>Discover More</span>
+							<span>{t("discoverMore")}</span>
 							<svg
 								className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
 								fill="none"

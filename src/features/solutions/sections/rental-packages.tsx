@@ -3,14 +3,17 @@
 import Image from "next/image";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 
 import { Link } from "@/i18n/navigation";
 
-import { packages } from "../data/rental-packages";
+import { getPackages } from "../data/rental-packages";
 
 export function RentalPackages() {
+	const t = useTranslations("solutions.RentalPackages");
+	const packages = getPackages(t);
 	return (
 		<section className="bg-white px-6 py-24 lg:px-16">
 			<div className="container mx-auto max-w-7xl">
@@ -22,7 +25,7 @@ export function RentalPackages() {
 						viewport={{ once: true }}
 						whileInView={{ opacity: 1, y: 0 }}
 					>
-						Rental Packages
+						{t("title")}
 					</motion.h2>
 					<motion.p
 						className="text-base text-slate-600 leading-relaxed md:text-lg"
@@ -31,8 +34,7 @@ export function RentalPackages() {
 						viewport={{ once: true }}
 						whileInView={{ opacity: 1, y: 0 }}
 					>
-						Our rental packages are designed to fit the needs of our customers —
-						from short-term projects to long-term contracts.
+						{t("description")}
 					</motion.p>
 				</div>
 
@@ -61,7 +63,7 @@ export function RentalPackages() {
 								nativeButton={false}
 								render={<Link href="/contact" />}
 							>
-								Request a Quote
+								{t("requestQuote")}
 								<Image
 									alt=""
 									className="ml-2 h-4 w-4 invert"
