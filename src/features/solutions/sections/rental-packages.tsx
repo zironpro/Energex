@@ -73,7 +73,7 @@ export function RentalPackages() {
 								</p>
 
 								<Button
-									className="group mt-auto w-full justify-center rounded-lg bg-white px-6 py-6 font-bold text-blue-900 transition-colors hover:bg-slate-50"
+									className="group mt-auto w-full justify-center rounded-lg bg-white px-6 py-6 font-bold text-blue-900 transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-slate-50"
 									render={<Link href="/contact" />}
 								>
 									{t("requestQuote")}

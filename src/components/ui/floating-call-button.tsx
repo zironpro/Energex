@@ -16,7 +16,7 @@ export function FloatingCallButton() {
 			transition={{ type: "spring", stiffness: 260, damping: 20, delay: 1 }}
 		>
 			<Link
-				className="group relative flex items-center gap-3 rounded-full bg-blue-600 p-3 text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-2xl hover:shadow-blue-900/50 md:pr-6"
+				className="group relative flex items-center gap-3 rounded-full bg-blue-600 p-3 text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700 md:pr-6"
 				href="tel:+971 50 233 5477"
 			>
 				{/* Expanding outer ring animation */}

@@ -66,10 +66,6 @@ export function Products() {
 								<h3 className="mb-2 font-bold text-gray-900 text-lg lg:text-xl">
 									{product.capacity}
 								</h3>
-								<div className="flex items-center font-semibold text-gray-500 text-sm transition-colors group-hover:text-blue-600">
-									{t("viewDetails")}{" "}
-									<ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-								</div>
 							</ScrollRevealItem>
 						);
 					})}

@@ -54,7 +54,7 @@ export function FeatureShowcase() {
 								{t("description")}
 							</p>
 							<Button
-								className="group h-12 rounded-lg bg-blue-600 px-8 font-bold text-white transition-colors hover:bg-blue-700"
+								className="group h-12 rounded-lg bg-blue-600 px-8 font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700"
 								render={<Link href="/contact" />}
 							>
 								{t("getStarted")}

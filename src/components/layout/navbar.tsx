@@ -278,7 +278,7 @@ export function Navbar() {
 								{/* Footer Buttons */}
 								<div className="mt-auto flex gap-3 border-slate-100 border-t px-6 pt-4">
 									<Link
-										className="flex h-12 flex-1 items-center justify-center rounded-lg bg-blue-600 px-4 font-semibold text-white transition-colors hover:bg-blue-700"
+										className="flex h-12 flex-1 items-center justify-center rounded-lg bg-blue-600 px-4 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700"
 										href="/contact"
 										onClick={() => setIsOpen(false)}
 									>
