@@ -1,27 +1,27 @@
-export const getProducts = (_t: (key: string) => string) => [
+export const getProducts = (t: (key: string) => string) => [
 	{
 		id: "50kva",
-		capacity: "50 kVA",
+		capacity: t("items.p50"),
 		image: "/products/50kva.png",
 	},
 	{
 		id: "100kva",
-		capacity: "100 kVA",
+		capacity: t("items.p100"),
 		image: "/products/100kva.png",
 	},
 	{
 		id: "250kva",
-		capacity: "250 kVA",
+		capacity: t("items.p250"),
 		image: "/products/250kva.png",
 	},
 	{
 		id: "500kva",
-		capacity: "500 kVA",
+		capacity: t("items.p500"),
 		image: "/products/500kva.png",
 	},
 	{
 		id: "1000kva",
-		capacity: "1000 kVA",
+		capacity: t("items.p1000"),
 		image: "/products/1000kva.png",
 	},
 ];

@@ -72,12 +72,19 @@
 		}
 	},
 	"Products": {
-		"title": "Power for Every Need.",
+		"title": "Renewable Energy Solutions in Dubai",
 		"viewAll": "View All Generators",
-		"viewDetails": "View Details"
+		"viewDetails": "View Details",
+		"items": {
+			"p50": "50 kVA Silent Diesel Generator",
+			"p100": "100 kVA Commercial Diesel Generator",
+			"p250": "250 kVA Industrial Power Generator",
+			"p500": "500 kVA Heavy-Duty Generator Set",
+			"p1000": "1000 kVA Prime Power Generator"
+		}
 	},
 	"Progress": {
-		"title": "Powering the UAE",
+		"title": "Industrial Energy Solutions in Dubai",
 		"description": "Best power generator solutions designed for UAE’s most demanding industries with reliable, efficient, and uninterrupted performance.",
 		"items": {
 			"construction": {
@@ -124,7 +131,7 @@
 		}
 	},
 	"GeneratorFeatures": {
-		"title": "Generators Built for Demanding Conditions",
+		"title": "Reliable Electrical & Energy Solutions in Dubai",
 		"description": "Discover the features that make our fleet the most reliable choice for your power needs.",
 		"items": {
 			"uaeReady": {
