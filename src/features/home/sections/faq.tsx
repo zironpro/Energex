@@ -15,6 +15,8 @@ import {
 	ScrollRevealItem,
 } from "@/components/ui/scroll-reveal";
 
+import { Link } from "@/i18n/navigation";
+
 import { getFaqs } from "../data/faq";
 
 export function FAQ() {
@@ -42,7 +44,10 @@ export function FAQ() {
 								<p className="mb-8 text-slate-600 leading-relaxed">
 									{t("cantFindAnswer")}
 								</p>
-								<Button className="flex items-center gap-2 rounded-lg bg-black px-6 py-6 font-bold text-base text-white hover:bg-slate-800">
+								<Button
+									className="flex items-center gap-2 rounded-lg bg-black px-6 py-6 font-bold text-base text-white hover:bg-slate-800"
+									render={<Link href="/contact" />}
+								>
 									{t("sendEmail")}
 									<Image
 										alt="Arrow"

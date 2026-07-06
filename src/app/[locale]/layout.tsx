@@ -5,7 +5,7 @@ import "../globals.css";
 import { notFound } from "next/navigation";
 
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
@@ -23,11 +23,18 @@ const geistMono = Geist_Mono({
 	subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-	title: "Energex | Best Power Generator Supplier in Dubai | UAE",
-	description:
-		"Energex is the best power generator supplier in Dubai, providing diesel and gas generators, backup power solutions, installation, maintenance, and expert support across the UAE.",
-};
+export async function generateMetadata({
+	params,
+}: {
+	params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+	const { locale } = await params;
+	const t = await getTranslations({ locale, namespace: "common.Metadata" });
+	return {
+		title: t("title"),
+		description: t("description"),
+	};
+}
 
 export default async function RootLayout({
 	children,

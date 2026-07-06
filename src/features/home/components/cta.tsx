@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 
+import { Link } from "@/i18n/navigation";
+
 export function CTA() {
 	const t = useTranslations("common.CTA");
 	return (
@@ -35,6 +37,7 @@ export function CTA() {
 				<div className="flex-shrink-0">
 					<Button
 						className="group flex h-auto cursor-pointer items-center gap-2 rounded-lg bg-blue-600 px-8 py-4 font-bold text-base text-white hover:bg-blue-700"
+						render={<Link href="/contact" />}
 						size="lg"
 					>
 						{t("button")}

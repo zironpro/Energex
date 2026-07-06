@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/navigation";
 
 export function StoryScroll() {
 	const t = useTranslations("home.StoryScroll");
@@ -75,8 +76,8 @@ export function StoryScroll() {
 						whileInView={{ opacity: 1, y: 0 }}
 					>
 						<Button
-							className="group h-14 rounded-full px-8 font-semibold text-base transition-all duration-300 hover:translate-x-1 hover:-translate-y-1"
-							size="lg"
+							className="group h-12 rounded-lg bg-blue-600 px-8 font-semibold text-white shadow-lg transition-all hover:scale-105 hover:bg-blue-700 hover:shadow-blue-600/25"
+							render={<Link href="/contact" />}
 						>
 							<span>{t("discoverMore")}</span>
 							<svg

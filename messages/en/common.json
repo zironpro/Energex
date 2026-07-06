@@ -58,5 +58,21 @@
 	"FloatingCallButton": {
 		"support": "24/7 Support",
 		"callNow": "Call Now"
+	},
+	"Metadata": {
+		"title": "Energex | Best Power Generator Supplier in Dubai | UAE",
+		"description": "Energex is the best power generator supplier in Dubai, providing diesel and gas generators, backup power solutions, installation, maintenance, and expert support across the UAE.",
+		"Contact": {
+			"title": "Contact Us - Energex",
+			"description": "Get in touch with Energex for your reliable power solution needs."
+		},
+		"Company": {
+			"title": "Company - Energex",
+			"description": "Learn more about Energex, our mission, vision, and core values."
+		},
+		"Terms": {
+			"title": "Terms & Policies - Energex",
+			"description": "Terms of Service and Privacy Policy for Energex."
+		}
 	}
 }

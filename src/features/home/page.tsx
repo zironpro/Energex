@@ -27,16 +27,22 @@ export function HomePage() {
 			wheelMultiplier: 1,
 		});
 
-		// Force page to top and disable scrolling during intro
-		window.scrollTo(0, 0);
-		lenis.stop();
-		document.body.style.overflow = "hidden";
+		let timer: NodeJS.Timeout;
+		const introPlayed = sessionStorage.getItem("introPlayed");
 
-		// Re-enable scrolling when intro finishes
-		const timer = setTimeout(() => {
-			lenis.start();
-			document.body.style.overflow = "";
-		}, 2500);
+		if (!introPlayed) {
+			// Force page to top and disable scrolling during intro
+			window.scrollTo(0, 0);
+			lenis.stop();
+			document.body.style.overflow = "hidden";
+
+			// Re-enable scrolling when intro finishes
+			timer = setTimeout(() => {
+				lenis.start();
+				document.body.style.overflow = "";
+				sessionStorage.setItem("introPlayed", "true");
+			}, 2500);
+		}
 
 		function raf(time: number) {
 			lenis.raf(time);
@@ -46,8 +52,9 @@ export function HomePage() {
 		requestAnimationFrame(raf);
 
 		return () => {
-			clearTimeout(timer);
+			if (timer) clearTimeout(timer);
 			lenis.destroy();
+			document.body.style.overflow = "";
 		};
 	}, []);
 

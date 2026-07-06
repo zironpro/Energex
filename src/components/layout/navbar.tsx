@@ -28,7 +28,7 @@ const NavLink = ({
 }) => {
 	return (
 		<Link
-			className="group relative flex overflow-hidden pb-1 font-bold text-lg text-white transition-colors"
+			className="group relative flex overflow-hidden pb-1 text-base text-white transition-colors"
 			href={href}
 		>
 			<div className="flex">
@@ -57,7 +57,7 @@ const NavLink = ({
 			</div>
 			{/* Animated Bottom Border */}
 			<div
-				className={`absolute bottom-0 left-0 h-[3px] bg-white transition-all duration-300 ease-in-out ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
+				className={`absolute bottom-0 left-0 h-[1px] bg-white transition-all duration-300 ease-in-out ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
 			/>
 		</Link>
 	);

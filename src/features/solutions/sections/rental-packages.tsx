@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
-
 import { Link } from "@/i18n/navigation";
 
 import { getPackages } from "../data/rental-packages";
@@ -59,14 +58,13 @@ export function RentalPackages() {
 							</p>
 
 							<Button
-								className="mt-auto inline-flex h-12 w-full items-center justify-center rounded-lg bg-black px-8 font-semibold text-sm text-white transition-transform hover:scale-105 hover:bg-black/90"
-								nativeButton={false}
+								className="group mt-4 w-full justify-between rounded-lg bg-slate-100 px-6 py-6 font-bold text-slate-900 transition-colors hover:bg-blue-600 hover:text-white"
 								render={<Link href="/contact" />}
 							>
 								{t("requestQuote")}
 								<Image
 									alt=""
-									className="ml-2 h-4 w-4 invert"
+									className="ml-2 h-4 w-4 invert group-hover:invert-0"
 									height={16}
 									src="/icons/caret-right.svg"
 									width={16}

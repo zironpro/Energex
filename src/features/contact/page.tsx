@@ -136,7 +136,13 @@ export function ContactPage() {
 							</h2>
 							<p className="mb-8 text-slate-500">{t("formSubtitle")}</p>
 
-							<form className="space-y-5">
+							<form 
+								className="space-y-5"
+								onSubmit={(e) => {
+									e.preventDefault();
+									alert("Thank you for your inquiry. Our team will contact you shortly.");
+								}}
+							>
 								<div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
 									<div className="space-y-1.5">
 										<Label
@@ -147,7 +153,7 @@ export function ContactPage() {
 											<span className="text-red-500">*</span>
 										</Label>
 										<Input
-											className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-600"
+											className="h-11 border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
 											id="firstName"
 											placeholder={t("form.firstNamePlaceholder")}
 										/>
@@ -161,7 +167,7 @@ export function ContactPage() {
 											<span className="text-red-500">*</span>
 										</Label>
 										<Input
-											className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-600"
+											className="h-11 border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
 											id="lastName"
 											placeholder={t("form.lastNamePlaceholder")}
 										/>
@@ -177,7 +183,7 @@ export function ContactPage() {
 											{t("form.companyLabel")}
 										</Label>
 										<Input
-											className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-600"
+											className="h-11 border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
 											id="company"
 											placeholder={t("form.companyPlaceholder")}
 										/>
@@ -191,7 +197,7 @@ export function ContactPage() {
 											<span className="text-red-500">*</span>
 										</Label>
 										<Input
-											className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-600"
+											className="h-11 border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
 											id="email"
 											placeholder={t("form.emailPlaceholder")}
 											type="email"
@@ -208,7 +214,7 @@ export function ContactPage() {
 										<span className="text-red-500">*</span>
 									</Label>
 									<Input
-										className="h-11 border-slate-200 bg-slate-50 focus-visible:ring-blue-600"
+										className="h-11 border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
 										id="phone"
 										placeholder={t("form.phonePlaceholder")}
 										type="tel"
@@ -225,7 +231,7 @@ export function ContactPage() {
 										</Label>
 										<Select>
 											<SelectTrigger
-												className="h-11 border-slate-200 bg-slate-50 focus:ring-blue-600"
+												className="h-11 border-transparent bg-[#d0d7e1] focus:ring-blue-600"
 												id="rentalDuration"
 											>
 												<SelectValue
@@ -255,7 +261,7 @@ export function ContactPage() {
 										</Label>
 										<Select>
 											<SelectTrigger
-												className="h-11 border-slate-200 bg-slate-50 focus:ring-blue-600"
+												className="h-11 border-transparent bg-[#d0d7e1] focus:ring-blue-600"
 												id="sector"
 											>
 												<SelectValue
@@ -292,7 +298,7 @@ export function ContactPage() {
 									</Label>
 									<Select>
 										<SelectTrigger
-											className="h-11 border-slate-200 bg-slate-50 focus:ring-blue-600"
+											className="h-11 border-transparent bg-[#d0d7e1] focus:ring-blue-600"
 											id="projectType"
 										>
 											<SelectValue placeholder={t("form.typePlaceholder")} />
@@ -322,7 +328,7 @@ export function ContactPage() {
 										{t("form.messageLabel")}
 									</Label>
 									<Textarea
-										className="resize-y border-slate-200 bg-slate-50 focus-visible:ring-blue-600"
+										className="resize-y border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
 										id="message"
 										placeholder={t("form.messagePlaceholder")}
 										rows={4}
@@ -349,7 +355,7 @@ export function ContactPage() {
 									</p>
 									<Button
 										className="group h-12 w-full rounded-lg bg-blue-600 px-8 font-semibold text-white transition-colors hover:bg-blue-700 sm:w-auto"
-										type="button"
+										type="submit"
 									>
 										{t("form.submit")}
 										<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

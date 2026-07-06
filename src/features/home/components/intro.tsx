@@ -6,15 +6,25 @@ import { motion } from "framer-motion";
 
 export function Intro() {
 	const [showIntro, setShowIntro] = useState(true);
+	const [shouldRender, setShouldRender] = useState(true);
 
 	useEffect(() => {
+		const introPlayed = sessionStorage.getItem("introPlayed");
+		if (introPlayed) {
+			setShouldRender(false);
+			return;
+		}
+
 		// Intro animation timeout increased to allow full animation sequence
 		const timer = setTimeout(() => {
 			setShowIntro(false);
+			setTimeout(() => setShouldRender(false), 1000); // Wait for transition
 		}, 2500);
 
 		return () => clearTimeout(timer);
 	}, []);
+
+	if (!shouldRender) return null;
 
 	return (
 		<div
