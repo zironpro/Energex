@@ -45,7 +45,7 @@ export function FAQ() {
 									{t("cantFindAnswer")}
 								</p>
 								<Button
-									className="flex items-center gap-2 rounded-lg bg-black px-6 py-6 font-bold text-base text-white hover:bg-slate-800"
+									className="flex items-center gap-2 rounded-lg bg-blue-600 px-6 py-6 font-bold text-base text-white transition-colors hover:bg-blue-700"
 									render={<Link href="/contact" />}
 								>
 									{t("sendEmail")}

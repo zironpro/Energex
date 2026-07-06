@@ -165,25 +165,9 @@ export function Footer() {
 							<li>
 								<Link
 									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
-									href="/about"
+									href="/company"
 								>
 									{t("columns.company.about")}
-								</Link>
-							</li>
-							<li>
-								<Link
-									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
-									href="/careers"
-								>
-									{t("columns.company.careers")}
-								</Link>
-							</li>
-							<li>
-								<Link
-									className="relative inline-block transition-all duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition-all before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
-									href="/news"
-								>
-									{t("columns.company.news")}
 								</Link>
 							</li>
 							<li>

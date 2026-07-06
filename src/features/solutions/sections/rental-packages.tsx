@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
+
 import { Link } from "@/i18n/navigation";
 
 import { getPackages } from "../data/rental-packages";
@@ -40,36 +41,44 @@ export function RentalPackages() {
 				<div className="grid grid-cols-1 gap-8 md:grid-cols-3">
 					{packages.map((pkg, i) => (
 						<motion.div
-							className="flex flex-col rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
+							className="group relative flex flex-col overflow-hidden rounded-2xl bg-blue-600 shadow-lg"
 							initial={{ opacity: 0, y: 20 }}
 							key={pkg.title}
 							transition={{ duration: 0.5, delay: i * 0.1 }}
 							viewport={{ once: true, margin: "-100px" }}
 							whileInView={{ opacity: 1, y: 0 }}
 						>
-							<div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600/10">
-								{pkg.icon}
+							<div className="relative h-56 w-full overflow-hidden">
+								{pkg.image && (
+									<Image
+										alt={pkg.title}
+										className="object-cover transition-transform duration-500 group-hover:scale-105"
+										fill
+										src={pkg.image}
+									/>
+								)}
+								<div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-600/50 to-blue-600" />
 							</div>
-							<h3 className="mb-3 font-bold text-slate-900 text-xl">
-								{pkg.title}
-							</h3>
-							<p className="mb-8 flex-grow text-slate-600 leading-relaxed">
-								{pkg.description}
-							</p>
 
-							<Button
-								className="group mt-4 w-full justify-between rounded-lg bg-slate-100 px-6 py-6 font-bold text-slate-900 transition-colors hover:bg-blue-600 hover:text-white"
-								render={<Link href="/contact" />}
-							>
-								{t("requestQuote")}
-								<Image
-									alt=""
-									className="ml-2 h-4 w-4 invert group-hover:invert-0"
-									height={16}
-									src="/icons/caret-right.svg"
-									width={16}
-								/>
-							</Button>
+							<div className="flex flex-grow flex-col px-8 pt-2 pb-8">
+								<div className="mb-4 flex items-center justify-between">
+									<h3 className="font-bold text-2xl text-white">{pkg.title}</h3>
+									<div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white backdrop-blur-sm">
+										<div className="[&>svg]:text-white">{pkg.icon}</div>
+									</div>
+								</div>
+
+								<p className="mb-8 flex-grow text-blue-100/80 leading-relaxed">
+									{pkg.description}
+								</p>
+
+								<Button
+									className="group mt-auto w-full justify-center rounded-lg bg-white px-6 py-6 font-bold text-blue-900 transition-colors hover:bg-slate-50"
+									render={<Link href="/contact" />}
+								>
+									{t("requestQuote")}
+								</Button>
+							</div>
 						</motion.div>
 					))}
 				</div>

@@ -173,7 +173,7 @@ export function MainHero() {
 					</h1>
 					<div className="flex flex-wrap justify-center gap-4 pt-6 md:pt-8">
 						<Link
-							className="inline-flex h-12 items-center justify-center rounded-lg bg-black px-8 font-semibold text-sm text-white transition-transform hover:scale-105"
+							className="inline-flex h-12 items-center justify-center rounded-lg bg-blue-600 px-8 font-semibold text-sm text-white transition-all hover:scale-105 hover:bg-blue-700"
 							href="/contact"
 						>
 							{t("requestQuote")}

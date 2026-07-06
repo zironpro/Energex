@@ -57,7 +57,7 @@ export function ContactPage() {
 								</h3>
 								<div className="flex gap-3">
 									<a
-										className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-900 text-white shadow-sm transition-all hover:-translate-y-1 hover:bg-blue-600"
+										className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-white shadow-sm transition-all hover:-translate-y-1 hover:bg-blue-700"
 										href="#"
 									>
 										<svg
@@ -69,7 +69,7 @@ export function ContactPage() {
 										</svg>
 									</a>
 									<a
-										className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-900 text-white shadow-sm transition-all hover:-translate-y-1 hover:bg-blue-600"
+										className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-white shadow-sm transition-all hover:-translate-y-1 hover:bg-blue-700"
 										href="#"
 									>
 										<svg
@@ -81,7 +81,7 @@ export function ContactPage() {
 										</svg>
 									</a>
 									<a
-										className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-900 text-white shadow-sm transition-all hover:-translate-y-1 hover:bg-blue-600"
+										className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-white shadow-sm transition-all hover:-translate-y-1 hover:bg-blue-700"
 										href="#"
 									>
 										<svg
@@ -93,7 +93,7 @@ export function ContactPage() {
 										</svg>
 									</a>
 									<a
-										className="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-900 text-white shadow-sm transition-all hover:-translate-y-1 hover:bg-blue-600"
+										className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-white shadow-sm transition-all hover:-translate-y-1 hover:bg-blue-700"
 										href="#"
 									>
 										<svg
@@ -136,11 +136,13 @@ export function ContactPage() {
 							</h2>
 							<p className="mb-8 text-slate-500">{t("formSubtitle")}</p>
 
-							<form 
+							<form
 								className="space-y-5"
 								onSubmit={(e) => {
 									e.preventDefault();
-									alert("Thank you for your inquiry. Our team will contact you shortly.");
+									alert(
+										"Thank you for your inquiry. Our team will contact you shortly."
+									);
 								}}
 							>
 								<div className="grid grid-cols-1 gap-5 sm:grid-cols-2">

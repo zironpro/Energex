@@ -9,13 +9,14 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
-import { Link } from "@/i18n/navigation";
 import {
 	Carousel,
 	type CarouselApi,
 	CarouselContent,
 	CarouselItem,
 } from "@/components/ui/carousel";
+
+import { Link } from "@/i18n/navigation";
 
 import { getFeatures } from "../data/feature-showcase";
 
@@ -52,8 +53,8 @@ export function FeatureShowcase() {
 							<p className="mb-8 text-base text-slate-600 leading-relaxed">
 								{t("description")}
 							</p>
-							<Button 
-								className="group h-12 rounded-lg bg-slate-900 px-8 font-bold text-white hover:bg-slate-800"
+							<Button
+								className="group h-12 rounded-lg bg-blue-600 px-8 font-bold text-white transition-colors hover:bg-blue-700"
 								render={<Link href="/contact" />}
 							>
 								{t("getStarted")}
