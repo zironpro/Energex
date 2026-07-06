@@ -113,15 +113,31 @@ export function ContactPage() {
 										{t("emailLabel")}
 									</span>
 									<span className="font-medium text-slate-900">
-										info@energex.ae
+										<a
+											className="transition-colors hover:text-blue-600 hover:underline"
+											href="mailto:info@energexequip.ae"
+										>
+											info@energexequip.ae
+										</a>
 									</span>
 								</div>
 								<div className="flex items-center gap-4">
 									<span className="w-16 font-bold text-blue-600 text-xs uppercase tracking-wider">
 										{t("phoneLabel")}
 									</span>
-									<span className="font-medium text-slate-900">
-										+971 50 123 4567
+									<span className="flex flex-col gap-1 font-medium text-slate-900">
+										<a
+											className="transition-colors hover:text-blue-600 hover:underline"
+											href="tel:+97145753066"
+										>
+											T: (+971) 4 575 3066
+										</a>
+										<a
+											className="transition-colors hover:text-blue-600 hover:underline"
+											href="tel:+971502335477"
+										>
+											M: +971 50 233 5477
+										</a>
 									</span>
 								</div>
 							</div>
@@ -385,13 +401,13 @@ export function ContactPage() {
 				<div className="mt-16 h-[400px] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-900 shadow-xl lg:h-[500px]">
 					<Map
 						initialViewState={{
-							longitude: 55.071,
-							latitude: 24.876,
+							longitude: 55.39307,
+							latitude: 25.28189,
 							zoom: 15.5,
 						}}
 						mapStyle="https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json"
 					>
-						<Marker anchor="center" latitude={24.876} longitude={55.071}>
+						<Marker anchor="center" latitude={25.28189} longitude={55.39307}>
 							<div className="h-5 w-5 rounded-full border-[3px] border-white bg-yellow-500 shadow-md" />
 						</Marker>
 
@@ -399,9 +415,9 @@ export function ContactPage() {
 							anchor="bottom"
 							closeButton={false}
 							closeOnClick={false}
-							latitude={24.876}
-							longitude={55.071}
-							offset={16}
+							latitude={25.28189}
+							longitude={55.39307}
+							offset={[0, -10]}
 						>
 							<div className="max-w-[220px] p-1">
 								<h4 className="mb-1 font-bold text-slate-900 text-sm">
