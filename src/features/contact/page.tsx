@@ -57,7 +57,7 @@ export function ContactPage() {
 								</h3>
 								<div className="flex gap-3">
 									<a
-										className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700"
+										className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700"
 										href="#"
 									>
 										<svg
@@ -69,7 +69,7 @@ export function ContactPage() {
 										</svg>
 									</a>
 									<a
-										className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700"
+										className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700"
 										href="#"
 									>
 										<svg
@@ -81,7 +81,7 @@ export function ContactPage() {
 										</svg>
 									</a>
 									<a
-										className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700"
+										className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700"
 										href="#"
 									>
 										<svg
@@ -93,7 +93,7 @@ export function ContactPage() {
 										</svg>
 									</a>
 									<a
-										className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700"
+										className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700"
 										href="#"
 									>
 										<svg
@@ -372,7 +372,7 @@ export function ContactPage() {
 										{t("form.termsText3")}
 									</p>
 									<Button
-										className="group h-12 w-full rounded-lg bg-blue-600 px-8 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700 sm:w-auto"
+										className="group h-12 w-full rounded-lg bg-blue-600 px-8 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700 sm:w-auto"
 										type="submit"
 									>
 										{t("form.submit")}

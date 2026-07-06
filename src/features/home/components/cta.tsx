@@ -36,7 +36,7 @@ export function CTA() {
 				</div>
 				<div className="flex-shrink-0">
 					<Button
-						className="group flex h-auto cursor-pointer items-center gap-2 rounded-lg bg-blue-600 px-8 py-4 font-bold text-base text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700"
+						className="group flex h-auto cursor-pointer items-center gap-2 rounded-lg bg-blue-600 px-8 py-4 font-bold text-base text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700"
 						render={<Link href="/contact" />}
 						size="lg"
 					>

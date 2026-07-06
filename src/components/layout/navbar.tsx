@@ -37,7 +37,7 @@ const NavLink = ({
 			</div>
 			{/* Animated Bottom Border */}
 			<div
-				className={`absolute bottom-0 left-0 h-[1px] bg-white transition-all duration-300 ease-in-out ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
+				className={`absolute bottom-0 left-0 h-[1px] bg-white transition duration-300 ease-in-out ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
 			/>
 		</Link>
 	);
@@ -83,7 +83,7 @@ export function Navbar() {
 
 	return (
 		<nav
-			className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ease-in-out ${
+			className={`fixed top-0 right-0 left-0 z-50 transition duration-300 ease-in-out ${
 				showBg ? "bg-blue-600 py-5 shadow-sm" : "bg-transparent py-8"
 			}`}
 		>
@@ -137,7 +137,7 @@ export function Navbar() {
 					{/* Mobile Menu */}
 					<div className="md:hidden">
 						<Sheet onOpenChange={setIsOpen} open={isOpen}>
-							<SheetTrigger className="flex cursor-pointer items-center justify-center rounded-lg bg-white/10 p-2.5 text-white backdrop-blur-md transition-all hover:bg-white/20 active:scale-95">
+							<SheetTrigger className="flex cursor-pointer items-center justify-center rounded-lg bg-white/10 p-2.5 text-white backdrop-blur-md transition hover:bg-white/20 active:scale-95">
 								<Menu className="h-6 w-6" />
 							</SheetTrigger>
 							<SheetContent
@@ -245,7 +245,7 @@ export function Navbar() {
 								{/* Footer Buttons */}
 								<div className="mt-auto flex gap-3 border-slate-100 border-t px-6 pt-4">
 									<Link
-										className="flex h-12 flex-1 items-center justify-center rounded-lg bg-blue-600 px-4 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700"
+										className="flex h-12 flex-1 items-center justify-center rounded-lg bg-blue-600 px-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700"
 										href="/contact"
 										onClick={() => setIsOpen(false)}
 									>

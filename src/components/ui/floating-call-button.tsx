@@ -35,7 +35,7 @@ export function FloatingCallButton() {
 		>
 			{/* Main Toggle Button */}
 			<button
-				className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-blue-600 text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700 hover:shadow-2xl hover:shadow-blue-900/50"
+				className="group relative flex h-14 w-14 cursor-pointer items-center justify-center rounded-full bg-blue-600 text-white shadow-xl transition duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700 hover:shadow-2xl hover:shadow-blue-900/50"
 				onClick={() => setIsOpen(!isOpen)}
 			>
 				{/* Expanding outer ring animation */}
@@ -70,10 +70,10 @@ export function FloatingCallButton() {
 							href="https://wa.me/971502335477"
 							target="_blank"
 						>
-							<span className="rounded-md bg-white px-3 py-1.5 font-bold text-slate-700 text-sm shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:scale-105 group-hover:text-green-600 group-hover:shadow-md">
+							<span className="rounded-md bg-white px-3 py-1.5 font-bold text-slate-700 text-sm shadow-sm transition duration-300 group-hover:-translate-y-1 group-hover:scale-105 group-hover:text-green-600 group-hover:shadow-md">
 								{t("whatsapp")}
 							</span>
-							<div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition-all duration-300 group-hover:-translate-y-1 group-hover:scale-105 group-hover:bg-green-600">
+							<div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition duration-300 group-hover:-translate-y-1 group-hover:scale-105 group-hover:bg-green-600">
 								<WhatsappIcon className="h-6 w-6" />
 							</div>
 						</Link>
@@ -83,10 +83,10 @@ export function FloatingCallButton() {
 							className="group flex items-center justify-end gap-3"
 							href="tel:+971502335477"
 						>
-							<span className="rounded-md bg-white px-3 py-1.5 font-bold text-slate-700 text-sm shadow-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:scale-105 group-hover:text-blue-600 group-hover:shadow-md">
+							<span className="rounded-md bg-white px-3 py-1.5 font-bold text-slate-700 text-sm shadow-sm transition duration-300 group-hover:-translate-y-1 group-hover:scale-105 group-hover:text-blue-600 group-hover:shadow-md">
 								{t("callNow")}
 							</span>
-							<div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-500 text-white shadow-lg transition-all duration-300 group-hover:-translate-y-1 group-hover:scale-105 group-hover:bg-blue-600">
+							<div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-500 text-white shadow-lg transition duration-300 group-hover:-translate-y-1 group-hover:scale-105 group-hover:bg-blue-600">
 								<Phone className="h-5 w-5" />
 							</div>
 						</Link>

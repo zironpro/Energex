@@ -37,7 +37,7 @@ export function Progress() {
 
 						return (
 							<ScrollRevealItem
-								className={`group relative overflow-hidden rounded-lg shadow-sm transition-all duration-700 hover:shadow-xl ${bentoLayouts[idx]}`}
+								className={`group relative overflow-hidden rounded-lg shadow-sm transition duration-700 hover:shadow-xl ${bentoLayouts[idx]}`}
 								key={industry.title}
 							>
 								{/* Full background image card */}

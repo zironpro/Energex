@@ -37,7 +37,7 @@ export function Values() {
 						const Icon = value.icon;
 						return (
 							<motion.div
-								className="group rounded-lg bg-white p-8 shadow-sm transition-all hover:-translate-y-2 hover:shadow-xl"
+								className="group rounded-lg bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-xl"
 								initial={{ opacity: 0, y: 20 }}
 								key={value.title}
 								transition={{ duration: 0.5, delay: index * 0.1 }}

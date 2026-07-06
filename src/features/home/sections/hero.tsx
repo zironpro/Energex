@@ -36,14 +36,14 @@ export function Hero() {
 				<ScrollReveal delay={0.4}>
 					<div className="pt-8">
 						<Button
-							className="group h-14 rounded-lg bg-white px-8 font-bold text-base text-slate-900 transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-600 hover:text-white"
+							className="group h-14 rounded-lg bg-white px-8 font-bold text-base text-slate-900 transition duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-600 hover:text-white"
 							nativeButton={false}
 							render={<Link href="/contact" />}
 						>
 							Contact Us
 							<Image
 								alt=""
-								className="ml-2 h-4 w-4 transition-all duration-300 group-hover:translate-x-1 group-hover:brightness-0 group-hover:invert"
+								className="ml-2 h-4 w-4 transition duration-300 group-hover:translate-x-1 group-hover:brightness-0 group-hover:invert"
 								height={16}
 								src="/icons/caret-right.svg"
 								width={16}

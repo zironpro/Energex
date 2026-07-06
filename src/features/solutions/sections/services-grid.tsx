@@ -28,7 +28,7 @@ export function ServicesGrid() {
 							viewport={{ once: true, margin: "-100px" }}
 							whileInView={{ opacity: 1, y: 0 }}
 						>
-							<Card className="group h-full border-slate-200 bg-white transition-all hover:border-blue-600 hover:shadow-lg">
+							<Card className="group h-full border-slate-200 bg-white transition hover:border-blue-600 hover:shadow-lg">
 								<CardHeader>
 									<div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600/10 transition-colors group-hover:bg-blue-600/20">
 										{service.icon}

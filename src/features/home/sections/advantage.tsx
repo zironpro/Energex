@@ -146,7 +146,7 @@ export function Advantage() {
 
 								return (
 									<div
-										className="absolute top-0 left-0 h-full w-full cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
+										className="absolute top-0 left-0 h-full w-full cursor-pointer transition duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
 										key={adv.title}
 										onClick={() => setActiveIndex(index)}
 										style={{
@@ -168,7 +168,7 @@ export function Advantage() {
 
 											{/* Gradient Overlay */}
 											<div
-												className={`pointer-events-none absolute inset-0 transition-all duration-500 ${
+												className={`pointer-events-none absolute inset-0 transition duration-500 ${
 													isActive
 														? "bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent"
 														: "bg-slate-900/70"
@@ -177,7 +177,7 @@ export function Advantage() {
 
 											{/* Text Content */}
 											<div
-												className={`pointer-events-none absolute inset-x-0 bottom-0 p-8 text-white transition-all duration-500 ${
+												className={`pointer-events-none absolute inset-x-0 bottom-0 p-8 text-white transition duration-500 ${
 													isActive
 														? "translate-y-0 opacity-100"
 														: "translate-y-8 opacity-0"
