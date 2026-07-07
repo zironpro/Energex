@@ -5,7 +5,11 @@ import "../globals.css";
 import { notFound } from "next/navigation";
 
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import {
+	getMessages,
+	getTranslations,
+	setRequestLocale,
+} from "next-intl/server";
 
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
@@ -60,7 +64,7 @@ export default async function RootLayout({
 		>
 			<body className="flex flex-col font-sans">
 				<NextIntlClientProvider messages={messages}>
-					<div className="flex min-h-screen flex-col overflow-x-hidden">
+					<div className="flex min-h-screen flex-col">
 						<Navbar />
 						{children}
 						<Footer />

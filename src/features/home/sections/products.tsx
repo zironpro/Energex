@@ -46,7 +46,7 @@ export function Products() {
 
 						return (
 							<ScrollRevealItem
-								className="group flex cursor-pointer flex-col items-center lg:w-1/5"
+								className="group flex cursor-pointer flex-col items-center last:col-span-2 md:last:col-span-1 lg:w-1/5"
 								key={product.id}
 							>
 								<div

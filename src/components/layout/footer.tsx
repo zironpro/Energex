@@ -78,7 +78,7 @@ export function Footer() {
 	const t = useTranslations("common.Footer");
 
 	return (
-		<footer className="relative overflow-hidden bg-blue-600 pt-20 pb-4 text-slate-300">
+		<footer className="relative bg-blue-600 pt-12 pb-4 text-slate-300 md:pt-20">
 			{/* Sweeping abstract waves background similar to the reference design */}
 			<div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
 				<svg
@@ -112,9 +112,9 @@ export function Footer() {
 			</div>
 
 			<div className="container relative z-10 mx-auto max-w-7xl px-6 md:px-12">
-				<div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+				<div className="grid grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-8">
 					{/* Column 1: Logo & Slogan */}
-					<div className="flex flex-col">
+					<div className="col-span-2 flex flex-col md:col-span-1">
 						<Link className="mb-6 flex items-center gap-3 text-white" href="/">
 							<svg className="h-8 w-auto fill-white" viewBox="0 0 210 126">
 								<g>
@@ -157,7 +157,7 @@ export function Footer() {
 					</div>
 
 					{/* Column 2: Company */}
-					<div className="flex flex-col">
+					<div className="col-span-1 flex flex-col">
 						<h4 className="mb-6 font-bold text-lg text-white">
 							{t("columns.company.title")}
 						</h4>
@@ -182,7 +182,7 @@ export function Footer() {
 					</div>
 
 					{/* Column 3: Solutions */}
-					<div className="flex flex-col">
+					<div className="col-span-1 flex flex-col">
 						<h4 className="mb-6 font-bold text-lg text-white">
 							{t("columns.solutions.title")}
 						</h4>
@@ -223,23 +223,23 @@ export function Footer() {
 					</div>
 
 					{/* Column 4: Contact Us */}
-					<div className="flex flex-col">
+					<div className="col-span-2 flex flex-col md:col-span-1">
 						<h4 className="mb-6 font-bold text-lg text-white">
 							{t("columns.contact.title")}
 						</h4>
-						<div className="flex flex-col gap-5 text-slate-300 text-sm">
-							<div>
+						<div className="grid grid-cols-2 gap-5 text-slate-300 text-sm md:flex md:flex-col">
+							<div className="col-span-1">
 								<span className="mb-1 block text-slate-400">
 									{t("columns.contact.email")}
 								</span>
 								<a
-									className="relative inline-block transition duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+									className="relative inline-block break-all transition duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
 									href="mailto:info@energexequip.ae"
 								>
 									info@energexequip.ae
 								</a>
 							</div>
-							<div>
+							<div className="col-span-1">
 								<span className="mb-1 block text-slate-400">
 									{t("columns.contact.phone")}
 								</span>
@@ -256,7 +256,7 @@ export function Footer() {
 									M: +971 50 233 5477
 								</a>
 							</div>
-							<div>
+							<div className="col-span-2 mt-4 flex flex-col items-start text-left md:col-span-1 md:mt-0">
 								<span className="mb-1 block text-slate-400">
 									{t("columns.contact.address")}
 								</span>
@@ -272,10 +272,17 @@ export function Footer() {
 			{/* Full-width Bottom Bar */}
 			<div className="mt-20 border-blue-400/30 border-t">
 				<div className="container relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-between px-6 py-6 text-slate-300 text-xs md:flex-row md:px-12">
-					<p>
-						&copy; {new Date().getFullYear()} {t("bottom.rights")}
+					<p className="order-1 flex-1 text-center md:text-left">
+						&copy; {new Date().getFullYear()} Ziron Pro Digital Solutions L.L.C
 					</p>
-					<div className="mt-4 flex gap-6 md:mt-0">
+
+					<div className="order-3 mt-4 flex flex-1 justify-center md:order-2 md:mt-0">
+						<span className="px-4 py-1 font-bold text-sm text-white/40 tracking-widest">
+							ENERGEX
+						</span>
+					</div>
+
+					<div className="order-2 mt-4 flex flex-1 justify-center gap-6 md:order-3 md:mt-0 md:justify-end">
 						<Link
 							className="transition hover:text-white"
 							href="/terms-and-policy"

@@ -17,6 +17,7 @@ if (typeof window !== "undefined") {
 }
 
 import { HeroFeatures } from "../components/hero-features";
+import { ScrollIndicator } from "../components/scroll-indicator";
 
 export function MainHero() {
 	const heroRef = useRef<HTMLElement>(null);
@@ -68,22 +69,31 @@ export function MainHero() {
 				}
 
 				tl.to(
-					".top-text-left, .top-text-right",
+					".scroll-indicator",
 					{
-						x: 0,
-						opacity: 1,
+						opacity: 0,
 						ease: "power1.inOut",
 					},
-					0.4
-				).to(
-					".bottom-reveal",
-					{
-						y: 0,
-						opacity: 1,
-						ease: "power1.inOut",
-					},
-					"<" // sync with previous
-				);
+					0
+				)
+					.to(
+						".top-text-left, .top-text-right",
+						{
+							x: 0,
+							opacity: 1,
+							ease: "power1.inOut",
+						},
+						0.4
+					)
+					.to(
+						".bottom-reveal",
+						{
+							y: 0,
+							opacity: 1,
+							ease: "power1.inOut",
+						},
+						"<" // sync with previous
+					);
 			}, heroRef);
 		};
 
@@ -207,6 +217,9 @@ export function MainHero() {
 			<div className="absolute bottom-0 bottom-reveal left-0 z-30 w-full">
 				<HeroFeatures />
 			</div>
+
+			{/* Mobile Scroll Indicator (Visible initially, fades out on scroll) */}
+			<ScrollIndicator />
 		</section>
 	);
 }

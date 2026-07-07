@@ -9,9 +9,9 @@ import { Link } from "@/i18n/navigation";
 export function CTA() {
 	const t = useTranslations("common.CTA");
 	return (
-		<section className="relative overflow-hidden bg-slate-950 py-16 text-white">
+		<section className="relative bg-slate-950 py-16 text-white">
 			{/* Background Logo Overflowing */}
-			<div className="pointer-events-none absolute inset-0 opacity-[0.08]">
+			<div className="pointer-events-none absolute inset-0 overflow-hidden opacity-[0.08]">
 				<svg
 					className="h-full w-full fill-current"
 					preserveAspectRatio="xMidYMid slice"

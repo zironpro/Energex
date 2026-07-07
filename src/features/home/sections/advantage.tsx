@@ -77,7 +77,10 @@ export function Advantage() {
 	};
 
 	return (
-		<section className="w-full overflow-hidden bg-slate-50 pt-8 pb-32 text-slate-900">
+		<section
+			className="w-full scroll-mt-20 overflow-hidden bg-slate-50 pt-8 pb-32 text-slate-900 md:scroll-mt-24"
+			id="advantage-section"
+		>
 			<div className="container mx-auto max-w-7xl px-6 md:px-12">
 				{/* Section Header */}
 				<div className="mb-20 grid grid-cols-1 items-center gap-8 px-4 md:grid-cols-2 md:px-12">
