@@ -121,7 +121,7 @@ export function MainHero() {
 
 	return (
 		<section
-			className="relative h-screen w-full overflow-hidden bg-white"
+			className="relative h-[100svh] w-full overflow-hidden bg-white"
 			ref={heroRef}
 		>
 			<style>{`

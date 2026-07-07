@@ -156,18 +156,42 @@ export function Footer() {
 						</div>
 					</div>
 
-					{/* Column 2: Company */}
+					{/* Column 2: General */}
 					<div className="col-span-1 flex flex-col">
 						<h4 className="mb-6 font-bold text-lg text-white">
-							{t("columns.company.title")}
+							{t("columns.general.title")}
 						</h4>
 						<ul className="flex flex-col gap-4 text-slate-300 text-sm">
 							<li>
 								<Link
 									className="relative inline-block transition duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+									href="/"
+								>
+									{t("columns.general.home")}
+								</Link>
+							</li>
+							<li>
+								<Link
+									className="relative inline-block transition duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+									href="/products"
+								>
+									{t("columns.general.products")}
+								</Link>
+							</li>
+							<li>
+								<Link
+									className="relative inline-block transition duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+									href="/solutions"
+								>
+									{t("columns.general.solutions")}
+								</Link>
+							</li>
+							<li>
+								<Link
+									className="relative inline-block transition duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
 									href="/company"
 								>
-									{t("columns.company.about")}
+									{t("columns.general.about")}
 								</Link>
 							</li>
 							<li>
@@ -175,7 +199,7 @@ export function Footer() {
 									className="relative inline-block transition duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
 									href="/contact"
 								>
-									{t("columns.company.contact")}
+									{t("columns.general.contact")}
 								</Link>
 							</li>
 						</ul>
@@ -228,35 +252,37 @@ export function Footer() {
 							{t("columns.contact.title")}
 						</h4>
 						<div className="grid grid-cols-2 gap-5 text-slate-300 text-sm md:flex md:flex-col">
-							<div className="col-span-1">
-								<span className="mb-1 block text-slate-400">
-									{t("columns.contact.email")}
-								</span>
-								<a
-									className="relative inline-block break-all transition duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
-									href="mailto:info@energexequip.ae"
-								>
-									info@energexequip.ae
-								</a>
+							<div className="col-span-1 flex flex-col gap-3 md:gap-5">
+								<div>
+									<span className="mb-1 block text-slate-400">
+										{t("columns.contact.email")}
+									</span>
+									<a
+										className="relative inline-block break-all transition duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+										href="mailto:info@energexequip.ae"
+									>
+										info@energexequip.ae
+									</a>
+								</div>
+								<div>
+									<span className="mb-1 block text-slate-400">
+										{t("columns.contact.phone")}
+									</span>
+									<a
+										className="relative mb-1 block transition duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+										href="tel:+97145753066"
+									>
+										T: (+971) 4 575 3066
+									</a>
+									<a
+										className="relative block transition duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+										href="tel:+971502335477"
+									>
+										M: +971 50 233 5477
+									</a>
+								</div>
 							</div>
-							<div className="col-span-1">
-								<span className="mb-1 block text-slate-400">
-									{t("columns.contact.phone")}
-								</span>
-								<a
-									className="relative mb-1 block transition duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
-									href="tel:+97145753066"
-								>
-									T: (+971) 4 575 3066
-								</a>
-								<a
-									className="relative block transition duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
-									href="tel:+971502335477"
-								>
-									M: +971 50 233 5477
-								</a>
-							</div>
-							<div className="col-span-2 mt-4 flex flex-col items-start text-left md:col-span-1 md:mt-0">
+							<div className="col-span-1 flex flex-col items-start text-left">
 								<span className="mb-1 block text-slate-400">
 									{t("columns.contact.address")}
 								</span>

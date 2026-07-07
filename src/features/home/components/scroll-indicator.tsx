@@ -13,7 +13,7 @@ export function ScrollIndicator() {
 
 	return (
 		<button
-			className="scroll-indicator absolute bottom-8 left-1/2 z-40 flex -translate-x-1/2 animate-bounce cursor-pointer flex-col items-center justify-center text-white transition-opacity hover:opacity-80 md:hidden"
+			className="scroll-indicator absolute bottom-12 left-1/2 z-40 flex -translate-x-1/2 animate-bounce cursor-pointer flex-col items-center justify-center text-white transition-opacity hover:opacity-80 md:hidden"
 			onClick={scrollToAdvantage}
 			type="button"
 		>

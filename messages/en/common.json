@@ -18,12 +18,13 @@
 	"Footer": {
 		"slogan": "Empowering the UAE with reliable, scalable, and efficient power solutions for every industry and event.",
 		"columns": {
-			"company": {
-				"title": "Company",
+			"general": {
+				"title": "General",
+				"home": "Home",
+				"products": "Products",
+				"solutions": "Solutions",
 				"about": "About Us",
-				"careers": "Careers",
-				"news": "News & Press",
-				"contact": "Contact"
+				"contact": "Contact Us"
 			},
 			"solutions": {
 				"title": "Solutions",
