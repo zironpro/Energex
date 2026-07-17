@@ -23,7 +23,7 @@ export function FAQ() {
 	const t = useTranslations("home.FAQ");
 	const faqs = getFaqs(t);
 	return (
-		<section className="bg-slate-50 py-16 text-slate-900">
+		<section className="overflow-hidden bg-slate-50 py-16 text-slate-900">
 			<div className="container mx-auto max-w-7xl px-6 md:px-12">
 				<div className="grid grid-cols-1 gap-16 lg:grid-cols-12">
 					{/* Left Column */}

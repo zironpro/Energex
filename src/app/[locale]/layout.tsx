@@ -4,6 +4,7 @@ import "../globals.css";
 
 import { notFound } from "next/navigation";
 
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { NextIntlClientProvider } from "next-intl";
 import {
 	getMessages,
@@ -37,6 +38,9 @@ export async function generateMetadata({
 	return {
 		title: t("title"),
 		description: t("description"),
+		verification: {
+			google: "4bKAMrB0AGsSxQuoqq4uz49qrPNs4lgYfGkY4-IIYhc",
+		},
 	};
 }
 
@@ -63,6 +67,14 @@ export default async function RootLayout({
 			lang={locale}
 		>
 			<body className="flex flex-col font-sans">
+				<noscript>
+					<iframe
+						height="0"
+						src="https://www.googletagmanager.com/ns.html?id=GTM-5RXTQ2PT"
+						style={{ display: "none", visibility: "hidden" }}
+						width="0"
+					/>
+				</noscript>
 				<NextIntlClientProvider messages={messages}>
 					<div className="flex min-h-screen flex-col">
 						<Navbar />
@@ -72,6 +84,8 @@ export default async function RootLayout({
 					</div>
 				</NextIntlClientProvider>
 			</body>
+			<GoogleAnalytics gaId="G-4SQ36YPC9H" />
+			<GoogleTagManager gtmId="GTM-5RXTQ2PT" />
 		</html>
 	);
 }

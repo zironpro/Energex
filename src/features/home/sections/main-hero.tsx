@@ -42,8 +42,8 @@ export function MainHero() {
 				// The Flip.fit animation configures the tween to scale and move the target image
 				const flip = Flip.fit(targetImgRef.current, smallImgRef.current, {
 					scale: false,
-					duration: 1,
-					ease: "none",
+					duration: 0.7,
+					ease: "power2.inOut",
 				}) as gsap.core.Tween | null;
 
 				const tl = gsap.timeline({
@@ -62,7 +62,8 @@ export function MainHero() {
 						targetImgRef.current,
 						{
 							borderRadius: "9999px",
-							ease: "none",
+							ease: "power2.inOut",
+							duration: 0.7
 						},
 						0
 					);
@@ -73,6 +74,7 @@ export function MainHero() {
 					{
 						opacity: 0,
 						ease: "power1.inOut",
+						duration: 0.2
 					},
 					0
 				)
@@ -81,24 +83,33 @@ export function MainHero() {
 						{
 							x: 0,
 							opacity: 1,
-							ease: "power1.inOut",
+							ease: "power2.out",
+							duration: 0.4
 						},
-						0.4
+						0.3
 					)
 					.to(
 						".bottom-reveal",
 						{
 							y: 0,
 							opacity: 1,
-							ease: "power1.inOut",
+							ease: "power2.out",
+							duration: 0.4
 						},
-						"<" // sync with previous
+						0.5 // sync after image has shrunk mostly
 					);
 			}, heroRef);
 		};
 
-		// Run immediately to establish initial ScrollTrigger state
-		init();
+		// Wait for fonts and layout to settle before initial GSAP calculation
+		if (typeof document !== "undefined" && document.fonts && document.fonts.ready) {
+			document.fonts.ready.then(() => {
+				// small delay to ensure rendering is complete
+				setTimeout(init, 50);
+			});
+		} else {
+			setTimeout(init, 100);
+		}
 
 		let windowWidth = window.innerWidth;
 		const handleResize = () => {

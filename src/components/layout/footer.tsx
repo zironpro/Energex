@@ -2,39 +2,6 @@ import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
 
-const Facebook = (props: React.SVGProps<SVGSVGElement>) => (
-	<svg
-		fill="none"
-		height="24"
-		stroke="currentColor"
-		strokeLinecap="round"
-		strokeLinejoin="round"
-		strokeWidth="2"
-		viewBox="0 0 24 24"
-		width="24"
-		xmlns="http://www.w3.org/2000/svg"
-		{...props}
-	>
-		<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-	</svg>
-);
-
-const Twitter = (props: React.SVGProps<SVGSVGElement>) => (
-	<svg
-		fill="none"
-		height="24"
-		stroke="currentColor"
-		strokeLinecap="round"
-		strokeLinejoin="round"
-		strokeWidth="2"
-		viewBox="0 0 24 24"
-		width="24"
-		xmlns="http://www.w3.org/2000/svg"
-		{...props}
-	>
-		<path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-	</svg>
-);
 
 const Instagram = (props: React.SVGProps<SVGSVGElement>) => (
 	<svg
@@ -71,6 +38,24 @@ const Linkedin = (props: React.SVGProps<SVGSVGElement>) => (
 		<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
 		<rect height="12" width="4" x="2" y="9" />
 		<circle cx="4" cy="4" r="2" />
+	</svg>
+);
+
+const Whatsapp = (props: React.SVGProps<SVGSVGElement>) => (
+	<svg
+		fill="none"
+		height="24"
+		stroke="currentColor"
+		strokeLinecap="round"
+		strokeLinejoin="round"
+		strokeWidth="2"
+		viewBox="0 0 24 24"
+		width="24"
+		xmlns="http://www.w3.org/2000/svg"
+		{...props}
+	>
+		<path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />
+		<path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1" />
 	</svg>
 );
 
@@ -128,30 +113,31 @@ export function Footer() {
 						<p className="mb-8 text-slate-300 text-sm leading-relaxed">
 							{t("slogan")}
 						</p>
-						<div className="flex gap-4">
+						<div className="flex flex-wrap gap-4">
+
 							<a
 								className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-blue-500"
-								href="#"
-							>
-								<Facebook className="h-5 w-5" />
-							</a>
-							<a
-								className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-blue-500"
-								href="#"
-							>
-								<Twitter className="h-5 w-5" />
-							</a>
-							<a
-								className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-blue-500"
-								href="#"
+								href="https://www.instagram.com/energex_equipment/"
+								rel="noreferrer"
+								target="_blank"
 							>
 								<Instagram className="h-5 w-5" />
 							</a>
 							<a
 								className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-blue-500"
-								href="#"
+								href="https://www.linkedin.com/company/energex-equipment-rental/"
+								rel="noreferrer"
+								target="_blank"
 							>
 								<Linkedin className="h-5 w-5" />
+							</a>
+							<a
+								className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-blue-500"
+								href="https://wa.me/971502335477"
+								rel="noreferrer"
+								target="_blank"
+							>
+								<Whatsapp className="h-5 w-5" />
 							</a>
 						</div>
 					</div>
@@ -299,12 +285,12 @@ export function Footer() {
 			<div className="mt-20 border-blue-400/30 border-t">
 				<div className="container relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-between px-6 py-6 text-slate-300 text-xs md:flex-row md:px-12">
 					<p className="order-1 flex-1 text-center md:text-left">
-						&copy; {new Date().getFullYear()} Ziron Pro Digital Solutions L.L.C
+						&copy; {new Date().getFullYear()} Energex. All Rights Reserved.
 					</p>
 
 					<div className="order-3 mt-4 flex flex-1 justify-center md:order-2 md:mt-0">
-						<span className="px-4 py-1 font-bold text-sm text-white/40 tracking-widest">
-							ENERGEX
+						<span className="px-4 py-1 font-light text-[10px] text-white/30">
+							Designed & Developed by Ziron Pro
 						</span>
 					</div>
 
