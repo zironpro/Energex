@@ -7,13 +7,14 @@ import Image from "next/image";
 import gsap from "gsap";
 import Flip from "gsap/Flip";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
 
 // Register GSAP Plugins (outside component for SSR safety, but we'll also register in useEffect)
 if (typeof window !== "undefined") {
 	gsap.registerPlugin(ScrollTrigger, Flip);
+	ScrollTrigger.config({ ignoreMobileResize: true });
 }
 
 import { HeroFeatures } from "../components/hero-features";
@@ -24,6 +25,7 @@ export function MainHero() {
 	const smallImgRef = useRef<HTMLDivElement>(null);
 	const targetImgRef = useRef<HTMLDivElement>(null);
 	const t = useTranslations("home.MainHero");
+	const locale = useLocale();
 
 	useEffect(() => {
 		// Ensure plugins are registered on client
@@ -101,14 +103,21 @@ export function MainHero() {
 			}, heroRef);
 		};
 
+		let initTimer: NodeJS.Timeout;
+
+		const runInit = () => {
+			initTimer = setTimeout(init, 50);
+		};
+
 		// Wait for fonts and layout to settle before initial GSAP calculation
-		if (typeof document !== "undefined" && document.fonts && document.fonts.ready) {
-			document.fonts.ready.then(() => {
-				// small delay to ensure rendering is complete
-				setTimeout(init, 50);
-			});
+		if (typeof document !== "undefined" && document.fonts) {
+			if (document.fonts.status === "loaded") {
+				init();
+			} else {
+				document.fonts.ready.then(runInit);
+			}
 		} else {
-			setTimeout(init, 100);
+			initTimer = setTimeout(init, 100);
 		}
 
 		let windowWidth = window.innerWidth;
@@ -125,14 +134,15 @@ export function MainHero() {
 
 		return () => {
 			clearTimeout(resizeTimer);
+			clearTimeout(initTimer);
 			if (ctx) ctx.revert();
 			window.removeEventListener("resize", handleResize);
 		};
-	}, []);
+	}, [locale]);
 
 	return (
 		<section
-			className="relative h-[100svh] w-full overflow-hidden bg-white"
+			className="relative h-screen w-full overflow-hidden bg-white"
 			ref={heroRef}
 		>
 			<style>{`
