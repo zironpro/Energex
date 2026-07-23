@@ -65,7 +65,7 @@ export function MainHero() {
 						{
 							borderRadius: "9999px",
 							ease: "power2.inOut",
-							duration: 0.7
+							duration: 0.7,
 						},
 						0
 					);
@@ -76,7 +76,7 @@ export function MainHero() {
 					{
 						opacity: 0,
 						ease: "power1.inOut",
-						duration: 0.2
+						duration: 0.2,
 					},
 					0
 				)
@@ -86,7 +86,7 @@ export function MainHero() {
 							x: 0,
 							opacity: 1,
 							ease: "power2.out",
-							duration: 0.4
+							duration: 0.4,
 						},
 						0.3
 					)
@@ -96,7 +96,7 @@ export function MainHero() {
 							y: 0,
 							opacity: 1,
 							ease: "power2.out",
-							duration: 0.4
+							duration: 0.4,
 						},
 						0.5 // sync after image has shrunk mostly
 					);

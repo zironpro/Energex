@@ -5,7 +5,19 @@
 			"solutions": "Solutions",
 			"products": "Products",
 			"company": "Company",
+			"insights": "Insights & News",
 			"contact": "Contact"
+		},
+		"companyDropdown": {
+			"aboutTitle": "About Us",
+			"aboutDesc": "Learn more about our story, mission, and power fleet.",
+			"insightsTitle": "Insights & News",
+			"insightsDesc": "Explore our latest articles, power guides, and updates.",
+			"solutionsTitle": "Power Solutions",
+			"solutionsDesc": "Tailored rental solutions for construction, events & industry.",
+			"terms": "Terms & Policies",
+			"contact": "Contact Us",
+			"products": "Products & Fleet"
 		},
 		"actions": {
 			"requestQuote": "Request Quote"
@@ -24,6 +36,7 @@
 				"products": "Products",
 				"solutions": "Solutions",
 				"about": "About Us",
+				"insights": "Insights & News",
 				"contact": "Contact Us"
 			},
 			"solutions": {
@@ -64,13 +77,25 @@
 	"Metadata": {
 		"title": "Energex | Best Power Generator Supplier in Dubai | UAE",
 		"description": "Energex is the best power generator supplier in Dubai, providing diesel and gas generators, backup power solutions, installation, maintenance, and expert support across the UAE.",
-		"Contact": {
-			"title": "Contact Us - Energex",
-			"description": "Get in touch with Energex for your reliable power solution needs."
+		"Solutions": {
+			"title": "Diesel Generator Rental Solutions Dubai | 20-1500kVA",
+			"description": "Power generator rental in Dubai for construction, events & industrial sites. Soundproof diesel generators, expert load assessment, 24/7 technical support.",
+			"keywords": "power generator rental in Dubai"
+		},
+		"Products": {
+			"title": "Generator Rental Dubai | Hire Diesel Genset in Dubai",
+			"description": "Browse Energex's diesel generator rental  in Dubai for events, construction , commercial & industrial power. Get a fast quote today.",
+			"keywords": "diesel generator rental Dubai, generator fleet Dubai"
 		},
 		"Company": {
-			"title": "Company - Energex",
-			"description": "Learn more about Energex, our mission, vision, and core values."
+			"title": "About Energex | Power Generator Rental Company Dubai",
+			"description": "Energex is a UAE-based power generator rental company serving all seven Emirates with reliable, scalable diesel power solutions since day one.",
+			"keywords": "power generator rental company Dubai"
+		},
+		"Contact": {
+			"title": "Contact Energex | Generator Rental Quote Dubai",
+			"description": "Request a quote for the best power generator rental near you in Dubai. Energex responds within 2 business hours — call, WhatsApp or email us today.",
+			"keywords": "best power generator rental near me"
 		},
 		"Terms": {
 			"title": "Terms & Policies - Energex",

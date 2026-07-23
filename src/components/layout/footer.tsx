@@ -2,7 +2,6 @@ import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
 
-
 const Instagram = (props: React.SVGProps<SVGSVGElement>) => (
 	<svg
 		fill="none"
@@ -114,7 +113,6 @@ export function Footer() {
 							{t("slogan")}
 						</p>
 						<div className="flex flex-wrap gap-4">
-
 							<a
 								className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-blue-500"
 								href="https://www.instagram.com/energex_equipment/"
@@ -178,6 +176,14 @@ export function Footer() {
 									href="/company"
 								>
 									{t("columns.general.about")}
+								</Link>
+							</li>
+							<li>
+								<Link
+									className="relative inline-block transition duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+									href="/insights"
+								>
+									{t("columns.general.insights")}
 								</Link>
 							</li>
 							<li>

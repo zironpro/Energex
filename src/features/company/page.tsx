@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 
 import { CTA } from "@/features/home/components/cta";
+import { InsightsNewsSection } from "@/features/insights/components/insights-news-section";
 
 import { AboutUs } from "./sections/about-us";
 import { Hero } from "./sections/hero";
@@ -43,6 +44,7 @@ export function CompanyPage() {
 			<LocalFocus />
 			<MissionVision />
 			<Values />
+			<InsightsNewsSection theme="light" />
 			<CTA />
 		</main>
 	);

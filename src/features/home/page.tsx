@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 import Lenis from "lenis";
 
+import { InsightsNewsSection } from "@/features/insights/components/insights-news-section";
 import { RentalPackages } from "@/features/solutions/sections/rental-packages";
 
 import { CTA } from "./components/cta";
@@ -34,7 +35,7 @@ export function HomePage() {
 			// Force page to top and disable scrolling during intro
 			window.scrollTo(0, 0);
 			lenis.stop();
-			document.body.style.overflow = "hidden";
+			document.body.style.overflow = "";
 
 			// Re-enable scrolling when intro finishes
 			timer = setTimeout(() => {
@@ -68,6 +69,7 @@ export function HomePage() {
 			<Products />
 			<RentalPackages />
 			<Progress />
+			<InsightsNewsSection />
 			<FAQ />
 			<CTA />
 		</main>

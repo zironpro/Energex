@@ -4,7 +4,14 @@ import { useEffect, useState } from "react";
 
 import Image from "next/image";
 
-import { Languages, Menu } from "lucide-react";
+import {
+	Building2,
+	ChevronDown,
+	Languages,
+	Menu,
+	Newspaper,
+	ShieldCheck,
+} from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -45,6 +52,7 @@ const NavLink = ({
 
 export function Navbar() {
 	const [isScrolled, setIsScrolled] = useState(false);
+	const [isCompanyHovered, setIsCompanyHovered] = useState(false);
 	const pathname = usePathname();
 	const router = useRouter();
 	const currentLocale = useLocale();
@@ -73,11 +81,15 @@ export function Navbar() {
 
 	const [isOpen, setIsOpen] = useState(false);
 
-	const mobileLinks = [
+	const navLinks = [
 		{ name: t("links.home"), href: "/" },
 		{ name: t("links.solutions"), href: "/solutions" },
 		{ name: t("links.products"), href: "/products" },
-		{ name: t("links.company"), href: "/company" },
+		{
+			name: t("links.company"),
+			href: "/company",
+			hasDropdown: true,
+		},
 		{ name: t("links.contact"), href: "/contact" },
 	];
 
@@ -107,19 +119,106 @@ export function Navbar() {
 
 				{/* Center: Navigation Links */}
 				<div className="hidden items-center space-x-8 md:flex">
-					{mobileLinks.map((link) => (
-						<NavLink
-							href={link.href}
-							isActive={
-								link.href === "/"
-									? pathname === "/"
-									: pathname.startsWith(link.href)
-							}
-							key={link.name}
-						>
-							{link.name}
-						</NavLink>
-					))}
+					{navLinks.map((link) => {
+						const isActive =
+							link.href === "/"
+								? pathname === "/"
+								: pathname.startsWith(link.href) ||
+									(link.hasDropdown && pathname.startsWith("/insights"));
+
+						if (link.hasDropdown) {
+							return (
+								<div
+									className="relative flex items-center"
+									key={link.name}
+									onMouseEnter={() => setIsCompanyHovered(true)}
+									onMouseLeave={() => setIsCompanyHovered(false)}
+								>
+									<div className="flex cursor-pointer items-center gap-1 py-2">
+										<NavLink href={link.href} isActive={isActive}>
+											{link.name}
+										</NavLink>
+										<ChevronDown
+											className={`h-4 w-4 text-white transition-transform duration-200 ${
+												isCompanyHovered ? "rotate-180" : ""
+											}`}
+										/>
+									</div>
+
+									{isCompanyHovered && (
+										<div className="fade-in-0 zoom-in-95 absolute start-0 top-full z-50 animate-in pt-3 duration-150">
+											<div className="flex w-[480px] flex-col gap-2 rounded-2xl border border-slate-100/90 bg-white p-2.5 text-slate-900 shadow-2xl ring-1 ring-black/5 md:flex-row">
+												{/* Left Column: Featured Items */}
+												<div className="flex flex-1 flex-col gap-1">
+													<Link
+														className={`group flex items-start gap-3.5 rounded-xl p-2.5 transition-all ${
+															pathname === "/company"
+																? "bg-blue-50/90"
+																: "hover:bg-slate-50"
+														}`}
+														href="/company"
+														onClick={() => setIsCompanyHovered(false)}
+													>
+														<div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 transition-transform duration-200 group-hover:scale-105 group-hover:bg-blue-600 group-hover:text-white">
+															<Building2 className="h-5 w-5" />
+														</div>
+														<div>
+															<div className="font-semibold text-slate-900 text-sm transition-colors group-hover:text-blue-600">
+																{t("companyDropdown.aboutTitle")}
+															</div>
+															<div className="mt-0.5 line-clamp-2 text-slate-500 text-xs leading-relaxed">
+																{t("companyDropdown.aboutDesc")}
+															</div>
+														</div>
+													</Link>
+
+													<Link
+														className={`group flex items-start gap-3.5 rounded-xl p-2.5 transition-all ${
+															pathname.startsWith("/insights")
+																? "bg-blue-50/90"
+																: "hover:bg-slate-50"
+														}`}
+														href="/insights"
+														onClick={() => setIsCompanyHovered(false)}
+													>
+														<div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 transition-transform duration-200 group-hover:scale-105 group-hover:bg-blue-600 group-hover:text-white">
+															<Newspaper className="h-5 w-5" />
+														</div>
+														<div>
+															<div className="font-semibold text-slate-900 text-sm transition-colors group-hover:text-blue-600">
+																{t("companyDropdown.insightsTitle")}
+															</div>
+															<div className="mt-0.5 line-clamp-2 text-slate-500 text-xs leading-relaxed">
+																{t("companyDropdown.insightsDesc")}
+															</div>
+														</div>
+													</Link>
+												</div>
+
+												{/* Right Column: Secondary Link */}
+												<div className="flex w-full shrink-0 flex-col justify-center gap-1 rounded-xl border border-slate-100 bg-slate-50/80 p-2.5 md:w-44">
+													<Link
+														className="group flex items-center gap-2.5 rounded-lg px-3 py-2.5 font-medium text-slate-700 text-xs transition-all hover:bg-white hover:text-blue-600 hover:shadow-sm"
+														href="/terms-and-policy"
+														onClick={() => setIsCompanyHovered(false)}
+													>
+														<ShieldCheck className="h-4 w-4 text-slate-400 transition-colors group-hover:text-blue-600" />
+														<span>{t("companyDropdown.terms")}</span>
+													</Link>
+												</div>
+											</div>
+										</div>
+									)}
+								</div>
+							);
+						}
+
+						return (
+							<NavLink href={link.href} isActive={isActive} key={link.name}>
+								{link.name}
+							</NavLink>
+						);
+					})}
 				</div>
 
 				{/* Right Side: Multilingual Button & Mobile Menu */}
@@ -219,11 +318,67 @@ export function Navbar() {
 								{/* Links */}
 								<div className="flex flex-1 flex-col overflow-y-auto px-6 py-6">
 									<div className="flex flex-col gap-5">
-										{mobileLinks.map((link) => {
+										{navLinks.map((link) => {
 											const isActive =
 												link.href === "/"
 													? pathname === "/"
-													: pathname.startsWith(link.href);
+													: pathname.startsWith(link.href) ||
+														(link.hasDropdown &&
+															pathname.startsWith("/insights"));
+
+											if (link.hasDropdown) {
+												return (
+													<div className="flex flex-col gap-2" key={link.name}>
+														<Link
+															className={`text-[19px] transition-colors ${
+																isActive
+																	? "font-bold text-slate-900"
+																	: "font-medium text-slate-600 hover:text-slate-900"
+															}`}
+															href={link.href}
+															onClick={() => setIsOpen(false)}
+														>
+															{link.name}
+														</Link>
+														<div className="ms-2.5 flex flex-col gap-2.5 border-slate-200 border-s-2 py-1 ps-4">
+															<Link
+																className={`text-[15px] transition-colors ${
+																	pathname === "/company"
+																		? "font-semibold text-blue-600"
+																		: "font-medium text-slate-500 hover:text-slate-900"
+																}`}
+																href="/company"
+																onClick={() => setIsOpen(false)}
+															>
+																{t("companyDropdown.aboutTitle")}
+															</Link>
+															<Link
+																className={`text-[15px] transition-colors ${
+																	pathname.startsWith("/insights")
+																		? "font-semibold text-blue-600"
+																		: "font-medium text-slate-500 hover:text-slate-900"
+																}`}
+																href="/insights"
+																onClick={() => setIsOpen(false)}
+															>
+																{t("companyDropdown.insightsTitle")}
+															</Link>
+															<Link
+																className={`text-[15px] transition-colors ${
+																	pathname.startsWith("/terms-and-policy")
+																		? "font-semibold text-blue-600"
+																		: "font-medium text-slate-500 hover:text-slate-900"
+																}`}
+																href="/terms-and-policy"
+																onClick={() => setIsOpen(false)}
+															>
+																{t("companyDropdown.terms")}
+															</Link>
+														</div>
+													</div>
+												);
+											}
+
 											return (
 												<Link
 													className={`text-[19px] transition-colors ${

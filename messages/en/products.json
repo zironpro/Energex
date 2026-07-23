@@ -24,17 +24,32 @@
 			"p250": {
 				"title": "250 kVA Industrial Power Generator",
 				"description": "Robust industrial-grade power tailored for large-scale operations and critical infrastructure backups.",
-				"specs": ["High capacity", "Weather proof", "Smart monitor", "Industrial"]
+				"specs": [
+					"High capacity",
+					"Weather proof",
+					"Smart monitor",
+					"Industrial"
+				]
 			},
 			"p500": {
 				"title": "500 kVA Heavy-Duty Generator Set",
 				"description": "Massive power output designed to support expansive events, factories, and emergency grids.",
-				"specs": ["Parallel ready", "Max efficiency", "24/7 uptime", "Grid support"]
+				"specs": [
+					"Parallel ready",
+					"Max efficiency",
+					"24/7 uptime",
+					"Grid support"
+				]
 			},
 			"p1000": {
 				"title": "1000 kVA Prime Power Generator",
 				"description": "The ultimate powerhouse for utility-scale demands, major industrial plants, and massive temporary power stations.",
-				"specs": ["Utility grade", "Containerized", "Load manage", "Ultimate power"]
+				"specs": [
+					"Utility grade",
+					"Containerized",
+					"Load manage",
+					"Ultimate power"
+				]
 			}
 		}
 	}

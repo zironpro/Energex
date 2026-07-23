@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { getTranslations } from "next-intl/server";
 
-import { ProductsPage } from "@/features/products/page";
+import { InsightsPage } from "@/features/insights/page";
 
 export async function generateMetadata({
 	params,
@@ -12,15 +12,16 @@ export async function generateMetadata({
 	const { locale } = await params;
 	const t = await getTranslations({
 		locale,
-		namespace: "common.Metadata.Products",
+		namespace: "insights",
 	});
 	return {
-		title: t("title"),
+		title: `${t("title")} | Energex Generator Rental Dubai`,
 		description: t("description"),
-		keywords: t("keywords"),
+		keywords:
+			"generator rental insights Dubai, diesel generator blog UAE, power solutions news",
 	};
 }
 
-export default function Products() {
-	return <ProductsPage />;
+export default function Page() {
+	return <InsightsPage />;
 }
