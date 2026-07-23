@@ -91,7 +91,7 @@ export function InsightsNewsSection({
 								whileInView={{ opacity: 1, y: 0 }}
 							>
 								{/* Article Image Container */}
-								<div className="relative h-56 w-full overflow-hidden bg-slate-800">
+								<div className="relative aspect-video w-full overflow-hidden bg-slate-800 sm:aspect-auto sm:h-56">
 									<Image
 										alt={title}
 										className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"

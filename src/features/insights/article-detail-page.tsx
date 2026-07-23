@@ -82,7 +82,7 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 				if (isQuestion || isHeadingCandidate) {
 					return (
 						<h2
-							className="mt-10 mb-4 font-bold text-2xl text-slate-900 tracking-tight md:text-3xl"
+							className="mt-10 mb-4 text-center font-bold text-2xl text-slate-900 tracking-tight md:text-3xl"
 							key={blockKey}
 						>
 							{trimmed}
@@ -98,7 +98,10 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 				)
 			) {
 				return (
-					<ul className="my-4 space-y-3 pl-2" key={blockKey}>
+					<ul
+						className="my-4 flex flex-col items-center space-y-3 pl-2"
+						key={blockKey}
+					>
 						{lines.map((line) => {
 							const lineText = line.replace(/^[•\d\.]+\s*/, "");
 							return (
@@ -118,7 +121,7 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 			// 3. Regular paragraph
 			return (
 				<p
-					className="mb-5 text-base text-slate-700 leading-relaxed md:text-lg"
+					className="mb-5 text-center text-base text-slate-700 leading-relaxed md:text-lg"
 					key={blockKey}
 				>
 					{trimmed}
@@ -145,9 +148,9 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 					</svg>
 				</div>
 
-				<div className="container relative z-10 mx-auto max-w-4xl">
+				<div className="container relative z-10 mx-auto max-w-4xl text-center">
 					{/* Meta Tag & Date */}
-					<div className="mb-4 flex flex-wrap items-center gap-3">
+					<div className="mb-4 flex flex-wrap items-center justify-center gap-3">
 						<span className="rounded-lg bg-blue-600 px-3 py-1 font-semibold text-white text-xs">
 							{category}
 						</span>
@@ -162,12 +165,12 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 					</div>
 
 					{/* Title */}
-					<h1 className="mb-8 font-black text-3xl text-blue-600 uppercase leading-snug tracking-tighter sm:text-4xl md:text-5xl">
+					<h1 className="mb-8 text-center font-black text-3xl text-blue-600 uppercase leading-snug tracking-tighter sm:text-4xl md:text-5xl">
 						{title}
 					</h1>
 
 					{/* Featured Image */}
-					<div className="relative h-72 w-full overflow-hidden rounded-lg bg-slate-200 shadow-lg md:h-[420px]">
+					<div className="relative -mx-6 aspect-video w-[calc(100%+3rem)] overflow-hidden bg-slate-900 shadow-md sm:mx-0 sm:w-full sm:rounded-xl md:aspect-auto md:h-[450px]">
 						<Image
 							alt={title}
 							className="object-cover"

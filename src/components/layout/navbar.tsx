@@ -240,7 +240,7 @@ export function Navbar() {
 								<Menu className="h-6 w-6" />
 							</SheetTrigger>
 							<SheetContent
-								className="mx-auto flex h-[90dvh] flex-col rounded-t-[2rem] border-0 bg-white px-0 pt-3 pb-6 text-slate-900 sm:max-w-md"
+								className="mx-auto flex max-h-[75vh] flex-col rounded-t-[2rem] border-0 bg-white px-0 pt-3 pb-6 text-slate-900 sm:max-w-md"
 								showCloseButton={false}
 								side="bottom"
 							>
@@ -316,8 +316,8 @@ export function Navbar() {
 								<div className="border-slate-100 border-b" />
 
 								{/* Links */}
-								<div className="flex flex-1 flex-col overflow-y-auto px-6 py-6">
-									<div className="flex flex-col gap-5">
+								<div className="flex flex-1 flex-col overflow-y-auto px-6 py-4">
+									<div className="flex flex-col gap-4">
 										{navLinks.map((link) => {
 											const isActive =
 												link.href === "/"
@@ -398,7 +398,7 @@ export function Navbar() {
 								</div>
 
 								{/* Footer Buttons */}
-								<div className="mt-auto flex gap-3 border-slate-100 border-t px-6 pt-4">
+								<div className="mt-auto flex shrink-0 gap-3 border-slate-100 border-t px-6 pt-4">
 									<Link
 										className="flex h-12 flex-1 items-center justify-center rounded-lg bg-blue-600 px-4 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700"
 										href="/contact"

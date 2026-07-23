@@ -91,7 +91,7 @@ export function InsightsPage() {
 									transition={{ duration: 0.3 }}
 								>
 									{/* Article Image Container */}
-									<div className="relative h-60 w-full overflow-hidden bg-slate-100">
+									<div className="relative aspect-video w-full overflow-hidden bg-slate-100 sm:aspect-auto sm:h-60">
 										<Image
 											alt={title}
 											className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
