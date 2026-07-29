@@ -62,7 +62,9 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 	const relatedArticles = ARTICLES.filter((a) => a.id !== article.id);
 
 	const renderFormattedContent = (rawText: string) => {
-		const blocks = rawText.split(/\n\n+/);
+		// Normalize literal '\n' sequences to real newlines
+		const normalizedText = rawText.replace(/\\n/g, "\n");
+		const blocks = normalizedText.split(/\n\n+/);
 
 		return blocks.map((block) => {
 			const trimmed = block.trim();
@@ -71,18 +73,19 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 			const blockKey = `block-${trimmed.slice(0, 24)}`;
 			const lines = trimmed.split("\n");
 
-			// 1. Heading detection (single short line without ending period, or ends with ?)
+			// 1. Heading detection (single short line without ending period, or ends with ? or ؟)
 			if (lines.length === 1 && trimmed.length < 130) {
-				const isQuestion = trimmed.endsWith("?");
+				const isQuestion = trimmed.endsWith("?") || trimmed.endsWith("؟");
 				const isHeadingCandidate =
 					!trimmed.endsWith(".") &&
+					!trimmed.endsWith("۔") &&
 					!trimmed.startsWith("•") &&
 					!/^\d+\./.test(trimmed);
 
 				if (isQuestion || isHeadingCandidate) {
 					return (
 						<h2
-							className="mt-10 mb-4 text-center font-bold text-2xl text-slate-900 tracking-tight md:text-3xl"
+							className="mt-10 mb-4 font-bold text-2xl text-slate-900 tracking-tight md:text-3xl"
 							key={blockKey}
 						>
 							{trimmed}
@@ -91,19 +94,62 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 				}
 			}
 
-			// 2. Bullet list detection
+			// 2. Multi-line block starting with a Subheading (short first line without period/bullet)
+			const firstLine = lines[0].trim();
+			const isFirstLineHeading =
+				lines.length > 1 &&
+				firstLine.length < 90 &&
+				!firstLine.endsWith(".") &&
+				!firstLine.endsWith("۔") &&
+				!firstLine.startsWith("•") &&
+				!/^\d+\./.test(firstLine);
+
+			if (isFirstLineHeading) {
+				const headingText = firstLine;
+				const restLines = lines.slice(1);
+				const isRestList = restLines.every(
+					(line) => line.trim().startsWith("•") || /^\d+\./.test(line.trim())
+				);
+
+				return (
+					<div className="my-6" key={blockKey}>
+						<h3 className="mt-6 mb-3 font-bold text-slate-900 text-xl md:text-2xl">
+							{headingText}
+						</h3>
+						{isRestList ? (
+							<ul className="my-4 flex flex-col space-y-3 pl-2">
+								{restLines.map((line) => {
+									const lineText = line.trim().replace(/^[•\d\.]+\s*/, "");
+									return (
+										<li
+											className="flex items-start gap-3 text-base text-slate-700 md:text-lg"
+											key={`line-${lineText.slice(0, 20)}`}
+										>
+											<span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-600" />
+											<span>{lineText}</span>
+										</li>
+									);
+								})}
+							</ul>
+						) : (
+							<p className="mb-5 text-base text-slate-700 leading-relaxed md:text-lg">
+								{restLines.join("\n").trim()}
+							</p>
+						)}
+					</div>
+				);
+			}
+
+			// 3. Bullet list detection
 			if (
 				lines.every(
 					(line) => line.trim().startsWith("•") || /^\d+\./.test(line.trim())
 				)
 			) {
 				return (
-					<ul
-						className="my-4 flex flex-col items-center space-y-3 pl-2"
-						key={blockKey}
-					>
+					<ul className="my-4 flex flex-col space-y-3 pl-2" key={blockKey}>
 						{lines.map((line) => {
-							const lineText = line.replace(/^[•\d\.]+\s*/, "");
+							const lineText = line.trim().replace(/^[•\d\.]+\s*/, "");
 							return (
 								<li
 									className="flex items-start gap-3 text-base text-slate-700 md:text-lg"
@@ -118,10 +164,10 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 				);
 			}
 
-			// 3. Regular paragraph
+			// 4. Regular paragraph
 			return (
 				<p
-					className="mb-5 text-center text-base text-slate-700 leading-relaxed md:text-lg"
+					className="mb-5 text-base text-slate-700 leading-relaxed md:text-lg"
 					key={blockKey}
 				>
 					{trimmed}

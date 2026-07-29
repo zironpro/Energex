@@ -14,4 +14,11 @@ export const ARTICLES: Article[] = [
 		categoryKey: "commercial",
 		date: "July 2026",
 	},
+	{
+		id: "generator-rental-in-dubai-best-backup-power-solutions-for-commercial-buildings",
+		key: "a2",
+		image: "/insights/generator rental in dubai.webp",
+		categoryKey: "commercial",
+		date: "July 2026",
+	},
 ];
