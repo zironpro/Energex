@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import { ChevronDown } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import type { LocationPageData } from "../types";
 
@@ -12,6 +13,7 @@ interface LocationFaqProps {
 }
 
 export function LocationFaq({ emirate, faqs }: LocationFaqProps) {
+	const t = useTranslations("locations.common.faq");
 	const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
 	return (
@@ -19,10 +21,10 @@ export function LocationFaq({ emirate, faqs }: LocationFaqProps) {
 			<div className="container mx-auto max-w-4xl px-6 md:px-12">
 				<div className="mb-14 text-center">
 					<h2 className="font-black text-3xl text-blue-600 leading-tight tracking-tighter sm:text-4xl md:text-5xl">
-						Frequently Asked Questions
+						{t("title")}
 					</h2>
 					<p className="mt-3 text-base text-slate-600 md:text-lg">
-						Common questions about generator rental services in {emirate}.
+						{t("subtitle", { emirate })}
 					</p>
 				</div>
 

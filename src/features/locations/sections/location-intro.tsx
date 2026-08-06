@@ -3,6 +3,7 @@
 import Image from "next/image";
 
 import { ArrowRight, Clock, Headphones, Phone, Truck, Zap } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
 
@@ -27,6 +28,7 @@ const getEmirateImage = (slug: string) => {
 };
 
 export function LocationIntro({ data }: LocationIntroProps) {
+	const t = useTranslations("locations.common.intro");
 	const imageSrc = getEmirateImage(data.slug);
 
 	return (
@@ -37,11 +39,11 @@ export function LocationIntro({ data }: LocationIntroProps) {
 					<div className="flex flex-col justify-between space-y-8 lg:col-span-7">
 						<div className="space-y-6">
 							<h2 className="font-black text-3xl text-blue-600 leading-[1.15] tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-								Generator Rental Fleet in {data.emirate}
+								{t("fleetIn", { emirate: data.emirate })}
 							</h2>
 
 							{/* Intro paragraph content */}
-							<p className="font-normal text-slate-700 text-base leading-relaxed md:text-lg">
+							<p className="font-normal text-base text-slate-700 leading-relaxed md:text-lg">
 								{data.intro}
 							</p>
 
@@ -51,7 +53,7 @@ export function LocationIntro({ data }: LocationIntroProps) {
 									className="group inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-7 py-3.5 font-semibold text-white shadow-blue-600/30 shadow-lg transition-all hover:bg-blue-500 hover:shadow-xl active:scale-95"
 									href="/contact"
 								>
-									<span>Get a Free Quote</span>
+									<span>{t("getQuote")}</span>
 									<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
 								</Link>
 								<a
@@ -59,7 +61,15 @@ export function LocationIntro({ data }: LocationIntroProps) {
 									href="tel:+971502335477"
 								>
 									<Phone className="h-4 w-4 text-blue-600" />
-									<span>Call (+971) 50 233 5477</span>
+									<span>
+										{t.rich("call", {
+											num: (chunks) => (
+												<span className="inline-block" dir="ltr">
+													{chunks}
+												</span>
+											),
+										})}
+									</span>
 								</a>
 							</div>
 						</div>
@@ -72,7 +82,9 @@ export function LocationIntro({ data }: LocationIntroProps) {
 									<div className="font-bold text-slate-900 text-xs sm:text-sm">
 										15 - 1500 kVA
 									</div>
-									<div className="text-slate-500 text-[11px]">Prime & Standby</div>
+									<div className="text-[11px] text-slate-500">
+										{t("primeStandby")}
+									</div>
 								</div>
 							</div>
 
@@ -80,10 +92,10 @@ export function LocationIntro({ data }: LocationIntroProps) {
 								<Truck className="h-5 w-5 shrink-0 text-blue-600" />
 								<div>
 									<div className="font-bold text-slate-900 text-xs sm:text-sm">
-										24/7 Delivery
+										{t("delivery")}
 									</div>
-									<div className="text-slate-500 text-[11px]">
-										Across {data.emirate}
+									<div className="text-[11px] text-slate-500">
+										{t("across", { emirate: data.emirate })}
 									</div>
 								</div>
 							</div>
@@ -92,9 +104,11 @@ export function LocationIntro({ data }: LocationIntroProps) {
 								<Headphones className="h-5 w-5 shrink-0 text-blue-600" />
 								<div>
 									<div className="font-bold text-slate-900 text-xs sm:text-sm">
-										Silent & Soundproof
+										{t("silent")}
 									</div>
-									<div className="text-slate-500 text-[11px]">Low Noise Units</div>
+									<div className="text-[11px] text-slate-500">
+										{t("lowNoise")}
+									</div>
 								</div>
 							</div>
 
@@ -102,9 +116,11 @@ export function LocationIntro({ data }: LocationIntroProps) {
 								<Clock className="h-5 w-5 shrink-0 text-blue-600" />
 								<div>
 									<div className="font-bold text-slate-900 text-xs sm:text-sm">
-										Flexible Rental
+										{t("flexible")}
 									</div>
-									<div className="text-slate-500 text-[11px]">Daily to Annual</div>
+									<div className="text-[11px] text-slate-500">
+										{t("dailyToAnnual")}
+									</div>
 								</div>
 							</div>
 						</div>
@@ -122,9 +138,9 @@ export function LocationIntro({ data }: LocationIntroProps) {
 								src={imageSrc}
 							/>
 							<div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-							<div className="absolute bottom-4 left-4 right-4 text-white">
+							<div className="absolute right-4 bottom-4 left-4 text-white">
 								<span className="inline-block rounded-md bg-blue-600/90 px-3 py-1 font-semibold text-xs uppercase tracking-wider backdrop-blur-md">
-									{data.emirate} Operations Hub
+									{t("hub", { emirate: data.emirate })}
 								</span>
 							</div>
 						</div>

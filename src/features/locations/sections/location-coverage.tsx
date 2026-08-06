@@ -1,4 +1,7 @@
+"use client";
+
 import { MapPin } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import type { LocationPageData } from "../types";
 
@@ -7,6 +10,8 @@ interface LocationCoverageProps {
 }
 
 export function LocationCoverage({ areasCovered }: LocationCoverageProps) {
+	const t = useTranslations("locations.common.coverage");
+
 	return (
 		<section className="border-slate-100 border-t bg-white py-20">
 			<div className="container mx-auto max-w-7xl px-6 md:px-12">
@@ -14,7 +19,7 @@ export function LocationCoverage({ areasCovered }: LocationCoverageProps) {
 					<div className="lg:col-span-5">
 						<div className="mb-3 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1 font-semibold text-blue-600 text-xs uppercase tracking-widest">
 							<MapPin className="h-3.5 w-3.5" />
-							<span>District Coverage</span>
+							<span>{t("badge")}</span>
 						</div>
 						<h2 className="mb-4 font-black text-3xl text-blue-600 leading-tight tracking-tighter sm:text-4xl md:text-5xl">
 							{areasCovered.title}

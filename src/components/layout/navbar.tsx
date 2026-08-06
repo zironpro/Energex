@@ -29,22 +29,15 @@ const NavLink = ({
 }) => {
 	return (
 		<Link
-			className="group relative flex overflow-hidden pb-1 text-base text-white transition-colors"
+			className="group relative inline-flex items-center py-1 font-medium text-base text-white transition-colors hover:text-white"
 			href={href}
 		>
-			<div className="flex">
-				<span className="transition-transform duration-300 ease-in-out group-hover:-translate-y-full">
-					{children}
-				</span>
-			</div>
-			<div className="absolute inset-0 flex text-blue-200">
-				<span className="translate-y-full transition-transform duration-300 ease-in-out group-hover:translate-y-0">
-					{children}
-				</span>
-			</div>
-			{/* Animated Bottom Border */}
-			<div
-				className={`absolute bottom-0 left-0 h-[1px] bg-white transition duration-300 ease-in-out ${isActive ? "w-full" : "w-0 group-hover:w-full"}`}
+			<span>{children}</span>
+			{/* Animated Bottom Border - Fills Left to Right */}
+			<span
+				className={`absolute start-0 bottom-0 h-[2px] bg-white transition-all duration-300 ease-in-out ${
+					isActive ? "w-full" : "w-0 group-hover:w-full"
+				}`}
 			/>
 		</Link>
 	);

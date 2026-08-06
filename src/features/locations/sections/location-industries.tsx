@@ -1,4 +1,7 @@
+"use client";
+
 import { Building2, Calendar, Factory, Fuel, HardHat, Zap } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import type { LocationPageData } from "../types";
 
@@ -28,6 +31,8 @@ export function LocationIndustries({
 	emirate,
 	industries,
 }: LocationIndustriesProps) {
+	const t = useTranslations("locations.common.industries");
+
 	return (
 		<section className="bg-slate-50/60 py-20">
 			<div className="container mx-auto max-w-7xl px-6 md:px-12">
@@ -36,8 +41,7 @@ export function LocationIndustries({
 						{industries.title}
 					</h2>
 					<p className="mt-4 text-base text-slate-600 md:text-lg">
-						Tailored generator rental contracts designed to meet the strict
-						power and sound demands of key industries across {emirate}.
+						{t("subtitle", { emirate })}
 					</p>
 				</div>
 

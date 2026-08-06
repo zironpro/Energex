@@ -262,12 +262,14 @@ export function Footer() {
 									</span>
 									<a
 										className="relative mb-1 block transition duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+										dir="ltr"
 										href="tel:+97145753066"
 									>
 										T: (+971) 4 575 3066
 									</a>
 									<a
 										className="relative block transition duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+										dir="ltr"
 										href="tel:+971502335477"
 									>
 										M: +971 50 233 5477

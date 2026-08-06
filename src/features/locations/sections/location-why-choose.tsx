@@ -1,4 +1,7 @@
+"use client";
+
 import { CheckCircle2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import type { LocationPageData } from "../types";
 
@@ -11,6 +14,8 @@ export function LocationWhyChoose({
 	emirate,
 	whyChoose,
 }: LocationWhyChooseProps) {
+	const t = useTranslations("locations.common.whyChoose");
+
 	return (
 		<section className="bg-slate-50/60 py-20">
 			<div className="container mx-auto max-w-7xl px-6 md:px-12">
@@ -19,8 +24,7 @@ export function LocationWhyChoose({
 						{whyChoose.title}
 					</h2>
 					<p className="mt-4 text-base text-slate-600 md:text-lg">
-						Energex combines rapid local dispatch with complete technical setup
-						and 24/7 backup maintenance across {emirate}.
+						{t("subtitle", { emirate })}
 					</p>
 				</div>
 

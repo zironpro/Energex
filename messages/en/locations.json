@@ -1,4 +1,50 @@
 {
+	"common": {
+		"intro": {
+			"fleetIn": "Generator Rental Fleet in {emirate}",
+			"getQuote": "Get a Free Quote",
+			"call": "Call <num>+971 50 233 5477</num>",
+			"primeStandby": "Prime & Standby",
+			"delivery": "24/7 Delivery",
+			"across": "Across {emirate}",
+			"silent": "Silent & Soundproof",
+			"lowNoise": "Low Noise Units",
+			"flexible": "Flexible Rental",
+			"dailyToAnnual": "Daily to Annual",
+			"hub": "{emirate} Operations Hub"
+		},
+		"whyChoose": {
+			"subtitle": "Energex combines rapid local dispatch with complete technical setup and 24/7 backup maintenance across {emirate}."
+		},
+		"generatorRange": {
+			"badge": "Power Solutions",
+			"availableCapacities": "Available Generator Capacities ({emirate})",
+			"type": "Diesel / Silent"
+		},
+		"industries": {
+			"subtitle": "Tailored generator rental contracts designed to meet the strict power and sound demands of key industries across {emirate}."
+		},
+		"coverage": {
+			"badge": "District Coverage"
+		},
+		"callout": {
+			"title": "Need a generator in {emirate} fast?",
+			"subtitle": "Contact Energex today for a free quote and same-day support.",
+			"requestQuote": "Request a Quote"
+		},
+		"faq": {
+			"title": "Frequently Asked Questions",
+			"subtitle": "Common questions about generator rental services in {emirate}."
+		},
+		"cta": {
+			"title": "Ready for Uninterrupted Power in {emirate}?",
+			"subtitle": "Speak to our technical engineers today for fast load sizing, competitive rental packages, and immediate delivery across {emirate}.",
+			"getStarted": "Get Started"
+		},
+		"emiratesStrip": {
+			"selectEmirate": "Select Emirate Location"
+		}
+	},
 	"generator-rental-dubai": {
 		"slug": "generator-rental-dubai",
 		"emirate": "Dubai",

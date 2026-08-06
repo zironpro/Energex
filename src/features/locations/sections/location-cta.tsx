@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 
-import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 
+import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 
 interface LocationCtaProps {
@@ -9,6 +12,8 @@ interface LocationCtaProps {
 }
 
 export function LocationCta({ emirate }: LocationCtaProps) {
+	const t = useTranslations("locations.common.cta");
+
 	return (
 		<section className="relative bg-slate-950 py-16 text-white">
 			{/* Background Logo Overflowing */}
@@ -29,12 +34,10 @@ export function LocationCta({ emirate }: LocationCtaProps) {
 			<div className="container relative z-10 mx-auto flex flex-col items-center justify-between gap-8 px-6 text-center md:flex-row md:px-12 md:text-left">
 				<div className="max-w-2xl">
 					<h2 className="mb-4 font-bold text-3xl tracking-tighter md:text-4xl">
-						Ready for Uninterrupted Power in {emirate}?
+						{t("title", { emirate })}
 					</h2>
 					<p className="font-medium text-base text-slate-400 md:text-lg">
-						Speak to our technical engineers today for fast load sizing,
-						competitive rental packages, and immediate delivery across {emirate}
-						.
+						{t("subtitle", { emirate })}
 					</p>
 				</div>
 				<div className="flex-shrink-0">
@@ -43,7 +46,7 @@ export function LocationCta({ emirate }: LocationCtaProps) {
 						render={<Link href="/contact" />}
 						size="lg"
 					>
-						<span>Get Started</span>
+						<span>{t("getStarted")}</span>
 						<Image
 							alt="Arrow"
 							className="brightness-0 invert transition-transform duration-300 group-hover:translate-x-1"

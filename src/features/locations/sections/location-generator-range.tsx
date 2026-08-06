@@ -1,4 +1,7 @@
+"use client";
+
 import { Zap } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import type { LocationPageData } from "../types";
 
@@ -11,6 +14,8 @@ export function LocationGeneratorRange({
 	emirate,
 	generatorRange,
 }: LocationGeneratorRangeProps) {
+	const t = useTranslations("locations.common.generatorRange");
+
 	return (
 		<section className="relative bg-white py-20">
 			<div className="container relative z-10 mx-auto max-w-7xl px-6 md:px-12">
@@ -18,7 +23,7 @@ export function LocationGeneratorRange({
 					{/* Left Column Text */}
 					<div className="lg:col-span-5">
 						<div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1 font-semibold text-blue-600 text-xs uppercase tracking-widest">
-							Power Solutions
+							{t("badge")}
 						</div>
 						<h2 className="mb-6 font-black text-3xl text-blue-600 leading-tight tracking-tighter sm:text-4xl md:text-5xl">
 							{generatorRange.title}
@@ -33,7 +38,7 @@ export function LocationGeneratorRange({
 						<div className="rounded-lg border border-slate-200/80 bg-slate-50 p-6 shadow-sm md:p-8">
 							<h3 className="mb-6 flex items-center gap-2 font-bold text-slate-900 text-xl">
 								<Zap className="h-5 w-5 text-blue-600" />
-								<span>Available Generator Capacities ({emirate})</span>
+								<span>{t("availableCapacities", { emirate })}</span>
 							</h3>
 							<div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
 								{generatorRange.capacities.map((cap) => (
@@ -45,7 +50,7 @@ export function LocationGeneratorRange({
 											{cap}
 										</span>
 										<span className="mt-1 font-medium text-[11px] text-slate-500 uppercase">
-											Diesel / Silent
+											{t("type")}
 										</span>
 									</div>
 								))}

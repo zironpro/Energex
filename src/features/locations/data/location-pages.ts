@@ -64,11 +64,11 @@ export async function getLocationDataBySlug(
 		const messages = (
 			await import(`../../../../messages/${validLocale}/locations.json`)
 		).default;
-		return (messages as Record<string, LocationPageData>)[slug];
+		return (messages as unknown as Record<string, LocationPageData>)[slug];
 	} catch {
 		const fallbackMessages = (
 			await import("../../../../messages/en/locations.json")
 		).default;
-		return (fallbackMessages as Record<string, LocationPageData>)[slug];
+		return (fallbackMessages as unknown as Record<string, LocationPageData>)[slug];
 	}
 }

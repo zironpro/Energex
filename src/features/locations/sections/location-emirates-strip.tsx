@@ -1,4 +1,6 @@
-import { useLocale } from "next-intl";
+"use client";
+
+import { useLocale, useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
 
@@ -12,6 +14,7 @@ export function LocationEmiratesStrip({
 	currentSlug,
 }: LocationEmiratesStripProps) {
 	const locale = useLocale();
+	const t = useTranslations("locations.common.emiratesStrip");
 	const isAr = locale === "ar";
 
 	return (
@@ -19,7 +22,7 @@ export function LocationEmiratesStrip({
 			<div className="container mx-auto max-w-7xl px-6 md:px-12">
 				<div className="no-scrollbar flex items-center gap-2 overflow-x-auto py-3">
 					<span className="me-2 shrink-0 font-semibold text-slate-400 text-xs uppercase tracking-wider">
-						{isAr ? "اختر المنطقة:" : "Select Emirate:"}
+						{t("selectEmirate")}
 					</span>
 					{LOCATION_PAGES_META.map((loc) => {
 						const isActive = loc.slug === currentSlug;
