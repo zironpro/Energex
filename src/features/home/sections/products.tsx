@@ -23,7 +23,7 @@ export function Products() {
 			<div className="container mx-auto px-6">
 				<div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between lg:mb-16">
 					<ScrollReveal>
-						<h2 className="font-extrabold text-4xl text-blue-600 tracking-tight lg:text-5xl">
+						<h2 className="font-bold text-4xl text-blue-600 tracking-tighter md:text-5xl">
 							{t("title")}
 						</h2>
 					</ScrollReveal>

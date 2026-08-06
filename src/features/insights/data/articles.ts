@@ -10,7 +10,7 @@ export const ARTICLES: Article[] = [
 	{
 		id: "best-power-generator-rental-company-in-dubai-for-commercial-use",
 		key: "a1",
-		image: "/insights/best power generator rental company in dubai.jpeg",
+		image: "/insights/best power generator rental company in dubai.webp",
 		categoryKey: "commercial",
 		date: "July 2026",
 	},

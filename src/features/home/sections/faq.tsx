@@ -29,7 +29,7 @@ export function FAQ() {
 					{/* Left Column */}
 					<div className="relative flex h-fit flex-col lg:sticky lg:top-24 lg:col-span-5">
 						<ScrollReveal direction="left">
-							<h2 className="mb-12 font-bold text-5xl text-blue-600 tracking-tighter md:text-6xl">
+							<h2 className="mb-12 font-bold text-4xl text-blue-600 tracking-tighter md:text-5xl">
 								{t("title1")}
 								<br />
 								{t("title2")}

@@ -37,7 +37,7 @@ export function InsightsNewsSection({
 				<div className="mb-14 flex flex-col items-center justify-between gap-6 md:flex-row md:items-end">
 					<div className="max-w-2xl text-center md:text-left">
 						<h2
-							className={`font-black text-3xl uppercase tracking-tighter sm:text-4xl md:text-5xl ${
+							className={`font-bold text-4xl tracking-tighter md:text-5xl ${
 								isDark ? "text-blue-500" : "text-blue-600"
 							}`}
 						>

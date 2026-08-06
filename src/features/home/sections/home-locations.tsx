@@ -31,7 +31,7 @@ export function HomeLocations() {
 				{/* Main Headline & Subtitle Description */}
 				<div className="mb-14 grid grid-cols-1 items-end gap-6 lg:grid-cols-12">
 					<motion.h2
-						className="font-black text-3xl text-blue-600 leading-tight sm:text-4xl md:text-5xl lg:col-span-7 lg:text-6xl"
+						className="font-bold text-4xl text-blue-600 tracking-tighter md:text-5xl lg:col-span-7"
 						initial={{ opacity: 0, y: 15 }}
 						transition={{ duration: 0.6, delay: 0.1 }}
 						viewport={{ once: true }}
