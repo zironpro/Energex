@@ -41,7 +41,7 @@ export function RentalPackages() {
 				<div className="grid grid-cols-1 gap-8 md:grid-cols-3">
 					{packages.map((pkg, i) => (
 						<motion.div
-							className="group relative flex flex-col overflow-hidden rounded-2xl bg-blue-600 shadow-lg"
+							className="group relative flex flex-col overflow-hidden rounded-lg bg-blue-600 shadow-lg"
 							initial={{ opacity: 0, y: 20 }}
 							key={pkg.title}
 							transition={{ duration: 0.5, delay: i * 0.1 }}
