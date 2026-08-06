@@ -17,6 +17,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { FloatingCallButton } from "@/components/ui/floating-call-button";
 
 import { routing } from "@/i18n/routing";
+import { buildOrganizationJsonLd } from "@/lib/schema/organization-json-ld";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -75,6 +76,7 @@ export default async function RootLayout({
 
 	setRequestLocale(locale);
 	const messages = await getMessages();
+	const organizationJsonLd = buildOrganizationJsonLd(locale);
 
 	return (
 		<html
@@ -82,6 +84,11 @@ export default async function RootLayout({
 			dir={locale === "ar" ? "rtl" : "ltr"}
 			lang={locale}
 		>
+			<head>
+				<script id="organization-schema" type="application/ld+json">
+					{JSON.stringify(organizationJsonLd)}
+				</script>
+			</head>
 			<body className="flex flex-col font-sans">
 				<noscript>
 					<iframe

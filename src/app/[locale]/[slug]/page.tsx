@@ -10,6 +10,8 @@ import {
 } from "@/features/locations/data/location-pages";
 import { LocationPage } from "@/features/locations/location-page";
 import { routing } from "@/i18n/routing";
+import { buildFaqPageJsonLd } from "@/lib/schema/faq-json-ld";
+import { buildLocationServiceJsonLd } from "@/lib/schema/location-json-ld";
 
 export async function generateStaticParams() {
 	const params: Array<{ locale: string; slug: string }> = [];
@@ -84,5 +86,22 @@ export default async function Page({
 		notFound();
 	}
 
-	return <LocationPage data={data} />;
+	const locationServiceJsonLd = buildLocationServiceJsonLd(
+		slug,
+		data.emirate,
+		locale
+	);
+	const faqJsonLd = buildFaqPageJsonLd(data.faqs);
+
+	return (
+		<>
+			<script id={`location-schema-${slug}`} type="application/ld+json">
+				{JSON.stringify(locationServiceJsonLd)}
+			</script>
+			<script id={`faq-schema-${slug}`} type="application/ld+json">
+				{JSON.stringify(faqJsonLd)}
+			</script>
+			<LocationPage data={data} />
+		</>
+	);
 }
