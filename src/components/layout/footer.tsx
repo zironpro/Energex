@@ -288,7 +288,7 @@ export function Footer() {
 			</div>
 
 			{/* Full-width Bottom Bar */}
-			<div className="mt-20 border-blue-400/30 border-t">
+			<div className="border-blue-400/30 border-t">
 				<div className="container relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-between px-6 py-6 text-slate-300 text-xs md:flex-row md:px-12">
 					<p className="order-1 flex-1 text-center md:text-left">
 						&copy; {new Date().getFullYear()} Energex. All Rights Reserved.

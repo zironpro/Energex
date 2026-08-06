@@ -12,6 +12,7 @@ import { Intro } from "./components/intro";
 import { Advantage } from "./sections/advantage";
 import { FAQ } from "./sections/faq";
 import { GeneratorFeatures } from "./sections/generator-features";
+import { HomeLocations } from "./sections/home-locations";
 import { MainHero } from "./sections/main-hero";
 import { Products } from "./sections/products";
 import { Progress } from "./sections/progress";
@@ -68,6 +69,7 @@ export function HomePage() {
 			<GeneratorFeatures />
 			<Products />
 			<RentalPackages />
+			<HomeLocations />
 			<Progress />
 			<InsightsNewsSection />
 			<FAQ />

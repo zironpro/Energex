@@ -28,6 +28,11 @@ const geistMono = Geist_Mono({
 	subsets: ["latin"],
 });
 
+const BASE_URL =
+	process.env.NEXT_PUBLIC_SITE_URL ||
+	process.env.SITE_URL ||
+	"https://www.energexequip.ae";
+
 export async function generateMetadata({
 	params,
 }: {
@@ -35,9 +40,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
 	const { locale } = await params;
 	const t = await getTranslations({ locale, namespace: "common.Metadata" });
+	const baseUrl = BASE_URL.trim().replace(/\/+$/, "");
+
 	return {
+		metadataBase: new URL(baseUrl),
 		title: t("title"),
 		description: t("description"),
+		alternates: {
+			canonical: `${baseUrl}/${locale}`,
+			languages: {
+				en: `${baseUrl}/en`,
+				ar: `${baseUrl}/ar`,
+				"x-default": `${baseUrl}/en`,
+			},
+		},
 		verification: {
 			google: "4bKAMrB0AGsSxQuoqq4uz49qrPNs4lgYfGkY4-IIYhc",
 		},

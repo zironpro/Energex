@@ -1,16 +1,36 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL =
-	process.env.NEXT_PUBLIC_SITE_URL ||
-	process.env.SITE_URL ||
-	"https://www.energexequip.ae";
+import { siteConfig } from "@/constants/site-config";
 
 export default function robots(): MetadataRoute.Robots {
 	return {
-		rules: {
-			userAgent: "*",
-			allow: "/",
-		},
-		sitemap: `${BASE_URL}/sitemap.xml`,
+		rules: [
+			{
+				userAgent: "*",
+				allow: "/",
+				disallow: [
+					"/api/",
+					"/_next/",
+					"/admin/",
+					"/private/",
+				],
+			},
+			{
+				userAgent: [
+					"GPTBot",
+					"OAI-SearchBot",
+					"ClaudeBot",
+					"PerplexityBot",
+					"Google-Extended",
+				],
+				allow: "/",
+			},
+			{
+				userAgent: ["CCBot", "anthropic-ai"],
+				disallow: "/",
+			},
+		],
+		sitemap: `${siteConfig.site}/sitemap.xml`,
+		host: siteConfig.site,
 	};
 }

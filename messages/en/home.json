@@ -160,5 +160,77 @@
 				"description": "Assistance whenever required."
 			}
 		}
+	},
+	"HomeLocations": {
+		"badge": "ENERGEX EQUIPMENT RENTAL",
+		"title": "Generator Rental Across the UAE",
+		"description": "7 emirate-specific power solutions built for construction, events, and industrial projects across Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, and Al Ain.",
+		"viewAll": "Explore All Locations",
+		"locations": {
+			"dubai": {
+				"name": "Dubai",
+				"h1": "Generator Rental Dubai",
+				"desc": "15 kVA to 1500 kVA diesel and silent generators for construction, events, and industry. 24/7 delivery across Dubai.",
+				"tag1": "DUBAI",
+				"tag2": "24/7 SUPPORT",
+				"slug": "generator-rental-dubai"
+			},
+			"abuDhabi": {
+				"name": "Abu Dhabi",
+				"h1": "Generator Rental Abu Dhabi",
+				"desc": "Industrial & diesel generators for construction, oil & gas, events, and commercial sites. Delivered 24/7.",
+				"tag1": "ABU DHABI",
+				"tag2": "15-1500 KVA",
+				"slug": "generator-rental-abu-dhabi"
+			},
+			"sharjah": {
+				"name": "Sharjah",
+				"h1": "Generator Rental Sharjah",
+				"desc": "Diesel and silent generators from 15 kVA to 1500 kVA for construction, industrial, and event power needs.",
+				"tag1": "SHARJAH",
+				"tag2": "INDUSTRIAL",
+				"slug": "generator-rental-sharjah"
+			},
+			"ajman": {
+				"name": "Ajman",
+				"h1": "Generator Rental Ajman",
+				"desc": "Dependable temporary power solutions for construction, industrial, and commercial sites from 15 kVA to 1500 kVA.",
+				"tag1": "AJMAN",
+				"tag2": "FAST DISPATCH",
+				"slug": "generator-rental-ajman"
+			},
+			"ummAlQuwain": {
+				"name": "Umm Al Quwain",
+				"h1": "Generator Rental Umm Al Quwain",
+				"desc": "Fast-dispatch diesel and silent power solutions from 15 kVA to 1500 kVA for industrial, marine, and construction.",
+				"tag1": "UMM AL QUWAIN",
+				"tag2": "MARINE & PORT",
+				"slug": "generator-rental-umm-al-quwain"
+			},
+			"rasAlKhaimah": {
+				"name": "Ras Al Khaimah",
+				"h1": "Generator Rental Ras Al Khaimah",
+				"desc": "Diesel and silent generators from 15 kVA to 1500 kVA for construction, industrial, and event power.",
+				"tag1": "RAS AL KHAIMAH",
+				"tag2": "HEAVY DUTY",
+				"slug": "generator-rental-ras-al-khaimah"
+			},
+			"fujairah": {
+				"name": "Fujairah",
+				"h1": "Generator Rental Fujairah",
+				"desc": "Generator rental for port, industrial, construction, and commercial sites from 15 kVA to 1500 kVA.",
+				"tag1": "FUJAIRAH",
+				"tag2": "PORT & OIL",
+				"slug": "generator-rental-fujairah"
+			},
+			"alAin": {
+				"name": "Al Ain",
+				"h1": "Generator Rental Al Ain",
+				"desc": "Diesel and silent generators from 15 kVA to 1500 kVA for construction, agricultural, and commercial power needs.",
+				"tag1": "AL AIN",
+				"tag2": "AGRICULTURAL",
+				"slug": "generator-rental-al-ain"
+			}
+		}
 	}
 }
