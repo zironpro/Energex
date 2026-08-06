@@ -1,4 +1,5 @@
 import { siteConfig } from "@/constants/site-config";
+
 import {
 	ORGANIZATION_ALTERNATE_NAME,
 	ORGANIZATION_DESCRIPTION,

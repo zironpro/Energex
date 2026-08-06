@@ -69,6 +69,8 @@ export async function getLocationDataBySlug(
 		const fallbackMessages = (
 			await import("../../../../messages/en/locations.json")
 		).default;
-		return (fallbackMessages as unknown as Record<string, LocationPageData>)[slug];
+		return (fallbackMessages as unknown as Record<string, LocationPageData>)[
+			slug
+		];
 	}
 }

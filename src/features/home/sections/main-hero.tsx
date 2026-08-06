@@ -7,7 +7,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import Flip from "gsap/Flip";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
 
@@ -25,7 +25,6 @@ export function MainHero() {
 	const smallImgRef = useRef<HTMLDivElement>(null);
 	const targetImgRef = useRef<HTMLDivElement>(null);
 	const t = useTranslations("home.MainHero");
-	const locale = useLocale();
 
 	useEffect(() => {
 		// Ensure plugins are registered on client
@@ -138,7 +137,7 @@ export function MainHero() {
 			if (ctx) ctx.revert();
 			window.removeEventListener("resize", handleResize);
 		};
-	}, [locale]);
+	}, []);
 
 	return (
 		<section

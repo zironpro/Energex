@@ -95,9 +95,6 @@ export function HomeLocations() {
 											<span className="rounded-full border border-white/25 bg-white/15 px-3.5 py-1 font-medium text-white text-xs tracking-wider backdrop-blur-md">
 												{tag1}
 											</span>
-											{/* <span className="rounded-full border border-white/25 bg-white/15 px-3.5 py-1 font-medium text-white text-xs tracking-wider backdrop-blur-md">
-												{tag2}
-											</span> */}
 										</div>
 
 										{/* Card Title */}

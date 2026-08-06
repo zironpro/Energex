@@ -30,7 +30,7 @@ export function LocationCoverage({ areasCovered }: LocationCoverageProps) {
 					</div>
 
 					<div className="lg:col-span-7">
-						<div className="flex flex-wrap gap-2.5 rounded-lg border border-slate-200/80 bg-slate-50 p-6 md:p-8 shadow-xs">
+						<div className="flex flex-wrap gap-2.5 rounded-lg border border-slate-200/80 bg-slate-50 p-6 shadow-xs md:p-8">
 							{areasCovered.areasList.map((area) => (
 								<span
 									className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-semibold text-slate-800 text-sm shadow-xs transition hover:border-blue-400 hover:text-blue-600 hover:shadow-sm"

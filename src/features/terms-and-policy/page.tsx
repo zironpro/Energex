@@ -1,5 +1,3 @@
-"use client";
-
 export function TermsAndPolicyPage() {
 	return (
 		<main className="relative min-h-screen bg-white pt-32 pb-24 text-slate-900">

@@ -1,46 +1,20 @@
 "use client";
 
-import { useEffect } from "react";
-
 import Image from "next/image";
 
 import { motion } from "framer-motion";
-import Lenis from "lenis";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { CTA } from "@/features/home/components/cta";
+import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 import { Link } from "@/i18n/navigation";
 
 import { ARTICLES } from "./data/articles";
 
 export function InsightsPage() {
 	const t = useTranslations("insights");
-
-	useEffect(() => {
-		window.scrollTo(0, 0);
-
-		const lenis = new Lenis({
-			duration: 1.2,
-			easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-			orientation: "vertical",
-			gestureOrientation: "vertical",
-			smoothWheel: true,
-		});
-
-		lenis.scrollTo(0, { immediate: true });
-
-		function raf(time: number) {
-			lenis.raf(time);
-			requestAnimationFrame(raf);
-		}
-
-		requestAnimationFrame(raf);
-
-		return () => {
-			lenis.destroy();
-		};
-	}, []);
+	useSmoothScroll();
 
 	return (
 		<main className="relative min-h-screen bg-slate-50 text-slate-900">

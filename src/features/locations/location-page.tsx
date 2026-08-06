@@ -1,8 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
-
-import Lenis from "lenis";
+import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
 import { LocationCallout } from "./sections/location-callout";
 import { LocationCoverage } from "./sections/location-coverage";
@@ -21,27 +19,7 @@ interface LocationPageProps {
 }
 
 export function LocationPage({ data }: LocationPageProps) {
-	useEffect(() => {
-		const lenis = new Lenis({
-			duration: 1.2,
-			easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-			orientation: "vertical",
-			gestureOrientation: "vertical",
-			smoothWheel: true,
-			wheelMultiplier: 1,
-		});
-
-		function raf(time: number) {
-			lenis.raf(time);
-			requestAnimationFrame(raf);
-		}
-
-		requestAnimationFrame(raf);
-
-		return () => {
-			lenis.destroy();
-		};
-	}, []);
+	useSmoothScroll();
 
 	// FAQ JSON-LD Schema
 	const faqSchema = {

@@ -1,4 +1,5 @@
 import { siteConfig } from "@/constants/site-config";
+
 import { ORGANIZATION_LEGAL_NAME } from "./constants";
 
 export function buildLocationServiceJsonLd(
