@@ -39,11 +39,11 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 		const normalizedText = rawText.replace(/\\n/g, "\n");
 		const blocks = normalizedText.split(/\n\n+/);
 
-		return blocks.map((block) => {
+		return blocks.map((block, index) => {
 			const trimmed = block.trim();
 			if (!trimmed) return null;
 
-			const blockKey = `block-${trimmed.slice(0, 24)}`;
+			const blockKey = `block-${index}-${trimmed.slice(0, 24)}`;
 			const lines = trimmed.split("\n");
 
 			// 1. Heading detection (single short line without ending period, or ends with ? or ؟)

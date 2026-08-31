@@ -399,7 +399,7 @@ export function Navbar() {
 									>
 										{t("actions.requestQuote")}
 										<Image
-											alt=""
+											alt="Arrow Icon"
 											className="ml-2 h-4 w-4 invert"
 											height={16}
 											src="/icons/caret-right.svg"

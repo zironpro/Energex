@@ -4,6 +4,8 @@ import { getTranslations } from "next-intl/server";
 
 import { InsightsPage } from "@/features/insights/page";
 
+import { getAlternates } from "@/lib/metadata";
+
 export async function generateMetadata({
 	params,
 }: {
@@ -19,6 +21,7 @@ export async function generateMetadata({
 		description: t("description"),
 		keywords:
 			"generator rental insights Dubai, diesel generator blog UAE, power solutions news",
+		alternates: getAlternates("/insights", locale),
 	};
 }
 

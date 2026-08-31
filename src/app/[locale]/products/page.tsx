@@ -4,6 +4,8 @@ import { getTranslations } from "next-intl/server";
 
 import { ProductsPage } from "@/features/products/page";
 
+import { getAlternates } from "@/lib/metadata";
+
 export async function generateMetadata({
 	params,
 }: {
@@ -18,6 +20,7 @@ export async function generateMetadata({
 		title: t("title"),
 		description: t("description"),
 		keywords: t("keywords"),
+		alternates: getAlternates("/products", locale),
 	};
 }
 

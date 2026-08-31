@@ -1,3 +1,5 @@
+import enInsights from "../../../../messages/en/insights.json";
+
 export interface Article {
 	id: string;
 	key: string;
@@ -6,19 +8,12 @@ export interface Article {
 	date: string;
 }
 
-export const ARTICLES: Article[] = [
-	{
-		id: "best-power-generator-rental-company-in-dubai-for-commercial-use",
-		key: "a1",
-		image: "/insights/best power generator rental company in dubai.webp",
-		categoryKey: "commercial",
-		date: "July 2026",
-	},
-	{
-		id: "generator-rental-in-dubai-best-backup-power-solutions-for-commercial-buildings",
-		key: "a2",
-		image: "/insights/generator rental in dubai.webp",
-		categoryKey: "commercial",
-		date: "July 2026",
-	},
-];
+export const ARTICLES: Article[] = Object.entries(enInsights.articles).map(
+	([key, data]) => ({
+		id: (data as any).id,
+		key,
+		image: (data as any).image,
+		categoryKey: (data as any).categoryKey,
+		date: (data as any).date,
+	})
+);
