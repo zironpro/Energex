@@ -34,6 +34,37 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 	// Other related articles
 	const relatedArticles = ARTICLES.filter((a) => a.id !== article.id);
 
+	const parseTextWithLinks = (text: string) => {
+		const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+		const parts = [];
+		let lastIndex = 0;
+		let match;
+
+		while ((match = linkRegex.exec(text)) !== null) {
+			if (match.index > lastIndex) {
+				parts.push(text.substring(lastIndex, match.index));
+			}
+			parts.push(
+				<a
+					className="font-semibold text-blue-600 underline decoration-blue-300 underline-offset-4 transition-colors hover:text-blue-800 hover:decoration-blue-600"
+					href={match[2]}
+					key={`link-${match.index}`}
+					rel="noopener noreferrer"
+					target="_blank"
+				>
+					{match[1]}
+				</a>
+			);
+			lastIndex = linkRegex.lastIndex;
+		}
+
+		if (lastIndex < text.length) {
+			parts.push(text.substring(lastIndex));
+		}
+
+		return parts.length > 0 ? parts : text;
+	};
+
 	const renderFormattedContent = (rawText: string) => {
 		// Normalize literal '\n' sequences to real newlines
 		const normalizedText = rawText.replace(/\\n/g, "\n");
@@ -61,7 +92,7 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 							className="mt-10 mb-4 font-bold text-2xl text-slate-900 tracking-tight md:text-3xl"
 							key={blockKey}
 						>
-							{trimmed}
+							{parseTextWithLinks(trimmed)}
 						</h2>
 					);
 				}
@@ -87,7 +118,7 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 				return (
 					<div className="my-6" key={blockKey}>
 						<h3 className="mt-6 mb-3 font-bold text-slate-900 text-xl md:text-2xl">
-							{headingText}
+							{parseTextWithLinks(headingText)}
 						</h3>
 						{isRestList ? (
 							<ul className="my-4 flex flex-col space-y-3 pl-2">
@@ -99,14 +130,14 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 											key={`line-${lineText.slice(0, 20)}`}
 										>
 											<span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-600" />
-											<span>{lineText}</span>
+											<span>{parseTextWithLinks(lineText)}</span>
 										</li>
 									);
 								})}
 							</ul>
 						) : (
 							<p className="mb-5 text-base text-slate-700 leading-relaxed md:text-lg">
-								{restLines.join("\n").trim()}
+								{parseTextWithLinks(restLines.join("\n").trim())}
 							</p>
 						)}
 					</div>
@@ -129,7 +160,7 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 									key={`line-${lineText.slice(0, 20)}`}
 								>
 									<span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-600" />
-									<span>{lineText}</span>
+									<span>{parseTextWithLinks(lineText)}</span>
 								</li>
 							);
 						})}
@@ -143,7 +174,7 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 					className="mb-5 text-base text-slate-700 leading-relaxed md:text-lg"
 					key={blockKey}
 				>
-					{trimmed}
+					{parseTextWithLinks(trimmed)}
 				</p>
 			);
 		});
