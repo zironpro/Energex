@@ -1,10 +1,7 @@
 "use client";
 
-import { useState } from "react";
-
-import { AnimatePresence, motion } from "framer-motion";
-import { Headset, Phone, X } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import { Phone } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 
@@ -20,79 +17,34 @@ const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 export function FloatingCallButton() {
-	const [isOpen, setIsOpen] = useState(false);
-	const t = useTranslations("common.FloatingCallButton");
-
 	return (
 		<motion.div
 			animate={{ scale: 1, opacity: 1, y: 0 }}
-			className="fixed right-6 bottom-6 z-50 flex flex-col-reverse items-end gap-4"
+			className="fixed right-6 bottom-6 z-50 flex flex-col gap-4"
 			dir="ltr"
 			initial={{ scale: 0, opacity: 0, y: 50 }}
-			onMouseEnter={() => setIsOpen(true)}
-			onMouseLeave={() => setIsOpen(false)}
 			transition={{ type: "spring", stiffness: 260, damping: 20, delay: 1 }}
 		>
-			{/* Main Toggle Button */}
-			<button
-				className="group relative flex h-14 w-14 cursor-pointer items-center justify-center rounded-full bg-blue-600 text-white shadow-xl transition duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700 hover:shadow-2xl hover:shadow-blue-900/50"
-				onClick={() => setIsOpen(!isOpen)}
+			{/* WhatsApp Button */}
+			<Link
+				className="group flex items-center justify-end gap-3"
+				href="https://wa.me/971502335477"
+				target="_blank"
 			>
-				{/* Expanding outer ring animation */}
-				{!isOpen && (
-					<div className="absolute inset-0 -z-10 animate-ping rounded-full bg-blue-600 opacity-20 duration-1000" />
-				)}
-				<motion.div
-					animate={{ rotate: isOpen ? 90 : 0 }}
-					transition={{ duration: 0.2 }}
-				>
-					{isOpen ? (
-						<X className="h-6 w-6" />
-					) : (
-						<Headset className="h-6 w-6 transition-transform duration-300 group-hover:scale-110" />
-					)}
-				</motion.div>
-			</button>
+				<div className="flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-xl transition duration-300 hover:shadow-2xl hover:shadow-green-900/50 group-hover:-translate-y-1 group-hover:scale-105 group-hover:bg-green-600">
+					<WhatsappIcon className="h-7 w-7" />
+				</div>
+			</Link>
 
-			{/* Sub Buttons */}
-			<AnimatePresence>
-				{isOpen && (
-					<motion.div
-						animate={{ opacity: 1, y: 0, scale: 1 }}
-						className="flex flex-col gap-3"
-						exit={{ opacity: 0, y: 20, scale: 0.8 }}
-						initial={{ opacity: 0, y: 20, scale: 0.8 }}
-						transition={{ duration: 0.2 }}
-					>
-						{/* WhatsApp Button */}
-						<Link
-							className="group flex items-center justify-end gap-3"
-							href="https://wa.me/971502335477"
-							target="_blank"
-						>
-							<span className="rounded-md bg-white px-3 py-1.5 font-bold text-slate-700 text-sm shadow-sm transition duration-300 group-hover:-translate-y-1 group-hover:scale-105 group-hover:text-green-600 group-hover:shadow-md">
-								{t("whatsapp")}
-							</span>
-							<div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition duration-300 group-hover:-translate-y-1 group-hover:scale-105 group-hover:bg-green-600">
-								<WhatsappIcon className="h-6 w-6" />
-							</div>
-						</Link>
-
-						{/* Call Button */}
-						<Link
-							className="group flex items-center justify-end gap-3"
-							href="tel:+971502335477"
-						>
-							<span className="rounded-md bg-white px-3 py-1.5 font-bold text-slate-700 text-sm shadow-sm transition duration-300 group-hover:-translate-y-1 group-hover:scale-105 group-hover:text-blue-600 group-hover:shadow-md">
-								{t("callNow")}
-							</span>
-							<div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-500 text-white shadow-lg transition duration-300 group-hover:-translate-y-1 group-hover:scale-105 group-hover:bg-blue-600">
-								<Phone className="h-5 w-5" />
-							</div>
-						</Link>
-					</motion.div>
-				)}
-			</AnimatePresence>
+			{/* Call Button */}
+			<Link
+				className="group flex items-center justify-end gap-3"
+				href="tel:+971502335477"
+			>
+				<div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-600 text-white shadow-xl transition duration-300 hover:shadow-2xl hover:shadow-blue-900/50 group-hover:-translate-y-1 group-hover:scale-105 group-hover:bg-blue-700">
+					<Phone className="h-6 w-6" />
+				</div>
+			</Link>
 		</motion.div>
 	);
 }
