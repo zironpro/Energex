@@ -1,3 +1,5 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/navigation";
@@ -134,6 +136,14 @@ export function Footer() {
 								href="https://wa.me/971502335477"
 								rel="noreferrer"
 								target="_blank"
+								onClick={() => {
+									(window as any).dataLayer = (window as any).dataLayer || [];
+									(window as any).dataLayer.push({
+										event: "whatsapp_click",
+										link_url: "https://wa.me/971502335477",
+										link_location: "footer_icon",
+									});
+								}}
 							>
 								<Whatsapp className="h-5 w-5" />
 							</a>

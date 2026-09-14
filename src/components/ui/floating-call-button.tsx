@@ -30,6 +30,14 @@ export function FloatingCallButton() {
 				className="group flex items-center justify-end gap-3"
 				href="https://wa.me/971502335477"
 				target="_blank"
+				onClick={() => {
+					(window as any).dataLayer = (window as any).dataLayer || [];
+					(window as any).dataLayer.push({
+						event: "whatsapp_click",
+						link_url: "https://wa.me/971502335477",
+						link_location: "floating_button",
+					});
+				}}
 			>
 				<div className="flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-xl transition duration-300 hover:shadow-2xl hover:shadow-green-900/50 group-hover:-translate-y-1 group-hover:scale-105 group-hover:bg-green-600">
 					<WhatsappIcon className="h-7 w-7" />
