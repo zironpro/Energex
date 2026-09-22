@@ -18,6 +18,7 @@ import { FloatingCallButton } from "@/components/ui/floating-call-button";
 
 import { routing } from "@/i18n/routing";
 import { buildOrganizationJsonLd } from "@/lib/schema/organization-json-ld";
+import { localBusinessJsonLd } from "@/lib/schema/local-business-json-ld";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -79,6 +80,9 @@ export default async function RootLayout({
 			<head>
 				<script id="organization-schema" type="application/ld+json">
 					{JSON.stringify(organizationJsonLd)}
+				</script>
+				<script id="local-business-schema" type="application/ld+json">
+					{JSON.stringify(localBusinessJsonLd)}
 				</script>
 			</head>
 			<body className="flex flex-col font-sans">
