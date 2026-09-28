@@ -10,7 +10,7 @@ export function Intro() {
 
 	useEffect(() => {
 		const introPlayed = sessionStorage.getItem("introPlayed");
-		if (introPlayed) {
+		if (introPlayed || window.innerWidth < 768) {
 			setShouldRender(false);
 			return;
 		}
@@ -18,8 +18,8 @@ export function Intro() {
 		// Intro animation timeout increased to allow full animation sequence
 		const timer = setTimeout(() => {
 			setShowIntro(false);
-			setTimeout(() => setShouldRender(false), 1000); // Wait for transition
-		}, 2500);
+			setTimeout(() => setShouldRender(false), 500); // Wait for transition
+		}, 1000);
 
 		return () => clearTimeout(timer);
 	}, []);
@@ -28,7 +28,7 @@ export function Intro() {
 
 	return (
 		<div
-			className={`fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-transform duration-1000 ease-[cubic-bezier(0.76,0,0.24,1)] ${
+			className={`fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] ${
 				showIntro ? "translate-y-0" : "pointer-events-none -translate-y-full"
 			}`}
 		>
@@ -38,7 +38,7 @@ export function Intro() {
 					animate={{ scale: 1, opacity: 1 }}
 					className="relative z-10 bg-white"
 					initial={{ scale: 0, opacity: 0 }}
-					transition={{ duration: 0.6, type: "spring", bounce: 0.5 }}
+					transition={{ duration: 0.4, type: "spring", bounce: 0.5 }}
 				>
 					<svg
 						className="h-auto w-24 fill-slate-900 md:w-32"
@@ -54,14 +54,14 @@ export function Intro() {
 
 				{/* Text Container - overflow hidden masks the sliding text */}
 				<div className="overflow-hidden py-4">
-					<motion.h1
+					<motion.div
 						animate={{ x: 0 }}
 						className="font-bold text-6xl text-slate-900 tracking-tighter md:text-8xl"
 						initial={{ x: "-100%" }}
-						transition={{ duration: 0.8, delay: 0.5, ease: [0.76, 0, 0.24, 1] }}
+						transition={{ duration: 0.5, delay: 0.3, ease: [0.76, 0, 0.24, 1] }}
 					>
 						ENERGEX
-					</motion.h1>
+					</motion.div>
 				</div>
 			</div>
 		</div>

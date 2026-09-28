@@ -121,6 +121,7 @@ export function Footer() {
 								rel="noreferrer"
 								target="_blank"
 							>
+								<span className="sr-only">Instagram</span>
 								<Instagram className="h-5 w-5" />
 							</a>
 							<a
@@ -129,13 +130,12 @@ export function Footer() {
 								rel="noreferrer"
 								target="_blank"
 							>
+								<span className="sr-only">LinkedIn</span>
 								<Linkedin className="h-5 w-5" />
 							</a>
 							<a
 								className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-blue-500"
 								href="https://wa.me/971502335477"
-								rel="noreferrer"
-								target="_blank"
 								onClick={() => {
 									(window as any).dataLayer = (window as any).dataLayer || [];
 									(window as any).dataLayer.push({
@@ -144,7 +144,10 @@ export function Footer() {
 										link_location: "footer_icon",
 									});
 								}}
+								rel="noreferrer"
+								target="_blank"
 							>
+								<span className="sr-only">WhatsApp</span>
 								<Whatsapp className="h-5 w-5" />
 							</a>
 						</div>
@@ -152,9 +155,9 @@ export function Footer() {
 
 					{/* Column 2: General */}
 					<div className="col-span-1 flex flex-col">
-						<h4 className="mb-6 font-bold text-lg text-white">
+						<h3 className="mb-6 font-bold text-lg text-white">
 							{t("columns.general.title")}
-						</h4>
+						</h3>
 						<ul className="flex flex-col gap-4 text-slate-300 text-sm">
 							<li>
 								<Link
@@ -209,9 +212,9 @@ export function Footer() {
 
 					{/* Column 3: Solutions */}
 					<div className="col-span-1 flex flex-col">
-						<h4 className="mb-6 font-bold text-lg text-white">
+						<h3 className="mb-6 font-bold text-lg text-white">
 							{t("columns.solutions.title")}
-						</h4>
+						</h3>
 						<ul className="flex flex-col gap-4 text-slate-300 text-sm">
 							<li>
 								<Link
@@ -250,9 +253,9 @@ export function Footer() {
 
 					{/* Column 4: Contact Us */}
 					<div className="col-span-2 flex flex-col md:col-span-1">
-						<h4 className="mb-6 font-bold text-lg text-white">
+						<h3 className="mb-6 font-bold text-lg text-white">
 							{t("columns.contact.title")}
-						</h4>
+						</h3>
 						<div className="grid grid-cols-2 gap-5 text-slate-300 text-sm md:flex md:flex-col">
 							<div className="col-span-1 flex flex-col gap-3 md:gap-5">
 								<div>

@@ -149,6 +149,7 @@ export function InsightsNewsSection({
 									{/* Action Link to Detail Page */}
 									<div className="mt-6 border-slate-800/40 border-t pt-4">
 										<Link
+											aria-label={`Read Article: ${title}`}
 											className={`group/btn flex items-center gap-2 font-semibold text-sm transition-colors ${
 												isDark
 													? "text-blue-400 hover:text-blue-300"

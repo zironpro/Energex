@@ -11,12 +11,26 @@ const nextConfig: NextConfig = {
 	},
 	images: {
 		formats: ["image/avif", "image/webp"],
+		qualities: [60, 75, 100],
 		remotePatterns: [
 			{
 				protocol: "https",
 				hostname: "images.unsplash.com",
 			},
 		],
+	},
+	async headers() {
+		return [
+			{
+				source: "/video/:path*",
+				headers: [
+					{
+						key: "Cache-Control",
+						value: "public, max-age=31536000, immutable",
+					},
+				],
+			},
+		];
 	},
 };
 

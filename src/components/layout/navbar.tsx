@@ -230,6 +230,7 @@ export function Navbar() {
 					<div className="md:hidden">
 						<Sheet onOpenChange={setIsOpen} open={isOpen}>
 							<SheetTrigger className="flex cursor-pointer items-center justify-center rounded-lg bg-white/10 p-2.5 text-white backdrop-blur-md transition hover:bg-white/20 active:scale-95">
+								<span className="sr-only">Open mobile menu</span>
 								<Menu className="h-6 w-6" />
 							</SheetTrigger>
 							<SheetContent

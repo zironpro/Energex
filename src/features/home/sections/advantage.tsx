@@ -163,6 +163,8 @@ export function Advantage() {
 													alt={adv.title}
 													className="pointer-events-none object-cover transition-transform duration-700 group-hover:scale-105"
 													fill
+													quality={60}
+													sizes="(max-width: 768px) 100vw, 33vw"
 													src={adv.image}
 												/>
 											) : (

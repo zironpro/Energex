@@ -192,15 +192,15 @@ export function MainHero() {
 						/>
 					</div>
 
-					<h1 className="top-text-right font-bold text-2xl text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
+					<div className="top-text-right font-bold text-2xl text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
 						{t("title2")}
-					</h1>
+					</div>
 				</div>
 
 				<div className="bottom-reveal mt-8 text-center md:mt-4">
-					<h1 className="font-bold text-3xl text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
+					<h2 className="font-bold text-3xl text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
 						{t("subtitle")}
-					</h1>
+					</h2>
 					<div className="flex flex-wrap justify-center gap-4 pt-6 md:pt-8">
 						<Link
 							className="inline-flex h-12 items-center justify-center rounded-lg bg-blue-600 px-8 font-semibold text-sm text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700"

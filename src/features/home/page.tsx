@@ -15,7 +15,7 @@ import { Products } from "./sections/products";
 import { Progress } from "./sections/progress";
 
 export function HomePage() {
-	useSmoothScroll({ enableIntroLock: true, introDurationMs: 2500 });
+	useSmoothScroll({ enableIntroLock: true, introDurationMs: 1000 });
 
 	return (
 		<main className="relative min-h-screen overflow-x-hidden bg-[#050505] text-white">

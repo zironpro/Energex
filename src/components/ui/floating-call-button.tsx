@@ -27,6 +27,7 @@ export function FloatingCallButton() {
 		>
 			{/* WhatsApp Button */}
 			<Link
+				aria-label="WhatsApp Us"
 				className="group flex items-center justify-end gap-3"
 				href="https://wa.me/971502335477"
 				target="_blank"
@@ -46,6 +47,7 @@ export function FloatingCallButton() {
 
 			{/* Call Button */}
 			<Link
+				aria-label="Call Us"
 				className="group flex items-center justify-end gap-3"
 				href="tel:+971502335477"
 			>

@@ -256,6 +256,7 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 
 								return (
 									<Link
+										aria-label={`Read Article: ${relTitle}`}
 										className="group flex flex-col overflow-hidden rounded-lg border border-slate-200/80 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-300 hover:shadow-xl"
 										href={`/insights/${relArticle.id}`}
 										key={relArticle.id}

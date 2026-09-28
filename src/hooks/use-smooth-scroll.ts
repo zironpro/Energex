@@ -8,7 +8,7 @@ interface UseSmoothScrollOptions {
 }
 
 export function useSmoothScroll(options: UseSmoothScrollOptions = {}) {
-	const { enableIntroLock = false, introDurationMs = 2500 } = options;
+	const { enableIntroLock = false, introDurationMs = 1000 } = options;
 
 	useEffect(() => {
 		const lenis = new Lenis({
@@ -25,7 +25,7 @@ export function useSmoothScroll(options: UseSmoothScrollOptions = {}) {
 
 		if (enableIntroLock) {
 			const introPlayed = sessionStorage.getItem("introPlayed");
-			if (!introPlayed) {
+			if (!introPlayed && window.innerWidth >= 768) {
 				window.scrollTo(0, 0);
 				lenis.stop();
 				document.body.style.overflow = "";

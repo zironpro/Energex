@@ -106,6 +106,7 @@ export function InsightsPage() {
 
 										<div className="mt-6 border-slate-100 border-t pt-4">
 											<Link
+												aria-label={`Read Article: ${title}`}
 												className="group/btn flex items-center gap-2 font-semibold text-blue-600 text-sm transition-colors hover:text-blue-700"
 												href={`/insights/${article.id}`}
 											>
