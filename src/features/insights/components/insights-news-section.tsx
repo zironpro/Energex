@@ -50,6 +50,13 @@ export function InsightsNewsSection({
 						>
 							{t("description")}
 						</p>
+						<p
+							className={`mt-2 text-sm md:text-base ${
+								isDark ? "text-slate-400" : "text-slate-600"
+							}`}
+						>
+							New to renting? Read our complete guide to <Link className="text-blue-500 hover:underline" href="/insights/power-generator-rental-uae-complete-guide">power generator rental in the UAE</Link>.
+						</p>
 					</div>
 
 					{showViewAll && (

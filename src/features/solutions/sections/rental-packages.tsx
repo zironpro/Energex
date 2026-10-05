@@ -69,7 +69,7 @@ export function RentalPackages() {
 								</div>
 
 								<p className="mb-8 flex-grow text-blue-100/80 leading-relaxed">
-									{pkg.description}
+									<span dangerouslySetInnerHTML={{ __html: pkg.description }} />
 								</p>
 
 								<Button

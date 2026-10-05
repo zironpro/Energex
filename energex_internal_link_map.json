@@ -1,0 +1,832 @@
+[
+  {
+    "Priority":"High",
+    "From (Source Page)":"Homepage",
+    "Source URL":"https:\/\/www.energexequip.ae\/en",
+    "To (Target Page)":"Blog: Power Generator Rental UAE Complete Guide",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/power-generator-rental-uae-complete-guide",
+    "Anchor Text":"power generator rental in the UAE",
+    "Where \/ Context":"Insights section intro — add: \"New to renting? Read our complete guide to power generator rental in the UAE.\"",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Products",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/products",
+    "To (Target Page)":"Blog: How to Choose the Right kVA Generator",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-to-choose-right-kva-generator-abu-dhabi",
+    "Anchor Text":"how to choose the right kVA generator",
+    "Where \/ Context":"Below the heading \"OUR PRODUCTS\": \"Need help sizing? See how to choose the right kVA generator.\"",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Products",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/products",
+    "To (Target Page)":"Blog: Silent Generator Rental in Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/silent-generator-rental-in-dubai",
+    "Anchor Text":"silent diesel generator",
+    "Where \/ Context":"50 kVA Silent Diesel Generator card description (the product title itself can stay linked to Contact)",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Products",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/products",
+    "To (Target Page)":"Blog: Oil & Gas Projects UAE",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-oil-gas-projects-uae",
+    "Anchor Text":"1000 kVA Prime Power Generator",
+    "Where \/ Context":"1000 kVA card description — add \"used on oil & gas and remote industrial sites\" and link that phrase",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Solutions",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/solutions",
+    "To (Target Page)":"Blog: Silent Generator Rental in Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/silent-generator-rental-in-dubai",
+    "Anchor Text":"Super Silent",
+    "Where \/ Context":"Small Portable (20–150 kVA): \"Super Silent (58–65 dB at 7m)\" → link \"Super Silent\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Solutions",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/solutions",
+    "To (Target Page)":"Blog: How to Choose the Right kVA Generator",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-to-choose-right-kva-generator-abu-dhabi",
+    "Anchor Text":"Strategic Assessment",
+    "Where \/ Context":"Strategic Assessment block — add: \"…we help you choose the right kVA generator.\"",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Company",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/company",
+    "To (Target Page)":"Solutions",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/solutions",
+    "Anchor Text":"power solutions",
+    "Where \/ Context":"About text — link first mention of power solutions\/services",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Company",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/company",
+    "To (Target Page)":"Generator Rental Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-dubai",
+    "Anchor Text":"generator rental in Dubai",
+    "Where \/ Context":"About text — link first mention of Dubai \/ UAE service area",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Generator Rental Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-dubai",
+    "To (Target Page)":"Blog: Silent Generator Rental in Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/silent-generator-rental-in-dubai",
+    "Anchor Text":"Silent generator rental",
+    "Where \/ Context":"Existing: \"Silent generator rental UAE options for noise-sensitive sites such as hospitals, hotels, and residential developments\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Generator Rental Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-dubai",
+    "To (Target Page)":"Blog: Construction Projects in Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-generator-rental-supports-construction-projects-in-dubai",
+    "Anchor Text":"Dubai's construction sites",
+    "Where \/ Context":"Existing: \"Continuous power for site offices, tower cranes, and heavy machinery on Dubai's construction sites\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Generator Rental Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-dubai",
+    "To (Target Page)":"Products",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/products",
+    "Anchor Text":"15 kVA to 1500 kVA diesel and silent generators",
+    "Where \/ Context":"Existing: \"15 kVA to 1500 kVA diesel and silent generators for construction, events, and industry\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Generator Rental Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-dubai",
+    "To (Target Page)":"Blog: Warehouses & Logistics Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-for-warehouses-and-logistics-facilities-in-dubai",
+    "Anchor Text":"Jebel Ali",
+    "Where \/ Context":"Existing area list \"…Al Quoz, Al Qusais, Deira, Bur Dubai, Jebel Ali\" → add \"warehouses in Jebel Ali\" link",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Generator Rental Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-dubai",
+    "To (Target Page)":"Blog: Backup Power for Commercial Buildings",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-in-dubai-best-backup-power-solutions-for-commercial-buildings",
+    "Anchor Text":"backup power",
+    "Where \/ Context":"Existing: \"Reliable backup power for exhibitions, concerts, weddings…\" → or add a line on commercial buildings and link \"backup power for commercial buildings\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Generator Rental Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-dubai",
+    "To (Target Page)":"Blog: Generator Rental & Hire in Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-hire-in-dubai",
+    "Anchor Text":"generator hire in Dubai",
+    "Where \/ Context":"Add FAQ\/intro line: \"Read more about generator hire in Dubai.\"",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Generator Rental Abu Dhabi",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-abu-dhabi",
+    "To (Target Page)":"Blog: Oil & Gas Projects UAE",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-oil-gas-projects-uae",
+    "Anchor Text":"oil & gas generator rental",
+    "Where \/ Context":"Existing: \"Fleet engineered for oil & gas generator rental and heavy industrial applications\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Generator Rental Abu Dhabi",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-abu-dhabi",
+    "To (Target Page)":"Blog: How to Choose the Right kVA Generator",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-to-choose-right-kva-generator-abu-dhabi",
+    "Anchor Text":"choose the right kVA",
+    "Where \/ Context":"Existing: \"Available capacities for Abu Dhabi generator rental include 15 kVA, 25 kVA…\" → add \"Not sure? choose the right kVA\"",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Generator Rental Abu Dhabi",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-abu-dhabi",
+    "To (Target Page)":"Generator Rental Al Ain",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-al-ain",
+    "Anchor Text":"Al Ain",
+    "Where \/ Context":"Existing area list \"…Abu Dhabi city, Mussafah, Khalifa City, Al Reem Island, Yas Island, ICAD…\" → add & link \"Al Ain\"",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Generator Rental Abu Dhabi",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-abu-dhabi",
+    "To (Target Page)":"Blog: Diesel vs Gas Generator",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/diesel-generator-vs-gas-generator-industrial-use",
+    "Anchor Text":"diesel or gas generator",
+    "Where \/ Context":"Industrial section — add: \"Unsure whether a diesel or gas generator suits your plant?\"",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Generator Rental Al Ain",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-al-ain",
+    "To (Target Page)":"Generator Rental Abu Dhabi",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-abu-dhabi",
+    "Anchor Text":"generator rental in Abu Dhabi",
+    "Where \/ Context":"Intro — \"Energex also supports projects across the emirate with generator rental in Abu Dhabi.\"",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Generator Rental Sharjah",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-sharjah",
+    "To (Target Page)":"Blog: Warehouses & Logistics Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-for-warehouses-and-logistics-facilities-in-dubai",
+    "Anchor Text":"warehouses and logistics facilities",
+    "Where \/ Context":"Industrial\/applications section (Sharjah industrial areas)",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Generator Rental Sharjah",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-sharjah",
+    "To (Target Page)":"Generator Rental Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-dubai",
+    "Anchor Text":"generator rental in Dubai",
+    "Where \/ Context":"Area\/coverage section — neighbouring emirate cross-link",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"Low",
+    "From (Source Page)":"Generator Rental Ajman",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-ajman",
+    "To (Target Page)":"Generator Rental Sharjah",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-sharjah",
+    "Anchor Text":"generator rental in Sharjah",
+    "Where \/ Context":"Area\/coverage section — neighbouring emirate cross-link",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"Low",
+    "From (Source Page)":"Generator Rental Umm Al Quwain",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-umm-al-quwain",
+    "To (Target Page)":"Generator Rental Ajman",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-ajman",
+    "Anchor Text":"generator rental in Ajman",
+    "Where \/ Context":"Area\/coverage section — neighbouring emirate cross-link",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Generator Rental Ras Al Khaimah",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-ras-al-khaimah",
+    "To (Target Page)":"Blog: Oil & Gas Projects UAE",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-oil-gas-projects-uae",
+    "Anchor Text":"industrial and oil & gas projects",
+    "Where \/ Context":"Industrial applications section",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Generator Rental Fujairah",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-fujairah",
+    "To (Target Page)":"Blog: Oil & Gas Projects UAE",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-oil-gas-projects-uae",
+    "Anchor Text":"oil & gas and port facilities",
+    "Where \/ Context":"Industrial applications section (Fujairah oil terminal \/ port)",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Silent Generator Rental in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/silent-generator-rental-in-dubai",
+    "To (Target Page)":"Generator Rental Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-dubai",
+    "Anchor Text":"silent generator rental in Dubai",
+    "Where \/ Context":"FIX: this anchor currently points to the Homepage (and a 2nd copy to Solutions) — point the first one to the Dubai page",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Silent Generator Rental in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/silent-generator-rental-in-dubai",
+    "To (Target Page)":"Blog: Construction Projects in Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-generator-rental-supports-construction-projects-in-dubai",
+    "Anchor Text":"Construction projects",
+    "Where \/ Context":"Existing: \"Construction projects frequently require temporary electricity for tools, lighting, pumps, site offices…\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Silent Generator Rental in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/silent-generator-rental-in-dubai",
+    "To (Target Page)":"Blog: Backup Power for Commercial Buildings",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-in-dubai-best-backup-power-solutions-for-commercial-buildings",
+    "Anchor Text":"commercial properties",
+    "Where \/ Context":"Existing: \"Offices, retail stores, restaurants, and commercial properties may require temporary power…\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Silent Generator Rental in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/silent-generator-rental-in-dubai",
+    "To (Target Page)":"Blog: How to Choose the Right kVA Generator",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-to-choose-right-kva-generator-abu-dhabi",
+    "Anchor Text":"correct generator size",
+    "Where \/ Context":"Existing: \"Choosing the correct generator size is equally important.\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Silent Generator Rental in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/silent-generator-rental-in-dubai",
+    "To (Target Page)":"Blog: Diesel vs Gas Generator",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/diesel-generator-vs-gas-generator-industrial-use",
+    "Anchor Text":"diesel generator",
+    "Where \/ Context":"Existing: \"A silent generator is a diesel generator fitted with an acoustic enclosure…\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Power Generator Rental UAE Complete Guide",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/power-generator-rental-uae-complete-guide",
+    "To (Target Page)":"Generator Rental Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-dubai",
+    "Anchor Text":"Dubai",
+    "Where \/ Context":"Existing: \"Energex provides generator rental solutions across the UAE, including Dubai, Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, Fujairah and Al Ain.\" (link each emirate — rows below)",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Power Generator Rental UAE Complete Guide",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/power-generator-rental-uae-complete-guide",
+    "To (Target Page)":"Generator Rental Abu Dhabi",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-abu-dhabi",
+    "Anchor Text":"Abu Dhabi",
+    "Where \/ Context":"Same sentence as above",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Power Generator Rental UAE Complete Guide",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/power-generator-rental-uae-complete-guide",
+    "To (Target Page)":"Generator Rental Sharjah",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-sharjah",
+    "Anchor Text":"Sharjah",
+    "Where \/ Context":"Same sentence as above",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Power Generator Rental UAE Complete Guide",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/power-generator-rental-uae-complete-guide",
+    "To (Target Page)":"Generator Rental Ajman",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-ajman",
+    "Anchor Text":"Ajman",
+    "Where \/ Context":"Same sentence as above",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Power Generator Rental UAE Complete Guide",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/power-generator-rental-uae-complete-guide",
+    "To (Target Page)":"Generator Rental Umm Al Quwain",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-umm-al-quwain",
+    "Anchor Text":"Umm Al Quwain",
+    "Where \/ Context":"Same sentence as above",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Power Generator Rental UAE Complete Guide",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/power-generator-rental-uae-complete-guide",
+    "To (Target Page)":"Generator Rental Ras Al Khaimah",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-ras-al-khaimah",
+    "Anchor Text":"Ras Al Khaimah",
+    "Where \/ Context":"Same sentence as above",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Power Generator Rental UAE Complete Guide",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/power-generator-rental-uae-complete-guide",
+    "To (Target Page)":"Generator Rental Fujairah",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-fujairah",
+    "Anchor Text":"Fujairah",
+    "Where \/ Context":"Same sentence as above",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Power Generator Rental UAE Complete Guide",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/power-generator-rental-uae-complete-guide",
+    "To (Target Page)":"Generator Rental Al Ain",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-al-ain",
+    "Anchor Text":"Al Ain",
+    "Where \/ Context":"Same sentence as above",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Power Generator Rental UAE Complete Guide",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/power-generator-rental-uae-complete-guide",
+    "To (Target Page)":"Blog: Oil & Gas Projects UAE",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-oil-gas-projects-uae",
+    "Anchor Text":"oil and gas projects",
+    "Where \/ Context":"Existing: \"For oil and gas projects, remote sites and other demanding environments, generator capacity and reliability…\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Power Generator Rental UAE Complete Guide",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/power-generator-rental-uae-complete-guide",
+    "To (Target Page)":"Products",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/products",
+    "Anchor Text":"20 kVA to 1500 kVA",
+    "Where \/ Context":"Existing: \"Energex provides generator solutions ranging from 20 kVA to 1500 kVA…\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Power Generator Rental UAE Complete Guide",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/power-generator-rental-uae-complete-guide",
+    "To (Target Page)":"Blog: Backup Power for Commercial Buildings",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-in-dubai-best-backup-power-solutions-for-commercial-buildings",
+    "Anchor Text":"commercial properties",
+    "Where \/ Context":"Existing: \"Warehouses, industrial facilities and commercial properties may also need backup power…\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Power Generator Rental UAE Complete Guide",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/power-generator-rental-uae-complete-guide",
+    "To (Target Page)":"Blog: Diesel vs Gas Generator",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/diesel-generator-vs-gas-generator-industrial-use",
+    "Anchor Text":"diesel vs gas generators",
+    "Where \/ Context":"Add after the buy-vs-rent paragraph: \"Also compare diesel vs gas generators for industrial use.\"",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: How to Choose the Right kVA Generator",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-to-choose-right-kva-generator-abu-dhabi",
+    "To (Target Page)":"Generator Rental Abu Dhabi",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-abu-dhabi",
+    "Anchor Text":"generator hire and rental in Abu Dhabi",
+    "Where \/ Context":"Existing: \"…generator hire and rental in Abu Dhabi can provide a practical way to access reliable power.\" (article has ZERO body links today)",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: How to Choose the Right kVA Generator",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-to-choose-right-kva-generator-abu-dhabi",
+    "To (Target Page)":"Blog: Construction Projects in Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-generator-rental-supports-construction-projects-in-dubai",
+    "Anchor Text":"construction sites",
+    "Where \/ Context":"Existing: \"For construction sites, generators may need to power tools, pumps, lighting, compressors…\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: How to Choose the Right kVA Generator",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-to-choose-right-kva-generator-abu-dhabi",
+    "To (Target Page)":"Blog: Backup Power for Commercial Buildings",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-in-dubai-best-backup-power-solutions-for-commercial-buildings",
+    "Anchor Text":"commercial buildings",
+    "Where \/ Context":"Existing: \"For commercial buildings, generators may be required to support essential systems…\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: How to Choose the Right kVA Generator",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-to-choose-right-kva-generator-abu-dhabi",
+    "To (Target Page)":"Blog: Warehouses & Logistics Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-for-warehouses-and-logistics-facilities-in-dubai",
+    "Anchor Text":"Warehouses",
+    "Where \/ Context":"Existing: \"Warehouses\" in the 100–250 kVA use-case list",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: How to Choose the Right kVA Generator",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-to-choose-right-kva-generator-abu-dhabi",
+    "To (Target Page)":"Blog: Oil & Gas Projects UAE",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-oil-gas-projects-uae",
+    "Anchor Text":"Oil and gas operations",
+    "Where \/ Context":"Existing: \"Oil and gas operations\" in the large-kVA use-case list",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: How to Choose the Right kVA Generator",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-to-choose-right-kva-generator-abu-dhabi",
+    "To (Target Page)":"Products",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/products",
+    "Anchor Text":"300 KVA to 500 KVA generator rental",
+    "Where \/ Context":"Existing: \"…a 300 KVA to 500 KVA generator rental may be more appropriate.\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Oil & Gas Projects UAE",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-oil-gas-projects-uae",
+    "To (Target Page)":"Generator Rental Abu Dhabi",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-abu-dhabi",
+    "Anchor Text":"generator rental in Abu Dhabi",
+    "Where \/ Context":"Add in intro: \"Many upstream sites rely on generator rental in Abu Dhabi and across the UAE.\" (ZERO body links today)",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Oil & Gas Projects UAE",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-oil-gas-projects-uae",
+    "To (Target Page)":"Blog: Diesel vs Gas Generator",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/diesel-generator-vs-gas-generator-industrial-use",
+    "Anchor Text":"diesel or gas",
+    "Where \/ Context":"Add in the equipment section: \"Wondering whether diesel or gas is better? See our comparison.\"",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Oil & Gas Projects UAE",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-oil-gas-projects-uae",
+    "To (Target Page)":"Solutions",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/solutions",
+    "Anchor Text":"fuel management",
+    "Where \/ Context":"Existing mention of \"fuel management\" in the body",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Oil & Gas Projects UAE",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-oil-gas-projects-uae",
+    "To (Target Page)":"Blog: How to Choose the Right kVA Generator",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-to-choose-right-kva-generator-abu-dhabi",
+    "Anchor Text":"right kVA",
+    "Where \/ Context":"Add near capacity discussion: \"Learn how to choose the right kVA for remote sites.\"",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Oil & Gas Projects UAE",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-oil-gas-projects-uae",
+    "To (Target Page)":"Generator Rental Ras Al Khaimah",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-ras-al-khaimah",
+    "Anchor Text":"Ras Al Khaimah",
+    "Where \/ Context":"Add coverage line naming RAK & Fujairah industrial zones",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Diesel vs Gas Generator",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/diesel-generator-vs-gas-generator-industrial-use",
+    "To (Target Page)":"Blog: Oil & Gas Projects UAE",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-oil-gas-projects-uae",
+    "Anchor Text":"oil and gas facilities",
+    "Where \/ Context":"Existing: \"Diesel generators are commonly found in factories, construction projects, warehouses, hospitals, data centers, oil and gas facilities, and remote sites.\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Diesel vs Gas Generator",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/diesel-generator-vs-gas-generator-industrial-use",
+    "To (Target Page)":"Blog: Warehouses & Logistics Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-for-warehouses-and-logistics-facilities-in-dubai",
+    "Anchor Text":"warehouses",
+    "Where \/ Context":"Same sentence as above",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Diesel vs Gas Generator",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/diesel-generator-vs-gas-generator-industrial-use",
+    "To (Target Page)":"Blog: Construction Projects in Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-generator-rental-supports-construction-projects-in-dubai",
+    "Anchor Text":"generator rental for construction projects",
+    "Where \/ Context":"Existing: \"Energex provides power solutions … across the UAE, including generator rental for construction projects.\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Diesel vs Gas Generator",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/diesel-generator-vs-gas-generator-industrial-use",
+    "To (Target Page)":"Blog: Silent Generator Rental in Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/silent-generator-rental-in-dubai",
+    "Anchor Text":"noise-sensitive locations",
+    "Where \/ Context":"Existing: \"…especially when a generator is being used near noise-sensitive locations.\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Diesel vs Gas Generator",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/diesel-generator-vs-gas-generator-industrial-use",
+    "To (Target Page)":"Products",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/products",
+    "Anchor Text":"20 kVA to 1500 kVA",
+    "Where \/ Context":"Existing: \"With a range of generator capacities from 20 kVA to 1500 kVA…\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Construction Projects in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-generator-rental-supports-construction-projects-in-dubai",
+    "To (Target Page)":"Generator Rental Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-dubai",
+    "Anchor Text":"generator rental in Dubai",
+    "Where \/ Context":"FIX: anchor currently points to the Homepage → point to the Dubai page",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Construction Projects in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-generator-rental-supports-construction-projects-in-dubai",
+    "To (Target Page)":"Products",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/products",
+    "Anchor Text":"20 kVA to 1500 kVA",
+    "Where \/ Context":"Existing: \"Energex provides generator solutions ranging from 20 kVA to 1500 kVA…\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Construction Projects in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-generator-rental-supports-construction-projects-in-dubai",
+    "To (Target Page)":"Generator Rental Abu Dhabi",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-abu-dhabi",
+    "Anchor Text":"Abu Dhabi",
+    "Where \/ Context":"Existing: \"…Dubai, Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, Fujairah and Al Ain.\" — link each emirate like the Guide article",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Construction Projects in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-generator-rental-supports-construction-projects-in-dubai",
+    "To (Target Page)":"Blog: How to Choose the Right kVA Generator",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-to-choose-right-kva-generator-abu-dhabi",
+    "Anchor Text":"choose the right kVA generator",
+    "Where \/ Context":"Add in the planning section",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Warehouses & Logistics Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-for-warehouses-and-logistics-facilities-in-dubai",
+    "To (Target Page)":"Generator Rental Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-dubai",
+    "Anchor Text":"generator rental in Dubai",
+    "Where \/ Context":"Intro — link first mention of Dubai generator rental (ZERO body links today)",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Warehouses & Logistics Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-for-warehouses-and-logistics-facilities-in-dubai",
+    "To (Target Page)":"Blog: Backup Power for Commercial Buildings",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-in-dubai-best-backup-power-solutions-for-commercial-buildings",
+    "Anchor Text":"backup power",
+    "Where \/ Context":"First mention of \"backup power\" in the body",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Warehouses & Logistics Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-for-warehouses-and-logistics-facilities-in-dubai",
+    "To (Target Page)":"Solutions",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/solutions",
+    "Anchor Text":"fuel management",
+    "Where \/ Context":"Existing mention of \"fuel capacity \/ fuel management\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Warehouses & Logistics Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-for-warehouses-and-logistics-facilities-in-dubai",
+    "To (Target Page)":"Blog: How to Choose the Right kVA Generator",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-to-choose-right-kva-generator-abu-dhabi",
+    "Anchor Text":"right generator size",
+    "Where \/ Context":"Add in the planning section",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"Low",
+    "From (Source Page)":"Blog: Warehouses & Logistics Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-for-warehouses-and-logistics-facilities-in-dubai",
+    "To (Target Page)":"Blog: Power Generator Rental UAE Complete Guide",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/power-generator-rental-uae-complete-guide",
+    "Anchor Text":"complete guide to generator rental in the UAE",
+    "Where \/ Context":"Conclusion paragraph",
+    "Action":"Add new sentence"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Generator Rental & Hire in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-hire-in-dubai",
+    "To (Target Page)":"Generator Rental Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-dubai",
+    "Anchor Text":"generator rental in Dubai",
+    "Where \/ Context":"FIX: anchor currently points to Products → point to the Dubai page",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Generator Rental & Hire in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-hire-in-dubai",
+    "To (Target Page)":"Blog: Construction Projects in Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-generator-rental-supports-construction-projects-in-dubai",
+    "Anchor Text":"generator rental for construction sites in Dubai",
+    "Where \/ Context":"FIX: anchor currently points to Products → point to the Construction article",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Generator Rental & Hire in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-hire-in-dubai",
+    "To (Target Page)":"Blog: Silent Generator Rental in Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/silent-generator-rental-in-dubai",
+    "Anchor Text":"Noise",
+    "Where \/ Context":"Existing: \"…choosing the right generator is about more than just capacity. Noise can also be an important consideration.\" → link \"silent generator\" \/ \"Noise…consideration\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Generator Rental & Hire in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-hire-in-dubai",
+    "To (Target Page)":"Blog: Backup Power for Commercial Buildings",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-in-dubai-best-backup-power-solutions-for-commercial-buildings",
+    "Anchor Text":"commercial buildings",
+    "Where \/ Context":"Commercial section of the article",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Generator Rental & Hire in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-hire-in-dubai",
+    "To (Target Page)":"Generator Rental Abu Dhabi",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-abu-dhabi",
+    "Anchor Text":"Abu Dhabi",
+    "Where \/ Context":"Existing: \"…including Dubai, Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, and Fujairah.\" — link each emirate",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Backup Power for Commercial Buildings",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-in-dubai-best-backup-power-solutions-for-commercial-buildings",
+    "To (Target Page)":"Generator Rental Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-dubai",
+    "Anchor Text":"Generator rental in Dubai",
+    "Where \/ Context":"Intro — first mention (ZERO body links today)",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Backup Power for Commercial Buildings",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-in-dubai-best-backup-power-solutions-for-commercial-buildings",
+    "To (Target Page)":"Blog: Silent Generator Rental in Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/silent-generator-rental-in-dubai",
+    "Anchor Text":"Noise",
+    "Where \/ Context":"Existing: \"Noise can also be an important consideration.\" → link as \"silent generator\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Backup Power for Commercial Buildings",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-in-dubai-best-backup-power-solutions-for-commercial-buildings",
+    "To (Target Page)":"Blog: How to Choose the Right kVA Generator",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-to-choose-right-kva-generator-abu-dhabi",
+    "Anchor Text":"correct generator size",
+    "Where \/ Context":"Existing: \"Choosing the correct generator size is essential for efficiency and performance.\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Backup Power for Commercial Buildings",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-in-dubai-best-backup-power-solutions-for-commercial-buildings",
+    "To (Target Page)":"Blog: Warehouses & Logistics Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-for-warehouses-and-logistics-facilities-in-dubai",
+    "Anchor Text":"Warehouses",
+    "Where \/ Context":"Existing: \"Warehouses depend on inventory systems, refrigeration units…\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Backup Power for Commercial Buildings",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-in-dubai-best-backup-power-solutions-for-commercial-buildings",
+    "To (Target Page)":"Blog: Best Generator Rental Company in Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/best-power-generator-rental-company-in-dubai-for-commercial-use",
+    "Anchor Text":"generator rental company in Dubai",
+    "Where \/ Context":"Existing: \"Businesses choose Energex because we combine high-quality equipment…\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Best Generator Rental Company in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/best-power-generator-rental-company-in-dubai-for-commercial-use",
+    "To (Target Page)":"Generator Rental Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/generator-rental-dubai",
+    "Anchor Text":"power generator rental company in Dubai",
+    "Where \/ Context":"Intro — first mention (ZERO body links today)",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"High",
+    "From (Source Page)":"Blog: Best Generator Rental Company in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/best-power-generator-rental-company-in-dubai-for-commercial-use",
+    "To (Target Page)":"Blog: Backup Power for Commercial Buildings",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/generator-rental-in-dubai-best-backup-power-solutions-for-commercial-buildings",
+    "Anchor Text":"backup power",
+    "Where \/ Context":"Existing: \"Reliable backup power during planned or unexpected outages\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Best Generator Rental Company in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/best-power-generator-rental-company-in-dubai-for-commercial-use",
+    "To (Target Page)":"Blog: Construction Projects in Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/how-generator-rental-supports-construction-projects-in-dubai",
+    "Anchor Text":"Construction sites",
+    "Where \/ Context":"Existing: \"Construction sites require continuous power for heavy machinery, lighting, cranes…\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Best Generator Rental Company in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/best-power-generator-rental-company-in-dubai-for-commercial-use",
+    "To (Target Page)":"Blog: Silent Generator Rental in Dubai",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/insights\/silent-generator-rental-in-dubai",
+    "Anchor Text":"noise-sensitive locations",
+    "Where \/ Context":"Existing: \"…especially when a generator is being used near noise-sensitive locations.\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Medium",
+    "From (Source Page)":"Blog: Best Generator Rental Company in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/best-power-generator-rental-company-in-dubai-for-commercial-use",
+    "To (Target Page)":"Solutions",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/solutions",
+    "Anchor Text":"round-the-clock technical assistance",
+    "Where \/ Context":"Existing: \"Energex offers round-the-clock technical assistance…\"",
+    "Action":"Link existing text"
+  },
+  {
+    "Priority":"Low",
+    "From (Source Page)":"Blog: Best Generator Rental Company in Dubai",
+    "Source URL":"https:\/\/www.energexequip.ae\/en\/insights\/best-power-generator-rental-company-in-dubai-for-commercial-use",
+    "To (Target Page)":"Company",
+    "Target URL":"https:\/\/www.energexequip.ae\/en\/company",
+    "Anchor Text":"Energex",
+    "Where \/ Context":"First brand mention → About\/Company page",
+    "Action":"Link existing text"
+  }
+]

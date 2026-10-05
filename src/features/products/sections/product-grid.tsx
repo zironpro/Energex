@@ -34,6 +34,9 @@ export function ProductGrid() {
 						whileInView={{ opacity: 1, y: 0 }}
 					>
 						{t("description")}
+						<span className="mt-2 block text-base">
+							Need help sizing? See <Link className="text-blue-500 hover:underline" href="/insights/how-to-choose-right-kva-generator-abu-dhabi">how to choose the right kVA generator</Link>.
+						</span>
 					</motion.p>
 				</div>
 
@@ -61,7 +64,7 @@ export function ProductGrid() {
 										{product.title}
 									</h3>
 									<p className="mb-6 text-slate-600 text-sm leading-relaxed md:text-base">
-										{product.description}
+										<span dangerouslySetInnerHTML={{ __html: product.description }} />
 									</p>
 
 									<div className="mb-8">

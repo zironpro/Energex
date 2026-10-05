@@ -44,7 +44,7 @@ export function LocationIntro({ data }: LocationIntroProps) {
 
 							{/* Intro paragraph content */}
 							<p className="font-normal text-base text-slate-700 leading-relaxed md:text-lg">
-								{data.intro}
+								<span dangerouslySetInnerHTML={{ __html: data.intro }} />
 							</p>
 
 							{/* Call to Action buttons */}
