@@ -7,6 +7,7 @@ import { FeatureShowcase } from "./sections/feature-showcase";
 import { Hero } from "./sections/hero";
 import { RentalPackages } from "./sections/rental-packages";
 import { ServicesGrid } from "./sections/services-grid";
+import { SolutionsSeoContent } from "@/components/seo-content";
 
 export function SolutionsPage() {
 	useSmoothScroll();
@@ -17,6 +18,7 @@ export function SolutionsPage() {
 			<ServicesGrid />
 			<FeatureShowcase />
 			<RentalPackages />
+			<SolutionsSeoContent />
 			<CTA />
 		</main>
 	);

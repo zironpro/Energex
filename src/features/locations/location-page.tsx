@@ -13,6 +13,7 @@ import { LocationIndustries } from "./sections/location-industries";
 import { LocationIntro } from "./sections/location-intro";
 import { LocationWhyChoose } from "./sections/location-why-choose";
 import type { LocationPageData } from "./types";
+import { LocationSeoContent } from "@/components/seo-content";
 
 interface LocationPageProps {
 	data: LocationPageData;
@@ -89,6 +90,8 @@ export function LocationPage({ data }: LocationPageProps) {
 
 			{/* FREQUENTLY ASKED QUESTIONS */}
 			<LocationFaq emirate={data.emirate} faqs={data.faqs} />
+
+			<LocationSeoContent emirate={data.emirate} />
 
 			{/* BOTTOM CTA SECTION - Styled like site-wide CTA */}
 			<LocationCta emirate={data.emirate} />

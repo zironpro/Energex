@@ -45,6 +45,9 @@ export async function generateMetadata({
 		title: `${title} | Energex Insights`,
 		description: excerpt,
 		keywords: `generator rental Dubai, ${t(`articles.${article.key}.category`)}, power solutions UAE`,
+		alternates: {
+			canonical: `https://www.energexequip.ae/${locale}/insights/${id}`,
+		},
 	};
 }
 

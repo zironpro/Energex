@@ -64,7 +64,7 @@ export function Footer() {
 	const t = useTranslations("common.Footer");
 
 	return (
-		<footer className="relative bg-blue-600 pt-12 pb-4 text-slate-300 md:pt-20">
+		<footer className="relative bg-blue-600 pt-12 text-slate-300 md:pt-20">
 			{/* Sweeping abstract waves background similar to the reference design */}
 			<div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
 				<svg
@@ -97,7 +97,7 @@ export function Footer() {
 				</svg>
 			</div>
 
-			<div className="container relative z-10 mx-auto max-w-7xl px-6 md:px-12">
+			<div className="container relative z-10 mx-auto px-6">
 				<div className="grid grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-8">
 					{/* Column 1: Logo & Slogan */}
 					<div className="col-span-2 flex flex-col md:col-span-1">
@@ -303,8 +303,8 @@ export function Footer() {
 			</div>
 
 			{/* Full-width Bottom Bar */}
-			<div className="border-blue-400/30 border-t">
-				<div className="container relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-between px-6 py-6 text-slate-300 text-xs md:flex-row md:px-12">
+			<div className="border-blue-400/30 border-t mt-12 md:mt-16">
+				<div className="container relative z-10 mx-auto flex flex-col items-center justify-between px-6 py-4 text-slate-300 text-xs md:flex-row">
 					<p className="order-1 flex-1 text-center md:text-left">
 						&copy; {new Date().getFullYear()} Energex. All Rights Reserved.
 					</p>

@@ -24,6 +24,7 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { ContactSeoContent } from "@/components/seo-content";
 
 export function ContactPage() {
 	const t = useTranslations("contact");
@@ -447,6 +448,9 @@ export function ContactPage() {
 						<FullscreenControl position="bottom-right" />
 					</Map>
 				</div>
+			</div>
+			<div className="mt-20">
+				<ContactSeoContent />
 			</div>
 		</main>
 	);

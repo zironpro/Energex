@@ -1,105 +1,106 @@
 {
-	"Navbar": {
-		"links": {
-			"home": "Home",
-			"solutions": "Solutions",
-			"products": "Products",
-			"company": "Company",
-			"insights": "Insights & News",
-			"contact": "Contact"
-		},
-		"companyDropdown": {
-			"aboutTitle": "About Us",
-			"aboutDesc": "Learn more about our story, mission, and power fleet.",
-			"insightsTitle": "Insights & News",
-			"insightsDesc": "Explore our latest articles, power guides, and updates.",
-			"solutionsTitle": "Power Solutions",
-			"solutionsDesc": "Tailored rental solutions for construction, events & industry.",
-			"terms": "Terms & Policies",
-			"contact": "Contact Us",
-			"products": "Products & Fleet"
-		},
-		"actions": {
-			"requestQuote": "Request Quote"
-		},
-		"languages": {
-			"en": "English (EN)",
-			"ar": "Arabic (AR)"
-		}
-	},
-	"Footer": {
-		"slogan": "Empowering the UAE with reliable, scalable, and efficient power solutions for every industry and event.",
-		"columns": {
-			"general": {
-				"title": "General",
-				"home": "Home",
-				"products": "Products",
-				"solutions": "Solutions",
-				"about": "About Us",
-				"insights": "Insights & News",
-				"contact": "Contact Us"
-			},
-			"solutions": {
-				"title": "Solutions",
-				"diesel": "Diesel Generators",
-				"hybrid": "Hybrid Power Systems",
-				"event": "Event Power",
-				"fuel": "Fuel Management"
-			},
-			"contact": {
-				"title": "Contact Us",
-				"email": "Email",
-				"phone": "Phone",
-				"address": "Address",
-				"addressLines": {
-					"line1": "Energex Equipment Rental,",
-					"line2": "Al Quasis Industrial Second,",
-					"line3": "Plot No. 238-0"
-				}
-			}
-		},
-		"bottom": {
-			"rights": "Energex",
-			"privacy": "Privacy Policy",
-			"terms": "Terms of Service"
-		}
-	},
-	"CTA": {
-		"title": "Ready to Power Your Next Project?",
-		"description": "Get in touch with our team today to discover how Energex can provide reliable, efficient, and scalable power solutions tailored to your unique requirements.",
-		"button": "Contact Us Today"
-	},
-	"FloatingCallButton": {
-		"support": "24/7 Support",
-		"callNow": "Call Now",
-		"whatsapp": "WhatsApp"
-	},
-	"Metadata": {
-		"title": "Energex | Best Power Generator Supplier in Dubai | UAE",
-		"description": "Energex is the best power generator supplier in Dubai, providing diesel and gas generators, backup power solutions, installation, maintenance, and expert support across the UAE.",
-		"Solutions": {
-			"title": "Diesel Generator Rental Solutions Dubai | 20-1500kVA",
-			"description": "Power generator rental in Dubai for construction, events & industrial sites. Soundproof diesel generators, expert load assessment, 24/7 technical support.",
-			"keywords": "power generator rental in Dubai"
-		},
-		"Products": {
-			"title": "Generator Rental Dubai | Hire Diesel Genset in Dubai",
-			"description": "Browse Energex's diesel generator rental  in Dubai for events, construction , commercial & industrial power. Get a fast quote today.",
-			"keywords": "diesel generator rental Dubai, generator fleet Dubai"
-		},
-		"Company": {
-			"title": "About Energex | Power Generator Rental Company Dubai",
-			"description": "Energex is a UAE-based power generator rental company serving all seven Emirates with reliable, scalable diesel power solutions since day one.",
-			"keywords": "power generator rental company Dubai"
-		},
-		"Contact": {
-			"title": "Contact Energex | Generator Rental Quote Dubai",
-			"description": "Request a quote for the best power generator rental near you in Dubai. Energex responds within 2 business hours — call, WhatsApp or email us today.",
-			"keywords": "best power generator rental near me"
-		},
-		"Terms": {
-			"title": "Terms & Policies - Energex",
-			"description": "Terms of Service and Privacy Policy for Energex."
-		}
-	}
+    "Navbar": {
+        "links": {
+            "home": "Home",
+            "solutions": "Solutions",
+            "products": "Products",
+            "company": "Company",
+            "insights": "Insights & News",
+            "contact": "Contact"
+        },
+        "companyDropdown": {
+            "aboutTitle": "About Us",
+            "aboutDesc": "Learn more about our story, mission, and power fleet.",
+            "insightsTitle": "Insights & News",
+            "insightsDesc": "Explore our latest articles, power guides, and updates.",
+            "solutionsTitle": "Power Solutions",
+            "solutionsDesc": "Tailored rental solutions for construction, events & industry.",
+            "terms": "Terms & Policies",
+            "contact": "Contact Us",
+            "products": "Products & Fleet"
+        },
+        "actions": {
+            "requestQuote": "Request Quote"
+        },
+        "languages": {
+            "en": "English (EN)",
+            "ar": "Arabic (AR)"
+        }
+    },
+    "Footer": {
+        "slogan": "Empowering the UAE with reliable, scalable, and efficient power solutions for every industry and event.",
+        "columns": {
+            "general": {
+                "title": "General",
+                "home": "Home",
+                "products": "Products",
+                "solutions": "Solutions",
+                "about": "About Us",
+                "insights": "Insights & News",
+                "contact": "Contact Us"
+            },
+            "solutions": {
+                "title": "Solutions",
+                "diesel": "Diesel Generators",
+                "hybrid": "Hybrid Power Systems",
+                "event": "Event Power",
+                "fuel": "Fuel Management"
+            },
+            "contact": {
+                "title": "Contact Us",
+                "email": "Email",
+                "phone": "Phone",
+                "address": "Address",
+                "addressLines": {
+                    "line1": "Energex Equipment Rental,",
+                    "line2": "Al Quasis Industrial Second,",
+                    "line3": "Plot No. 238-0"
+                }
+            }
+        },
+        "bottom": {
+            "rights": "Energex",
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Service"
+        }
+    },
+    "CTA": {
+        "title": "Ready to Power Your Next Project?",
+        "description": "Get in touch with our team today to discover how Energex can provide reliable, efficient, and scalable power solutions tailored to your unique requirements.",
+        "button": "Contact Us Today"
+    },
+    "FloatingCallButton": {
+        "support": "24/7 Support",
+        "callNow": "Call Now",
+        "whatsapp": "WhatsApp"
+    },
+    "Metadata": {
+        "title": "Generator Rental UAE | 15-1500 kVA | Energex",
+        "description": "Energex is the leading generator rental company in Dubai, providing reliable diesel and silent generators, backup power solutions, and 24/7 technical support across the UAE.",
+        "Solutions": {
+            "title": "Diesel Generator Rental Solutions Dubai | 20-1500kVA",
+            "description": "Power generator rental in Dubai for construction, events & industrial sites. Soundproof diesel generators, expert load assessment, 24/7 technical support.",
+            "keywords": "power generator rental in Dubai"
+        },
+        "Products": {
+            "title": "Generator Rental Dubai | Hire Diesel Genset in Dubai",
+            "description": "Browse Energex's diesel generator rental  in Dubai for events, construction , commercial & industrial power. Get a fast quote today.",
+            "keywords": "diesel generator rental Dubai, generator fleet Dubai"
+        },
+        "Company": {
+            "title": "About Energex | Power Generator Rental Company Dubai",
+            "description": "Energex is a UAE-based power generator rental company serving all seven Emirates with reliable, scalable diesel power solutions since day one.",
+            "keywords": "power generator rental company Dubai"
+        },
+        "Contact": {
+            "title": "Contact Energex | Generator Rental Quote Dubai",
+            "description": "Request a quote for the best power generator rental near you in Dubai. Energex responds within 2 business hours — call, WhatsApp or email us today.",
+            "keywords": "best power generator rental near me"
+        },
+        "Terms": {
+            "title": "Generator Rental Terms & Conditions | Energex UAE",
+            "description": "Read the terms and conditions and privacy policy for generator rental services by Energex Equipment Rental in the UAE.",
+            "keywords": "generator rental terms, UAE equipment rental policy"
+        }
+    }
 }
