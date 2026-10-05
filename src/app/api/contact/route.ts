@@ -1,21 +1,32 @@
-import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
+import { NextResponse } from "next/server";
+
+import { Resend } from "resend";
 
 // Make sure to add RESEND_API_KEY in your .env file
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
-  try {
-    const { firstName, lastName, company, email, phone, rentalDuration, sector, projectType, details } = await req.json();
+	try {
+		const {
+			firstName,
+			lastName,
+			company,
+			email,
+			phone,
+			rentalDuration,
+			sector,
+			projectType,
+			details,
+		} = await req.json();
 
-    if (!firstName || !lastName || !email || !phone) {
-      return NextResponse.json(
-        { error: 'Missing required fields' },
-        { status: 400 }
-      );
-    }
+		if (!firstName || !lastName || !email || !phone) {
+			return NextResponse.json(
+				{ error: "Missing required fields" },
+				{ status: 400 }
+			);
+		}
 
-    const htmlTemplate = `
+		const htmlTemplate = `
       <!DOCTYPE html>
       <html>
       <head>
@@ -82,23 +93,23 @@ export async function POST(req: Request) {
       </html>
     `;
 
-    const { data, error } = await resend.emails.send({
-      from: 'Contact Form <onboarding@resend.dev>', // Change to your verified domain email
-      to: ['dev@zironpro.ae'], // Testing email allowed by Resend
-      subject: `New Lead: ${firstName} ${lastName} - ${company || 'Energex'}`,
-      html: htmlTemplate,
-    });
+		const { data, error } = await resend.emails.send({
+			from: "Contact Form <leads@energexequip.ae>", // Using the new verified domain
+			to: ["info@energexequip.ae"], // Updating recipient as requested
+			subject: `New Lead: ${firstName} ${lastName} - ${company || "Energex"}`,
+			html: htmlTemplate,
+		});
 
-    if (error) {
-      return NextResponse.json({ error }, { status: 400 });
-    }
+		if (error) {
+			return NextResponse.json({ error }, { status: 400 });
+		}
 
-    return NextResponse.json({ data }, { status: 200 });
-  } catch (error) {
-    console.error('Error sending email:', error);
-    return NextResponse.json(
-      { error: 'Internal Server Error' },
-      { status: 500 }
-    );
-  }
+		return NextResponse.json({ data }, { status: 200 });
+	} catch (error) {
+		console.error("Error sending email:", error);
+		return NextResponse.json(
+			{ error: "Internal Server Error" },
+			{ status: 500 }
+		);
+	}
 }
