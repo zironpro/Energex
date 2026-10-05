@@ -11,7 +11,7 @@ import Map, {
 import { Link } from "@/i18n/navigation";
 import "maplibre-gl/dist/maplibre-gl.css";
 
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -26,8 +26,50 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { ContactSeoContent } from "@/components/seo-content";
 
+import { useState } from "react";
+
 export function ContactPage() {
 	const t = useTranslations("contact");
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+	async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+		e.preventDefault();
+		setIsSubmitting(true);
+		setSubmitStatus("idle");
+
+		const formData = new FormData(e.currentTarget);
+		const data = {
+			firstName: formData.get("firstName"),
+			lastName: formData.get("lastName"),
+			company: formData.get("company"),
+			email: formData.get("email"),
+			phone: formData.get("phone"),
+			rentalDuration: formData.get("rentalDuration"),
+			sector: formData.get("sector"),
+			projectType: formData.get("projectType"),
+			details: formData.get("message"),
+		};
+
+		try {
+			const res = await fetch("/api/contact", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(data),
+			});
+
+			if (res.ok) {
+				setSubmitStatus("success");
+				(e.target as HTMLFormElement).reset();
+			} else {
+				setSubmitStatus("error");
+			}
+		} catch (err) {
+			setSubmitStatus("error");
+		} finally {
+			setIsSubmitting(false);
+		}
+	}
 	return (
 		<main className="relative min-h-screen bg-slate-50 pt-32 pb-24 text-slate-900">
 			<div className="container relative z-10 mx-auto max-w-7xl px-6">
@@ -167,15 +209,34 @@ export function ContactPage() {
 							</h2>
 							<p className="mb-8 text-slate-500">{t("formSubtitle")}</p>
 
-							<form
-								className="space-y-5"
-								onSubmit={(e) => {
-									e.preventDefault();
-									alert(
-										"Thank you for your inquiry. Our team will contact you shortly."
-									);
-								}}
-							>
+							{submitStatus === "success" ? (
+								<div className="flex flex-col items-center justify-center py-12 text-center">
+									<div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-green-100 text-green-600">
+										<CheckCircle2 className="h-10 w-10" />
+									</div>
+									<h3 className="mb-2 font-bold text-2xl text-slate-900">
+										Request Sent Successfully
+									</h3>
+									<p className="mb-8 text-slate-500">
+										Thank you for your inquiry. Our team will review your request and get back to you shortly.
+									</p>
+									<Button
+										className="h-12 bg-blue-600 px-8 font-semibold text-white transition hover:-translate-y-1 hover:bg-blue-700 hover:shadow-lg"
+										onClick={() => setSubmitStatus("idle")}
+									>
+										Submit Another Request
+									</Button>
+								</div>
+							) : (
+								<form
+									className="space-y-5"
+									onSubmit={handleSubmit}
+								>
+								{submitStatus === "error" && (
+									<div className="rounded-md bg-red-50 p-4 text-red-700">
+										There was an error sending your message. Please try again.
+									</div>
+								)}
 								<div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
 									<div className="space-y-1.5">
 										<Label
@@ -188,6 +249,8 @@ export function ContactPage() {
 										<Input
 											className="h-11 border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
 											id="firstName"
+											name="firstName"
+											required
 											placeholder={t("form.firstNamePlaceholder")}
 										/>
 									</div>
@@ -202,6 +265,8 @@ export function ContactPage() {
 										<Input
 											className="h-11 border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
 											id="lastName"
+											name="lastName"
+											required
 											placeholder={t("form.lastNamePlaceholder")}
 										/>
 									</div>
@@ -218,6 +283,7 @@ export function ContactPage() {
 										<Input
 											className="h-11 border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
 											id="company"
+											name="company"
 											placeholder={t("form.companyPlaceholder")}
 										/>
 									</div>
@@ -232,6 +298,8 @@ export function ContactPage() {
 										<Input
 											className="h-11 border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
 											id="email"
+											name="email"
+											required
 											placeholder={t("form.emailPlaceholder")}
 											type="email"
 										/>
@@ -249,6 +317,8 @@ export function ContactPage() {
 									<Input
 										className="h-11 border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
 										id="phone"
+										name="phone"
+										required
 										placeholder={t("form.phonePlaceholder")}
 										type="tel"
 									/>
@@ -262,7 +332,7 @@ export function ContactPage() {
 										>
 											{t("form.durationLabel")}
 										</Label>
-										<Select>
+										<Select name="rentalDuration">
 											<SelectTrigger
 												className="h-11 border-transparent bg-[#d0d7e1] focus:ring-blue-600"
 												id="rentalDuration"
@@ -292,7 +362,7 @@ export function ContactPage() {
 										>
 											{t("form.sectorLabel")}
 										</Label>
-										<Select>
+										<Select name="sector">
 											<SelectTrigger
 												className="h-11 border-transparent bg-[#d0d7e1] focus:ring-blue-600"
 												id="sector"
@@ -329,7 +399,7 @@ export function ContactPage() {
 									>
 										{t("form.typeLabel")}
 									</Label>
-									<Select>
+									<Select name="projectType">
 										<SelectTrigger
 											className="h-11 border-transparent bg-[#d0d7e1] focus:ring-blue-600"
 											id="projectType"
@@ -363,6 +433,7 @@ export function ContactPage() {
 									<Textarea
 										className="resize-y border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
 										id="message"
+										name="message"
 										placeholder={t("form.messagePlaceholder")}
 										rows={4}
 									/>
@@ -389,12 +460,16 @@ export function ContactPage() {
 									<Button
 										className="group h-12 w-full rounded-lg bg-blue-600 px-8 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700 sm:w-auto"
 										type="submit"
+										disabled={isSubmitting}
 									>
-										{t("form.submit")}
-										<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+										{isSubmitting ? "Sending..." : t("form.submit")}
+										{!isSubmitting && (
+											<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+										)}
 									</Button>
 								</div>
-							</form>
+								</form>
+							)}
 						</div>
 
 						<div className="mt-8 text-center sm:pl-4 sm:text-left">

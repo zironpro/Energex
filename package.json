@@ -26,6 +26,7 @@
 		"react": "19.2.4",
 		"react-dom": "19.2.4",
 		"react-map-gl": "^8.1.1",
+		"resend": "^6.32.0",
 		"tailwind-merge": "^3.6.0"
 	},
 	"devDependencies": {
@@ -38,6 +39,9 @@
 		"typescript": "^5"
 	},
 	"pnpm": {
-		"ignoredBuiltDependencies": ["sharp", "unrs-resolver"]
+		"ignoredBuiltDependencies": [
+			"sharp",
+			"unrs-resolver"
+		]
 	}
 }
