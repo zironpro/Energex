@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
 		optimizePackageImports: ["lucide-react", "framer-motion", "@base-ui/react"],
 	},
 	images: {
+		unoptimized: true,
 		formats: ["image/avif", "image/webp"],
 		qualities: [60, 75, 100],
 		remotePatterns: [
