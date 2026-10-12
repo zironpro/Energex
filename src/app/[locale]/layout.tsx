@@ -20,7 +20,6 @@ export function generateStaticParams() {
 
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
-import { AlternateLinks } from "@/components/layout/alternate-links";
 import { FloatingCallButton } from "@/components/ui/floating-call-button";
 
 import { routing } from "@/i18n/routing";
@@ -85,7 +84,6 @@ export default async function RootLayout({
 			lang={locale}
 		>
 			<head>
-				<AlternateLinks />
 				<script id="organization-schema" type="application/ld+json">
 					{JSON.stringify(organizationJsonLd)}
 				</script>

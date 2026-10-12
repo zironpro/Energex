@@ -6,6 +6,7 @@ import { getTranslations } from "next-intl/server";
 import { ArticleDetailPage } from "@/features/insights/article-detail-page";
 import { ARTICLES } from "@/features/insights/data/articles";
 import { routing } from "@/i18n/routing";
+import { getAlternates } from "@/lib/metadata";
 
 export async function generateStaticParams() {
 	const params: Array<{ locale: string; id: string }> = [];
@@ -45,9 +46,7 @@ export async function generateMetadata({
 		title: `${title} | Energex Insights`,
 		description: excerpt,
 		keywords: `generator rental Dubai, ${t(`articles.${article.key}.category`)}, power solutions UAE`,
-		alternates: {
-			canonical: `https://www.energexequip.ae/${locale}/insights/${id}`,
-		},
+		alternates: getAlternates(`/insights/${id}`, locale),
 	};
 }
 

@@ -1,9 +1,11 @@
+import { siteConfig } from "@/constants/site-config";
+
 export const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://energexequip.ae/#localbusiness",
+  "@id": `${siteConfig.site}/#localbusiness`,
   "name": "Energex Equipment Rentals",
-  "url": "https://energexequip.ae/en/",
+  "url": `${siteConfig.site}/en`,
   "telephone": "+97145753066",
   "description": "Energex Equipment Rentals provides reliable generator rental near me and generator hire services across Dubai, UAE. We offer diesel generator rental, silent generator rental, commercial and industrial generator rental, event power solutions and emergency backup power solutions.",
   "priceRange": "$$",
