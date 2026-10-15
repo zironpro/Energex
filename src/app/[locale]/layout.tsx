@@ -54,6 +54,9 @@ export async function generateMetadata({
 		metadataBase: new URL(baseUrl),
 		title: t("title"),
 		description: t("description"),
+		openGraph: {
+			siteName: locale === "ar" ? "تأجير مولدات دبي" : "Generator Rental Dubai",
+		},
 		verification: {
 			google: "4bKAMrB0AGsSxQuoqq4uz49qrPNs4lgYfGkY4-IIYhc",
 		},

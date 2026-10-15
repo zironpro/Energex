@@ -248,8 +248,8 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 						<h3 className="mb-8 font-black text-2xl text-slate-900 uppercase tracking-tighter md:text-3xl">
 							Related Insights & News
 						</h3>
-						<div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
-							{relatedArticles.slice(0, 2).map((relArticle) => {
+						<div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+							{relatedArticles.slice(0, 3).map((relArticle) => {
 								const relTitle = t(`articles.${relArticle.key}.title`);
 								const relExcerpt = t(`articles.${relArticle.key}.excerpt`);
 								const relCategory = t(`articles.${relArticle.key}.category`);

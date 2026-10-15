@@ -8,8 +8,8 @@ export const SITE_URL = (
 	"https://www.energexequip.ae"
 ).replace(/\/$/, "");
 const SITE_NAME = {
-	en: "Energex Equipment Rental",
-	ar: "إنرجكس لتأجير المعدات",
+	en: "Generator Rental Dubai",
+	ar: "تأجير مولدات دبي",
 };
 const OG_LOCALE = { en: "en_US", ar: "ar_AE" };
 
