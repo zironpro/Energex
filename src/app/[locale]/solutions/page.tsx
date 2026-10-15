@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 
-import { getTranslations } from "next-intl/server";
-
 import { SolutionsPage } from "@/features/solutions/page";
-
-import { getAlternates } from "@/lib/metadata";
+import { buildMetadata } from "@/lib/seo/og";
 
 export async function generateMetadata({
 	params,
@@ -12,16 +9,7 @@ export async function generateMetadata({
 	params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
 	const { locale } = await params;
-	const t = await getTranslations({
-		locale,
-		namespace: "common.Metadata.Solutions",
-	});
-	return {
-		title: t("title"),
-		description: t("description"),
-		keywords: t("keywords"),
-		alternates: getAlternates("/solutions", locale),
-	};
+	return buildMetadata(locale, "/solutions");
 }
 
 export default function Solutions() {

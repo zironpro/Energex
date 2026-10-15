@@ -179,10 +179,11 @@ export function MainHero() {
 
 			{/* Content */}
 			<div className="relative z-30 flex h-full w-full flex-col items-center justify-center px-2 pt-16 pb-24 md:pb-0">
+				<h1 className="sr-only">{t("h1")}</h1>
 				<div className="flex w-full max-w-7xl flex-row items-center justify-center gap-3 sm:gap-6 md:gap-8 lg:gap-12">
-					<h1 className="top-text-left font-bold text-2xl text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
+					<div className="top-text-left font-bold text-2xl text-blue-600 tracking-tighter sm:text-4xl md:text-6xl lg:text-[80px]">
 						{t("title1")}
-					</h1>
+					</div>
 
 					{/* Medium Image Placeholder for Flip */}
 					<div className="h-[140px] w-[90px] shrink-0 sm:h-[150px] sm:w-[250px] md:h-[220px] md:w-[350px] lg:h-[300px] lg:w-[500px]">

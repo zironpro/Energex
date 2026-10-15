@@ -7,9 +7,9 @@ export function ContactSeoContent() {
 	if (isAr) {
 		return (
 			<section className="container mx-auto px-6 py-12 text-slate-700 max-w-4xl">
-				<h2 className="text-2xl font-bold mb-4 text-slate-900">تواصل مع إينرجيكس لتأجير المولدات في الإمارات</h2>
+				<h2 className="text-2xl font-bold mb-4 text-slate-900">تواصل مع إنرجكس لتأجير المولدات في الإمارات</h2>
 				<p className="mb-4 leading-relaxed">
-					تعتبر إينرجيكس واحدة من الشركات الرائدة في مجال تأجير المولدات الكهربائية في دبي وأبوظبي والشارقة وكافة أنحاء الإمارات. سواء كنت تبحث عن مولدات ديزل صامتة لمشروع بناء ضخم، أو طاقة احتياطية لفعالية كبرى، نحن هنا لتلبية كافة احتياجاتك.
+					تعتبر إنرجكس واحدة من الشركات الرائدة في مجال تأجير المولدات الكهربائية في دبي وأبوظبي والشارقة وكافة أنحاء الإمارات. سواء كنت تبحث عن مولدات ديزل صامتة لمشروع بناء ضخم، أو طاقة احتياطية لفعالية كبرى، نحن هنا لتلبية كافة احتياجاتك.
 				</p>
 				<h3 className="text-xl font-semibold mb-3 text-slate-900">المناطق التي نخدمها</h3>
 				<p className="mb-4 leading-relaxed">
@@ -50,7 +50,7 @@ export function ProductsSeoContent() {
 			<section className="container mx-auto px-6 py-12 text-slate-700 max-w-4xl">
 				<h2 className="text-2xl font-bold mb-4 text-slate-900">أسطول مولدات الديزل للإيجار في دبي والإمارات</h2>
 				<p className="mb-4 leading-relaxed">
-					نقدم في إينرجيكس مجموعة واسعة من مولدات الديزل الصامتة والموثوقة المصممة لتلبية متطلبات الطاقة لمختلف القطاعات. يتم صيانة أسطولنا بانتظام لضمان أعلى مستويات الأداء والكفاءة في استهلاك الوقود.
+					نقدم في إنرجكس مجموعة واسعة من مولدات الديزل الصامتة والموثوقة المصممة لتلبية متطلبات الطاقة لمختلف القطاعات. يتم صيانة أسطولنا بانتظام لضمان أعلى مستويات الأداء والكفاءة في استهلاك الوقود.
 				</p>
 				<h3 className="text-xl font-semibold mb-3 text-slate-900">أحجام المولدات المتوفرة (kVA)</h3>
 				<ul className="list-disc list-inside mb-4 space-y-2">
@@ -58,7 +58,7 @@ export function ProductsSeoContent() {
 					<li><strong>المولدات المتوسطة (150 - 500 كيلو فولت أمبير):</strong> تستخدم على نطاق واسع في مواقع البناء، والمستودعات، والمباني التجارية.</li>
 					<li><strong>المولدات الضخمة (750 - 1500 كيلو فولت أمبير):</strong> مصممة للمصانع الكبرى، وقطاع النفط والغاز، والمشاريع الإنشائية العملاقة.</li>
 				</ul>
-				<h3 className="text-xl font-semibold mb-3 text-slate-900">لماذا تختار مولدات إينرجيكس؟</h3>
+				<h3 className="text-xl font-semibold mb-3 text-slate-900">لماذا تختار مولدات إنرجكس؟</h3>
 				<p className="mb-4 leading-relaxed">
 					جميع مولداتنا مزودة بأنظمة كتم الصوت (Soundproof) لتتناسب مع العمل في المناطق السكنية والتجارية. كما نوفر ملحقات متكاملة تشمل الكابلات، وخزانات الوقود الإضافية، ولوحات التوزيع الكهربائي لتوفير حل متكامل للطاقة أينما كنت.
 				</p>
@@ -95,7 +95,7 @@ export function SolutionsSeoContent() {
 			<section className="container mx-auto px-6 py-12 text-slate-700 max-w-4xl">
 				<h2 className="text-2xl font-bold mb-4 text-slate-900">حلول الطاقة المخصصة لكل القطاعات</h2>
 				<p className="mb-4 leading-relaxed">
-					نحن لا نؤجر المولدات فحسب، بل نقدم حلول طاقة متكاملة تناسب طبيعة كل مشروع. تدرك إينرجيكس أن احتياجات الطاقة في موقع بناء تختلف تماماً عن متطلبات الطاقة لفعالية حية أو مستشفى.
+					نحن لا نؤجر المولدات فحسب، بل نقدم حلول طاقة متكاملة تناسب طبيعة كل مشروع. تدرك إنرجكس أن احتياجات الطاقة في موقع بناء تختلف تماماً عن متطلبات الطاقة لفعالية حية أو مستشفى.
 				</p>
 				<h3 className="text-xl font-semibold mb-3 text-slate-900">القطاعات التي نخدمها</h3>
 				<ul className="list-disc list-inside mb-4 space-y-2">
@@ -154,7 +154,7 @@ export function LocationSeoContent({ emirate }: { emirate: string }) {
 			<section className="container mx-auto px-6 py-12 text-slate-700 max-w-4xl border-t border-slate-200 mt-12 bg-white rounded-lg shadow-sm">
 				<h2 className="text-2xl font-bold mb-4 text-slate-900">تأجير المولدات في {emirate}: الحل الأمثل لاحتياجاتك من الطاقة</h2>
 				<p className="mb-4 leading-relaxed">
-					تعتبر {emirate} واحدة من أسرع المناطق نمواً، وتتطلب مشاريعها المستمرة مصدراً موثوقاً للطاقة. سواء كنت تعمل في قطاع البناء أو تدير فعالية كبرى، فإن اختيار المولد المناسب يضمن سير العمل بدون انقطاع. نحن في إينرجيكس نقدم تشكيلة واسعة من المولدات بدءاً من 20 كيلو فولت أمبير وحتى 1500 كيلو فولت أمبير لدعم كافة متطلبات المشاريع في {emirate}.
+					تعتبر {emirate} واحدة من أسرع المناطق نمواً، وتتطلب مشاريعها المستمرة مصدراً موثوقاً للطاقة. سواء كنت تعمل في قطاع البناء أو تدير فعالية كبرى، فإن اختيار المولد المناسب يضمن سير العمل بدون انقطاع. نحن في إنرجكس نقدم تشكيلة واسعة من المولدات بدءاً من 20 كيلو فولت أمبير وحتى 1500 كيلو فولت أمبير لدعم كافة متطلبات المشاريع في {emirate}.
 				</p>
 				<h3 className="text-xl font-semibold mb-3 text-slate-900">كيفية اختيار المولد المناسب في {emirate}</h3>
 				<ul className="list-disc list-inside mb-4 space-y-2">

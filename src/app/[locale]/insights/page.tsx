@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 
-import { getTranslations } from "next-intl/server";
-
 import { InsightsPage } from "@/features/insights/page";
-
-import { getAlternates } from "@/lib/metadata";
+import { buildMetadata } from "@/lib/seo/og";
 
 export async function generateMetadata({
 	params,
@@ -12,17 +9,7 @@ export async function generateMetadata({
 	params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
 	const { locale } = await params;
-	const t = await getTranslations({
-		locale,
-		namespace: "insights",
-	});
-	return {
-		title: `${t("title")} | Energex Generator Rental Dubai`,
-		description: t("description"),
-		keywords:
-			"generator rental insights Dubai, diesel generator blog UAE, power solutions news",
-		alternates: getAlternates("/insights", locale),
-	};
+	return buildMetadata(locale, "/insights");
 }
 
 export default function Page() {

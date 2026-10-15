@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { getTranslations } from "next-intl/server";
-
 import { ArticleDetailPage } from "@/features/insights/article-detail-page";
 import { ARTICLES } from "@/features/insights/data/articles";
 import { routing } from "@/i18n/routing";
-import { getAlternates } from "@/lib/metadata";
+import { buildMetadata } from "@/lib/seo/og";
 
 export async function generateStaticParams() {
 	const params: Array<{ locale: string; id: string }> = [];
@@ -34,20 +32,7 @@ export async function generateMetadata({
 		};
 	}
 
-	const t = await getTranslations({
-		locale,
-		namespace: "insights",
-	});
-
-	const title = t(`articles.${article.key}.title`);
-	const excerpt = t(`articles.${article.key}.excerpt`);
-
-	return {
-		title: `${title} | Energex Insights`,
-		description: excerpt,
-		keywords: `generator rental Dubai, ${t(`articles.${article.key}.category`)}, power solutions UAE`,
-		alternates: getAlternates(`/insights/${id}`, locale),
-	};
+	return buildMetadata(locale, `/insights/${id}`);
 }
 
 export default async function Page({

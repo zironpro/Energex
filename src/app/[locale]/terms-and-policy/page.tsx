@@ -1,9 +1,7 @@
-import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
 
 import { TermsAndPolicyPage } from "@/features/terms-and-policy/page";
-
-import { getAlternates } from "@/lib/metadata";
+import { buildMetadata } from "@/lib/seo/og";
 
 export async function generateMetadata({
 	params,
@@ -11,16 +9,7 @@ export async function generateMetadata({
 	params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
 	const { locale } = await params;
-	const t = await getTranslations({
-		locale,
-		namespace: "common.Metadata.Terms",
-	});
-	return {
-		title: t("title"),
-		description: t("description"),
-		keywords: t("keywords"),
-		alternates: getAlternates("/terms-and-policy", locale),
-	};
+	return buildMetadata(locale, "/terms-and-policy");
 }
 
 export default function Page() {
