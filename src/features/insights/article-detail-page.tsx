@@ -35,27 +35,43 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 	const relatedArticles = ARTICLES.filter((a) => a.id !== article.id);
 
 	const parseTextWithLinks = (text: string) => {
-		const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+		// Matches markdown links [text](url) OR bold **text**
+		const tokenRegex = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*/g;
 		const parts = [];
 		let lastIndex = 0;
 		let match;
 
-		while ((match = linkRegex.exec(text)) !== null) {
+		while ((match = tokenRegex.exec(text)) !== null) {
 			if (match.index > lastIndex) {
 				parts.push(text.substring(lastIndex, match.index));
 			}
-			parts.push(
-				<a
-					className="font-semibold text-blue-600 underline decoration-blue-300 underline-offset-4 transition-colors hover:text-blue-800 hover:decoration-blue-600"
-					href={match[2]}
-					key={`link-${match.index}`}
-					rel="noopener noreferrer"
-					target="_blank"
-				>
-					{match[1]}
-				</a>
-			);
-			lastIndex = linkRegex.lastIndex;
+
+			if (match[1] !== undefined && match[2] !== undefined) {
+				// Link match
+				parts.push(
+					<a
+						className="font-semibold text-blue-600 underline decoration-blue-300 underline-offset-4 transition-colors hover:text-blue-800 hover:decoration-blue-600"
+						href={match[2]}
+						key={`link-${match.index}`}
+						rel="noopener noreferrer"
+						target="_blank"
+					>
+						{match[1]}
+					</a>
+				);
+			} else if (match[3] !== undefined) {
+				// Bold match
+				parts.push(
+					<strong
+						className="font-bold text-slate-900"
+						key={`bold-${match.index}`}
+					>
+						{match[3]}
+					</strong>
+				);
+			}
+
+			lastIndex = tokenRegex.lastIndex;
 		}
 
 		if (lastIndex < text.length) {
@@ -98,22 +114,91 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 				}
 			}
 
-			// 2. Multi-line block starting with a Subheading (short first line without period/bullet)
+			// 2. Markdown Table detection
+			const isTable =
+				lines.length >= 3 &&
+				lines[0].includes("|") &&
+				lines[1].includes("|") &&
+				/^[\s|:-]+$/.test(lines[1]);
+
+			if (isTable) {
+				const parseCells = (rowStr: string) => {
+					const cleaned = rowStr.trim().replace(/^\||\|$/g, "");
+					return cleaned.split("|").map((c) => c.trim());
+				};
+
+				const headerCells = parseCells(lines[0]);
+				const dataRows = lines.slice(2).filter((r) => r.trim().includes("|"));
+
+				return (
+					<div
+						className="my-8 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
+						key={blockKey}
+					>
+						<div className="overflow-x-auto">
+							<table className="w-full text-left text-sm md:text-base">
+								<thead>
+									<tr className="border-b border-slate-200 bg-slate-100/80 font-bold text-slate-900">
+										{headerCells.map((cell, cIdx) => (
+											<th
+												className="px-6 py-4 font-bold text-blue-950 uppercase tracking-wider text-xs md:text-sm"
+												key={`th-${cIdx}`}
+											>
+												{parseTextWithLinks(cell)}
+											</th>
+										))}
+									</tr>
+								</thead>
+								<tbody className="divide-y divide-slate-100">
+									{dataRows.map((rowStr, rIdx) => {
+										const rowCells = parseCells(rowStr);
+										return (
+											<tr
+												className="transition-colors hover:bg-slate-50/70"
+												key={`tr-${rIdx}`}
+											>
+												{rowCells.map((cell, cIdx) => (
+													<td
+														className={`px-6 py-4 text-slate-700 ${
+															cIdx === 0
+																? "font-semibold text-slate-900 whitespace-nowrap"
+																: ""
+														}`}
+														key={`td-${rIdx}-${cIdx}`}
+													>
+														{parseTextWithLinks(cell)}
+													</td>
+												))}
+											</tr>
+										);
+									})}
+								</tbody>
+							</table>
+						</div>
+					</div>
+				);
+			}
+
+			// 3. Multi-line block starting with a Subheading
+			// A line is a heading if it's short, doesn't end with a period, and is not a plain bullet.
+			// Numbered headings like "1. A Wide Range..." are supported as long as the entire rest of lines are NOT all list items.
 			const firstLine = lines[0].trim();
+			const restLines = lines.slice(1);
+			const isRestList = restLines.every(
+				(line) => line.trim().startsWith("•") || /^\d+\./.test(line.trim())
+			);
+
 			const isFirstLineHeading =
 				lines.length > 1 &&
 				firstLine.length < 90 &&
 				!firstLine.endsWith(".") &&
 				!firstLine.endsWith("۔") &&
 				!firstLine.startsWith("•") &&
-				!/^\d+\./.test(firstLine);
+				!firstLine.startsWith("|") &&
+				(!/^\d+\./.test(firstLine) || !isRestList);
 
 			if (isFirstLineHeading) {
 				const headingText = firstLine;
-				const restLines = lines.slice(1);
-				const isRestList = restLines.every(
-					(line) => line.trim().startsWith("•") || /^\d+\./.test(line.trim())
-				);
 
 				return (
 					<div className="my-6" key={blockKey}>
@@ -144,7 +229,7 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 				);
 			}
 
-			// 3. Bullet list detection
+			// 4. Bullet list detection
 			if (
 				lines.every(
 					(line) => line.trim().startsWith("•") || /^\d+\./.test(line.trim())
