@@ -222,6 +222,22 @@ export const OG_PAGES: Record<string, OgEntry> = {
 				"تأجير مولدات في العين من إنرجكس — مولدات ديزل وصامتة من 15 إلى 1500 كيلو فولت أمبير للبناء والزراعة والتجارة.",
 		},
 	},
+	"/insights/1000-kva-generator-rental-dubai": {
+		type: "article",
+		image: "insights--1000-kva-generator-rental-dubai",
+		en: {
+			title:
+				"1000 kVA Generator Rental in Dubai: Reliable Power for Large-Scale Projects | Energex",
+			description:
+				"Rent 1000 kVA prime and backup generators in Dubai for large construction sites, industrial facilities, infrastructure projects and major events. 24/7 technical support.",
+		},
+		ar: {
+			title:
+				"تأجير مولدات 1000 كيلو فولت أمبير في دبي: طاقة موثوقة للمشاريع الكبرى | إنرجكس",
+			description:
+				"استأجر مولدات 1000 كيلو فولت أمبير رئيسية واحتياطية في دبي لمواقع البناء الكبرى والمنشآت الصناعية ومشاريع البنية التحتية والفعاليات الضخمة مع دعم فني 24/7.",
+		},
+	},
 	"/insights/generator-rental-dubai": {
 		type: "article",
 		image: "insights--500kva-generator-rental-dubai",
