@@ -222,6 +222,20 @@ export const OG_PAGES: Record<string, OgEntry> = {
 				"تأجير مولدات في العين من إنرجكس — مولدات ديزل وصامتة من 15 إلى 1500 كيلو فولت أمبير للبناء والزراعة والتجارة.",
 		},
 	},
+	"/insights/generator-rental-for-events-in-dubai": {
+		type: "article",
+		image: "insights--generator-rental-for-events-in-dubai",
+		en: {
+			title: "Generator Rental for Events in Dubai | Energex",
+			description:
+				"Looking for generator rental for parties in Dubai? Energex Equipment provides power solutions for weddings, corporate events, outdoor parties, and celebrations.",
+		},
+		ar: {
+			title: "تأجير مولدات للفعاليات في دبي | إنرجكس",
+			description:
+				"هل تبحث عن تأجير مولدات للحفلات في دبي؟ تقدم إنرجكس حلول طاقة موثوقة لحفلات الزفاف وفعاليات الشركات والحفلات الخارجية والمناسبات الخاصة.",
+		},
+	},
 	"/insights/best-generator-rental-dubai": {
 		type: "article",
 		image: "insights--best-generator-rental-dubai",
