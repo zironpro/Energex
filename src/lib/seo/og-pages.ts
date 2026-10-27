@@ -222,6 +222,20 @@ export const OG_PAGES: Record<string, OgEntry> = {
 				"تأجير مولدات في العين من إنرجكس — مولدات ديزل وصامتة من 15 إلى 1500 كيلو فولت أمبير للبناء والزراعة والتجارة.",
 		},
 	},
+	"/insights/generator-rental-near-me": {
+		type: "article",
+		image: "insights--generator-rental-near-me",
+		en: {
+			title: "Generator Rental Near Me: Reliable Power Solutions | Energex",
+			description:
+				"Find reliable generator rental near you in the UAE. Diesel, silent, and industrial generators across Dubai, Abu Dhabi, and all Emirates.",
+		},
+		ar: {
+			title: "تأجير مولدات بالقرب مني: حلول طاقة موثوقة لمشروعك | إنرجكس",
+			description:
+				"ابحث عن خدمات تأجير المولدات بالقرب منك في الإمارات. مولدات ديزل وصامتة وصناعية في دبي وأبوظبي وجميع أنحاء الإمارات.",
+		},
+	},
 	"/insights/generator-rental-for-events-in-dubai": {
 		type: "article",
 		image: "insights--generator-rental-for-events-in-dubai",
