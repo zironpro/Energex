@@ -1,66 +1,378 @@
 {
-    "Hero": {
-        "title1": "OUR",
-        "title2": "PRODUCTS",
-        "description": "Explore our extensive range of high-quality products designed for maximum performance, reliability, and efficiency."
-    },
-    "ProductGrid": {
-        "title": "Generator Rental Fleet in Dubai",
-        "description": "Discover our versatile range of high-performance generators, perfectly suited to handle anything from local events to massive industrial power demands.",
-        "premium": "PREMIUM",
-        "quote": "Quote",
-        "generatorType": "kVA generator",
-        "items": {
-            "p50": {
-                "title": "50 kVA Silent Diesel Generator",
-                "description": "Compact and efficient. Ideal for small events, retail backups, and temporary small-scale setups.",
-                "specs": [
-                    "Low emissions",
-                    "Ultra-silent",
-                    "Fuel efficient",
-                    "Portable"
-                ]
-            },
-            "p100": {
-                "title": "100 kVA Commercial Diesel Generator",
-                "description": "Versatile and reliable power for construction sites, medium-sized events, and commercial facilities.",
-                "specs": [
-                    "Heavy-duty",
-                    "Extended runtime",
-                    "Quick deploy",
-                    "Reliable"
-                ]
-            },
-            "p250": {
-                "title": "250 kVA Industrial Power Generator",
-                "description": "Robust industrial-grade power tailored for large-scale operations and critical infrastructure backups.",
-                "specs": [
-                    "High capacity",
-                    "Weather proof",
-                    "Smart monitor",
-                    "Industrial"
-                ]
-            },
-            "p500": {
-                "title": "500 kVA Heavy-Duty Generator Set",
-                "description": "Massive power output designed to support expansive events, factories, and emergency grids.",
-                "specs": [
-                    "Parallel ready",
-                    "Max efficiency",
-                    "24/7 uptime",
-                    "Grid support"
-                ]
-            },
-            "p1000": {
-                "title": "1000 kVA Prime Power Generator",
-                "description": "The ultimate powerhouse for utility-scale demands, major industrial plants, and massive temporary power stations, used on oil & gas and remote industrial sites.",
-                "specs": [
-                    "Utility grade",
-                    "Containerized",
-                    "Load manage",
-                    "Ultimate power"
-                ]
-            }
-        }
-    }
+	"Hero": {
+		"title1": "OUR",
+		"title2": "PRODUCTS",
+		"description": "Explore our extensive range of high-quality products designed for maximum performance, reliability, and efficiency."
+	},
+	"ProductGrid": {
+		"title": "Generator Rental Fleet in Dubai",
+		"description": "Discover our versatile range of high-performance generators, perfectly suited to handle anything from local events to massive industrial power demands.",
+		"premium": "PREMIUM",
+		"quote": "Quote",
+		"viewDetails": "View Details",
+		"generatorType": "kVA generator",
+		"items": {
+			"p50": {
+				"title": "50 kVA Silent Diesel Generator",
+				"description": "Compact and efficient. Ideal for small events, retail backups, and temporary small-scale setups.",
+				"specs": ["Low emissions", "Ultra-silent", "Fuel efficient", "Portable"]
+			},
+			"p100": {
+				"title": "100 kVA Commercial Diesel Generator",
+				"description": "Versatile and reliable power for construction sites, medium-sized events, and commercial facilities.",
+				"specs": ["Heavy-duty", "Extended runtime", "Quick deploy", "Reliable"]
+			},
+			"p250": {
+				"title": "250 kVA Industrial Power Generator",
+				"description": "Robust industrial-grade power tailored for large-scale operations and critical infrastructure backups.",
+				"specs": [
+					"High capacity",
+					"Weather proof",
+					"Smart monitor",
+					"Industrial"
+				]
+			},
+			"p500": {
+				"title": "500 kVA Heavy-Duty Generator Set",
+				"description": "Massive power output designed to support expansive events, factories, and emergency grids.",
+				"specs": [
+					"Parallel ready",
+					"Max efficiency",
+					"24/7 uptime",
+					"Grid support"
+				]
+			},
+			"p1000": {
+				"title": "1000 kVA Prime Power Generator",
+				"description": "The ultimate powerhouse for utility-scale demands, major industrial plants, and massive temporary power stations, used on oil & gas and remote industrial sites.",
+				"specs": [
+					"Utility grade",
+					"Containerized",
+					"Load manage",
+					"Ultimate power"
+				]
+			}
+		}
+	},
+	"ProductDetail": {
+		"backToProducts": "Back to All Products",
+		"availabilityBadge": "Available Across UAE • 24/7 Dispatch",
+		"capacityUnit": "kVA",
+		"activePowerUnit": "kW",
+		"requestQuote": "Request a Quote",
+		"callNow": "Call +971 50 233 5477",
+		"whatsappQuote": "WhatsApp Quote",
+		"highlightsTitle": "Key Performance Advantages",
+		"specificationsTitle": "Technical Specifications",
+		"specificationsSubtitle": "Engineered for continuous performance in demanding UAE ambient conditions.",
+		"applicationsTitle": "Ideal Applications",
+		"includedServicesTitle": "Included With Your Rental",
+		"includedServices": [
+			"24/7 on-call technical support and emergency breakdown response across the UAE",
+			"Rapid delivery, crane/forklift offloading, positioning, and commissioning",
+			"Free pre-rental load assessment to verify starting currents and kVA sizing",
+			"Scheduled preventive maintenance, oil/filter servicing, and health checks",
+			"Flexible daily, weekly, and monthly rental agreements tailored to your timeline",
+			"Optional power cables, distribution boards, ATS panels, and external fuel tanks"
+		],
+		"faqTitle": "Frequently Asked Questions",
+		"faqSubtitle": "Common questions about renting this generator in Dubai and the UAE",
+		"relatedTitle": "Explore Other Generator Capacities",
+		"relatedSubtitle": "Compare other units in our fleet to match your project's exact electrical load.",
+		"viewProduct": "View Specifications",
+		"specLabels": {
+			"primePower": "Prime Power Output",
+			"standbyPower": "Standby Power Output",
+			"voltage": "Rated Voltage",
+			"frequency": "Frequency / Speed",
+			"phase": "Phase Configuration",
+			"powerFactor": "Power Factor",
+			"fuelType": "Fuel Type",
+			"enclosure": "Enclosure Type",
+			"noiseLevel": "Sound Level (@ 7m)",
+			"cooling": "Cooling System"
+		},
+		"items": {
+			"p50": {
+				"badge": "Silent Series",
+				"subtitle": "Compact, low-noise temporary power for events, retail units, and light site operations.",
+				"overview": "Our 50 kVA Silent Diesel Generator delivers dependable 40 kW active power inside a compact, weather-resistant acoustic canopy. Engineered for urban Dubai environments where low noise and small footprint matter, it provides clean, stable voltage for outdoor events, retail backup, site cabins, and telecom installations. Every unit is serviced prior to dispatch and backed by Energex's 24/7 UAE technical support team.",
+				"technicalSpecs": {
+					"primePower": "50 kVA / 40 kW",
+					"standbyPower": "55 kVA / 44 kW",
+					"voltage": "400 / 230 V",
+					"frequency": "50 Hz / 1500 RPM",
+					"phase": "3-Phase, 4-Wire",
+					"powerFactor": "0.8 Lagging",
+					"fuelType": "Diesel",
+					"enclosure": "Sound-Attenuated Acoustic Canopy",
+					"noiseLevel": "65 - 68 dBA @ 7m",
+					"cooling": "Water-Cooled Tropical Radiator"
+				},
+				"applications": [
+					"Outdoor private parties, weddings, and boutique events",
+					"Retail stores, cafes, clinics, and commercial backup",
+					"Construction site offices, cabins, and security lighting",
+					"Film shoots, exhibitions, and pop-up installations",
+					"Telecom towers and light maintenance operations"
+				],
+				"highlights": [
+					{
+						"title": "Ultra-Quiet Canopy",
+						"description": "Sound-attenuated enclosure keeps operating noise low for residential neighborhoods and hotel venues."
+					},
+					{
+						"title": "High Fuel Efficiency",
+						"description": "Optimized diesel engine minimizes fuel burn during light and variable load cycles."
+					},
+					{
+						"title": "Compact Footprint",
+						"description": "Easy to transport and position in tight urban spaces, alleyways, and event grounds."
+					},
+					{
+						"title": "Rapid Deployment",
+						"description": "Same-day dispatch across Dubai and neighboring Emirates with fast cable hookup."
+					}
+				],
+				"faqs": [
+					{
+						"question": "How much equipment can a 50 kVA generator power?",
+						"answer": "At a 0.8 power factor, a 50 kVA generator supplies up to 40 kW (approx. 72 amps per phase at 400V). It comfortably handles site office ACs, lighting rigs, catering warmers, or small retail loads."
+					},
+					{
+						"question": "Is the 50 kVA generator quiet enough for events and residential areas?",
+						"answer": "Yes. Our 50 kVA units feature sound-attenuated acoustic canopies designed to reduce operational noise, making them suitable for outdoor celebrations, villas, hotels, and noise-sensitive areas in Dubai."
+					},
+					{
+						"question": "Can I rent a 50 kVA generator for a single day or weekend?",
+						"answer": "Yes, Energex offers flexible daily, weekly, and monthly rental plans depending on your event or project duration, including delivery, setup, and collection."
+					}
+				]
+			},
+			"p100": {
+				"badge": "Commercial Series",
+				"subtitle": "Versatile mid-size power for active construction sites, commercial buildings, and medium events.",
+				"overview": "The 100 kVA Commercial Diesel Generator is one of the most popular workhorses in our Dubai rental fleet, supplying 80 kW of steady prime power. Built for demanding UAE temperatures, it easily supports multi-cabin construction compounds, medium-sized commercial facilities, warehouses, and corporate events. Equipped with digital AVR voltage regulation and comprehensive engine protection, it ensures safe operation for sensitive electronics and motor loads alike.",
+				"technicalSpecs": {
+					"primePower": "100 kVA / 80 kW",
+					"standbyPower": "110 kVA / 88 kW",
+					"voltage": "400 / 230 V",
+					"frequency": "50 Hz / 1500 RPM",
+					"phase": "3-Phase, 4-Wire",
+					"powerFactor": "0.8 Lagging",
+					"fuelType": "Diesel",
+					"enclosure": "Weatherproof Sound-Attenuated Canopy",
+					"noiseLevel": "68 - 72 dBA @ 7m",
+					"cooling": "Water-Cooled Heavy-Duty Radiator"
+				},
+				"applications": [
+					"Construction site compounds, lighting towers, and power tools",
+					"Warehouses, cold rooms, and logistics loading bays",
+					"Mid-sized corporate events, weddings, and outdoor exhibitions",
+					"Offices, showrooms, and commercial building backup",
+					"Dewatering pumps and site welding operations"
+				],
+				"highlights": [
+					{
+						"title": "Balanced Capacity",
+						"description": "Delivers 80 kW of continuous power—ideal for mixed HVAC, lighting, and motor loads."
+					},
+					{
+						"title": "Extended Runtime",
+						"description": "Generous integrated base fuel tank supports long daily shifts with minimal refuelling stops."
+					},
+					{
+						"title": "Tropicalized Cooling",
+						"description": "Rated to run reliably in high UAE ambient summer temperatures without derating."
+					},
+					{
+						"title": "24/7 Fleet Support",
+						"description": "Backed by round-the-clock maintenance technicians and emergency unit replacement."
+					}
+				],
+				"faqs": [
+					{
+						"question": "Is a 100 kVA generator suitable for a medium construction site?",
+						"answer": "Yes. A 100 kVA generator is widely used on active construction sites in Dubai to power site offices, air conditioning units, floodlighting, small pumps, and fabrication tools simultaneously."
+					},
+					{
+						"question": "Does Energex provide power cables and distribution boards?",
+						"answer": "Yes, we can supply armored power cables, distribution boards (DBs), and Automatic Transfer Switches (ATS) alongside your 100 kVA generator rental."
+					},
+					{
+						"question": "How fast can a 100 kVA generator be delivered in Dubai?",
+						"answer": "We offer rapid dispatch across Dubai and all seven Emirates, with same-day delivery available for urgent standby and site requirements."
+					}
+				]
+			},
+			"p250": {
+				"badge": "Industrial Series",
+				"subtitle": "Robust, weatherproof industrial power for major construction works, factories, and large facilities.",
+				"overview": "Designed for heavy continuous loads, our 250 kVA Industrial Power Generator delivers 200 kW of dependable three-phase electricity. It is an ideal match for mid-to-large construction projects, industrial workshops, manufacturing lines, commercial towers, and large outdoor productions. Featuring smart digital telemetry, automatic shutdown protection, and a rugged soundproof canopy, the 250 kVA unit maintains high voltage stability even under fluctuating inductive loads.",
+				"technicalSpecs": {
+					"primePower": "250 kVA / 200 kW",
+					"standbyPower": "275 kVA / 220 kW",
+					"voltage": "400 / 230 V",
+					"frequency": "50 Hz / 1500 RPM",
+					"phase": "3-Phase, 4-Wire",
+					"powerFactor": "0.8 Lagging",
+					"fuelType": "Diesel",
+					"enclosure": "Heavy-Duty Soundproof Weatherproof Canopy",
+					"noiseLevel": "70 - 74 dBA @ 7m",
+					"cooling": "Water-Cooled Tropical Radiator"
+				},
+				"applications": [
+					"Large building construction sites, hoists, and batching support",
+					"Industrial manufacturing plants and fabrication workshops",
+					"Hotels, malls, and multi-story commercial building backup",
+					"Cold storage facilities and major logistics centers",
+					"Large outdoor festivals, concerts, and exhibition pavilions"
+				],
+				"highlights": [
+					{
+						"title": "Smart Monitoring",
+						"description": "Advanced digital controller tracks load, voltage, oil pressure, temperature, and run hours."
+					},
+					{
+						"title": "Heavy Motor Starting",
+						"description": "High alternator surge capacity handles starting currents for cranes, chillers, and pumps."
+					},
+					{
+						"title": "All-Weather Canopy",
+						"description": "Powder-coated enclosure protects against dust, sandstorms, humidity, and coastal air."
+					},
+					{
+						"title": "Flexible Fuel Options",
+						"description": "Compatible with external bulk fuel tanks for uninterrupted multi-day continuous operation."
+					}
+				],
+				"faqs": [
+					{
+						"question": "What is the active power output of a 250 kVA generator?",
+						"answer": "At a standard 0.8 power factor, a 250 kVA generator produces 200 kW of continuous prime power (roughly 360 amps per phase at 400V)."
+					},
+					{
+						"question": "Can a 250 kVA generator run continuously 24 hours a day?",
+						"answer": "Yes, our prime-rated 250 kVA generators are built for continuous 24/7 operation when paired with scheduled preventive servicing and external fuel tank arrangements."
+					},
+					{
+						"question": "Will Energex help calculate if 250 kVA is the right size?",
+						"answer": "Yes. Share your equipment list and starting currents with our engineers and we will perform a free load calculation before confirming the generator capacity."
+					}
+				]
+			},
+			"p500": {
+				"badge": "Heavy-Duty Series",
+				"subtitle": "High-capacity, parallel-ready power generation for major construction, factories, and mega events.",
+				"overview": "Our 500 kVA Heavy-Duty Generator Set supplies 400 kW of prime power engineered for high-demand commercial, industrial, and infrastructure applications across the UAE. Whether supporting tower cranes and dewatering systems on a major Dubai construction site, backing up a manufacturing facility during grid maintenance, or synchronizing multiple sets for a mega event, this unit provides exceptional uptime, fuel economy under heavy loads, and full synchronization capability.",
+				"technicalSpecs": {
+					"primePower": "500 kVA / 400 kW",
+					"standbyPower": "550 kVA / 440 kW",
+					"voltage": "400 / 230 V",
+					"frequency": "50 Hz / 1500 RPM",
+					"phase": "3-Phase, 4-Wire",
+					"powerFactor": "0.8 Lagging",
+					"fuelType": "Diesel",
+					"enclosure": "Heavy-Duty Acoustic Canopy (Parallel Ready)",
+					"noiseLevel": "72 - 76 dBA @ 7m",
+					"cooling": "High-Ambient Water-Cooled System"
+				},
+				"applications": [
+					"High-rise construction projects, tower cranes, and hoists",
+					"Large factories, processing lines, and district cooling support",
+					"Hospitals, data centers, and major commercial towers",
+					"Mega concerts, international exhibitions, and stadium events",
+					"Synchronized multi-generator temporary power stations"
+				],
+				"highlights": [
+					{
+						"title": "Parallel Synchronization",
+						"description": "Equipped for load-sharing synchronization with additional generators or grid tie-in."
+					},
+					{
+						"title": "24/7 Continuous Uptime",
+						"description": "Industrial diesel engine built for round-the-clock prime power under demanding loads."
+					},
+					{
+						"title": "Precision Voltage Control",
+						"description": "Digital AVR protects sensitive industrial machinery, chillers, and AV production rigs."
+					},
+					{
+						"title": "Dedicated Site Support",
+						"description": "Includes scheduled preventive maintenance and priority emergency engineer dispatch."
+					}
+				],
+				"faqs": [
+					{
+						"question": "Can multiple 500 kVA generators be synchronized together?",
+						"answer": "Yes. Our 500 kVA sets are parallel-ready, allowing two or more units to be synchronized for higher total capacity (e.g., 1000 kVA+) or N+1 redundancy on critical projects."
+					},
+					{
+						"question": "How many amps does a 500 kVA generator provide?",
+						"answer": "At 400V three-phase (0.8 power factor), a 500 kVA generator delivers approximately 721 amps per phase, corresponding to 400 kW of active power."
+					},
+					{
+						"question": "Are ATS panels and external fuel tanks available?",
+						"answer": "Yes, we provide Automatic Transfer Switches (ATS), synchronizing panels, heavy-duty cabling, and external bunded diesel tanks to support long-term 500 kVA deployments."
+					}
+				]
+			},
+			"p1000": {
+				"badge": "Utility Prime Series",
+				"subtitle": "Containerized utility-scale power for major infrastructure, oil & gas, and industrial complexes.",
+				"overview": "The 1000 kVA Prime Power Generator is Energex's flagship utility-scale powerhouse, delivering 800 kW of continuous electrical output inside a rugged containerized enclosure. Purpose-built for major infrastructure developments, oil & gas operations, remote industrial camps, seaports, and large manufacturing plants, it handles massive inductive loads with ease. Units can be deployed standalone or synchronized in multi-megawatt power packages with full load management and on-site engineering support.",
+				"technicalSpecs": {
+					"primePower": "1000 kVA / 800 kW",
+					"standbyPower": "1100 kVA / 880 kW",
+					"voltage": "400 / 230 V (Step-Up HV Option)",
+					"frequency": "50 Hz / 1500 RPM",
+					"phase": "3-Phase, 4-Wire",
+					"powerFactor": "0.8 Lagging",
+					"fuelType": "Diesel",
+					"enclosure": "ISO Sound-Attenuated Containerized Enclosure",
+					"noiseLevel": "75 - 78 dBA @ 7m",
+					"cooling": "Heavy-Duty Tropicalized Cooling Package"
+				},
+				"applications": [
+					"Mega infrastructure, metro, road, and port development projects",
+					"Oil & gas fields, refineries, and remote industrial sites",
+					"Heavy manufacturing, steelworks, and large concrete plants",
+					"Utility peak-shaving and multi-megawatt temporary power plants",
+					"Data centers, hospitals, and major commercial campuses"
+				],
+				"highlights": [
+					{
+						"title": "Containerized Protection",
+						"description": "ISO container housing provides maximum durability, security, and weather protection on harsh sites."
+					},
+					{
+						"title": "Multi-MW Scalability",
+						"description": "Advanced load-management controllers enable seamless paralleling into multi-megawatt arrays."
+					},
+					{
+						"title": "Utility-Grade Stability",
+						"description": "Handles massive motor start-up surges and continuous industrial duty cycles reliably."
+					},
+					{
+						"title": "Turnkey Engineering",
+						"description": "Supported by full site survey, crane logistics, HV/LV cabling, and on-site operators if needed."
+					}
+				],
+				"faqs": [
+					{
+						"question": "What industries typically rent a 1000 kVA generator in the UAE?",
+						"answer": "1000 kVA containerized generators are commonly rented for major infrastructure projects, oil and gas facilities, large manufacturing plants, data center backups, and utility-scale temporary power stations."
+					},
+					{
+						"question": "Can 1000 kVA units be combined for multi-megawatt power?",
+						"answer": "Yes. Multiple 1000 kVA generators can be synchronized with load-sharing switchgear and step-up transformers to build scalable multi-megawatt temporary power plants."
+					},
+					{
+						"question": "Does Energex handle crane delivery and installation for 1000 kVA sets?",
+						"answer": "Yes. Our logistics and engineering teams coordinate heavy transport, crane offloading, positioning, earthing, cabling, and full load testing prior to handover."
+					}
+				]
+			}
+		}
+	}
 }

@@ -49,23 +49,30 @@ export function Products() {
 								className="group flex cursor-pointer flex-col items-center last:col-span-2 md:last:col-span-1 lg:w-1/5"
 								key={product.id}
 							>
-								<div
-									className="mb-6 flex h-[140px] w-full items-center justify-center transition-transform duration-500 group-hover:-translate-y-2 lg:items-end lg:[height:var(--desktop-height)]"
-									style={
-										{ "--desktop-height": `${height}px` } as React.CSSProperties
-									}
+								<Link
+									className="flex w-full flex-col items-center"
+									href={`/products/${product.slug}`}
 								>
-									<Image
-										alt={product.capacity}
-										className="max-h-full w-auto object-contain drop-shadow-xl"
-										height={300}
-										src={product.image}
-										width={400}
-									/>
-								</div>
-								<h3 className="mb-2 font-bold text-gray-900 text-lg lg:text-xl">
-									{product.capacity}
-								</h3>
+									<div
+										className="mb-6 flex h-[140px] w-full items-center justify-center transition-transform duration-500 group-hover:-translate-y-2 lg:items-end lg:[height:var(--desktop-height)]"
+										style={
+											{
+												"--desktop-height": `${height}px`,
+											} as React.CSSProperties
+										}
+									>
+										<Image
+											alt={product.capacity}
+											className="max-h-full w-auto object-contain drop-shadow-xl"
+											height={300}
+											src={product.image}
+											width={400}
+										/>
+									</div>
+									<h3 className="mb-2 font-bold text-gray-900 text-lg transition-colors group-hover:text-blue-600 lg:text-xl">
+										{product.capacity}
+									</h3>
+								</Link>
 							</ScrollRevealItem>
 						);
 					})}

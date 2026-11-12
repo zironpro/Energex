@@ -3,6 +3,7 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/constants/site-config";
 import { ARTICLES } from "@/features/insights/data/articles";
 import { LOCATION_PAGES } from "@/features/locations/data/location-pages";
+import { PRODUCTS } from "@/features/products/data/products";
 import { routing } from "@/i18n/routing";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -32,6 +33,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 	addEntry("", 1.0);
 	addEntry("/solutions", 0.8);
 	addEntry("/products", 0.8);
+	for (const product of PRODUCTS) {
+		addEntry(`/products/${product.slug}`, 0.8);
+	}
 	addEntry("/company", 0.8);
 	addEntry("/insights", 0.8);
 	addEntry("/contact", 0.8);

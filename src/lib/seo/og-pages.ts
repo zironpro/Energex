@@ -53,6 +53,76 @@ export const OG_PAGES: Record<string, OgEntry> = {
 				"تصفح أسطول إنرجكس لتأجير مولدات الديزل في دبي للفعاليات والبناء والطاقة التجارية والصناعية. احصل على عرض سعر سريع اليوم.",
 		},
 	},
+	"/products/50-kva-silent-diesel-generator": {
+		type: "website",
+		image: "products--50-kva-silent-diesel-generator",
+		en: {
+			title: "50 kVA Silent Diesel Generator Rental Dubai | Energex",
+			description:
+				"Rent a 50 kVA (40 kW) silent diesel generator in Dubai and the UAE. Ultra-quiet, fuel-efficient, and ideal for events, retail backup, and site offices.",
+		},
+		ar: {
+			title: "تأجير مولد ديزل صامت 50 كيلو فولت أمبير في دبي | إنرجكس",
+			description:
+				"استأجر مولد ديزل صامت بقدرة 50 كيلو فولت أمبير (40 كيلوواط) في دبي والإمارات. هادئ للغاية وموفر للوقود ومثالي للفعاليات والمتاجر والمكاتب المؤقتة.",
+		},
+	},
+	"/products/100-kva-commercial-diesel-generator": {
+		type: "website",
+		image: "products--100-kva-commercial-diesel-generator",
+		en: {
+			title: "100 kVA Commercial Diesel Generator Rental Dubai | Energex",
+			description:
+				"Rent a 100 kVA (80 kW) commercial diesel generator in Dubai. Heavy-duty, quick-deploy temporary power for construction sites, warehouses, and events.",
+		},
+		ar: {
+			title: "تأجير مولد ديزل تجاري 100 كيلو فولت أمبير في دبي | إنرجكس",
+			description:
+				"استأجر مولد ديزل تجاري بقدرة 100 كيلو فولت أمبير (80 كيلوواط) في دبي. طاقة مؤقتة موثوقة وسريعة النشر لمواقع البناء والمستودعات والفعاليات.",
+		},
+	},
+	"/products/250-kva-industrial-power-generator": {
+		type: "website",
+		image: "products--250-kva-industrial-power-generator",
+		en: {
+			title: "250 kVA Industrial Power Generator Rental Dubai | Energex",
+			description:
+				"Rent a 250 kVA (200 kW) industrial diesel generator in Dubai. Weatherproof, smart-monitored power for construction projects, factories, and commercial towers.",
+		},
+		ar: {
+			title: "تأجير مولد طاقة صناعي 250 كيلو فولت أمبير في دبي | إنرجكس",
+			description:
+				"استأجر مولد طاقة صناعي بقدرة 250 كيلو فولت أمبير (200 كيلوواط) في دبي. طاقة مقاومة للعوامل الجوية مع مراقبة ذكية لمواقع البناء والمصانع والأبراج التجارية.",
+		},
+	},
+	"/products/500-kva-heavy-duty-generator-set": {
+		type: "website",
+		image: "products--500-kva-heavy-duty-generator-set",
+		en: {
+			title: "500 kVA Heavy-Duty Generator Rental Dubai | Energex",
+			description:
+				"Rent a 500 kVA (400 kW) heavy-duty diesel generator set in Dubai. Parallel-ready with 24/7 support for large construction sites, manufacturing plants, and mega events.",
+		},
+		ar: {
+			title: "تأجير مولد للخدمة الشاقة 500 كيلو فولت أمبير في دبي | إنرجكس",
+			description:
+				"استأجر مجموعة مولدات للخدمة الشاقة بقدرة 500 كيلو فولت أمبير (400 كيلوواط) في دبي. جاهزة للتوازي مع دعم 24/7 لمواقع البناء الكبرى والمصانع والفعاليات الضخمة.",
+		},
+	},
+	"/products/1000-kva-prime-power-generator": {
+		type: "website",
+		image: "products--1000-kva-prime-power-generator",
+		en: {
+			title: "1000 kVA Prime Power Generator Rental Dubai | Energex",
+			description:
+				"Rent a 1000 kVA (800 kW) containerized prime power generator in Dubai and the UAE. Utility-grade temporary power for major infrastructure, oil & gas, and industrial plants.",
+		},
+		ar: {
+			title: "تأجير مولد طاقة رئيسي 1000 كيلو فولت أمبير في دبي | إنرجكس",
+			description:
+				"استأجر مولد طاقة رئيسي في حاوية بقدرة 1000 كيلو فولت أمبير (800 كيلوواط) في دبي والإمارات. طاقة بدرجة المرافق لمشاريع البنية التحتية والنفط والغاز والمصانع الكبرى.",
+		},
+	},
 	"/company": {
 		type: "website",
 		image: "company",

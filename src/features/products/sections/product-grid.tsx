@@ -35,7 +35,14 @@ export function ProductGrid() {
 					>
 						{t("description")}
 						<span className="mt-2 block text-base">
-							Need help sizing? See <Link className="text-blue-500 hover:underline" href="/insights/how-to-choose-right-kva-generator-abu-dhabi">how to choose the right kVA generator</Link>.
+							Need help sizing? See{" "}
+							<Link
+								className="text-blue-500 hover:underline"
+								href="/insights/how-to-choose-right-kva-generator-abu-dhabi"
+							>
+								how to choose the right kVA generator
+							</Link>
+							.
 						</span>
 					</motion.p>
 				</div>
@@ -60,26 +67,40 @@ export function ProductGrid() {
 
 								{/* Left/Top Content */}
 								<div className="z-10 flex flex-col">
-									<h3 className="mb-3 font-black text-3xl text-blue-600 leading-[1.1] tracking-tighter">
-										{product.title}
-									</h3>
+									<Link
+										className="mb-3 block transition-colors hover:opacity-85"
+										href={`/products/${product.slug}`}
+									>
+										<h3 className="font-black text-3xl text-blue-600 leading-[1.1] tracking-tighter">
+											{product.title}
+										</h3>
+									</Link>
 									<p className="mb-6 text-slate-600 text-sm leading-relaxed md:text-base">
-										<span dangerouslySetInnerHTML={{ __html: product.description }} />
+										{product.description}
 									</p>
 
-									<div className="mb-8">
+									<div className="mb-8 flex flex-wrap items-center gap-3">
 										<Link
-											className="group inline-flex w-fit items-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700"
+											className="group inline-flex w-fit items-center gap-2 rounded-lg bg-blue-600 px-5 py-3 font-semibold text-sm text-white duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700"
+											href={`/products/${product.slug}`}
+										>
+											{t("viewDetails")}{" "}
+											<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+										</Link>
+										<Link
+											className="inline-flex w-fit items-center gap-2 rounded-lg border border-slate-200 bg-white px-5 py-3 font-semibold text-slate-800 text-sm transition-colors hover:border-blue-300 hover:text-blue-600"
 											href="/contact"
 										>
-											{t("quote")}{" "}
-											<ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+											{t("quote")}
 										</Link>
 									</div>
 								</div>
 
 								{/* Bottom Area: Centered Image */}
-								<div className="mt-auto flex h-[200px] w-full items-center justify-center">
+								<Link
+									className="mt-auto flex h-[200px] w-full items-center justify-center"
+									href={`/products/${product.slug}`}
+								>
 									<div className="relative h-full w-[240px] transition-transform duration-500 ease-out group-hover:scale-110">
 										<Image
 											alt={product.title}
@@ -89,7 +110,7 @@ export function ProductGrid() {
 											src={product.image}
 										/>
 									</div>
-								</div>
+								</Link>
 							</motion.div>
 						);
 					})}
