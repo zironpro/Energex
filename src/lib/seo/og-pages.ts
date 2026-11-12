@@ -222,6 +222,22 @@ export const OG_PAGES: Record<string, OgEntry> = {
 				"تأجير مولدات في العين من إنرجكس — مولدات ديزل وصامتة من 15 إلى 1500 كيلو فولت أمبير للبناء والزراعة والتجارة.",
 		},
 	},
+	"/insights/construction-site-generator-rental-in-dubai": {
+		type: "article",
+		image: "insights--construction-site-generator-rental-in-dubai",
+		en: {
+			title:
+				"Construction Site Generator Rental in Dubai: A Complete Guide | Energex",
+			description:
+				"Complete guide to construction site generator rental in Dubai: uses, benefits, choosing the right kVA capacity, generator types, and pre-rental checks.",
+		},
+		ar: {
+			title:
+				"تأجير مولدات مواقع البناء في دبي: دليل شامل لمشاريع الإنشاءات | إنرجكس",
+			description:
+				"دليل شامل لتأجير مولدات مواقع البناء في دبي: الاستخدامات والمزايا وكيفية اختيار السعة المناسبة وأنواع المولدات ونقاط التحقق قبل الاستئجار.",
+		},
+	},
 	"/insights/generator-rental-near-me": {
 		type: "article",
 		image: "insights--generator-rental-near-me",
