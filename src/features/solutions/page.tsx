@@ -1,5 +1,7 @@
 "use client";
 
+import { SolutionsSeoContent } from "@/components/seo-content";
+
 import { CTA } from "@/features/home/components/cta";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
@@ -7,7 +9,7 @@ import { FeatureShowcase } from "./sections/feature-showcase";
 import { Hero } from "./sections/hero";
 import { RentalPackages } from "./sections/rental-packages";
 import { ServicesGrid } from "./sections/services-grid";
-import { SolutionsSeoContent } from "@/components/seo-content";
+import { SolutionsCatalog } from "./sections/solutions-catalog";
 
 export function SolutionsPage() {
 	useSmoothScroll();
@@ -17,6 +19,7 @@ export function SolutionsPage() {
 			<Hero />
 			<ServicesGrid />
 			<FeatureShowcase />
+			<SolutionsCatalog />
 			<RentalPackages />
 			<SolutionsSeoContent />
 			<CTA />

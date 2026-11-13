@@ -46,9 +46,9 @@ export function FeatureShowcase() {
 					{/* Left Side: Navigation & Intro */}
 					<div className="flex flex-col lg:col-span-5">
 						<div className="mb-12">
-							<h2 className="mb-6 font-black text-3xl text-blue-600 uppercase leading-[1.1] sm:text-4xl md:text-5xl">
+							<h2 className="mb-6 font-black text-3xl text-blue-600 leading-tight tracking-tighter sm:text-4xl md:text-5xl">
 								{t("title1")} <br />
-								<span className="text-blue-600">{t("title2")}</span>
+								<span>{t("title2")}</span>
 							</h2>
 							<p className="mb-8 text-base text-slate-600 leading-relaxed">
 								{t("description")}
@@ -115,7 +115,7 @@ export function FeatureShowcase() {
 												{feature.description}
 											</p>
 
-											<ul className="mb-8 space-y-3">
+											<ul className="mb-6 space-y-3">
 												{feature.points.map((point) => (
 													<li
 														className="flex items-center space-x-3 text-slate-700 text-sm md:text-base"
@@ -126,6 +126,18 @@ export function FeatureShowcase() {
 													</li>
 												))}
 											</ul>
+
+											{feature.serviceHref && feature.serviceLinkText && (
+												<div className="mb-6">
+													<Link
+														className="group/link inline-flex items-center gap-1.5 font-bold text-blue-600 text-xs uppercase tracking-wider transition hover:text-blue-700"
+														href={feature.serviceHref}
+													>
+														<span>{feature.serviceLinkText}</span>
+														<ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-1 rtl:rotate-180 rtl:group-hover/link:-translate-x-1" />
+													</Link>
+												</div>
+											)}
 
 											{/* Image */}
 											<div className="relative mt-auto aspect-[16/10] w-full overflow-hidden rounded-lg">

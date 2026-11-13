@@ -1,90 +1,372 @@
+import type { ReactNode } from "react";
+
+import {
+	Building2,
+	HelpCircle,
+	MapPin,
+	Settings2,
+	ShieldCheck,
+	Wrench,
+	Zap,
+} from "lucide-react";
 import { useLocale } from "next-intl";
+
+import { Link } from "@/i18n/navigation";
+
+// --- Shared Reusable Primitives ---
+
+interface SeoSectionProps {
+	title: string;
+	lead: string;
+	children: ReactNode;
+}
+
+function SeoSection({ title, lead, children }: SeoSectionProps) {
+	return (
+		<section className="relative border-slate-200/80 border-t bg-gradient-to-b from-slate-50/70 via-white to-slate-50/50 py-16 sm:py-20 lg:py-24">
+			<div className="container mx-auto max-w-6xl px-6 md:px-12">
+				{/* Section Header */}
+				<div className="mx-auto mb-12 max-w-3xl text-center">
+					<h2 className="font-black text-2xl text-slate-900 leading-tight tracking-tight sm:text-3xl md:text-4xl">
+						{title}
+					</h2>
+					<p className="mt-4 text-base text-slate-600 leading-relaxed md:text-lg">
+						{lead}
+					</p>
+				</div>
+
+				{/* Cards Grid */}
+				<div className="grid gap-6 md:grid-cols-2 lg:gap-8">{children}</div>
+			</div>
+		</section>
+	);
+}
+
+interface SeoCardProps {
+	icon: ReactNode;
+	title: string;
+	children: ReactNode;
+}
+
+function SeoCard({ icon, title, children }: SeoCardProps) {
+	return (
+		<div className="flex flex-col rounded-2xl border border-slate-200/90 bg-white p-6 shadow-xs transition-all duration-300 hover:border-blue-200 hover:shadow-md sm:p-8">
+			<div className="mb-5 flex items-center gap-3 border-slate-100 border-b pb-4">
+				<div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600">
+					{icon}
+				</div>
+				<h3 className="font-bold text-lg text-slate-900 sm:text-xl">{title}</h3>
+			</div>
+			<div className="flex flex-1 flex-col space-y-4 text-slate-600 text-sm leading-relaxed sm:text-base">
+				{children}
+			</div>
+		</div>
+	);
+}
+
+interface SeoItemBoxProps {
+	title: string;
+	description: ReactNode;
+}
+
+function SeoItemBox({ title, description }: SeoItemBoxProps) {
+	return (
+		<div className="rounded-xl border border-slate-100 bg-slate-50/70 p-4 transition-colors hover:bg-slate-50">
+			<div className="font-bold text-slate-900 text-sm sm:text-base">
+				{title}
+			</div>
+			<div className="mt-1 text-slate-600 text-xs leading-relaxed sm:text-sm">
+				{description}
+			</div>
+		</div>
+	);
+}
+
+interface SeoFaqItemProps {
+	question: string;
+	answer: string;
+}
+
+function SeoFaqItem({ question, answer }: SeoFaqItemProps) {
+	return (
+		<div className="rounded-xl border border-slate-100 bg-slate-50/70 p-4">
+			<div className="flex items-start gap-2.5 font-bold text-slate-900 text-sm sm:text-base">
+				<span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-600 font-bold text-[11px] text-white">
+					Q
+				</span>
+				<span>{question}</span>
+			</div>
+			<p className="mt-2 text-slate-600 text-xs leading-relaxed sm:text-sm ltr:pl-7 rtl:pr-7">
+				{answer}
+			</p>
+		</div>
+	);
+}
+
+// --- 1. Contact Page SEO Content ---
 
 export function ContactSeoContent() {
 	const locale = useLocale();
 	const isAr = locale === "ar";
-	
+
 	if (isAr) {
+		const emirates = [
+			"دبي",
+			"أبوظبي",
+			"الشارقة",
+			"عجمان",
+			"رأس الخيمة",
+			"الفجيرة",
+			"أم القيوين",
+			"جبل علي",
+			"الخليج التجاري",
+			"القوز",
+			"مجمع دبي للاستثمار",
+			"دبي الجنوب",
+		];
+
 		return (
-			<section className="container mx-auto px-6 py-12 text-slate-700 max-w-4xl">
-				<h2 className="text-2xl font-bold mb-4 text-slate-900">تواصل مع إنرجكس لتأجير المولدات في الإمارات</h2>
-				<p className="mb-4 leading-relaxed">
-					تعتبر إنرجكس واحدة من الشركات الرائدة في مجال تأجير المولدات الكهربائية في دبي وأبوظبي والشارقة وكافة أنحاء الإمارات. سواء كنت تبحث عن مولدات ديزل صامتة لمشروع بناء ضخم، أو طاقة احتياطية لفعالية كبرى، نحن هنا لتلبية كافة احتياجاتك.
-				</p>
-				<h3 className="text-xl font-semibold mb-3 text-slate-900">المناطق التي نخدمها</h3>
-				<p className="mb-4 leading-relaxed">
-					نقدم خدمات تأجير المولدات بجميع الأحجام (من 20 كيلو فولت أمبير وحتى 1500 كيلو فولت أمبير) في كافة مناطق دبي بما في ذلك جبل علي، الخليج التجاري، القوز، مجمع دبي للاستثمار، بالإضافة إلى أبوظبي، الشارقة، عجمان، رأس الخيمة، الفجيرة، وأم القيوين.
-				</p>
-				<h3 className="text-xl font-semibold mb-3 text-slate-900">إرشادات الأسعار والخدمات</h3>
-				<p className="mb-4 leading-relaxed">
-					تختلف أسعار الإيجار بناءً على السعة المطلوبة، ومدة الإيجار (يومي، أسبوعي، شهري)، والموقع. تواصل معنا اليوم للحصول على استشارة مجانية وتقييم للأحمال المطلوبة لضمان حصولك على الحل الأكثر كفاءة واقتصادية.
-				</p>
-			</section>
+			<SeoSection
+				lead="تعتبر إنرجكس واحدة من الشركات الرائدة في مجال تأجير المولدات الكهربائية في دبي وأبوظبي والشارقة وكافة أنحاء الإمارات لتلبية متطلبات المشاريع الإنشائية والتجارية والفعاليات الكبرى."
+				title="تواصل مع إنرجكس لتأجير المولدات في الإمارات"
+			>
+				<SeoCard
+					icon={<MapPin className="h-5 w-5" />}
+					title="المناطق التي نخدمها في كافة الإمارات"
+				>
+					<p>
+						نقدم خدمات توريد وصيانة مولدات الديزل الصامتة من 20 إلى 1500 كيلو
+						فولت أمبير مع استجابة فورية ودعم فني مخصص على مدار الساعة.
+					</p>
+					<div className="pt-2">
+						<div className="mb-2.5 font-semibold text-slate-900 text-xs">
+							مراكز التغطية والمدن الرئيسية:
+						</div>
+						<div className="flex flex-wrap gap-1.5">
+							{emirates.map((item) => (
+								<span
+									className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1 font-medium text-slate-700 text-xs"
+									key={item}
+								>
+									{item}
+								</span>
+							))}
+						</div>
+					</div>
+				</SeoCard>
+
+				<SeoCard
+					icon={<Zap className="h-5 w-5" />}
+					title="أحجام المولدات وإرشادات الأسعار"
+				>
+					<p>
+						نمتلك أسطولاً متنوعاً يغطي كافة الاحتياجات التشغيلية مع تسعير شفاف
+						ومرن وفقاً لطبيعة كل مشروع:
+					</p>
+					<div className="space-y-2.5 pt-1">
+						<SeoItemBox
+							description="مولدات ديزل صامتة مجهزة بأحدث تقنيات توفير الوقود وأنظمة التحكم الذكي."
+							title="نطاق الأسطول (20 إلى 1500 ك.ف.أ)"
+						/>
+						<SeoItemBox
+							description="عقود إيجار يومية، أسبوعية، شهرية، وسنوية مرنة مع خطط تسعير تنافسية."
+							title="فترات إيجار مرنة"
+						/>
+						<SeoItemBox
+							description="فحص مجاني للأحمال، تمديد الكابلات، لوحات التحويل التلقائي ATS، وإدارة الوقود."
+							title="حلول تسليم مفتاح شاملة"
+						/>
+					</div>
+				</SeoCard>
+			</SeoSection>
 		);
 	}
 
+	const emirates = [
+		"Dubai",
+		"Abu Dhabi",
+		"Sharjah",
+		"Ajman",
+		"Ras Al Khaimah",
+		"Fujairah",
+		"Umm Al Quwain",
+		"Jebel Ali",
+		"Business Bay",
+		"Al Quoz",
+		"DIP",
+		"Dubai South",
+	];
+
 	return (
-		<section className="container mx-auto px-6 py-12 text-slate-700 max-w-4xl">
-			<h2 className="text-2xl font-bold mb-4 text-slate-900">Contact Energex for Generator Rental in the UAE</h2>
-			<p className="mb-4 leading-relaxed">
-				Energex Equipment Rental is a leading provider of power solutions across Dubai, Abu Dhabi, Sharjah, and the wider UAE. Whether you are managing a large-scale construction site, organizing a major event, or require reliable backup power for an industrial facility, our team is ready to deliver tailored generator rental solutions.
-			</p>
-			<h3 className="text-xl font-semibold mb-3 text-slate-900">Areas We Serve</h3>
-			<p className="mb-4 leading-relaxed">
-				We supply and maintain soundproof diesel generators across all seven Emirates. In Dubai, our primary service areas include Jebel Ali, Business Bay, Al Quoz, Dubai Investment Park, and Dubai South. We also offer rapid deployment and 24/7 technical support in Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, and Umm Al Quwain.
-			</p>
-			<h3 className="text-xl font-semibold mb-3 text-slate-900">Available kVA Sizes and Pricing</h3>
-			<p className="mb-4 leading-relaxed">
-				Our fleet includes a comprehensive range of generator sizes to meet diverse power demands, from 20kVA for small temporary setups up to 1500kVA for massive industrial loads. Rental prices depend on the required capacity, the rental duration (daily, weekly, or monthly contracts), and specific site requirements such as cabling and fuel management. Contact us today for a free load assessment and a competitive, transparent quote.
-			</p>
-		</section>
+		<SeoSection
+			lead="Energex Equipment Rental is a leading provider of power solutions across Dubai, Abu Dhabi, Sharjah, and the wider UAE. Whether managing a large-scale construction site or organizing a major event, our team delivers reliable, tailored power."
+			title="Contact Energex for Generator Rental in the UAE"
+		>
+			<SeoCard
+				icon={<MapPin className="h-5 w-5" />}
+				title="Areas We Serve Across the UAE"
+			>
+				<p>
+					We supply and maintain soundproof diesel generators across all seven
+					Emirates. In Dubai, our primary service hubs ensure rapid dispatch and
+					24/7 technical support.
+				</p>
+				<div className="pt-2">
+					<div className="mb-2.5 font-semibold text-slate-900 text-xs">
+						Primary Regional Hubs:
+					</div>
+					<div className="flex flex-wrap gap-1.5">
+						{emirates.map((item) => (
+							<span
+								className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1 font-medium text-slate-700 text-xs"
+								key={item}
+							>
+								{item}
+							</span>
+						))}
+					</div>
+				</div>
+			</SeoCard>
+
+			<SeoCard
+				icon={<Zap className="h-5 w-5" />}
+				title="Available kVA Sizes and Pricing"
+			>
+				<p>
+					Our fleet includes a comprehensive capacity range to satisfy both
+					light commercial setups and continuous high-load industrial demands:
+				</p>
+				<div className="space-y-2.5 pt-1">
+					<SeoItemBox
+						description="High-performance soundproof diesel gensets from 20 kVA up to 1500 kVA."
+						title="Fleet Capacity Range"
+					/>
+					<SeoItemBox
+						description="Daily, weekly, monthly, and long-term project rental options at competitive rates."
+						title="Flexible Contract Terms"
+					/>
+					<SeoItemBox
+						description="Complimentary site load assessment, heavy-duty cabling, ATS switches, and fuel logistics."
+						title="Turnkey Support"
+					/>
+				</div>
+			</SeoCard>
+		</SeoSection>
 	);
 }
+
+// --- 2. Products Page SEO Content ---
 
 export function ProductsSeoContent() {
 	const locale = useLocale();
 	const isAr = locale === "ar";
-	
+
 	if (isAr) {
 		return (
-			<section className="container mx-auto px-6 py-12 text-slate-700 max-w-4xl">
-				<h2 className="text-2xl font-bold mb-4 text-slate-900">أسطول مولدات الديزل للإيجار في دبي والإمارات</h2>
-				<p className="mb-4 leading-relaxed">
-					نقدم في إنرجكس مجموعة واسعة من مولدات الديزل الصامتة والموثوقة المصممة لتلبية متطلبات الطاقة لمختلف القطاعات. يتم صيانة أسطولنا بانتظام لضمان أعلى مستويات الأداء والكفاءة في استهلاك الوقود.
-				</p>
-				<h3 className="text-xl font-semibold mb-3 text-slate-900">أحجام المولدات المتوفرة (kVA)</h3>
-				<ul className="list-disc list-inside mb-4 space-y-2">
-					<li><strong>المولدات الصغيرة (20 - 100 كيلو فولت أمبير):</strong> مثالية للمكاتب المؤقتة، الفعاليات الصغيرة، والمعدات الخفيفة.</li>
-					<li><strong>المولدات المتوسطة (150 - 500 كيلو فولت أمبير):</strong> تستخدم على نطاق واسع في مواقع البناء، والمستودعات، والمباني التجارية.</li>
-					<li><strong>المولدات الضخمة (750 - 1500 كيلو فولت أمبير):</strong> مصممة للمصانع الكبرى، وقطاع النفط والغاز، والمشاريع الإنشائية العملاقة.</li>
-				</ul>
-				<h3 className="text-xl font-semibold mb-3 text-slate-900">لماذا تختار مولدات إنرجكس؟</h3>
-				<p className="mb-4 leading-relaxed">
-					جميع مولداتنا مزودة بأنظمة كتم الصوت (Soundproof) لتتناسب مع العمل في المناطق السكنية والتجارية. كما نوفر ملحقات متكاملة تشمل الكابلات، وخزانات الوقود الإضافية، ولوحات التوزيع الكهربائي لتوفير حل متكامل للطاقة أينما كنت.
-				</p>
-			</section>
+			<SeoSection
+				lead="نقدم في إنرجكس أسطولاً حديثاً ومجهزاً بالكامل من مولدات الديزل الصامتة والموثوقة والمصممة لتحمل أصعب الظروف المناخية في الإمارات حتى 50 درجة مئوية."
+				title="أسطول مولدات الديزل للإيجار في دبي والإمارات"
+			>
+				<SeoCard
+					icon={<Zap className="h-5 w-5" />}
+					title="أحجام المولدات المتوفرة وتطبيقاتها"
+				>
+					<div className="space-y-2.5">
+						<SeoItemBox
+							description="مثالية للمكاتب المؤقتة، الفعاليات الصغيرة، أبراج الإنارة، والطاقة الاحتياطية للمحلات التجارية."
+							title="السعات الصغيرة (20 - 100 ك.ف.أ)"
+						/>
+						<SeoItemBox
+							description="تستخدم على نطاق واسع في مواقع البناء المتوسطة، المستودعات، والمجمعات السكنية والتجارية."
+							title="السعات المتوسطة (150 - 500 ك.ف.أ)"
+						/>
+						<SeoItemBox
+							description="مصممة للمصانع الكبرى، حقول النفط والغاز، محطات التبريد المركزي، والمشاريع الإنشائية الضخمة."
+							title="السعات الكبيرة (750 - 1500 ك.ف.أ)"
+						/>
+					</div>
+				</SeoCard>
+
+				<SeoCard
+					icon={<Settings2 className="h-5 w-5" />}
+					title="المزامنة الكهربائية والملحقات المتكاملة"
+				>
+					<p>
+						إلى جانب الوحدات المستقلة، نوفر حلول مزامنة متعددة الميجاوات لتوفير
+						طاقة عالية وموثوقية مضاعفة (N+1) لمنع أي انقطاع كهربائي.
+					</p>
+					<div className="space-y-2.5 pt-1">
+						<SeoItemBox
+							description="تحويل آلي وفوري للكهرباء عند انقطاع التيار الرئيسي لضمان استمرارية الأعمال."
+							title="لوحات التحويل التلقائي (ATS)"
+						/>
+						<SeoItemBox
+							description="كابلات مطاطية مدرعة مصممة لتحمل حرارة الصحراء ولوحات توزيع متعددة المخارج."
+							title="كابلات ولوحات توزيع احترافية"
+						/>
+						<SeoItemBox
+							description="خزانات وقود خارجية معتمدة (1,000 إلى 10,000 لتر) للتشغيل المستمر دون توقف."
+							title="خزانات وقود إضافية"
+						/>
+					</div>
+				</SeoCard>
+			</SeoSection>
 		);
 	}
 
 	return (
-		<section className="container mx-auto px-6 py-12 text-slate-700 max-w-4xl border-t border-slate-200 mt-12">
-			<h2 className="text-2xl font-bold mb-4 text-slate-900">Diesel Generator Fleet for Rent in Dubai & UAE</h2>
-			<p className="mb-4 leading-relaxed">
-				Energex Equipment Rental maintains a modern, meticulously serviced fleet of soundproof diesel generators designed to meet the rigorous demands of the UAE climate. From temporary construction setups to mission-critical backup power, our equipment ensures uninterrupted operations.
-			</p>
-			<h3 className="text-xl font-semibold mb-3 text-slate-900">Available kVA Sizes and Applications</h3>
-			<ul className="list-disc list-inside mb-4 space-y-2">
-				<li><strong>Small Capacity (20kVA - 100kVA):</strong> Perfect for temporary site offices, small events, lighting towers, and backup power for small commercial setups.</li>
-				<li><strong>Medium Capacity (150kVA - 500kVA):</strong> Highly versatile units ideal for mid-sized construction sites, warehouses, residential complexes, and retail centers.</li>
-				<li><strong>Large Capacity (750kVA - 1500kVA):</strong> Heavy-duty generators built for heavy manufacturing, oil and gas operations, large-scale district cooling, and massive infrastructure projects.</li>
-			</ul>
-			<h3 className="text-xl font-semibold mb-3 text-slate-900">Synchronized Power & Accessories</h3>
-			<p className="mb-4 leading-relaxed">
-				Beyond standalone units, we provide multi-megawatt synchronized generator packages for massive power demands. We also supply all necessary accessories, including ATS panels, electrical distribution boards, heavy-duty cables, and external fuel tanks for extended run times without interruption.
-			</p>
-		</section>
+		<SeoSection
+			lead="Energex Equipment Rental maintains a modern, meticulously serviced fleet of soundproof diesel generators engineered to thrive in the demanding UAE desert environment up to 50°C."
+			title="Diesel Generator Fleet for Rent in Dubai & UAE"
+		>
+			<SeoCard
+				icon={<Zap className="h-5 w-5" />}
+				title="Available kVA Sizes and Applications"
+			>
+				<div className="space-y-2.5">
+					<SeoItemBox
+						description="Perfect for temporary site offices, small events, mobile lighting towers, and small commercial backup."
+						title="Small Capacity (20kVA – 100kVA)"
+					/>
+					<SeoItemBox
+						description="Highly versatile workhorse units for mid-sized construction sites, warehouses, and commercial centers."
+						title="Medium Capacity (150kVA – 500kVA)"
+					/>
+					<SeoItemBox
+						description="Heavy-duty prime power for manufacturing facilities, oil & gas operations, district cooling, and civil infrastructure."
+						title="Large Capacity (750kVA – 1500kVA)"
+					/>
+				</div>
+			</SeoCard>
+
+			<SeoCard
+				icon={<Settings2 className="h-5 w-5" />}
+				title="Synchronized Power & Accessories"
+			>
+				<p>
+					Beyond standalone units, we engineer multi-megawatt synchronized power
+					plants for massive demands with built-in N+1 operational redundancy.
+				</p>
+				<div className="space-y-2.5 pt-1">
+					<SeoItemBox
+						description="Automatic Transfer Switches providing seamless fallback to prevent costly downtime."
+						title="ATS Automatic Transfer Switches"
+					/>
+					<SeoItemBox
+						description="Certified desert-grade electrical cables, distribution panels, and breaker protections."
+						title="Heavy-Duty Distribution"
+					/>
+					<SeoItemBox
+						description="Double-walled auxiliary bulk fuel tanks (1,000L to 10,000L) for extended autonomous runtime."
+						title="Auxiliary Fuel Storage"
+					/>
+				</div>
+			</SeoCard>
+		</SeoSection>
 	);
 }
+
+// --- 3. Solutions Page SEO Content ---
 
 export function SolutionsSeoContent() {
 	const locale = useLocale();
@@ -92,58 +374,116 @@ export function SolutionsSeoContent() {
 
 	if (isAr) {
 		return (
-			<section className="container mx-auto px-6 py-12 text-slate-700 max-w-4xl">
-				<h2 className="text-2xl font-bold mb-4 text-slate-900">حلول الطاقة المخصصة لكل القطاعات</h2>
-				<p className="mb-4 leading-relaxed">
-					نحن لا نؤجر المولدات فحسب، بل نقدم حلول طاقة متكاملة تناسب طبيعة كل مشروع. تدرك إنرجكس أن احتياجات الطاقة في موقع بناء تختلف تماماً عن متطلبات الطاقة لفعالية حية أو مستشفى.
-				</p>
-				<h3 className="text-xl font-semibold mb-3 text-slate-900">القطاعات التي نخدمها</h3>
-				<ul className="list-disc list-inside mb-4 space-y-2">
-					<li><strong>قطاع المقاولات والبناء:</strong> توفير طاقة مستمرة للرافعات، والمعدات الثقيلة، ومخيمات العمال طوال فترة المشروع.</li>
-					<li><strong>الفعاليات والترفيه:</strong> مولدات فائقة الهدوء تضمن تشغيل أنظمة الصوت والإضاءة بدون أي انقطاع أو إزعاج.</li>
-					<li><strong>القطاع الصناعي والنفط:</strong> طاقة احتياطية موثوقة للمصانع، لضمان استمرارية الإنتاج وتجنب الخسائر المالية.</li>
-				</ul>
-				<h3 className="text-xl font-semibold mb-3 text-slate-900">الأسئلة الشائعة (FAQ)</h3>
-				<div className="space-y-4 mb-4">
-					<div>
-						<h4 className="font-bold text-slate-900">هل تقدمون خدمة الدعم الفني على مدار الساعة؟</h4>
-						<p>نعم، فريق الدعم الفني لدينا متاح 24/7 للتدخل السريع والصيانة الدورية لضمان عدم توقف عملياتك.</p>
+			<SeoSection
+				lead="نحن لا نؤجر المولدات فحسب، بل نقدم حلول طاقة متكاملة تناسب طبيعة كل مشروع بدقة، مع التزام كامل بأعلى معايير السلامة والكفاءة."
+				title="حلول الطاقة المخصصة لكل القطاعات"
+			>
+				<SeoCard
+					icon={<Building2 className="h-5 w-5" />}
+					title="القطاعات الحيوية التي نخدمها"
+				>
+					<div className="space-y-2.5">
+						<SeoItemBox
+							description={
+								<span>
+									توفير طاقة مستمرة تشمل{" "}
+									<Link
+										className="font-semibold text-blue-600 underline hover:text-blue-800"
+										href="/solutions/100-kva-generator-for-tower-crane"
+									>
+										مولدات 100 ك.ف.أ للرافعات البرجية
+									</Link>
+									، والمعدات الثقيلة، ومخيمات العمال طوال فترة المشروع.
+								</span>
+							}
+							title="قطاع المقاولات والإنشاءات"
+						/>
+						<SeoItemBox
+							description="مولدات فائقة الهدوء تضمن تشغيل أنظمة الصوت والإضاءة والبث المباشر بدون أي انقطاع أو إزعاج صوتي."
+							title="الفعاليات والترفيه"
+						/>
+						<SeoItemBox
+							description="طاقة احتياطية موثوقة للمصانع والمستودعات المبردة لضمان استمرارية خطوط الإنتاج وتجنب الخسائر."
+							title="القطاع الصناعي والخدمات اللوجستية"
+						/>
 					</div>
-					<div>
-						<h4 className="font-bold text-slate-900">كيف أختار حجم المولد المناسب لمشروعي؟</h4>
-						<p>يقوم مهندسونا بإجراء تقييم مجاني للأحمال الكهربائية الخاصة بك لاقتراح السعة الدقيقة وتجنب إهدار الوقود أو نقص الطاقة.</p>
+				</SeoCard>
+
+				<SeoCard
+					icon={<HelpCircle className="h-5 w-5" />}
+					title="الأسئلة الشائعة حول خدمات الطاقة"
+				>
+					<div className="space-y-3">
+						<SeoFaqItem
+							answer="نعم، فريق الدعم الفني لدينا متاح 24/7 للتدخل السريع والصيانة الدورية وتزويد الوقود لضمان عدم توقف عملياتك."
+							question="هل تقدمون خدمة الدعم الفني على مدار الساعة؟"
+						/>
+						<SeoFaqItem
+							answer="يقوم مهندسونا بإجراء تقييم مجاني للأحمال الكهربائية الخاصة بك لاقتراح السعة الدقيقة وتجنب إهدار الوقود أو عجز الطاقة."
+							question="كيف أختار حجم المولد المناسب لمشروعي؟"
+						/>
 					</div>
-				</div>
-			</section>
+				</SeoCard>
+			</SeoSection>
 		);
 	}
 
 	return (
-		<section className="container mx-auto px-6 py-12 text-slate-700 max-w-4xl border-t border-slate-200 mt-12">
-			<h2 className="text-2xl font-bold mb-4 text-slate-900">Tailored Power Solutions Across Industries</h2>
-			<p className="mb-4 leading-relaxed">
-				Energex goes beyond standard equipment rental by engineering complete, turnkey power solutions. We understand that the power requirements for a remote oil rig are vastly different from those of a high-profile corporate event in Downtown Dubai.
-			</p>
-			<h3 className="text-xl font-semibold mb-3 text-slate-900">Industry-Specific Generator Applications</h3>
-			<ul className="list-disc list-inside mb-4 space-y-2">
-				<li><strong>Construction & Infrastructure:</strong> Rugged, reliable power for tower cranes, heavy machinery, dewatering pumps, and labor camps. Our equipment thrives in dusty, high-temperature environments.</li>
-				<li><strong>Events & Entertainment:</strong> Super-silent generators that deliver uninterrupted, clean power for lighting rigs, sound systems, broadcasting equipment, and VIP catering without disruptive noise.</li>
-				<li><strong>Industrial & Manufacturing:</strong> Mission-critical standby and prime power to prevent costly downtime in factories, logistics hubs, and cold storage facilities.</li>
-			</ul>
-			<h3 className="text-xl font-semibold mb-3 text-slate-900">Frequently Asked Questions</h3>
-			<div className="space-y-4 mb-4">
-				<div>
-					<h4 className="font-bold text-slate-900">Do you provide 24/7 technical support and maintenance?</h4>
-					<p>Yes. Our dedicated technical teams are available around the clock to provide rapid response assistance, refueling services, and scheduled preventative maintenance to ensure zero downtime.</p>
+		<SeoSection
+			lead="Energex goes beyond standard equipment rental by engineering turnkey power solutions tailored to the exacting operational requirements of each sector across the UAE."
+			title="Tailored Power Solutions Across Industries"
+		>
+			<SeoCard
+				icon={<Building2 className="h-5 w-5" />}
+				title="Industry-Specific Generator Applications"
+			>
+				<div className="space-y-2.5">
+					<SeoItemBox
+						description={
+							<span>
+								Rugged, reliable prime power including specialized{" "}
+								<Link
+									className="font-semibold text-blue-600 underline hover:text-blue-800"
+									href="/solutions/100-kva-generator-for-tower-crane"
+								>
+									100 kVA generators for tower cranes
+								</Link>
+								, dewatering pumps, and contractor site compounds.
+							</span>
+						}
+						title="Construction & Infrastructure"
+					/>
+					<SeoItemBox
+						description="Super-silent generators (<58 dBA) delivering stable, clean electricity for sound, lighting rigs, broadcasting, and VIP hospitality."
+						title="Events & Entertainment"
+					/>
+					<SeoItemBox
+						description="Mission-critical standby and prime power systems ensuring zero downtime for factories, cold storage, and logistics hubs."
+						title="Industrial & Manufacturing"
+					/>
 				</div>
-				<div>
-					<h4 className="font-bold text-slate-900">How do I calculate the right kVA size for my project?</h4>
-					<p>Selecting the correct generator size involves calculating running loads, starting currents, and future demand. Our engineers provide complimentary site visits and load assessments to recommend the optimal generator size, preventing both fuel wastage (from oversized units) and power failures (from undersized units).</p>
+			</SeoCard>
+
+			<SeoCard
+				icon={<HelpCircle className="h-5 w-5" />}
+				title="Frequently Asked Questions"
+			>
+				<div className="space-y-3">
+					<SeoFaqItem
+						answer="Yes. Our certified technical teams are available around the clock to provide rapid on-site assistance, 24/7 refueling, and preventative maintenance."
+						question="Do you provide 24/7 technical support and maintenance?"
+					/>
+					<SeoFaqItem
+						answer="Our engineering team provides complimentary site load assessments to analyze running wattage, starting inrush currents, and duty cycles to specify the optimal generator size."
+						question="How do I calculate the right kVA size for my project?"
+					/>
 				</div>
-			</div>
-		</section>
+			</SeoCard>
+		</SeoSection>
 	);
 }
+
+// --- 4. Location Page SEO Content ---
 
 export function LocationSeoContent({ emirate }: { emirate: string }) {
 	const locale = useLocale();
@@ -151,41 +491,105 @@ export function LocationSeoContent({ emirate }: { emirate: string }) {
 
 	if (isAr) {
 		return (
-			<section className="container mx-auto px-6 py-12 text-slate-700 max-w-4xl border-t border-slate-200 mt-12 bg-white rounded-lg shadow-sm">
-				<h2 className="text-2xl font-bold mb-4 text-slate-900">تأجير المولدات في {emirate}: الحل الأمثل لاحتياجاتك من الطاقة</h2>
-				<p className="mb-4 leading-relaxed">
-					تعتبر {emirate} واحدة من أسرع المناطق نمواً، وتتطلب مشاريعها المستمرة مصدراً موثوقاً للطاقة. سواء كنت تعمل في قطاع البناء أو تدير فعالية كبرى، فإن اختيار المولد المناسب يضمن سير العمل بدون انقطاع. نحن في إنرجكس نقدم تشكيلة واسعة من المولدات بدءاً من 20 كيلو فولت أمبير وحتى 1500 كيلو فولت أمبير لدعم كافة متطلبات المشاريع في {emirate}.
-				</p>
-				<h3 className="text-xl font-semibold mb-3 text-slate-900">كيفية اختيار المولد المناسب في {emirate}</h3>
-				<ul className="list-disc list-inside mb-4 space-y-2">
-					<li><strong>التقييم الدقيق للأحمال:</strong> يجب حساب إجمالي الأحمال التشغيلية وتيارات البدء للمعدات لضمان عدم تحميل المولد فوق طاقته.</li>
-					<li><strong>مولدات صامتة للمناطق الحضرية:</strong> في المناطق السكنية أو التجارية المزدحمة في {emirate}، يعتبر المولد الصامت (Soundproof) خياراً ضرورياً للامتثال لقوانين الضوضاء.</li>
-					<li><strong>الدعم الفني والصيانة:</strong> اختر مزود خدمة يضمن لك دعماً فنياً على مدار الساعة لتقليل فترات التوقف لأدنى حد.</li>
-				</ul>
-				<h3 className="text-xl font-semibold mb-3 text-slate-900">خدماتنا الشاملة في {emirate}</h3>
-				<p className="mb-4 leading-relaxed">
-					لا يقتصر دورنا على تأجير المولدات فحسب، بل نوفر الكابلات اللازمة، ولوحات التوزيع (ATS)، وخزانات الوقود الخارجية. فريقنا مستعد دائماً لتقديم خدمات التركيب السريع والصيانة الدورية في جميع أنحاء {emirate}. اتصل بنا اليوم للحصول على تسعيرة تنافسية وحلول طاقة موثوقة.
-				</p>
-			</section>
+			<SeoSection
+				lead={`تعتبر ${emirate} واحدة من أسرع المناطق نمواً في المنطقة، وتتطلب مشاريعها المستمرة مصدراً موثوقاً للطاقة لضمان استمرارية العمل دون انقطاع.`}
+				title={`تأجير المولدات في ${emirate}: الحل الأمثل لاحتياجاتك من الطاقة`}
+			>
+				<SeoCard
+					icon={<ShieldCheck className="h-5 w-5" />}
+					title={`كيفية اختيار المولد المناسب في ${emirate}`}
+				>
+					<div className="space-y-2.5">
+						<SeoItemBox
+							description="حساب إجمالي الأحمال التشغيلية وتيارات بدء تشغيل المعدات بدقة لتجنب هدر الوقود أو تعطل المولد."
+							title="التقييم الدقيق للأحمال الكهربائية"
+						/>
+						<SeoItemBox
+							description={`في المناطق السكنية والتجارية في ${emirate}، تعتبر المولدات الصامتة ضرورية للامتثال للمعايير البيئية.`}
+							title="مولدات صامتة للمناطق الحضرية"
+						/>
+						<SeoItemBox
+							description={`فريق صيانة وتدخل سريع متاح 24/7 في كافة أنحاء ${emirate} لتقليل فترات التوقف لأدنى حد.`}
+							title="دعم فني وصيانة وقائية مستمرة"
+						/>
+					</div>
+				</SeoCard>
+
+				<SeoCard
+					icon={<Wrench className="h-5 w-5" />}
+					title={`خدماتنا المتكاملة في ${emirate}`}
+				>
+					<p>
+						لا يقتصر دورنا على توريد المولدات، بل نوفر حلول طاقة متكاملة تشمل
+						كافة الملحقات الضرورية لضمان أعلى مستويات الأداء:
+					</p>
+					<div className="space-y-2.5 pt-1">
+						<SeoItemBox
+							description={`توصيل وتركيب فوري لكافة مواقع العمل والمشاريع في ${emirate}.`}
+							title="توصيل سريع وتشغيل فوري"
+						/>
+						<SeoItemBox
+							description="كابلات أرضية متينة، لوحات تحويل أوتوماتيكي ATS، ولوحات توزيع كهربائية معتمدة."
+							title="كابلات ولوحات توزيع متكاملة"
+						/>
+						<SeoItemBox
+							description="تزويد وقود دوري وخزانات وقود إضافية لضمان عمل المولدات لأيام متواصلة دون انقطاع."
+							title="إدارة وتوريد الديزل"
+						/>
+					</div>
+				</SeoCard>
+			</SeoSection>
 		);
 	}
 
 	return (
-		<section className="container mx-auto px-6 py-12 text-slate-700 max-w-4xl border-t border-slate-200 mt-12 bg-white rounded-lg shadow-sm">
-			<h2 className="text-2xl font-bold mb-4 text-slate-900">Generator Rental in {emirate}: Complete Power Solutions</h2>
-			<p className="mb-4 leading-relaxed">
-				As {emirate} continues to expand rapidly with new infrastructure and commercial developments, reliable temporary power is more critical than ever. Whether you are managing a large-scale construction site, a logistics hub, or a high-profile event, Energex provides tailored generator rental services in {emirate}. Our extensive fleet ranges from 20kVA to 1500kVA, ensuring we can meet any power demand efficiently.
-			</p>
-			<h3 className="text-xl font-semibold mb-3 text-slate-900">Choosing the Right Generator for Your {emirate} Project</h3>
-			<ul className="list-disc list-inside mb-4 space-y-2">
-				<li><strong>Accurate Load Sizing:</strong> Proper sizing is essential to avoid fuel wastage from oversized generators or power failures from undersized units. Our experts provide free site assessments to calculate your exact running loads and starting currents.</li>
-				<li><strong>Silent Generators for Urban Areas:</strong> For projects in residential or dense commercial zones in {emirate}, our sound-attenuated (soundproof) generators are highly recommended to comply with local noise regulations without sacrificing performance.</li>
-				<li><strong>Reliable Maintenance & Support:</strong> We guarantee 24/7 technical support and regular preventive maintenance for all our rental units in {emirate}, ensuring zero unexpected downtime.</li>
-			</ul>
-			<h3 className="text-xl font-semibold mb-3 text-slate-900">Turnkey Rental Services in {emirate}</h3>
-			<p className="mb-4 leading-relaxed">
-				Beyond simply delivering a generator, Energex offers complete, turnkey power solutions in {emirate}. We supply all necessary electrical accessories including heavy-duty cables, Automatic Transfer Switches (ATS), distribution boards, and external bulk fuel tanks for extended, uninterrupted operation. Contact us today for competitive pricing and dependable power solutions tailored to your specific requirements.
-			</p>
-		</section>
+		<SeoSection
+			lead={`As ${emirate} continues to expand rapidly with high-value infrastructure and commercial developments, dependable temporary power is critical to safeguard project milestones.`}
+			title={`Generator Rental in ${emirate}: Complete Power Solutions`}
+		>
+			<SeoCard
+				icon={<ShieldCheck className="h-5 w-5" />}
+				title={`Choosing the Right Generator for Your ${emirate} Project`}
+			>
+				<div className="space-y-2.5">
+					<SeoItemBox
+						description="Complimentary on-site assessments to calculate exact running loads and starting currents, preventing fuel waste and overloads."
+						title="Accurate Load Sizing"
+					/>
+					<SeoItemBox
+						description={`Sound-attenuated canopies engineered to satisfy municipal noise guidelines across residential and commercial sectors in ${emirate}.`}
+						title="Silent Gensets for Urban Zones"
+					/>
+					<SeoItemBox
+						description={`Round-the-clock technical dispatch and preventative service routines across ${emirate} to guarantee zero unexpected downtime.`}
+						title="24/7 Rapid Response Support"
+					/>
+				</div>
+			</SeoCard>
+
+			<SeoCard
+				icon={<Wrench className="h-5 w-5" />}
+				title={`Turnkey Rental Services in ${emirate}`}
+			>
+				<p>
+					Beyond delivering generators, Energex provides fully engineered power
+					packages with all supporting electrical infrastructure:
+				</p>
+				<div className="space-y-2.5 pt-1">
+					<SeoItemBox
+						description={`Fast same-day delivery and professional setup across all job sites in ${emirate}.`}
+						title="Rapid Mobilization & Installation"
+					/>
+					<SeoItemBox
+						description="Certified heavy-duty cabling, Automatic Transfer Switches (ATS), and weather-sealed distribution panels."
+						title="Turnkey Distribution Hardware"
+					/>
+					<SeoItemBox
+						description="Double-walled bulk fuel tanks and scheduled direct-to-site diesel delivery for extended run times."
+						title="Dedicated Fuel Logistics"
+					/>
+				</div>
+			</SeoCard>
+		</SeoSection>
 	);
 }

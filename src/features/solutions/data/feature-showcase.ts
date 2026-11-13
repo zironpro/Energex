@@ -1,4 +1,13 @@
-export const getFeatures = (t: (key: string) => string) => [
+export interface FeatureItem {
+	title: string;
+	description: string;
+	points: string[];
+	image: string;
+	serviceHref?: string;
+	serviceLinkText?: string;
+}
+
+export const getFeatures = (t: (key: string) => string): FeatureItem[] => [
 	{
 		title: t("features.small.title"),
 		description: t("features.small.description"),
@@ -8,6 +17,8 @@ export const getFeatures = (t: (key: string) => string) => [
 			t("features.small.points.2"),
 		],
 		image: "/solutions/small-portable.webp",
+		serviceHref: "/solutions/100-kva-generator-for-tower-crane",
+		serviceLinkText: t("features.small.serviceLink"),
 	},
 	{
 		title: t("features.medium.title"),

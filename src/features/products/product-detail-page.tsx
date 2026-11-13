@@ -325,6 +325,27 @@ export function ProductDetailPage({ slug }: ProductDetailPageProps) {
 										</li>
 									))}
 								</ul>
+
+								{product.key === "p100" && (
+									<div className="mt-6 rounded-lg border border-blue-200 bg-blue-50/80 p-4 transition hover:border-blue-300">
+										<span className="block font-bold text-[11px] text-blue-700 uppercase tracking-wider">
+											{t("ProductDetail.towerCraneBanner.badge")}
+										</span>
+										<p className="mt-1 font-bold text-slate-900 text-sm">
+											{t("ProductDetail.towerCraneBanner.title")}
+										</p>
+										<p className="mt-1 text-slate-600 text-xs leading-relaxed">
+											{t("ProductDetail.towerCraneBanner.description")}
+										</p>
+										<Link
+											className="mt-3 inline-flex items-center gap-1.5 font-bold text-blue-600 text-xs hover:text-blue-700"
+											href="/solutions/100-kva-generator-for-tower-crane"
+										>
+											<span>{t("ProductDetail.towerCraneBanner.action")}</span>
+											<ArrowRight className="h-3.5 w-3.5 rtl:rotate-180" />
+										</Link>
+									</div>
+								)}
 							</div>
 
 							<div className="rounded-xl border border-blue-100 bg-blue-50/70 p-6 md:p-8">
@@ -396,7 +417,7 @@ export function ProductDetailPage({ slug }: ProductDetailPageProps) {
 			<section className="border-slate-200/80 border-t bg-slate-100/70 py-16">
 				<div className="container mx-auto max-w-7xl px-6 lg:px-16">
 					<div className="mb-10">
-						<h2 className="mb-2 font-black text-2xl text-slate-900 uppercase tracking-tighter sm:text-3xl">
+						<h2 className="mb-2 font-black text-2xl text-slate-900 tracking-tight sm:text-3xl">
 							{t("ProductDetail.relatedTitle")}
 						</h2>
 						<p className="text-slate-600 text-sm md:text-base">

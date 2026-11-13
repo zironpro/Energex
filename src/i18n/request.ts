@@ -29,6 +29,8 @@ export default getRequestConfig(async ({ requestLocale }) => {
 				.default,
 			locations: (await import(`../../messages/${locale}/locations.json`))
 				.default,
+			services: (await import(`../../messages/${locale}/services.json`))
+				.default,
 		},
 	};
 });

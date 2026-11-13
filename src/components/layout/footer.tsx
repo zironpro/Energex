@@ -137,8 +137,11 @@ export function Footer() {
 								className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white transition hover:bg-blue-500"
 								href="https://wa.me/971502335477"
 								onClick={() => {
-									(window as any).dataLayer = (window as any).dataLayer || [];
-									(window as any).dataLayer.push({
+									const win = window as unknown as {
+										dataLayer?: Record<string, unknown>[];
+									};
+									win.dataLayer = win.dataLayer || [];
+									win.dataLayer.push({
 										event: "whatsapp_click",
 										link_url: "https://wa.me/971502335477",
 										link_location: "footer_icon",
@@ -248,6 +251,14 @@ export function Footer() {
 									{t("columns.solutions.fuel")}
 								</Link>
 							</li>
+							<li>
+								<Link
+									className="relative inline-block transition duration-300 before:absolute before:top-1/2 before:-left-3 before:h-[2px] before:w-0 before:-translate-y-1/2 before:bg-white before:transition before:duration-300 hover:translate-x-3 hover:text-white hover:before:w-2"
+									href="/solutions/100-kva-generator-for-tower-crane"
+								>
+									{t("columns.solutions.crane")}
+								</Link>
+							</li>
 						</ul>
 					</div>
 
@@ -303,7 +314,7 @@ export function Footer() {
 			</div>
 
 			{/* Full-width Bottom Bar */}
-			<div className="border-blue-400/30 border-t mt-12 md:mt-16">
+			<div className="mt-12 border-blue-400/30 border-t md:mt-16">
 				<div className="container relative z-10 mx-auto flex flex-col items-center justify-between px-6 py-4 text-slate-300 text-xs md:flex-row">
 					<p className="order-1 flex-1 text-center md:text-left">
 						&copy; {new Date().getFullYear()} Energex. All Rights Reserved.

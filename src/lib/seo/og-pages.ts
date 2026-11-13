@@ -193,6 +193,126 @@ export const OG_PAGES: Record<string, OgEntry> = {
 				"تأجير مولدات كهربائية في دبي من إنرجكس — مولدات ديزل وصامتة من 15 إلى 1500 كيلو فولت أمبير للبناء والفعاليات والصناعة. توصيل على مدار 24/7 في جميع أنحاء دبي.",
 		},
 	},
+	"/100-kva-generator-for-tower-crane": {
+		type: "website",
+		image: "100-kva-generator-for-tower-crane",
+		en: {
+			title:
+				"100 kVA Generator Rental for Tower Cranes in Dubai & UAE | Energex",
+			description:
+				"Rent a 100 kVA (80 kW) diesel generator for tower cranes in Dubai. High motor-starting surge, VFD-safe digital AVR, 24/7 site support, and zero downtime.",
+		},
+		ar: {
+			title:
+				"تأجير مولد 100 كيلو فولت أمبير للرافعات البرجية في دبي والإمارات | إنرجكس",
+			description:
+				"استأجر مولد ديزل 100 كيلو فولت أمبير للرافعات البرجية في دبي والإمارات. تحمل فائق لتيار بدء التشغيل، منظم جهد رقمي لمحركات VFD، ودعم ميداني 24/7.",
+		},
+	},
+	"/services/100-kva-generator-for-tower-crane": {
+		type: "website",
+		image: "services--100-kva-generator-for-tower-crane",
+		en: {
+			title:
+				"100 kVA Generator Rental for Tower Cranes in Dubai & UAE | Energex",
+			description:
+				"Rent a 100 kVA (80 kW) diesel generator for tower cranes in Dubai. High motor-starting surge, VFD-safe digital AVR, 24/7 site support, and zero downtime.",
+		},
+		ar: {
+			title:
+				"تأجير مولد 100 كيلو فولت أمبير للرافعات البرجية في دبي والإمارات | إنرجكس",
+			description:
+				"استأجر مولد ديزل 100 كيلو فولت أمبير للرافعات البرجية في دبي والإمارات. تحمل فائق لتيار بدء التشغيل، منظم جهد رقمي لمحركات VFD، ودعم ميداني 24/7.",
+		},
+	},
+	"/solutions/100-kva-generator-for-tower-crane": {
+		type: "website",
+		image: "services--100-kva-generator-for-tower-crane",
+		en: {
+			title:
+				"100 kVA Generator Rental for Tower Cranes in Dubai & UAE | Energex",
+			description:
+				"Rent a 100 kVA (80 kW) diesel generator for tower cranes in Dubai. High motor-starting surge, VFD-safe digital AVR, 24/7 site support, and zero downtime.",
+		},
+		ar: {
+			title:
+				"تأجير مولد 100 كيلو فولت أمبير للرافعات البرجية في دبي والإمارات | إنرجكس",
+			description:
+				"استأجر مولد ديزل 100 كيلو فولت أمبير للرافعات البرجية في دبي والإمارات. تحمل فائق لتيار بدء التشغيل، منظم جهد رقمي لمحركات VFD، ودعم ميداني 24/7.",
+		},
+	},
+	"/solutions/diesel-generator-rental": {
+		type: "website",
+		image: "solutions",
+		en: {
+			title: "Diesel Generator Rental in Dubai & UAE (20-1500 kVA) | Energex",
+			description:
+				"Rent commercial and industrial soundproof diesel generators from 20kVA to 1500kVA in Dubai and across the UAE with 24/7 support.",
+		},
+		ar: {
+			title:
+				"تأجير مولدات الديزل في دبي والإمارات (20 إلى 1500 ك.ف.أ) | إنرجكس",
+			description:
+				"استئجار مولدات ديزل صامتة من 20 إلى 1500 كيلو فولت أمبير في دبي والإمارات لمواقع البناء والمصانع والطوارئ مع دعم 24/7.",
+		},
+	},
+	"/solutions/hybrid-power-systems": {
+		type: "website",
+		image: "solutions",
+		en: {
+			title: "Hybrid Power Systems & Battery Storage Rental Dubai | Energex",
+			description:
+				"Eco-efficient diesel generator and battery storage hybrid systems cutting fuel burn by up to 60% with zero nighttime noise.",
+		},
+		ar: {
+			title:
+				"تأجير أنظمة الطاقة الهجينة وتخزين البطاريات في دبي والإمارات | إنرجكس",
+			description:
+				"أنظمة طاقة هجينة تجمع بين مولدات الديزل وبطاريات التخزين الذكية لتوفير حتى 60% من استهلاك الوقود وتشغيل صامت ليلاً.",
+		},
+	},
+	"/solutions/event-power-solutions": {
+		type: "website",
+		image: "solutions",
+		en: {
+			title: "Event Power & Ultra-Silent Generator Rental Dubai | Energex",
+			description:
+				"Whisper-quiet synchronized event generators under 58 dBA with N+1 redundancy, heavy-duty cable ramps, and on-site electricians.",
+		},
+		ar: {
+			title: "تأجير مولدات الفعاليات فائقة الهدوء في دبي والإمارات | إنرجكس",
+			description:
+				"مولدات متزامنة فائقة الصمت أقل من 58 ديسيبل للحفلات والمهرجانات والبطولات الرياضية مع نظام N+1 ومطبات كابلات آمنة.",
+		},
+	},
+	"/solutions/fuel-management-services": {
+		type: "website",
+		image: "solutions",
+		en: {
+			title: "Automated Fuel Management & On-Site Refueling Dubai | Energex",
+			description:
+				"24/7 direct-to-site diesel delivery, UN-certified double-walled bulk fuel tank hire, and IoT telemetry sensor monitoring.",
+		},
+		ar: {
+			title: "خدمات إدارة وتوريد الوقود المؤتمتة في دبي والإمارات | إنرجكس",
+			description:
+				"تزويد مباشر بوقود الديزل 24/7، وخزانات وقود خارجية مزدوجة الجدار معتمدة، وحساسات IoT لمنع نفاد الوقود نهائياً.",
+		},
+	},
+	"/solutions/construction-generator-rental": {
+		type: "website",
+		image: "solutions",
+		en: {
+			title: "Construction Site Generator Rental in Dubai & UAE | Energex",
+			description:
+				"Heavy-duty temporary power for tower cranes, hoists, batching plants, and dewatering pumps with multi-tap distribution panels.",
+		},
+		ar: {
+			title: "تأجير مولدات مواقع البناء والإنشاءات في دبي والإمارات | إنرجكس",
+			description:
+				"حلول طاقة مؤقتة للخدمة الشاقة لمواقع الإنشاءات والرافعات البرجية ومضخات نزح المياه مع لوحات توزيع شاملة ودعم 24/7.",
+		},
+	},
 	"/generator-rental-abu-dhabi": {
 		type: "website",
 		image: "generator-rental-abu-dhabi",

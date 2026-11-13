@@ -44,7 +44,8 @@
                 "diesel": "Diesel Generators",
                 "hybrid": "Hybrid Power Systems",
                 "event": "Event Power",
-                "fuel": "Fuel Management"
+                "fuel": "Fuel Management",
+                "crane": "Tower Crane Power"
             },
             "contact": {
                 "title": "Contact Us",

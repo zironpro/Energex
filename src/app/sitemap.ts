@@ -4,6 +4,7 @@ import { siteConfig } from "@/constants/site-config";
 import { ARTICLES } from "@/features/insights/data/articles";
 import { LOCATION_PAGES } from "@/features/locations/data/location-pages";
 import { PRODUCTS } from "@/features/products/data/products";
+import { SERVICE_PAGES } from "@/features/services/data/service-pages";
 import { routing } from "@/i18n/routing";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -43,6 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 	for (const page of LOCATION_PAGES) {
 		addEntry(`/${page.slug}`, 0.9);
+	}
+
+	for (const page of SERVICE_PAGES) {
+		addEntry(`/${page.slug}`, 0.9);
+		addEntry(`/solutions/${page.slug}`, 0.9);
+		addEntry(`/services/${page.slug}`, 0.8);
 	}
 
 	for (const article of ARTICLES) {
