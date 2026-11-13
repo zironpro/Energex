@@ -209,6 +209,38 @@ export const OG_PAGES: Record<string, OgEntry> = {
 				"استأجر مولد ديزل 100 كيلو فولت أمبير للرافعات البرجية في دبي والإمارات. تحمل فائق لتيار بدء التشغيل، منظم جهد رقمي لمحركات VFD، ودعم ميداني 24/7.",
 		},
 	},
+	"/services/100-kva-generator-for-tower-crane": {
+		type: "website",
+		image: "services--100-kva-generator-for-tower-crane",
+		en: {
+			title:
+				"100 kVA Generator Rental for Tower Cranes in Dubai & UAE | Energex",
+			description:
+				"Rent a 100 kVA (80 kW) diesel generator for tower cranes in Dubai. High motor-starting surge, VFD-safe digital AVR, 24/7 site support, and zero downtime.",
+		},
+		ar: {
+			title:
+				"تأجير مولد 100 كيلو فولت أمبير للرافعات البرجية في دبي والإمارات | إنرجكس",
+			description:
+				"استأجر مولد ديزل 100 كيلو فولت أمبير للرافعات البرجية في دبي والإمارات. تحمل فائق لتيار بدء التشغيل، منظم جهد رقمي لمحركات VFD، ودعم ميداني 24/7.",
+		},
+	},
+	"/solutions/100-kva-generator-for-tower-crane": {
+		type: "website",
+		image: "services--100-kva-generator-for-tower-crane",
+		en: {
+			title:
+				"100 kVA Generator Rental for Tower Cranes in Dubai & UAE | Energex",
+			description:
+				"Rent a 100 kVA (80 kW) diesel generator for tower cranes in Dubai. High motor-starting surge, VFD-safe digital AVR, 24/7 site support, and zero downtime.",
+		},
+		ar: {
+			title:
+				"تأجير مولد 100 كيلو فولت أمبير للرافعات البرجية في دبي والإمارات | إنرجكس",
+			description:
+				"استأجر مولد ديزل 100 كيلو فولت أمبير للرافعات البرجية في دبي والإمارات. تحمل فائق لتيار بدء التشغيل، منظم جهد رقمي لمحركات VFD، ودعم ميداني 24/7.",
+		},
+	},
 	"/construction-site-generator-rental": {
 		type: "website",
 		image: "services--construction-site-generator-rental",
