@@ -1,148 +1,151 @@
 {
-    "Hero": {
-        "title1": "Empowering",
-        "title2": "Every Project",
-        "description": "We provide premium diesel generator rental solutions Dubai for construction, commercial, industrial, and emergency power requirements."
-    },
-    "Catalog": {
-        "badge": "Specialized Power Services",
-        "title": "100 kVA Tower Crane Generator",
-        "description": "High-starting-surge 100 kVA diesel generator rental engineered specifically for tower crane hoists, slewing drives, and high-rise construction across Dubai and the UAE.",
-        "explore": "Explore Full Specifications",
-        "contactUs": "Request a Quote",
-        "items": {
-            "crane": {
-                "badge": "Construction & Lifting",
-                "title": "100 kVA Tower Crane Generator",
-                "description": "High-starting-surge 100 kVA diesel generators engineered specifically for tower crane hoists, slewing drives, and high-rise construction across Dubai and the UAE.",
-                "points": [
-                    "High-torque motor starting capability",
-                    "VFD & regenerative load protection",
-                    "Desert-grade 50°C tropicalized cooling",
-                    "24/7 dedicated crane maintenance"
-                ]
-            },
-            "diesel": {
-                "badge": "Prime & Standby Power",
-                "title": "Diesel Generator Rental Fleet",
-                "description": "Soundproof diesel generators from 20 kVA to 1500 kVA for construction, manufacturing plants, hospitals, and infrastructure.",
-                "points": [
-                    "Full 20 kVA to 1500 kVA capacity fleet",
-                    "Rapid same-day dispatch across UAE",
-                    "Turnkey cabling, distribution & ATS"
-                ]
-            },
-            "hybrid": {
-                "badge": "Eco & Fuel Efficiency",
-                "title": "Hybrid Battery & Diesel Systems",
-                "description": "Smart energy storage integration combining clean battery power with diesel generators to cut fuel consumption by up to 60%.",
-                "points": [
-                    "Up to 60% diesel fuel burn savings",
-                    "Zero-emission silent nighttime mode",
-                    "Cloud telemetry and automatic cycling"
-                ]
-            },
-            "event": {
-                "badge": "Entertainment & Broadcast",
-                "title": "Event Power & Silent Gensets",
-                "description": "Super-silent (<58 dBA) synchronized generator solutions for festivals, sporting events, outdoor galas, and live broadcast productions.",
-                "points": [
-                    "Ultra-quiet acoustic canopies",
-                    "Synchronized N+1 redundant pairs",
-                    "Safety cable ramps & distro panels"
-                ]
-            },
-            "fuel": {
-                "badge": "Logistics & Refueling",
-                "title": "Automated Fuel Management",
-                "description": "Round-the-clock site refueling, double-walled UN-approved bulk fuel tanks, and IoT sensor level tracking to guarantee zero fuel outages.",
-                "points": [
-                    "Scheduled 24/7 direct-to-site refueling",
-                    "IoT remote level & burn monitoring",
-                    "1,000L to 10,000L auxiliary bulk tanks"
-                ]
-            },
-            "construction": {
-                "badge": "Site Infrastructure",
-                "title": "Construction Temporary Power",
-                "description": "Complete site compound electrification, dewatering pump power, perimeter lighting, and contractor workshops across UAE sites.",
-                "points": [
-                    "Heavy-duty desert-proof build (50°C)",
-                    "Multi-voltage distribution panels",
-                    "Rapid emergency replacement guarantee"
-                ]
-            }
-        }
-    },
-    "ServicesGrid": {
-        "items": {
-            "assessment": {
-                "title": "Strategic Assessment",
-                "description": "Expert load calculation to optimise efficiency and performance. Need help? We help you choose the right kVA generator."
-            },
-            "logistics": {
-                "title": "Logistics & Installation",
-                "description": "Precision delivery and professionals on-site setup for operational readiness."
-            },
-            "support": {
-                "title": "24/7 Support",
-                "description": "Rapid-response technicians ready to troubleshoot any issue."
-            }
-        }
-    },
-    "RentalPackages": {
-        "title": "Rental Packages",
-        "description": "Our rental packages are designed to fit the needs of our customers — from short-term projects to long-term contracts.",
-        "requestQuote": "Request a Quote",
-        "items": {
-            "short": {
-                "title": "Short-Term Projects",
-                "description": "Agile solutions for events or emergencies."
-            },
-            "long": {
-                "title": "Long-Term Contracts",
-                "description": "Cost-effective, scalable power for multi-year projects."
-            },
-            "custom": {
-                "title": "Custom Partnerships",
-                "description": "Bespoke sub-rental agreements for equipment providers."
-            }
-        }
-    },
-    "FeatureShowcase": {
-        "title1": "Power Solutions",
-        "title2": "You Can Depend On",
-        "description": "We provide premium diesel generator rental solutions across the UAE for construction, commercial, industrial, and emergency power requirements. Our soundproof generators from 20kVA to 1500kVA are designed for maximum efficiency, reliability, and 24/7 operation.",
-        "getStarted": "Get Started",
-        "features": {
-            "small": {
-                "title": "20kVA – 150kVA",
-                "description": "Power Range: 20, 30, 45, 60, 100, 125, 150 kVA. Noise Level: Super Silent (58–65 dB at 7m).",
-                "serviceLink": "Featured Service: 100 kVA Tower Crane Generator",
-                "points": [
-                    "Internal fuel tanks (8 to 24-hour runtime)",
-                    "Easy-to-tow trailers",
-                    "Multi-socket distribution panels"
-                ]
-            },
-            "medium": {
-                "title": "200kVA – 800kVA",
-                "description": "Power Range: 200, 250, 350, 500, 650, 800 kVA. Noise Level: Sound Attenuated (70–75 dB at 7m).",
-                "points": [
-                    "External fuel link capability",
-                    "Electronic governors for stable frequency",
-                    "Heavy-duty skid bases"
-                ]
-            },
-            "large": {
-                "title": "1000kVA – 1500kVA",
-                "description": "Power Range: 1000, 1250, 1500 kVA. Design: 20ft or 40ft ISO Containerised Units.",
-                "points": [
-                    "High-capacity internal fuel tanks",
-                    "Internal lighting & fire suppression systems",
-                    "Synchronised control modules (DeepSea/ComAp)"
-                ]
-            }
-        }
-    }
+	"Hero": {
+		"title1": "Empowering",
+		"title2": "Every Project",
+		"description": "We provide premium diesel generator rental solutions Dubai for construction, commercial, industrial, and emergency power requirements."
+	},
+	"Catalog": {
+		"badge": "Specialized Power Services",
+		"title": "100 kVA Tower Crane Generator",
+		"description": "High-starting-surge 100 kVA diesel generator rental engineered specifically for tower crane hoists, slewing drives, and high-rise construction across Dubai and the UAE.",
+		"explore": "Explore Full Specifications",
+		"contactUs": "Request a Quote",
+		"previous": "Previous solution",
+		"next": "Next solution",
+		"items": {
+			"crane": {
+				"badge": "Construction & Lifting",
+				"title": "100 kVA Tower Crane Generator",
+				"description": "High-starting-surge 100 kVA diesel generators engineered specifically for tower crane hoists, slewing drives, and high-rise construction across Dubai and the UAE.",
+				"points": [
+					"High-torque motor starting capability",
+					"VFD & regenerative load protection",
+					"Desert-grade 50°C tropicalized cooling",
+					"24/7 dedicated crane maintenance"
+				]
+			},
+			"diesel": {
+				"badge": "Prime & Standby Power",
+				"title": "Diesel Generator Rental Fleet",
+				"description": "Soundproof diesel generators from 20 kVA to 1500 kVA for construction, manufacturing plants, hospitals, and infrastructure.",
+				"points": [
+					"Full 20 kVA to 1500 kVA capacity fleet",
+					"Rapid same-day dispatch across UAE",
+					"Turnkey cabling, distribution & ATS"
+				]
+			},
+			"hybrid": {
+				"badge": "Eco & Fuel Efficiency",
+				"title": "Hybrid Battery & Diesel Systems",
+				"description": "Smart energy storage integration combining clean battery power with diesel generators to cut fuel consumption by up to 60%.",
+				"points": [
+					"Up to 60% diesel fuel burn savings",
+					"Zero-emission silent nighttime mode",
+					"Cloud telemetry and automatic cycling"
+				]
+			},
+			"event": {
+				"badge": "Entertainment & Broadcast",
+				"title": "Event Power & Silent Gensets",
+				"description": "Super-silent (<58 dBA) synchronized generator solutions for festivals, sporting events, outdoor galas, and live broadcast productions.",
+				"points": [
+					"Ultra-quiet acoustic canopies",
+					"Synchronized N+1 redundant pairs",
+					"Safety cable ramps & distro panels"
+				]
+			},
+			"fuel": {
+				"badge": "Logistics & Refueling",
+				"title": "Automated Fuel Management",
+				"description": "Round-the-clock site refueling, double-walled UN-approved bulk fuel tanks, and IoT sensor level tracking to guarantee zero fuel outages.",
+				"points": [
+					"Scheduled 24/7 direct-to-site refueling",
+					"IoT remote level & burn monitoring",
+					"1,000L to 10,000L auxiliary bulk tanks"
+				]
+			},
+			"construction": {
+				"badge": "Site Electrification & Dewatering",
+				"title": "Construction Site Generator Rental",
+				"description": "Heavy-duty 20 kVA to 1500 kVA temporary diesel power solutions engineered for civil infrastructure, contractor compounds, and commercial construction across Dubai and the UAE.",
+				"points": [
+					"Full 20 kVA to 1500 kVA fleet capacity",
+					"Rapid same-day mobilization across all 7 Emirates",
+					"Turnkey cabling, distribution panels & ATS switches",
+					"24/7 dedicated technician support & automated fueling"
+				]
+			}
+		}
+	},
+	"ServicesGrid": {
+		"items": {
+			"assessment": {
+				"title": "Strategic Assessment",
+				"description": "Expert load calculation to optimise efficiency and performance. Need help? We help you choose the right kVA generator."
+			},
+			"logistics": {
+				"title": "Logistics & Installation",
+				"description": "Precision delivery and professionals on-site setup for operational readiness."
+			},
+			"support": {
+				"title": "24/7 Support",
+				"description": "Rapid-response technicians ready to troubleshoot any issue."
+			}
+		}
+	},
+	"RentalPackages": {
+		"title": "Rental Packages",
+		"description": "Our rental packages are designed to fit the needs of our customers — from short-term projects to long-term contracts.",
+		"requestQuote": "Request a Quote",
+		"items": {
+			"short": {
+				"title": "Short-Term Projects",
+				"description": "Agile solutions for events or emergencies."
+			},
+			"long": {
+				"title": "Long-Term Contracts",
+				"description": "Cost-effective, scalable power for multi-year projects."
+			},
+			"custom": {
+				"title": "Custom Partnerships",
+				"description": "Bespoke sub-rental agreements for equipment providers."
+			}
+		}
+	},
+	"FeatureShowcase": {
+		"title1": "Power Solutions",
+		"title2": "You Can Depend On",
+		"description": "We provide premium diesel generator rental solutions across the UAE for construction, commercial, industrial, and emergency power requirements. Our soundproof generators from 20kVA to 1500kVA are designed for maximum efficiency, reliability, and 24/7 operation.",
+		"getStarted": "Get Started",
+		"features": {
+			"small": {
+				"title": "20kVA – 150kVA",
+				"description": "Power Range: 20, 30, 45, 60, 100, 125, 150 kVA. Noise Level: Super Silent (58–65 dB at 7m).",
+				"serviceLink": "Featured Service: 100 kVA Tower Crane Generator",
+				"points": [
+					"Internal fuel tanks (8 to 24-hour runtime)",
+					"Easy-to-tow trailers",
+					"Multi-socket distribution panels"
+				]
+			},
+			"medium": {
+				"title": "200kVA – 800kVA",
+				"description": "Power Range: 200, 250, 350, 500, 650, 800 kVA. Noise Level: Sound Attenuated (70–75 dB at 7m).",
+				"points": [
+					"External fuel link capability",
+					"Electronic governors for stable frequency",
+					"Heavy-duty skid bases"
+				]
+			},
+			"large": {
+				"title": "1000kVA – 1500kVA",
+				"description": "Power Range: 1000, 1250, 1500 kVA. Design: 20ft or 40ft ISO Containerised Units.",
+				"points": [
+					"High-capacity internal fuel tanks",
+					"Internal lighting & fire suppression systems",
+					"Synchronised control modules (DeepSea/ComAp)"
+				]
+			}
+		}
+	}
 }

@@ -12,6 +12,11 @@ export const SERVICE_PAGES_META: ServiceMeta[] = [
 		url: "/100-kva-generator-for-tower-crane",
 		solutionUrl: "/solutions/100-kva-generator-for-tower-crane",
 	},
+	{
+		slug: "construction-site-generator-rental",
+		url: "/construction-site-generator-rental",
+		solutionUrl: "/solutions/construction-site-generator-rental",
+	},
 ];
 
 export const SERVICE_PAGES = SERVICE_PAGES_META.map((item) => ({

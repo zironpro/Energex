@@ -70,28 +70,34 @@ export function ServiceIntro({ data }: ServiceIntroProps) {
 					height={900}
 					priority
 					sizes="(max-width: 1280px) 100vw, 1280px"
-					src="/services/100-kva-generator-for-tower-crane.webp"
+					src={data.image || `/services/${data.slug}.webp`}
 					width={1600}
 				/>
 
 				{/* Plain caption under the image */}
 				<div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
 					<p className="text-slate-900">
-						<span className="font-bold text-lg">{t("primeCapacity")}</span>
+						<span className="font-bold text-lg">
+							{data.heroStats[0]?.value || t("primeCapacity")}
+						</span>
 						<span className="ms-3 text-slate-500 text-sm">
-							{t("phaseVoltage")}
+							{data.heroStats[0]?.desc || t("phaseVoltage")}
 						</span>
 					</p>
 					<p className="flex items-center gap-2.5 text-slate-600 text-sm">
 						<ShieldAlert className="h-4 w-4 shrink-0 text-amber-500" />
-						<span>{t("testedCaption")}</span>
+						<span>
+							{data.slug === "100-kva-generator-for-tower-crane"
+								? t("testedCaption")
+								: t("constructionCaption")}
+						</span>
 					</p>
 				</div>
 
 				{/* Copy: heading on top, text flows in two columns so nothing is left empty */}
 				<div className="mt-12 lg:mt-16">
 					<h2 className="max-w-3xl font-black text-3xl text-slate-900 leading-tight tracking-tight sm:text-4xl md:text-5xl">
-						{t("introHeading")}
+						{data.introHeading || t("introHeading")}
 					</h2>
 
 					<div className="mt-6 text-base text-slate-700 leading-relaxed md:text-lg lg:columns-2 lg:gap-12">

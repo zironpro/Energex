@@ -33,11 +33,13 @@ export interface ServiceFaqItem {
 
 export interface ServicePageData {
 	slug: string;
+	image?: string;
 	badge: string;
 	title: string;
 	subtitle: string;
 	metaDescription: string;
 	h1: string;
+	introHeading?: string;
 	heroStats: HeroStat[];
 	intro: string[];
 	whyChoose: WhyChooseItem[];

@@ -1,6 +1,6 @@
 export interface SolutionCatalogItem {
 	slug: string;
-	key: "crane";
+	key: "crane" | "construction";
 	image: string;
 	badgeKey: string;
 	titleKey: string;
@@ -20,6 +20,21 @@ export const SOLUTIONS_CATALOG: SolutionCatalogItem[] = [
 			"catalog.crane.point0",
 			"catalog.crane.point1",
 			"catalog.crane.point2",
+			"catalog.crane.point3",
+		],
+	},
+	{
+		slug: "construction-site-generator-rental",
+		key: "construction",
+		image: "/services/construction-site-generator-rental.webp",
+		badgeKey: "catalog.construction.badge",
+		titleKey: "catalog.construction.title",
+		descriptionKey: "catalog.construction.description",
+		pointsKeys: [
+			"catalog.construction.point0",
+			"catalog.construction.point1",
+			"catalog.construction.point2",
+			"catalog.construction.point3",
 		],
 	},
 ];
