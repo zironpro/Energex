@@ -454,6 +454,21 @@ export const OG_PAGES: Record<string, OgEntry> = {
 				"تأجير مولدات في العين من إنرجكس — مولدات ديزل وصامتة من 15 إلى 1500 كيلو فولت أمبير للبناء والزراعة والتجارة.",
 		},
 	},
+	"/insights/understanding-power-demands-on-modern-construction-sites": {
+		type: "article",
+		image: "insights--understanding-power-demands-on-modern-construction-sites",
+		en: {
+			title:
+				"Understanding Power Demands on Modern Construction Sites | Energex",
+			description:
+				"Learn how construction site power demands work across Dubai projects: machinery loads, temporary facilities, project stages, climate impact, and load management.",
+		},
+		ar: {
+			title: "فهم متطلبات الطاقة في مواقع البناء الحديثة | إنرجكس",
+			description:
+				"تعرّف على متطلبات الطاقة في مواقع البناء الحديثة في دبي: أحمال المعدات الثقيلة، والمرافق المؤقتة، ومراحل المشروع، وتأثير المناخ، وإدارة الأحمال الكهربائية.",
+		},
+	},
 	"/insights/construction-site-generator-rental-in-dubai": {
 		type: "article",
 		image: "insights--construction-site-generator-rental-in-dubai",
