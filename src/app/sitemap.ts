@@ -47,9 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 	}
 
 	for (const page of SERVICE_PAGES) {
-		addEntry(`/${page.slug}`, 0.9);
 		addEntry(`/solutions/${page.slug}`, 0.9);
-		addEntry(`/services/${page.slug}`, 0.8);
 	}
 
 	for (const article of ARTICLES) {

@@ -36,20 +36,5 @@ export function buildProductJsonLd({
 		},
 		category: "Diesel Generator Rental",
 		url: pageUrl,
-		offers: {
-			"@type": "Offer",
-			url: pageUrl,
-			availability: "https://schema.org/InStock",
-			priceCurrency: "AED",
-			areaServed: {
-				"@type": "Country",
-				name: "United Arab Emirates",
-			},
-			seller: {
-				"@type": "Organization",
-				name: ORGANIZATION_LEGAL_NAME,
-			},
-		},
 	};
 }
-
