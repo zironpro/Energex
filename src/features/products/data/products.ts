@@ -51,4 +51,3 @@ export function getProductBySlug(slug: string): ProductCatalogItem | undefined {
 export function getRelatedProducts(slug: string): ProductCatalogItem[] {
 	return PRODUCTS.filter((product) => product.slug !== slug);
 }
-

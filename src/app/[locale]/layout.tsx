@@ -3,8 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 
 import { notFound } from "next/navigation";
+import Script from "next/script";
 
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { NextIntlClientProvider } from "next-intl";
 import {
 	getMessages,
@@ -23,17 +23,19 @@ import { Navbar } from "@/components/layout/navbar";
 import { FloatingCallButton } from "@/components/ui/floating-call-button";
 
 import { routing } from "@/i18n/routing";
-import { buildOrganizationJsonLd } from "@/lib/schema/organization-json-ld";
 import { localBusinessJsonLd } from "@/lib/schema/local-business-json-ld";
+import { buildOrganizationJsonLd } from "@/lib/schema/organization-json-ld";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
 	subsets: ["latin"],
+	display: "swap",
 });
 
 const geistMono = Geist_Mono({
 	variable: "--font-geist-mono",
 	subsets: ["latin"],
+	display: "swap",
 });
 
 const BASE_URL =
@@ -112,8 +114,34 @@ export default async function RootLayout({
 					</div>
 				</NextIntlClientProvider>
 			</body>
-			<GoogleAnalytics gaId="G-4SQ36YPC9H" />
-			<GoogleTagManager gtmId="GTM-5RXTQ2PT" />
+			<Script
+				dangerouslySetInnerHTML={{
+					__html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+					new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+					j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+					'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+					})(window,document,'script','dataLayer','GTM-5RXTQ2PT');`,
+				}}
+				id="gtm-script"
+				strategy="lazyOnload"
+			/>
+			<Script
+				id="ga-script"
+				src="https://www.googletagmanager.com/gtag/js?id=G-4SQ36YPC9H"
+				strategy="lazyOnload"
+			/>
+			<Script
+				dangerouslySetInnerHTML={{
+					__html: `
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+						gtag('js', new Date());
+						gtag('config', 'G-4SQ36YPC9H');
+					`,
+				}}
+				id="ga-init"
+				strategy="lazyOnload"
+			/>
 		</html>
 	);
 }

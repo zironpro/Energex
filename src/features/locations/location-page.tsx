@@ -1,5 +1,7 @@
 "use client";
 
+import { LocationSeoContent } from "@/components/seo-content";
+
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
 import { LocationCallout } from "./sections/location-callout";
@@ -13,7 +15,6 @@ import { LocationIndustries } from "./sections/location-industries";
 import { LocationIntro } from "./sections/location-intro";
 import { LocationWhyChoose } from "./sections/location-why-choose";
 import type { LocationPageData } from "./types";
-import { LocationSeoContent } from "@/components/seo-content";
 
 interface LocationPageProps {
 	data: LocationPageData;

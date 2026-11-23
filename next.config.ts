@@ -7,7 +7,13 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig: NextConfig = {
 	experimental: {
 		cpus: 1,
-		optimizePackageImports: ["lucide-react", "framer-motion", "@base-ui/react"],
+		optimizePackageImports: [
+			"lucide-react",
+			"framer-motion",
+			"@base-ui/react",
+			"lenis",
+			"gsap",
+		],
 	},
 	images: {
 		unoptimized: true,
@@ -24,6 +30,15 @@ const nextConfig: NextConfig = {
 		return [
 			{
 				source: "/video/:path*",
+				headers: [
+					{
+						key: "Cache-Control",
+						value: "public, max-age=31536000, immutable",
+					},
+				],
+			},
+			{
+				source: "/:all*(svg|jpg|png|webp|avif)",
 				headers: [
 					{
 						key: "Cache-Control",

@@ -1,5 +1,6 @@
-import { Link } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
+
+import { Link } from "@/i18n/navigation";
 
 export default function NotFound() {
 	const locale = useLocale();
@@ -23,18 +24,20 @@ export default function NotFound() {
 			</div>
 
 			<div className="relative z-10 flex max-w-2xl flex-col items-center">
-				<h1 className="mb-4 font-bold text-7xl text-blue-700 md:text-9xl">404</h1>
+				<h1 className="mb-4 font-bold text-7xl text-blue-700 md:text-9xl">
+					404
+				</h1>
 				<h2 className="mb-6 font-bold text-2xl text-slate-900 md:text-3xl">
 					{isAr ? "الصفحة غير موجودة" : "Page Not Found"}
 				</h2>
 				<p className="mb-10 text-lg text-slate-600">
-					{isAr 
+					{isAr
 						? "عذراً، الصفحة التي تبحث عنها غير موجودة أو تم نقلها."
 						: "Sorry, the page you are looking for doesn't exist or has been moved."}
 				</p>
 				<Link
-					href="/"
 					className="inline-flex items-center justify-center rounded-sm bg-blue-700 px-8 py-4 font-bold text-white transition-colors hover:bg-blue-800"
+					href="/"
 				>
 					{isAr ? "العودة إلى الصفحة الرئيسية" : "Back to Home"}
 				</Link>

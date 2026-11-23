@@ -55,7 +55,14 @@ export function InsightsNewsSection({
 								isDark ? "text-slate-400" : "text-slate-600"
 							}`}
 						>
-							New to renting? Read our complete guide to <Link className="text-blue-500 hover:underline" href="/insights/power-generator-rental-uae-complete-guide">power generator rental in the UAE</Link>.
+							New to renting? Read our complete guide to{" "}
+							<Link
+								className="text-blue-500 hover:underline"
+								href="/insights/power-generator-rental-uae-complete-guide"
+							>
+								power generator rental in the UAE
+							</Link>
+							.
 						</p>
 					</div>
 

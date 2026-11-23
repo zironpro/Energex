@@ -2,8 +2,6 @@
 
 import { useEffect, useRef } from "react";
 
-import Image from "next/image";
-
 import gsap from "gsap";
 import Flip from "gsap/Flip";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -39,6 +37,22 @@ export function MainHero() {
 			ctx = gsap.context(() => {
 				if (!smallImgRef.current || !targetImgRef.current || !heroRef.current)
 					return;
+
+				// On mobile screens, keep hero text, buttons, and features visible immediately without scroll trapping
+				if (window.innerWidth < 768) {
+					Flip.fit(targetImgRef.current, smallImgRef.current, {
+						scale: false,
+						duration: 0,
+					});
+					gsap.set(targetImgRef.current, { borderRadius: "40px" });
+					gsap.set(".top-text-left, .top-text-right, .bottom-reveal", {
+						x: 0,
+						y: 0,
+						opacity: 1,
+						clearProps: "all",
+					});
+					return;
+				}
 
 				// The Flip.fit animation configures the tween to scale and move the target image
 				const flip = Flip.fit(targetImgRef.current, smallImgRef.current, {
@@ -145,9 +159,11 @@ export function MainHero() {
 			ref={heroRef}
 		>
 			<style>{`
-				.top-text-left { transform: translateX(-100vw); opacity: 0; }
-				.top-text-right { transform: translateX(100vw); opacity: 0; }
-				.bottom-reveal { transform: translateY(100px); opacity: 0; }
+				@media (min-width: 768px) {
+					.top-text-left { transform: translateX(-100vw); opacity: 0; }
+					.top-text-right { transform: translateX(100vw); opacity: 0; }
+					.bottom-reveal { transform: translateY(100px); opacity: 0; }
+				}
 			`}</style>
 
 			{/* Full Screen Image Container (target for Flip) */}
@@ -162,6 +178,8 @@ export function MainHero() {
 						loop
 						muted
 						playsInline
+						poster="/video/hero-poster.webp"
+						preload="metadata"
 					>
 						<source src="/video/hero-vid.webm" type="video/webm" />
 					</video>
@@ -171,6 +189,8 @@ export function MainHero() {
 						loop
 						muted
 						playsInline
+						poster="/video/mobile-poster.webp"
+						preload="metadata"
 					>
 						<source src="/video/vid-mobile.webm" type="video/webm" />
 					</video>
@@ -208,13 +228,13 @@ export function MainHero() {
 							href="/contact"
 						>
 							{t("requestQuote")}
-							<Image
+							{/* <Image
 								alt="Arrow Icon"
 								className="ml-2 h-4 w-4 invert"
 								height={16}
 								src="/icons/caret-right.svg"
 								width={16}
-							/>
+							/> */}
 						</Link>
 					</div>
 				</div>

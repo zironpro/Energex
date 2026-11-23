@@ -1,6 +1,8 @@
-import createMiddleware from "next-intl/middleware";
-import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
+
+import createMiddleware from "next-intl/middleware";
+
 import { routing } from "./i18n/routing";
 
 const intlMiddleware = createMiddleware(routing);
@@ -8,14 +10,17 @@ const intlMiddleware = createMiddleware(routing);
 export default function middleware(request: NextRequest) {
 	const url = request.nextUrl.clone();
 	const host = request.headers.get("host") || "";
-	const protocol = request.headers.get("x-forwarded-proto") || url.protocol.replace(':', '');
-	
+	const protocol =
+		request.headers.get("x-forwarded-proto") || url.protocol.replace(":", "");
+
 	// Consider it production if it's explicitly set or we're on the real domain
-	const isProd = process.env.NODE_ENV === 'production' || host.includes('energexequip.ae');
+	const isProd =
+		process.env.NODE_ENV === "production" || host.includes("energexequip.ae");
 	const targetHost = "www.energexequip.ae";
-	
-	const needsHostRedirect = isProd && (host !== targetHost || protocol !== "https");
-	
+
+	const needsHostRedirect =
+		isProd && (host !== targetHost || protocol !== "https");
+
 	const response = intlMiddleware(request);
 
 	// Intercept next-intl redirects to enforce 308 and one-hop domain correction

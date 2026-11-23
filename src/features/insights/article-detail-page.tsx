@@ -138,10 +138,10 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 						<div className="overflow-x-auto">
 							<table className="w-full text-left text-sm md:text-base">
 								<thead>
-									<tr className="border-b border-slate-200 bg-slate-100/80 font-bold text-slate-900">
+									<tr className="border-slate-200 border-b bg-slate-100/80 font-bold text-slate-900">
 										{headerCells.map((cell, cIdx) => (
 											<th
-												className="px-6 py-4 font-bold text-blue-950 uppercase tracking-wider text-xs md:text-sm"
+												className="px-6 py-4 font-bold text-blue-950 text-xs uppercase tracking-wider md:text-sm"
 												key={`th-${cIdx}`}
 											>
 												{parseTextWithLinks(cell)}
@@ -161,7 +161,7 @@ export function ArticleDetailPage({ id }: ArticleDetailPageProps) {
 													<td
 														className={`px-6 py-4 text-slate-700 ${
 															cIdx === 0
-																? "font-semibold text-slate-900 whitespace-nowrap"
+																? "whitespace-nowrap font-semibold text-slate-900"
 																: ""
 														}`}
 														key={`td-${rIdx}-${cIdx}`}

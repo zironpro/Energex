@@ -1,11 +1,12 @@
 "use client";
 
+import { ProductsSeoContent } from "@/components/seo-content";
+
 import { CTA } from "@/features/home/components/cta";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
 import { Hero } from "./sections/hero";
 import { ProductGrid } from "./sections/product-grid";
-import { ProductsSeoContent } from "@/components/seo-content";
 
 export function ProductsPage() {
 	useSmoothScroll();

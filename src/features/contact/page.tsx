@@ -11,8 +11,11 @@ import Map, {
 import { Link } from "@/i18n/navigation";
 import "maplibre-gl/dist/maplibre-gl.css";
 
+import { useState } from "react";
+
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
+import { ContactSeoContent } from "@/components/seo-content";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -24,14 +27,13 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { ContactSeoContent } from "@/components/seo-content";
-
-import { useState } from "react";
 
 export function ContactPage() {
 	const t = useTranslations("contact");
 	const [isSubmitting, setIsSubmitting] = useState(false);
-	const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+	const [submitStatus, setSubmitStatus] = useState<
+		"idle" | "success" | "error"
+	>("idle");
 
 	async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
@@ -218,7 +220,8 @@ export function ContactPage() {
 										Request Sent Successfully
 									</h3>
 									<p className="mb-8 text-slate-500">
-										Thank you for your inquiry. Our team will review your request and get back to you shortly.
+										Thank you for your inquiry. Our team will review your
+										request and get back to you shortly.
 									</p>
 									<Button
 										className="h-12 bg-blue-600 px-8 font-semibold text-white transition hover:-translate-y-1 hover:bg-blue-700 hover:shadow-lg"
@@ -228,128 +231,193 @@ export function ContactPage() {
 									</Button>
 								</div>
 							) : (
-								<form
-									className="space-y-5"
-									onSubmit={handleSubmit}
-								>
-								{submitStatus === "error" && (
-									<div className="rounded-md bg-red-50 p-4 text-red-700">
-										There was an error sending your message. Please try again.
+								<form className="space-y-5" onSubmit={handleSubmit}>
+									{submitStatus === "error" && (
+										<div className="rounded-md bg-red-50 p-4 text-red-700">
+											There was an error sending your message. Please try again.
+										</div>
+									)}
+									<div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+										<div className="space-y-1.5">
+											<Label
+												className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
+												htmlFor="firstName"
+											>
+												{t("form.firstNameLabel")}{" "}
+												<span className="text-red-500">*</span>
+											</Label>
+											<Input
+												className="h-11 border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
+												id="firstName"
+												name="firstName"
+												placeholder={t("form.firstNamePlaceholder")}
+												required
+											/>
+										</div>
+										<div className="space-y-1.5">
+											<Label
+												className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
+												htmlFor="lastName"
+											>
+												{t("form.lastNameLabel")}{" "}
+												<span className="text-red-500">*</span>
+											</Label>
+											<Input
+												className="h-11 border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
+												id="lastName"
+												name="lastName"
+												placeholder={t("form.lastNamePlaceholder")}
+												required
+											/>
+										</div>
 									</div>
-								)}
-								<div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+
+									<div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+										<div className="space-y-1.5">
+											<Label
+												className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
+												htmlFor="company"
+											>
+												{t("form.companyLabel")}
+											</Label>
+											<Input
+												className="h-11 border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
+												id="company"
+												name="company"
+												placeholder={t("form.companyPlaceholder")}
+											/>
+										</div>
+										<div className="space-y-1.5">
+											<Label
+												className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
+												htmlFor="email"
+											>
+												{t("form.emailLabel")}{" "}
+												<span className="text-red-500">*</span>
+											</Label>
+											<Input
+												className="h-11 border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
+												id="email"
+												name="email"
+												placeholder={t("form.emailPlaceholder")}
+												required
+												type="email"
+											/>
+										</div>
+									</div>
+
 									<div className="space-y-1.5">
 										<Label
 											className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
-											htmlFor="firstName"
+											htmlFor="phone"
 										>
-											{t("form.firstNameLabel")}{" "}
+											{t("form.phoneLabel")}{" "}
 											<span className="text-red-500">*</span>
 										</Label>
 										<Input
 											className="h-11 border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
-											id="firstName"
-											name="firstName"
+											id="phone"
+											name="phone"
+											placeholder={t("form.phonePlaceholder")}
 											required
-											placeholder={t("form.firstNamePlaceholder")}
+											type="tel"
 										/>
 									</div>
-									<div className="space-y-1.5">
-										<Label
-											className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
-											htmlFor="lastName"
-										>
-											{t("form.lastNameLabel")}{" "}
-											<span className="text-red-500">*</span>
-										</Label>
-										<Input
-											className="h-11 border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
-											id="lastName"
-											name="lastName"
-											required
-											placeholder={t("form.lastNamePlaceholder")}
-										/>
-									</div>
-								</div>
 
-								<div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-									<div className="space-y-1.5">
-										<Label
-											className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
-											htmlFor="company"
-										>
-											{t("form.companyLabel")}
-										</Label>
-										<Input
-											className="h-11 border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
-											id="company"
-											name="company"
-											placeholder={t("form.companyPlaceholder")}
-										/>
-									</div>
-									<div className="space-y-1.5">
-										<Label
-											className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
-											htmlFor="email"
-										>
-											{t("form.emailLabel")}{" "}
-											<span className="text-red-500">*</span>
-										</Label>
-										<Input
-											className="h-11 border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
-											id="email"
-											name="email"
-											required
-											placeholder={t("form.emailPlaceholder")}
-											type="email"
-										/>
-									</div>
-								</div>
+									<div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+										<div className="space-y-1.5">
+											<Label
+												className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
+												htmlFor="rentalDuration"
+											>
+												{t("form.durationLabel")}
+											</Label>
+											<Select name="rentalDuration">
+												<SelectTrigger
+													className="h-11 border-transparent bg-[#d0d7e1] focus:ring-blue-600"
+													id="rentalDuration"
+												>
+													<SelectValue
+														placeholder={t("form.durationPlaceholder")}
+													/>
+												</SelectTrigger>
+												<SelectContent>
+													<SelectItem value="short">
+														{t("form.durationShort")}
+													</SelectItem>
+													<SelectItem value="medium">
+														{t("form.durationMedium")}
+													</SelectItem>
+													<SelectItem value="long">
+														{t("form.durationLong")}
+													</SelectItem>
+												</SelectContent>
+											</Select>
+										</div>
 
-								<div className="space-y-1.5">
-									<Label
-										className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
-										htmlFor="phone"
-									>
-										{t("form.phoneLabel")}{" "}
-										<span className="text-red-500">*</span>
-									</Label>
-									<Input
-										className="h-11 border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
-										id="phone"
-										name="phone"
-										required
-										placeholder={t("form.phonePlaceholder")}
-										type="tel"
-									/>
-								</div>
+										<div className="space-y-1.5">
+											<Label
+												className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
+												htmlFor="sector"
+											>
+												{t("form.sectorLabel")}
+											</Label>
+											<Select name="sector">
+												<SelectTrigger
+													className="h-11 border-transparent bg-[#d0d7e1] focus:ring-blue-600"
+													id="sector"
+												>
+													<SelectValue
+														placeholder={t("form.sectorPlaceholder")}
+													/>
+												</SelectTrigger>
+												<SelectContent>
+													<SelectItem value="construction">
+														{t("form.sectorConstruction")}
+													</SelectItem>
+													<SelectItem value="events">
+														{t("form.sectorEvents")}
+													</SelectItem>
+													<SelectItem value="industrial">
+														{t("form.sectorIndustrial")}
+													</SelectItem>
+													<SelectItem value="oilgas">
+														{t("form.sectorOilGas")}
+													</SelectItem>
+													<SelectItem value="other">
+														{t("form.sectorOther")}
+													</SelectItem>
+												</SelectContent>
+											</Select>
+										</div>
+									</div>
 
-								<div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
 									<div className="space-y-1.5">
 										<Label
 											className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
-											htmlFor="rentalDuration"
+											htmlFor="projectType"
 										>
-											{t("form.durationLabel")}
+											{t("form.typeLabel")}
 										</Label>
-										<Select name="rentalDuration">
+										<Select name="projectType">
 											<SelectTrigger
 												className="h-11 border-transparent bg-[#d0d7e1] focus:ring-blue-600"
-												id="rentalDuration"
+												id="projectType"
 											>
-												<SelectValue
-													placeholder={t("form.durationPlaceholder")}
-												/>
+												<SelectValue placeholder={t("form.typePlaceholder")} />
 											</SelectTrigger>
 											<SelectContent>
-												<SelectItem value="short">
-													{t("form.durationShort")}
+												<SelectItem value="prime">
+													{t("form.typePrime")}
 												</SelectItem>
-												<SelectItem value="medium">
-													{t("form.durationMedium")}
+												<SelectItem value="standby">
+													{t("form.typeStandby")}
 												</SelectItem>
-												<SelectItem value="long">
-													{t("form.durationLong")}
+												<SelectItem value="hybrid">
+													{t("form.typeHybrid")}
+												</SelectItem>
+												<SelectItem value="custom">
+													{t("form.typeCustom")}
 												</SelectItem>
 											</SelectContent>
 										</Select>
@@ -358,116 +426,48 @@ export function ContactPage() {
 									<div className="space-y-1.5">
 										<Label
 											className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
-											htmlFor="sector"
+											htmlFor="message"
 										>
-											{t("form.sectorLabel")}
+											{t("form.messageLabel")}
 										</Label>
-										<Select name="sector">
-											<SelectTrigger
-												className="h-11 border-transparent bg-[#d0d7e1] focus:ring-blue-600"
-												id="sector"
-											>
-												<SelectValue
-													placeholder={t("form.sectorPlaceholder")}
-												/>
-											</SelectTrigger>
-											<SelectContent>
-												<SelectItem value="construction">
-													{t("form.sectorConstruction")}
-												</SelectItem>
-												<SelectItem value="events">
-													{t("form.sectorEvents")}
-												</SelectItem>
-												<SelectItem value="industrial">
-													{t("form.sectorIndustrial")}
-												</SelectItem>
-												<SelectItem value="oilgas">
-													{t("form.sectorOilGas")}
-												</SelectItem>
-												<SelectItem value="other">
-													{t("form.sectorOther")}
-												</SelectItem>
-											</SelectContent>
-										</Select>
+										<Textarea
+											className="resize-y border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
+											id="message"
+											name="message"
+											placeholder={t("form.messagePlaceholder")}
+											rows={4}
+										/>
 									</div>
-								</div>
 
-								<div className="space-y-1.5">
-									<Label
-										className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
-										htmlFor="projectType"
-									>
-										{t("form.typeLabel")}
-									</Label>
-									<Select name="projectType">
-										<SelectTrigger
-											className="h-11 border-transparent bg-[#d0d7e1] focus:ring-blue-600"
-											id="projectType"
+									<div className="mt-8 flex flex-col items-center justify-between gap-6 border-slate-100 border-t pt-4 sm:flex-row">
+										<p className="max-w-[200px] text-slate-500 text-xs">
+											{t("form.termsText1")} <br />
+											<Link
+												className="text-blue-600 hover:underline"
+												href="/terms-and-policy"
+											>
+												{t("form.termsLink")}
+											</Link>{" "}
+											{t("form.termsText2")}{" "}
+											<Link
+												className="text-blue-600 hover:underline"
+												href="/terms-and-policy"
+											>
+												{t("form.privacyLink")}
+											</Link>
+											{t("form.termsText3")}
+										</p>
+										<Button
+											className="group h-12 w-full rounded-lg bg-blue-600 px-8 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700 sm:w-auto"
+											disabled={isSubmitting}
+											type="submit"
 										>
-											<SelectValue placeholder={t("form.typePlaceholder")} />
-										</SelectTrigger>
-										<SelectContent>
-											<SelectItem value="prime">
-												{t("form.typePrime")}
-											</SelectItem>
-											<SelectItem value="standby">
-												{t("form.typeStandby")}
-											</SelectItem>
-											<SelectItem value="hybrid">
-												{t("form.typeHybrid")}
-											</SelectItem>
-											<SelectItem value="custom">
-												{t("form.typeCustom")}
-											</SelectItem>
-										</SelectContent>
-									</Select>
-								</div>
-
-								<div className="space-y-1.5">
-									<Label
-										className="font-semibold text-slate-700 text-xs uppercase tracking-wider"
-										htmlFor="message"
-									>
-										{t("form.messageLabel")}
-									</Label>
-									<Textarea
-										className="resize-y border-transparent bg-[#d0d7e1] focus-visible:ring-blue-600"
-										id="message"
-										name="message"
-										placeholder={t("form.messagePlaceholder")}
-										rows={4}
-									/>
-								</div>
-
-								<div className="mt-8 flex flex-col items-center justify-between gap-6 border-slate-100 border-t pt-4 sm:flex-row">
-									<p className="max-w-[200px] text-slate-500 text-xs">
-										{t("form.termsText1")} <br />
-										<Link
-											className="text-blue-600 hover:underline"
-											href="/terms-and-policy"
-										>
-											{t("form.termsLink")}
-										</Link>{" "}
-										{t("form.termsText2")}{" "}
-										<Link
-											className="text-blue-600 hover:underline"
-											href="/terms-and-policy"
-										>
-											{t("form.privacyLink")}
-										</Link>
-										{t("form.termsText3")}
-									</p>
-									<Button
-										className="group h-12 w-full rounded-lg bg-blue-600 px-8 font-semibold text-white transition duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-blue-700 sm:w-auto"
-										type="submit"
-										disabled={isSubmitting}
-									>
-										{isSubmitting ? "Sending..." : t("form.submit")}
-										{!isSubmitting && (
-											<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-										)}
-									</Button>
-								</div>
+											{isSubmitting ? "Sending..." : t("form.submit")}
+											{!isSubmitting && (
+												<ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+											)}
+										</Button>
+									</div>
 								</form>
 							)}
 						</div>

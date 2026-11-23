@@ -5,7 +5,6 @@ import { RentalPackages } from "@/features/solutions/sections/rental-packages";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
 import { CTA } from "./components/cta";
-import { Intro } from "./components/intro";
 import { Advantage } from "./sections/advantage";
 import { FAQ } from "./sections/faq";
 import { GeneratorFeatures } from "./sections/generator-features";
@@ -15,11 +14,10 @@ import { Products } from "./sections/products";
 import { Progress } from "./sections/progress";
 
 export function HomePage() {
-	useSmoothScroll({ enableIntroLock: true, introDurationMs: 1000 });
+	useSmoothScroll();
 
 	return (
 		<main className="relative min-h-screen overflow-x-hidden bg-[#050505] text-white">
-			<Intro />
 			<MainHero />
 			<Advantage />
 			<GeneratorFeatures />
