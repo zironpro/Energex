@@ -104,19 +104,26 @@ export function MainHero() {
 
 		let initTimer: NodeJS.Timeout;
 
-		const runInit = () => {
-			initTimer = setTimeout(init, 50);
+		const scheduleInit = () => {
+			if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+				(window as any).requestIdleCallback(
+					() => {
+						requestAnimationFrame(init);
+					},
+					{ timeout: 800 }
+				);
+			} else {
+				initTimer = setTimeout(() => {
+					requestAnimationFrame(init);
+				}, 120);
+			}
 		};
 
-		// Wait for fonts and layout to settle before initial GSAP calculation
+		// Schedule after initial paint so hydration tasks finish with near-zero TBT
 		if (typeof document !== "undefined" && document.fonts) {
-			if (document.fonts.status === "loaded") {
-				init();
-			} else {
-				document.fonts.ready.then(runInit);
-			}
+			document.fonts.ready.then(scheduleInit);
 		} else {
-			initTimer = setTimeout(init, 100);
+			scheduleInit();
 		}
 
 		let windowWidth = window.innerWidth;
@@ -145,9 +152,9 @@ export function MainHero() {
 			ref={heroRef}
 		>
 			<style>{`
-				.top-text-left { transform: translateX(-100vw); opacity: 0; }
-				.top-text-right { transform: translateX(100vw); opacity: 0; }
-				.bottom-reveal { transform: translateY(100px); opacity: 0; }
+				.top-text-left { transform: translateX(-100vw); opacity: 0; will-change: transform, opacity; }
+				.top-text-right { transform: translateX(100vw); opacity: 0; will-change: transform, opacity; }
+				.bottom-reveal { transform: translateY(100px); opacity: 0; will-change: transform, opacity; }
 			`}</style>
 
 			{/* Full Screen Image Container (target for Flip on both Desktop & Mobile) */}
@@ -158,25 +165,23 @@ export function MainHero() {
 				>
 					<video
 						autoPlay
-						className="absolute inset-0 hidden h-full w-full object-cover md:block"
+						className="absolute inset-0 h-full w-full object-cover"
 						loop
 						muted
 						playsInline
 						poster="/video/hero-poster.webp"
 						preload="metadata"
 					>
-						<source src="/video/hero-vid.webm" type="video/webm" />
-					</video>
-					<video
-						autoPlay
-						className="absolute inset-0 block h-full w-full object-cover md:hidden"
-						loop
-						muted
-						playsInline
-						poster="/video/mobile-poster.webp"
-						preload="metadata"
-					>
-						<source src="/video/vid-mobile.webm" type="video/webm" />
+						<source
+							media="(max-width: 767px)"
+							src="/video/vid-mobile.webm"
+							type="video/webm"
+						/>
+						<source
+							media="(min-width: 768px)"
+							src="/video/hero-vid.webm"
+							type="video/webm"
+						/>
 					</video>
 				</div>
 			</div>

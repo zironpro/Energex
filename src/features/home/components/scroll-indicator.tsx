@@ -21,7 +21,7 @@ export function ScrollIndicator() {
 				{t("scrollDown")}
 			</span>
 			<svg
-				className="h-5 w-5 animate-bounce drop-shadow-md"
+				className="h-5 w-5 drop-shadow-md transition-transform duration-300 motion-safe:animate-[bounce_1.2s_ease-in-out_2]"
 				fill="none"
 				stroke="currentColor"
 				viewBox="0 0 24 24"
