@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
+import Image from "next/image";
+
 import gsap from "gsap";
 import Flip from "gsap/Flip";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -38,22 +40,6 @@ export function MainHero() {
 				if (!smallImgRef.current || !targetImgRef.current || !heroRef.current)
 					return;
 
-				// On mobile screens, keep hero text, buttons, and features visible immediately without scroll trapping
-				if (window.innerWidth < 768) {
-					Flip.fit(targetImgRef.current, smallImgRef.current, {
-						scale: false,
-						duration: 0,
-					});
-					gsap.set(targetImgRef.current, { borderRadius: "40px" });
-					gsap.set(".top-text-left, .top-text-right, .bottom-reveal", {
-						x: 0,
-						y: 0,
-						opacity: 1,
-						clearProps: "all",
-					});
-					return;
-				}
-
 				// The Flip.fit animation configures the tween to scale and move the target image
 				const flip = Flip.fit(targetImgRef.current, smallImgRef.current, {
 					scale: false,
@@ -65,7 +51,7 @@ export function MainHero() {
 					scrollTrigger: {
 						trigger: heroRef.current,
 						start: "top top",
-						end: "+=150%", // 150% of viewport height for scrolling duration
+						end: "+=130%", // Smooth scrolling duration for hero animation
 						pin: true,
 						scrub: true,
 					},
@@ -76,7 +62,7 @@ export function MainHero() {
 					tl.to(
 						targetImgRef.current,
 						{
-							borderRadius: "9999px",
+							borderRadius: window.innerWidth < 768 ? "40px" : "9999px",
 							ease: "power2.inOut",
 							duration: 0.7,
 						},
@@ -159,14 +145,12 @@ export function MainHero() {
 			ref={heroRef}
 		>
 			<style>{`
-				@media (min-width: 768px) {
-					.top-text-left { transform: translateX(-100vw); opacity: 0; }
-					.top-text-right { transform: translateX(100vw); opacity: 0; }
-					.bottom-reveal { transform: translateY(100px); opacity: 0; }
-				}
+				.top-text-left { transform: translateX(-100vw); opacity: 0; }
+				.top-text-right { transform: translateX(100vw); opacity: 0; }
+				.bottom-reveal { transform: translateY(100px); opacity: 0; }
 			`}</style>
 
-			{/* Full Screen Image Container (target for Flip) */}
+			{/* Full Screen Image Container (target for Flip on both Desktop & Mobile) */}
 			<div className="pointer-events-none absolute inset-0 z-20">
 				<div
 					className="relative h-full w-full overflow-hidden"

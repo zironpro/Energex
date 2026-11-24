@@ -89,6 +89,22 @@ export default async function RootLayout({
 			lang={locale}
 		>
 			<head>
+				<link
+					as="image"
+					fetchPriority="high"
+					href="/video/mobile-poster.webp"
+					media="(max-width: 767px)"
+					rel="preload"
+					type="image/webp"
+				/>
+				<link
+					as="image"
+					fetchPriority="high"
+					href="/video/hero-poster.webp"
+					media="(min-width: 768px)"
+					rel="preload"
+					type="image/webp"
+				/>
 				<script id="organization-schema" type="application/ld+json">
 					{JSON.stringify(organizationJsonLd)}
 				</script>

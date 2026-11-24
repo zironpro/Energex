@@ -11,6 +11,11 @@ export function useSmoothScroll(options: UseSmoothScrollOptions = {}) {
 	const { enableIntroLock = false, introDurationMs = 1000 } = options;
 
 	useEffect(() => {
+		// Native momentum scroll on mobile devices is hardware-accelerated; skip Lenis on mobile
+		if (typeof window !== "undefined" && window.innerWidth < 768) {
+			return;
+		}
+
 		const lenis = new Lenis({
 			duration: 1.2,
 			easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),

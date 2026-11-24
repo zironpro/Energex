@@ -2,11 +2,6 @@
 
 import { useTranslations } from "next-intl";
 
-import {
-	ScrollRevealGroup,
-	ScrollRevealItem,
-} from "@/components/ui/scroll-reveal";
-
 import { getFeatures } from "../data/hero-features";
 
 export function HeroFeatures() {
@@ -15,16 +10,12 @@ export function HeroFeatures() {
 	return (
 		<div className="relative z-20 pt-2 pb-4 md:py-6">
 			<div className="container mx-auto px-2 md:px-6 lg:px-12">
-				<ScrollRevealGroup
-					className="grid grid-cols-2 items-start justify-between gap-2 sm:gap-4 md:grid-cols-2 md:items-center md:gap-8 lg:grid-cols-4 lg:gap-4"
-					stagger={0.3}
-				>
+				<div className="grid grid-cols-2 items-start justify-between gap-2 sm:gap-4 md:grid-cols-2 md:items-center md:gap-8 lg:grid-cols-4 lg:gap-4">
 					{features.map((feature) => {
 						const Icon = feature.icon;
 						return (
-							<ScrollRevealItem
+							<div
 								className="flex flex-col items-center gap-2 text-center md:flex-row md:gap-4 md:text-left lg:justify-center"
-								duration={0.8}
 								key={feature.title}
 							>
 								<div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600 md:h-12 md:w-12">
@@ -38,10 +29,10 @@ export function HeroFeatures() {
 										{feature.description}
 									</p>
 								</div>
-							</ScrollRevealItem>
+							</div>
 						);
 					})}
-				</ScrollRevealGroup>
+				</div>
 			</div>
 		</div>
 	);
