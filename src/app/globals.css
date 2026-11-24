@@ -62,3 +62,14 @@ body {
 		transform: translateY(0);
 	}
 }
+
+@keyframes floatIn {
+	from {
+		transform: translateY(50px) scale(0);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0) scale(1);
+		opacity: 1;
+	}
+}

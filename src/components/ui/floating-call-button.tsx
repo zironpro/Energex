@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
@@ -18,12 +17,9 @@ const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 export function FloatingCallButton() {
 	return (
-		<motion.div
-			animate={{ scale: 1, opacity: 1, y: 0 }}
-			className="fixed right-6 bottom-6 z-50 flex flex-col gap-4"
+		<div
+			className="fixed right-6 bottom-6 z-50 flex flex-col gap-4 motion-safe:animate-[floatIn_0.5s_cubic-bezier(0.175,0.885,0.32,1.275)_1s_both]"
 			dir="ltr"
-			initial={{ scale: 0, opacity: 0, y: 50 }}
-			transition={{ type: "spring", stiffness: 260, damping: 20, delay: 1 }}
 		>
 			{/* WhatsApp Button */}
 			<Link
@@ -55,6 +51,6 @@ export function FloatingCallButton() {
 					<Phone className="h-6 w-6" />
 				</div>
 			</Link>
-		</motion.div>
+		</div>
 	);
 }

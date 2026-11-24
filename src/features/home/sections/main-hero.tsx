@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Image from "next/image";
 
@@ -24,16 +24,27 @@ export function MainHero() {
 	const heroRef = useRef<HTMLElement>(null);
 	const smallImgRef = useRef<HTMLDivElement>(null);
 	const targetImgRef = useRef<HTMLDivElement>(null);
+	const [poster, setPoster] = useState("/video/mobile-poster.webp");
 	const t = useTranslations("home.MainHero");
 
 	useEffect(() => {
-		// Ensure plugins are registered on client
-		gsap.registerPlugin(ScrollTrigger, Flip);
+		if (typeof window !== "undefined" && window.innerWidth >= 768) {
+			setPoster("/video/hero-poster.webp");
+		}
 
 		let ctx: gsap.Context;
 		let resizeTimer: NodeJS.Timeout;
+		let initTimer: NodeJS.Timeout;
+		let isInitialized = false;
 
 		const init = () => {
+			if (isInitialized) return;
+			isInitialized = true;
+			removeListeners();
+
+			// Ensure plugins are registered on client
+			gsap.registerPlugin(ScrollTrigger, Flip);
+
 			if (ctx) ctx.revert();
 
 			ctx = gsap.context(() => {
@@ -102,28 +113,26 @@ export function MainHero() {
 			}, heroRef);
 		};
 
-		let initTimer: NodeJS.Timeout;
-
-		const scheduleInit = () => {
-			if (typeof window !== "undefined" && "requestIdleCallback" in window) {
-				(window as any).requestIdleCallback(
-					() => {
-						requestAnimationFrame(init);
-					},
-					{ timeout: 800 }
-				);
-			} else {
-				initTimer = setTimeout(() => {
-					requestAnimationFrame(init);
-				}, 120);
-			}
+		const removeListeners = () => {
+			window.removeEventListener("scroll", init);
+			window.removeEventListener("touchstart", init);
+			window.removeEventListener("pointerdown", init);
+			window.removeEventListener("wheel", init);
 		};
 
-		// Schedule after initial paint so hydration tasks finish with near-zero TBT
-		if (typeof document !== "undefined" && document.fonts) {
-			document.fonts.ready.then(scheduleInit);
+		if (window.scrollY > 0) {
+			init();
 		} else {
-			scheduleInit();
+			window.addEventListener("scroll", init, { passive: true, once: true });
+			window.addEventListener("touchstart", init, { passive: true, once: true });
+			window.addEventListener("pointerdown", init, { passive: true, once: true });
+			window.addEventListener("wheel", init, { passive: true, once: true });
+
+			if ("requestIdleCallback" in window) {
+				(window as any).requestIdleCallback(init, { timeout: 2500 });
+			} else {
+				initTimer = setTimeout(init, 1800);
+			}
 		}
 
 		let windowWidth = window.innerWidth;
@@ -132,13 +141,17 @@ export function MainHero() {
 			windowWidth = window.innerWidth;
 			clearTimeout(resizeTimer);
 			resizeTimer = setTimeout(() => {
-				init();
+				if (isInitialized) {
+					isInitialized = false;
+					init();
+				}
 			}, 200);
 		};
 
 		window.addEventListener("resize", handleResize);
 
 		return () => {
+			removeListeners();
 			clearTimeout(resizeTimer);
 			clearTimeout(initTimer);
 			if (ctx) ctx.revert();
@@ -169,7 +182,7 @@ export function MainHero() {
 						loop
 						muted
 						playsInline
-						poster="/video/hero-poster.webp"
+						poster={poster}
 						preload="metadata"
 					>
 						<source

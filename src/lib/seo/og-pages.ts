@@ -454,6 +454,20 @@ export const OG_PAGES: Record<string, OgEntry> = {
 				"تأجير مولدات في العين من إنرجكس — مولدات ديزل وصامتة من 15 إلى 1500 كيلو فولت أمبير للبناء والزراعة والتجارة.",
 		},
 	},
+	"/insights/heavy-duty-generator-rental-services-in-dubai": {
+		type: "article",
+		image: "insights--heavy-duty-generator-rental-services-in-dubai",
+		en: {
+			title: "Heavy Duty Generator Rental Services in Dubai | Energex",
+			description:
+				"Rent heavy-duty generators in Dubai (200-1500 kVA) from Energex. High-capacity, reliable power solutions for construction, industrial plants, and commercial facilities.",
+		},
+		ar: {
+			title: "خدمات تأجير المولدات الكهربائية الثقيلة في دبي | إنرجكس",
+			description:
+				"استأجر مولدات كهربائية ثقيلة في دبي (200-1500 ك.ف.أ) من إنرجكس. حلول طاقة موثوقة وعالية السعة لمواقع البناء والمصانع والمنشآت التجارية.",
+		},
+	},
 	"/insights/understanding-power-demands-on-modern-construction-sites": {
 		type: "article",
 		image: "insights--understanding-power-demands-on-modern-construction-sites",
