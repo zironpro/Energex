@@ -454,6 +454,21 @@ export const OG_PAGES: Record<string, OgEntry> = {
 				"تأجير مولدات في العين من إنرجكس — مولدات ديزل وصامتة من 15 إلى 1500 كيلو فولت أمبير للبناء والزراعة والتجارة.",
 		},
 	},
+	"/insights/generator-rental-for-retail-spaces-and-commercial-properties": {
+		type: "article",
+		image: "insights--generator-rental-for-retail-spaces-and-commercial-properties",
+		en: {
+			title:
+				"Generator Rental for Retail Spaces and Commercial Properties | Energex",
+			description:
+				"Reliable generator rental solutions for retail stores, shopping centres, and commercial buildings in Dubai. Maintain business continuity, POS, and HVAC.",
+		},
+		ar: {
+			title: "تأجير المولدات للمساحات التجارية ومراكز التسوق | إنرجكس",
+			description:
+				"حلول تأجير مولدات موثوقة لمتاجر التجزئة ومراكز التسوق والمباني التجارية في دبي. حافظ على استمرارية الأعمال وأنظمة نقاط البيع والتكييف.",
+		},
+	},
 	"/insights/heavy-duty-generator-rental-services-in-dubai": {
 		type: "article",
 		image: "insights--heavy-duty-generator-rental-services-in-dubai",
